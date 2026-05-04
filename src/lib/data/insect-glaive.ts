@@ -211,5 +211,10 @@ export const insectGlaive: WeaponData = {
 		}
 	},
 	sourcesText:
-		'Game8 IG Builds (Dec 2025), Icy Veins (Dec 2025), Mobalytics (Jan 2026). No Artian/Gogma materials.'
+		'Game8 IG Builds (Dec 2025), Icy Veins (Dec 2025), Mobalytics (Jan 2026). No Artian/Gogma materials.',
+	display: {
+		weaponListTitle: 'Non-Artian Insect Glaives',
+		comfortTitle: 'Comfort / Mobility',
+		weaponLayout: 'detail'
+	}
 };

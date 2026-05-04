@@ -1,7 +1,7 @@
 # Compendium Bow General Info — Reference
 
 Source: MH:GH Bow Compendium (@p_chu & @ninjazenia)
-Extracted from screenshots on 2026-04-08.
+Extracted from screenshots on 2026-05-04.
 
 This document captures non-build-specific bow information that should eventually live in an informational section of the app.
 
@@ -125,3 +125,23 @@ These four sections could be presented in the app as:
 3. **A reference sidebar or modal** accessible from any build result — "How do I cap stamina?" / "Which bow should I use?" / "How do I craft the Artian bow?"
 
 The meal data is especially useful per-build since the correct meal depends on the build's Constitution level. The stamina cap and Artian crafting info are more static reference content. The bow options table is useful as a "swap guide" shown alongside or below the weapon recommendations in each build result.
+
+---
+
+## Path Reference
+
+Shared assets backing the sections in this document:
+
+- meals (§1): `screenshots/bow/google_doc/shared/meals.png`
+- stamina management (§2): `screenshots/bow/google_doc/shared/stamina-management.png`
+- ideal Artian bow (§3): `screenshots/bow/google_doc/shared/artian.png`
+- non-Artian / alternative bows (§4): `screenshots/bow/google_doc/shared/non-artian-weapons.png`
+
+Related Gogma-era references (covered in `google-doc-bow-builds.md`'s Shared Weapon Recommendations):
+
+- Gogma Artian (Calamitous Angel) target stats: `screenshots/bow/google_doc/shared/gogma-artian.png`
+- Gogma Artian crafting instructions: `screenshots/bow/google_doc/shared/gogma-artian-instructions.png`
+
+Legacy / out-of-scope reference (not currently transcribed here):
+
+- TU2-and-below weapon skills overview: `screenshots/bow/google_doc/shared/weapon-skills.png`

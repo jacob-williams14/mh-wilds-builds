@@ -92,7 +92,7 @@
 				<BuildResult
 					build={currentBuild}
 					weapons={currentData.weapons}
-					weaponType={currentWeapon}
+					display={currentData.display}
 				/>
 			{/if}
 		</div>

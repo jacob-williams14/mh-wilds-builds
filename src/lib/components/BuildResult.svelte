@@ -1,15 +1,15 @@
 <script lang="ts">
-	import type { Build, WeaponOption } from '$lib/data/types';
+	import type { Build, WeaponDisplay, WeaponOption } from '$lib/data/types';
 	import ResistanceBars from './ResistanceBars.svelte';
 	import SkillTags from './SkillTags.svelte';
 
 	type Props = {
 		build: Build;
 		weapons: WeaponOption[];
-		weaponType: string;
+		display: WeaponDisplay;
 	};
 
-	let { build, weapons, weaponType }: Props = $props();
+	let { build, weapons, display }: Props = $props();
 
 	const damageSkills = $derived(
 		build.skills.filter((skill) => skill.type === 'dmg').map((skill) => skill.name)
@@ -17,10 +17,6 @@
 	const comfortSkills = $derived(
 		build.skills.filter((skill) => skill.type === 'comfort').map((skill) => skill.name)
 	);
-	const weaponListTitle = $derived(
-		weaponType === 'bow' ? 'Non-Artian Bows (Compendium Picks)' : 'Non-Artian Insect Glaives'
-	);
-	const comfortTitle = $derived(weaponType === 'bow' ? 'Comfort Skills' : 'Comfort / Mobility');
 </script>
 
 <section class="result-card">
@@ -50,7 +46,7 @@
 	<ResistanceBars resistances={build.res} />
 
 	<SkillTags title="Offensive Skills" items={damageSkills} variant="damage" />
-	<SkillTags title={comfortTitle} items={comfortSkills} variant="comfort" />
+	<SkillTags title={display.comfortTitle} items={comfortSkills} variant="comfort" />
 	<SkillTags title="Set / Group Skills" items={build.setSkills} variant="set" />
 
 	<div class="note-box">
@@ -59,7 +55,7 @@
 	</div>
 
 	<div class="result-section">
-		<div class="skills-title">{weaponListTitle}</div>
+		<div class="skills-title">{display.weaponListTitle}</div>
 		<div class="weapon-grid">
 			{#each weapons as weapon (weapon.name)}
 				<div class="weapon-card">
@@ -67,7 +63,9 @@
 						<div class={`weapon-element ${weapon.cls ?? ''}`.trim()}>{weapon.element}</div>
 					{/if}
 					<div class="weapon-name">{weapon.name}</div>
-					<div class={weaponType === 'bow' ? 'weapon-stat' : 'weapon-detail'}>{weapon.info}</div>
+					<div class={display.weaponLayout === 'chip' ? 'weapon-stat' : 'weapon-detail'}>
+						{weapon.info}
+					</div>
 				</div>
 			{/each}
 		</div>

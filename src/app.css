@@ -19,6 +19,7 @@
 	--thunder: #f0c040;
 	--ice: #7ecfff;
 	--dragon: #9b59b6;
+	--raw: #c9a87a;
 }
 
 html,
@@ -447,6 +448,10 @@ button {
 
 .weapon-element.dragon {
 	color: var(--dragon);
+}
+
+.weapon-element.raw {
+	color: var(--raw);
 }
 
 .weapon-name {

@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A SvelteKit web app that helps Monster Hunter Wilds players choose endgame armor builds for each weapon type through a 2-step flowchart based on playstyle priorities. No Artian or Gogma Artian materials. Feel over optimization.
+A SvelteKit web app that helps Monster Hunter Wilds players choose endgame armor builds for each weapon type through a 2-step flowchart based on playstyle priorities. Feel over optimization. Artian and Gogma material inclusion is decided per-weapon based on what each weapon's sources cover.
 
 ## Why Svelte
 
@@ -20,13 +20,12 @@ A SvelteKit web app that helps Monster Hunter Wilds players choose endgame armor
 
 ## Core Constraints (Apply to Every Weapon)
 
-1. **No Artian or Gogma Artian weapons** — craftable only
-2. **No Gogma armor** — no Gogmazios set pieces
-3. **Feel over DPS** — prioritize stamina flow, dodge windows, mobility, comfort
-4. **HR 50+ baseline** — HR 100+ appraised talismans noted as optional upgrades
-5. **Cite sources** — every build references where it came from
-6. **Elemental resistances** — calculated per mixed set, shown visually
-7. **Meal guidance** — Constitution cap method + food recommendation per build
+1. **Artian and Gogma inclusion is per-weapon** — included when the weapon's authoritative sources cover them; cited in `sourcesText` either way
+2. **Feel over DPS** — prioritize stamina flow, dodge windows, mobility, comfort
+3. **HR 50+ baseline** — HR 100+ appraised talismans noted as optional upgrades
+4. **Cite sources** — every build references where it came from
+5. **Elemental resistances** — calculated per mixed set, shown visually
+6. **Meal guidance** — Constitution cap method + food recommendation per build
 
 ## Project Structure
 
@@ -58,12 +57,12 @@ mhw-builds/
 │   │       └── stamina-caps.ts        # Constitution cap combinations
 │   ├── app.css                        # Global dark theme styles
 │   └── app.html
-├── sources/                           # NOT deployed — dev reference only
-│   ├── bow-compendium.md
-│   ├── bow-game8.md
-│   ├── ig-game8.md
-│   └── [weapon]-[source].md
-├── PLAN.md
+├── ai-resources/                      # NOT deployed — research, plans, references
+│   ├── PLAN.md                        # this file
+│   ├── PROCESS-add-weapon.md          # workflow checklist
+│   ├── phases/                        # phased execution plans
+│   ├── <source>-<weapon>-builds.md    # per-source reference docs
+│   └── screenshots/<weapon>/<source>/ # local-only build screenshots (gitignored)
 ├── package.json
 ├── svelte.config.js
 └── vite.config.ts
@@ -106,11 +105,18 @@ interface FlowConfig {
   q2: Record<string, { text: string; options: FlowOption[] }>;
 }
 
+interface WeaponDisplay {
+  weaponListTitle: string;            // e.g. "Non-Artian Bows (Compendium Picks)"
+  comfortTitle: string;               // e.g. "Comfort Skills"
+  weaponLayout: 'chip' | 'detail';
+}
+
 interface WeaponData {
   builds: Record<string, Build>;
   weapons: WeaponOption[];
   flow: FlowConfig;
-  sources: string;
+  sourcesText: string;
+  display: WeaponDisplay;
 }
 ```
 
@@ -233,12 +239,12 @@ Start with friends' weapons. Otherwise:
 ## Quick-Start
 
 ```bash
-npx sv create mhw-builds    # SvelteKit, TypeScript, minimal
-cd mhw-builds
-npm install
-# Copy PLAN.md and sources/ into project root
-# First session: scaffold components + port Bow and IG data
+bun install
+bun dev          # start dev server
+bun run check    # typecheck
 ```
+
+For per-weapon work, see `ai-resources/phases/` — each phase is a self-contained execution plan.
 
 Prompt for adding weapons:
 ```

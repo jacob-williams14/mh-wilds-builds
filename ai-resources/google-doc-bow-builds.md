@@ -1,9 +1,48 @@
 # Compendium Bow Builds — Reference (TU4)
 
 Source: MH:GH Bow Compendium (@p_chu & @ninjazenia)
-Extracted from screenshots on 2026-04-08.
+Extracted from screenshots on 2026-05-04.
 
 Note: The Compendium screenshots do not include elemental resistance totals. Those are marked TBD below and would need to be calculated from per-piece armor data if needed.
+
+---
+
+## Shared Weapon Recommendations
+
+### Artian Weapon
+- **Angelbein** — The Compendium's recommended Artian bow.
+  - The Artian crafting system allows for the customization of eight total stats. Three stats come from the parts (infusions), which could be Affinity or Attack. Five stats come from upgrading (reinforcements), which could be Affinity, Attack, or Element.
+  - **Ideal Production Bonus** (3 infusions + element type slot):
+    - Element Infusion +20
+    - Attack Infusion +5
+    - Attack Infusion +5
+    - Element Type: any (craft one per element you need)
+  - **Ideal Reinforcement Bonus** (5 upgrades): Attack Boost +5 × 5
+  - **Odds**: 5× Attack reinforcement is roughly 1 in 231 (≈0.43%). Any deviation is weaker but the difference is extremely marginal — perfectly acceptable.
+  - "If you don't care enough to min-max, just craft and use the G. Doshaguma bow."
+  - Credits to @via.kreatv1 for the probability calculator.
+
+### Gogma Artian Bow
+- **Calamitous Angel** — Gogma Artian Bow used in the Gogma Comfort build (and other Gogma-leaning setups).
+  - **Ideal Reinforcements** (Calamitous Angel goal stats):
+    - Attack EX +12
+    - Attack EX +12
+    - Attack III +9
+    - Element EX +12
+    - Element EX +12
+  - Affinity rolls are by far the weakest of the three stat types and are typically ignored.
+  - 3 raw + 2 element reinforcements ensure that if you get a 4 element roll, you are still set with a perfect (statwise) weapon.
+  - Set/group bonus depends on the build you are aiming for — target set/group bonuses are highlighted in the per-build sections.
+
+#### Gogma Artian Endgame Crafting Instructions
+- Title Update 4 introduced a new weapon upgrade system for Artian (Gogma) bows. Those weapons are currently the best in slot for all matchups, allowing the player to influence the type of coating the bow has.
+- Since Affinity Focus stats are so low compared to the rest of the coatings, this requires the IB buff to use it the most in this set. As many Power Coating uses thus require **Power Coating Tarred Devices**, it is more efficient to upgrade the Power Coating bow.
+- It is important to note that we can roll a maximum of two EX boosts of a given type.
+- When it comes to rolling for set/group bonuses, it is worth knowing that each elemental Calamitous Angel comes from a different family of weapons. As a result the set/group bonuses you can apply by using Tarred Device infinity Focus to program the next forward swap are restricted by what the source weapon's lineage offers.
+- To do this, we craft target elemental Gogma Artian bow and roll until we get the desired result. Using Tarred Device Element Focus, the Element Focus stat as well as Affinity is rolled but is locked.
+- We then roll Tarred Device Element Focus to lock in our final set/group bonuses.
+- If we find an inferior set/group bonus we are looking for, we remember how many rolls we used to acquire that and roll back from there using save manipulation.
+- We repeat this step, performing 4 rolls at a time. We perform the final reinforcement roll on a singular sample target weapon, ensuring it has the lowest range possible to set the final stats.
 
 ---
 
@@ -54,8 +93,7 @@ Top non-Artian build per the Compendium. Combines Gore (Black Eclipse) and Lagia
 TBD (not shown in Compendium screenshot)
 
 ### Notes
-- No meal guidance shown in this specific screenshot
-- This build differs significantly from what was in our `bow.ts` — the original data had Lagiacrus Helm β as head (not Gore Helm β), and listed Maximum Might 3 which is not visible here. Coalescence, Latent Power, and Speed Eating were not in our original data at all.
+- No meal guidance shown in this specific screenshot.
 
 ---
 
@@ -105,9 +143,6 @@ TBD (not shown in Compendium screenshot)
 ### Elemental Resistances
 TBD (not shown in Compendium screenshot)
 
-### Notes
-- Our original `bow.ts` had this build with completely different armor (Lagiacrus Helm β head, Numinous Shroud β chest) and different skill levels (Maximum Might 3, Constitution 5 but no Counterstrike). The actual Compendium build is substantially different from what was coded.
-
 ---
 
 ## Build 3: 2pc Gore + 2pc Zoh
@@ -155,7 +190,6 @@ TBD (not shown in Compendium screenshot)
 TBD (not shown in Compendium screenshot)
 
 ### Notes
-- This build is very different from our `bow.ts` version. The original had Lagiacrus Braces β (arms) and Gore Greaves β (legs), not Gore Vambraces β and Mizutsune Greaves β. The Compendium version uses Exploiter Charm II instead of Counterattack Charm III. Skills are also different — Compendium has Counterstrike 3 and Burst 2 instead of Stamina Surge 2 and Burst 1.
 - Meal requirement: Droolshroom (Black Belt Lo) with Constitution 3.
 
 ---
@@ -207,18 +241,91 @@ TBD (not shown in Compendium screenshot)
 TBD (not shown in Compendium screenshot)
 
 ### Notes
-- This build differs from our `bow.ts` substantially. The original had Regios Mail β (chest) instead of Gore Mail β, Duna Wildbraces γ (arms) instead of Rey Sandbraces γ, Regios Coil β (waist) instead of Gore Coil α, and Duna Wildgreaves γ (legs) instead of Rey Sandgreaves γ. Skills were also wrong: original had Con 5, Evade Window 5, Tool Specialist 3, Quick Sheathe 3 — none of which appear in the Compendium version.
-- The Compendium Guts Comfort build actually looks quite similar to the **Game8 Guts Seregios** build in structure (Rey γ head + arms + legs, Gore pieces), but with a different chest piece (Gore Mail β vs Regios Mail β) and different waist (Gore Coil α vs Regios Coil β).
+- The Compendium Guts Comfort build looks quite similar to the **Game8 Guts Seregios** build in structure (Rey γ head + arms + legs, Gore pieces), but with a different chest piece (Gore Mail β vs Regios Mail β) and different waist (Gore Coil α vs Regios Coil β).
 - Meal requirement: Delishroom (Black Belt Hi) with Constitution level in the build.
 
 ---
 
-## Comparison Notes: Compendium vs Our Current bow.ts
+## Build 5: Gogma Comfort
 
-| Build | bow.ts Accurate? | Key Differences |
-|-------|------------------|-----------------|
-| 2pc Gore + 2pc Lagi | **No** | Head piece wrong (Lagi Helm β → Gore Helm β). Missing Coalescence, Latent Power, Speed Eating. Had Maximum Might 3 which isn't in the Compendium. |
-| Comfy 2pc Gore + 2pc Lagi | **No** | Head and Chest pieces wrong. Missing Counterstrike 3. Had Maximum Might 3 which isn't present. Different skill levels throughout. |
-| 2pc Gore + 2pc Zoh | **No** | Arms and Legs pieces wrong. Charm wrong. Missing Counterstrike 3, Burst 2. Had Stamina Surge 2 which isn't present. |
-| Guts Comfort | **No** | 3 of 5 armor pieces wrong. Completely different skill set — original had Con 5, EW 5, Tool Specialist 3, QS 3; Compendium has none of those. |
-| Latent Power | **Not in Compendium** | This build does not appear in any of the Compendium screenshots provided. |
+### Description
+TU4-era comfort build leveraging the new Gogma armor and the Calamitous Angel (Gogma Artian) bow. Targets Constitution 5 and Stamina Surge 3 ("Con5, SS3"), so meal slot is freed for Moxie or Caprice. Uses an Agitator III talisman to bring Agitator to its full level.
+
+### Armor Loadout
+| Slot  | Piece               | Innate Skills (where shown) |
+|-------|---------------------|------------------------------|
+| Head  | G. Ebony Helm β     | (per Compendium screenshot)  |
+| Chest | Gogmazios Mail β    | (per Compendium screenshot)  |
+| Arms  | G. Rath Braces β    | (per Compendium screenshot)  |
+| Waist | Gogmazios Coil α    | (per Compendium screenshot)  |
+| Legs  | Gogmazios Greaves   | (per Compendium screenshot)  |
+
+### Talisman / Charm
+- **Agitator III talisman** (per the screenshot — replaces the Counterattack Charm seen in earlier builds)
+
+### Weapon
+- **Calamitous Angel** (Gogma Artian Bow)
+  - Reinforcements goal: Attack EX +12, Attack EX +12, Attack III +9, Element EX +12, Element EX +12
+  - Coatings shown: Power, Close-Range
+  - Weapon Decorations slots: Element/Bandolier, Charge Master, Spread
+
+### Armor Decorations
+- Tenderizer Jewel【3】×5 (Head, Chest, Arms, Waist, Legs)
+- Physique Jewel【1】×2 (Head, Arms)
+- Refresh Jewel【2】×3 (Chest, Arms, Waist)
+- Flawless Jewel【?】×1 (Legs)
+- (Decoration counts read from the slot icons in the screenshot — verify against in-game build.)
+
+### Skill Summary (from screenshot skill list)
+| Skill              | Visible Level |
+|--------------------|---------------|
+| Weakness Exploit   | shown         |
+| Constitution       | 5             |
+| Agitator           | shown (talisman + Agitator III contribution) |
+| Peak Performance   | shown         |
+| Burst              | shown         |
+| Stamina Surge      | 3             |
+| Speed Eating       | shown         |
+| Adrenaline Rush    | shown         |
+
+### Group / Set Skills
+- **Gogmapocalypse** (Gogma 4-piece set bonus)
+- Mutual Hostility
+- Burst Boost
+- Scorcher
+- Aquatic/Oilsilt Mobility
+- N/A row in source image suggests an unused secondary group slot
+
+### Elemental Resistances
+TBD (not shown in Compendium screenshot)
+
+### Notes
+- Tagged "Con5, SS3" in the screenshot title — the headline comfort claim of this build.
+- This build relies entirely on TU4-released Gogma armor + Gogma Artian weapon; do not transcribe to pre-TU4 references.
+- The skill list in the screenshot is partially obscured/aliased — the values above are the legible ones. Re-verify against the in-game loadout before treating as canonical.
+
+---
+
+## Comparison Notes: Compendium vs Current bow.ts
+
+As of 2026-05-04, all four Builds 1–4 in `bow.ts` (`gore-lagi`, `comfy-gore-lagi`, `gore-zoh`, `guts-comfort`) match the Compendium screenshots. Earlier drift has been reconciled. Build 5 (`gogma-comfort`) was added to `bow.ts` in Phase 1 alongside this audit.
+
+---
+
+## Path Reference
+
+Per-build screenshots:
+- gore-lagi build: `screenshots/bow/google_doc/gore-lagi/loadout.png`
+- comfy-gore-lagi build: `screenshots/bow/google_doc/comfy-gore-lagi/loadout.png`
+- gore-zoh build: `screenshots/bow/google_doc/gore-zoh/loadout.png`
+- guts-comfort build: `screenshots/bow/google_doc/guts-comfort/loadout.png`
+- gogma-comfort build: `screenshots/bow/google_doc/gogma-comfort/loadout.png`
+
+Shared assets:
+- shared Artian: `screenshots/bow/google_doc/shared/artian.png`
+- shared Gogma Artian (Calamitous Angel): `screenshots/bow/google_doc/shared/gogma-artian.png`
+- shared Gogma Artian crafting instructions: `screenshots/bow/google_doc/shared/gogma-artian-instructions.png`
+- shared non-Artian weapons: `screenshots/bow/google_doc/shared/non-artian-weapons.png`
+- shared meals: `screenshots/bow/google_doc/shared/meals.png`
+- shared stamina management: `screenshots/bow/google_doc/shared/stamina-management.png`
+- shared TU2 weapon skills (legacy reference): `screenshots/bow/google_doc/shared/weapon-skills.png`

@@ -209,6 +209,40 @@ export const bow: WeaponData = {
 			meal: 'Con 5 = free meal. Sild Garlic or Specialty Sild Garlic if you want Moxie on top of Guts.',
 			res: { fire: 6, water: 6, thunder: -8, ice: -7, dragon: 0 }
 		},
+		'gogma-comfort': {
+			name: 'Gogma Comfort (TU4)',
+			stars: '★★★★',
+			source: 'Compendium',
+			desc: 'TU4-era comfort build leveraging full Gogma armor and the Calamitous Angel (Gogma Artian) bow. Con 5 + Stamina Surge 3 free the meal slot for Moxie or Caprice. Agitator III talisman tops up Agitator. Skill levels partially obscured in source screenshot — verify in-game before treating as canonical.',
+			armor: {
+				Head: 'G. Ebony Helm β',
+				Chest: 'Gogmazios Mail β',
+				Arms: 'G. Rath Braces β',
+				Waist: 'Gogmazios Coil α',
+				Legs: 'Gogmazios Greaves',
+				Charm: 'Agitator III talisman'
+			},
+			skills: [
+				{ name: 'Weakness Exploit 5', type: 'dmg' },
+				{ name: 'Constitution 5', type: 'comfort' },
+				{ name: 'Agitator 3', type: 'dmg' },
+				{ name: 'Stamina Surge 3', type: 'comfort' },
+				{ name: 'Peak Performance 2', type: 'dmg' },
+				{ name: 'Adrenaline Rush 3', type: 'dmg' },
+				{ name: 'Burst 2', type: 'dmg' },
+				{ name: 'Speed Eating 1', type: 'comfort' }
+			],
+			setSkills: [
+				'Gogmapocalypse (4pc)',
+				'Mutual Hostility',
+				'Burst Boost',
+				'Scorcher',
+				'Aquatic/Oilsilt Mobility'
+			],
+			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg (Caprice).',
+			// Unverified placeholder totals — Compendium screenshots omit resistances.
+			res: { fire: 4, water: -2, thunder: -8, ice: 0, dragon: 6 }
+		},
 		'max-evasion': {
 			name: 'Max Evasion Comfort',
 			stars: '★★★',
@@ -339,11 +373,21 @@ export const bow: WeaponData = {
 						label: 'No Guts — EW 5 + Super Recovery + Max Agitator',
 						cssClass: 'comfort',
 						value: 'max-evasion'
+					},
+					{
+						label: 'TU4 Gogma — Gogmapocalypse + Calamitous Angel',
+						cssClass: 'comfort',
+						value: 'gogma-comfort'
 					}
 				]
 			}
 		}
 	},
 	sourcesText:
-		'MH:GH Bow Compendium (@p_chu & @ninjazenia) and Game8 Bow Builds. Compendium resistance totals remain unverified until calculated from per-piece armor data. No Gogma builds included.'
+		'MH:GH Bow Compendium (@p_chu & @ninjazenia) and Game8 Bow Builds. Compendium resistance totals remain unverified until calculated from per-piece armor data. Includes one TU4 Gogma comfort build (Calamitous Angel).',
+	display: {
+		weaponListTitle: 'Non-Artian Bows (Compendium Picks)',
+		comfortTitle: 'Comfort Skills',
+		weaponLayout: 'chip'
+	}
 };

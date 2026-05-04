@@ -1,7 +1,7 @@
 # Game8 Bow Builds — HR50+ Reference (TU4)
 
 Source: game8.co/games/Monster-Hunter-Wilds/archives/503042
-Extracted from screenshots on 2026-04-08.
+Extracted from screenshots on 2026-05-04.
 
 ---
 
@@ -299,3 +299,20 @@ Defense: 317
 - The Guts Seregios build is the only one without Black Eclipse (uses Razor's Edge + Protective Veil + Guts instead)
 - Zoh-Gore WEX and Max Evasion Comfort share the same head+chest (Numinous Crown β + Numinous Shroud β) but differ in arms/waist/legs
 - Sere-Gore and Zoh-Gore WEX share the same waist+legs (Gore Coil β + Gore Greaves β) but differ in head/chest/arms
+
+---
+
+## Path Reference
+
+- sere-gore build: `screenshots/bow/game8_builds/sere-gore/{loadout,skills,description}.png`
+- zoh-gore-wex build: `screenshots/bow/game8_builds/zoh-gore-wex/{loadout,skills,description}.png`
+- guts-sere build: `screenshots/bow/game8_builds/guts-sere/{loadout,skills,description}.png`
+- max-evasion-comfort build: `screenshots/bow/game8_builds/max-evasion-comfort/{loadout,skills,description}.png`
+- shared Artian: `screenshots/bow/game8_builds/shared/artian.png`
+- shared non-Artian elemental bows:
+  - Fire (Dark Filament): `screenshots/bow/game8_builds/shared/dark-filament.png`
+  - Thunder (High Voltsender): `screenshots/bow/game8_builds/shared/high-voltsender.png`
+  - Ice (Singha Sharanga): `screenshots/bow/game8_builds/shared/singha-sharanga.png`
+  - Dragon (Verzweiflung): `screenshots/bow/game8_builds/shared/verzweiflung.png`
+- shared secondary weapons: `screenshots/bow/game8_builds/shared/secondary-weapons.png`
+- shared mantle: `screenshots/bow/game8_builds/shared/mantle.png`

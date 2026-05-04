@@ -50,9 +50,16 @@ export interface FlowConfig {
 	q2: Record<string, FlowStep>;
 }
 
+export interface WeaponDisplay {
+	weaponListTitle: string;
+	comfortTitle: string;
+	weaponLayout: 'chip' | 'detail';
+}
+
 export interface WeaponData {
 	builds: Record<string, Build>;
 	weapons: WeaponOption[];
 	flow: FlowConfig;
 	sourcesText: string;
+	display: WeaponDisplay;
 }
