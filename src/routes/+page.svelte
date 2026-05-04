@@ -40,18 +40,20 @@
 	<title>MH Wilds — Build Selector</title>
 	<meta
 		name="description"
-		content="A feel-first Monster Hunter Wilds build selector for Bow and Insect Glaive."
+		content="A feel-first Monster Hunter Wilds build selector. Choose armor by playstyle; Artian/Gogma weapons noted as best in slot with craftable alternatives."
 	/>
 </svelte:head>
 
 <div class="app-shell">
 	<header class="app-header">
 		<h1 class="app-title">MH Wilds Build Selector</h1>
-		<div class="app-subtitle">No Artian / Gogma — Feel Over Optimization</div>
+		<div class="app-subtitle">Feel-First — Choose Armor by Playstyle</div>
 		<div class="hr-badge">HR 50+ Endgame Builds</div>
 		<p class="app-lead">
 			Choose a weapon, answer two quick questions, and get an endgame build that favors comfort,
-			flow, and consistency over spreadsheet DPS.
+			flow, and consistency. Armor is the playstyle decision; weapons are about access —
+			Artian/Gogma Artian are best in slot, with non-Artian alternatives listed when you can't craft
+			one.
 		</p>
 	</header>
 	<section class="hero-panel">

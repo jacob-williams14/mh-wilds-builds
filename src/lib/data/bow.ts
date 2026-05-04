@@ -213,6 +213,7 @@ export const bow: WeaponData = {
 			name: 'Gogma Comfort (TU4)',
 			stars: '★★★★',
 			source: 'Compendium',
+			tier: 'meta',
 			desc: 'TU4-era comfort build leveraging full Gogma armor and the Calamitous Angel (Gogma Artian) bow. Con 5 + Stamina Surge 3 free the meal slot for Moxie or Caprice. Agitator III talisman tops up Agitator. Skill levels partially obscured in source screenshot — verify in-game before treating as canonical.',
 			armor: {
 				Head: 'G. Ebony Helm β',

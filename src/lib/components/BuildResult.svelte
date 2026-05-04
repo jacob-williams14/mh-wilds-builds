@@ -17,6 +17,16 @@
 	const comfortSkills = $derived(
 		build.skills.filter((skill) => skill.type === 'comfort').map((skill) => skill.name)
 	);
+	const tierLabel = $derived.by(() => {
+		switch (build.tier) {
+			case 'meta':
+				return 'TU4 Meta';
+			case 'mixed':
+				return 'Mixed Gogma';
+			default:
+				return null;
+		}
+	});
 </script>
 
 <section class="result-card">
@@ -27,6 +37,9 @@
 
 	<div class="source-chip-row">
 		<span class="skill-tag ss source-chip">Source: {build.source}</span>
+		{#if tierLabel}
+			<span class="skill-tag tier-chip tier-{build.tier}">{tierLabel}</span>
+		{/if}
 	</div>
 
 	<div class="result-desc">{build.desc}</div>

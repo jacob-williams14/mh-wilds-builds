@@ -136,6 +136,7 @@ Compare current 5 builds against the new screenshots:
 - Verify each loadout matches its screenshot.
 - Verify resistance totals (currently treated as verified) — flag with `// Unverified placeholder` comments if Google Doc screenshots don't show them.
 - Update slugs if any current slugs don't match the canonical convention (e.g. `rey-gore-mm` is fine; `lords-soul-lagi` is fine; check the rest).
+- **Set `tier` field** per `phases/00-conventions.md` §5: omit for pure non-Gogma builds (defaults to `'craftable'`); set `'mixed'` for builds blending Gogma pieces; set `'meta'` for full Gogma loadouts. The new Artian/Gogma builds added in section C will need this.
 - Update `sourcesText` to cite Game8 + the Google Doc source by its actual title. If Icy Veins and Mobalytics aren't in the screenshots, drop them from the citation.
 
 ### H. Validate

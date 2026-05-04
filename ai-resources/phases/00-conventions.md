@@ -188,6 +188,8 @@ Defined in `src/lib/data/types.ts:16-26`. Every build needs all 9 fields:
 
 **Canonical reference**: `src/lib/data/bow.ts:5-35` (the `gore-lagi` build) is the cleanest example — open this when in doubt about field shapes.
 
+**Optional `tier` field** (added in Phase 1): `'craftable' | 'mixed' | 'meta'`. Omit for pure-craftable builds (no Gogma armor) — that's the default. Use `'mixed'` when a build blends Gogma pieces with non-Gogma. Use `'meta'` when a build runs full Gogma armor. The UI renders a tier badge for `'mixed'` and `'meta'`; nothing for `'craftable'` or omitted. Examples: `bow.ts:gogma-comfort` is `'meta'`. The framing is: armor tier reflects *playstyle access* (what gear you can craft), not playstyle preference itself — those are separate decisions.
+
 **`armor` slot keys** are not enforced at the type level (it's `Record<string, string>`), but every existing build uses exactly: `Head`, `Chest`, `Arms`, `Waist`, `Legs`, `Charm`. Don't deviate — `BuildResult.svelte:41` iterates `Object.entries(build.armor)` so unfamiliar keys would render as labels in the UI.
 
 **`SkillType`** is the literal union `'dmg' | 'comfort'` (`types.ts:1`). The component uses this to split offensive vs comfort skill chips (`BuildResult.svelte:14-19`).

@@ -13,6 +13,8 @@ export interface BuildSkill {
 	type: SkillType;
 }
 
+export type ArmorTier = 'craftable' | 'mixed' | 'meta';
+
 export interface Build {
 	name: string;
 	stars: string;
@@ -23,6 +25,11 @@ export interface Build {
 	setSkills: string[];
 	meal: string;
 	res: Resistances;
+	/**
+	 * Armor tier classification. Defaults to 'craftable' (pure non-Artian/non-Gogma) when omitted.
+	 * 'mixed' = blends Gogma armor pieces with non-Gogma. 'meta' = full Gogma set, current TU4 best.
+	 */
+	tier?: ArmorTier;
 }
 
 export interface WeaponOption {

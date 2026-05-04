@@ -333,11 +333,33 @@ button {
 }
 
 .source-chip-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
 	margin-bottom: 8px;
 }
 
 .source-chip {
 	font-size: 0.75rem;
+}
+
+.tier-chip {
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+}
+
+.tier-chip.tier-meta {
+	color: var(--gold);
+	background: rgb(240 192 64 / 0.12);
+	border: 1px solid var(--gold);
+}
+
+.tier-chip.tier-mixed {
+	color: var(--raw);
+	background: rgb(201 168 122 / 0.1);
+	border: 1px solid var(--raw);
 }
 
 .gear-grid {

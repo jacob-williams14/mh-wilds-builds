@@ -104,6 +104,8 @@ Apply the source map from prior research (already vetted):
 
 Conform to `WeaponData` (with `display`):
 
+Each build sets the appropriate `tier` field per `phases/00-conventions.md` §5: omit for pure non-Gogma (default `'craftable'`); set `'mixed'` for hybrid Gogma; set `'meta'` for full Gogma loadouts. Long Sword's TU4 meta builds (Headsman's Hamus + Gogmazios pieces) should be `'meta'`; the Game8 HR50+ Gore-armor builds are `'craftable'`.
+
 **`builds`** — likely 6-7 entries with kebab-case slugs:
 
 - `fulgur-lagi-guts` (HR100+, merged with Google Doc Gore/Guts)
