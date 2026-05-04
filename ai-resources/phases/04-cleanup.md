@@ -1,0 +1,135 @@
+# Phase 4 — Cleanup
+
+**Status:** Blocked on Phases 1, 2, 3 (run last)
+**Blocks:** Nothing
+**Estimated effort:** ~20 min triage + decisions, ~15 min execution
+
+## Why this phase exists
+
+After Phases 1-3 land, several stale or redundant artifacts remain in the repo. Cleanup runs *last* (not first) so we know which files were genuinely unused versus quietly load-bearing. Each candidate gets explicit triage — keep, archive, or delete — with the user making the final call.
+
+Triage-driven, not blanket-delete: if a file's purpose is unclear, default to keeping it.
+
+## Cleanup candidates
+
+### A. Historical prototype artifacts in `ai-resources/`
+
+**`ai-resources/knowledge-base.jsx`** (~18KB) — React component cataloging data sources with quality ratings, URLs, and per-source notes. Not imported anywhere. Could legitimately be:
+
+- **Kept as-is** if you want the source catalog as living documentation.
+- **Migrated to markdown** (`ai-resources/sources-catalog.md`) since nothing else in `ai-resources/` is `.jsx` and it's read as text, not executed.
+- **Archived** to `ai-resources/archive/` if you want it out of the way but preserved.
+
+**`ai-resources/mhw-builds.html`** (~27KB) — original single-file prototype before the SvelteKit port. Inline data + JS + CSS. Useful for reference (color tokens, layout decisions, original flow design) but not load-bearing. Recommend archive: `ai-resources/archive/mhw-builds-original-prototype.html`. Don't delete — git history is fine but having the prototype in-tree as an explicit reference saves time when answering "why is the layout shaped like X?"
+
+### B. PROCESS-add-weapon.md vs phases/00-conventions.md overlap
+
+`ai-resources/PROCESS-add-weapon.md` predates the phases system. Roughly 60% of its content (steps 1-7, parallelization summary, effort estimates) overlaps with what's now in `phases/00-conventions.md` and the per-phase docs.
+
+Three options, in order of preference:
+
+1. **Slim PROCESS down to a one-page workflow checklist** — `gather → screenshot → reference doc → cross-ref → data module → register → validate` — and have it link to `phases/00-conventions.md` for all the per-step detail. Keeps a quick-reference doc for adding *future* weapons (post-Long Sword) without re-reading the full phase docs.
+2. **Delete PROCESS** entirely, on the grounds that future weapons should follow the Phase 3 (LS) template since LS is the most recent fully-documented addition.
+3. **Keep PROCESS as-is** — it's already short (4.8KB). Some duplication is fine if both docs are accurate.
+
+Recommend option 1.
+
+### C. PLAN.md final reconciliation
+
+Phase 1.F fixed three specific staleness points (lines 61, 113, Artian caveat). Phase 4 does a full pass and asks: does PLAN.md still describe project reality?
+
+Read the full file end-to-end. Specifically check:
+
+- "Current State" section — does the listed weapon count match `weaponRegistry`?
+- "Project Structure" sketch — match actual `src/lib/` layout? Phase 1's exploration found PLAN.md described directories that don't exist (e.g. `src/lib/stores/` not present; state lives in `+page.svelte` runes).
+- "Key Type Definitions" — already half-fixed in Phase 1; re-verify against `types.ts` end-to-end.
+- "Component Responsibilities" table — list the components that actually exist in `src/lib/components/`.
+- "Store Design" section — likely stale since stores aren't used; consider removing or rewriting as "State Design (Svelte 5 runes)".
+- "How to Add a New Weapon" — should redirect to `phases/00-conventions.md` and `PROCESS-add-weapon.md` rather than duplicating content.
+- "Session Order" — drop weapons already shipped (Bow, IG); keep upcoming list (LS, …).
+- "Quick-Start" — verify commands still work.
+
+Output: a refreshed PLAN.md that is honestly current, OR a redirect doc that points at the canonical sources. The user picks the format.
+
+### D. Orphaned screenshot files
+
+After Phases 1, 2, 3 are complete, scan the screenshot tree for files not referenced in any reference doc:
+
+```bash
+# rough recipe — refine as needed
+find ai-resources/screenshots -name "*.png" | while read f; do
+  rel="${f#ai-resources/}"
+  if ! grep -rq "$rel" ai-resources/*.md; then
+    echo "ORPHAN: $rel"
+  fi
+done
+```
+
+For each orphan, decide:
+- Genuinely unused → delete (still local-only since screenshots are gitignored).
+- Used as visual reference for human contributors → keep, add a mention in the relevant reference doc.
+
+### E. `.DS_Store` files
+
+Three present (`/`, `ai-resources/`, `ai-resources/screenshots/`). All are gitignored already (`.gitignore:14`), so they don't pollute the repo. Local cleanup only — not necessary for repo hygiene. Skip unless the user is bothered by clutter:
+
+```bash
+find . -name '.DS_Store' -not -path './node_modules/*' -delete
+```
+
+### F. README.md (project root)
+
+Project root has `README.md` — confirm it accurately describes the current app state. Was generated by SvelteKit init; might still say "create-svelte-app" boilerplate. Quick sanity check, replace boilerplate with real description if needed.
+
+### G. CLAUDE.md
+
+`CLAUDE.md` exists at the repo root. Confirm it still reflects current project state and Svelte MCP usage instructions are accurate. Low-priority sanity check.
+
+## Triage gate
+
+Each candidate above gets one of three outcomes, decided with the user:
+
+- **Keep** — leave as-is, optionally add an inline comment explaining its role.
+- **Archive** — move to `ai-resources/archive/<file>` with a short note in `ai-resources/archive/README.md` explaining what it is and why we kept it.
+- **Delete** — only when the artifact has no current or future use AND its content lives in git history.
+
+Default to **Keep** when uncertain. Cleanup is opt-in — every action requires user confirmation in this phase.
+
+## Critical files
+
+**Potentially modify or relocate** (depending on triage outcome):
+
+- `ai-resources/knowledge-base.jsx`
+- `ai-resources/mhw-builds.html`
+- `ai-resources/PROCESS-add-weapon.md`
+- `ai-resources/PLAN.md`
+- `README.md` (project root)
+- `CLAUDE.md` (project root)
+
+**Potentially create:**
+
+- `ai-resources/archive/` (if any artifacts are archived)
+- `ai-resources/archive/README.md` (index for archived items)
+- `ai-resources/sources-catalog.md` (if knowledge-base.jsx is migrated to markdown)
+
+**Potentially delete:**
+
+- Orphaned screenshot files (after grep audit, with confirmation per file)
+- `.DS_Store` files (low priority)
+
+## Validation
+
+Cleanup is purely organizational — no code changes. Validation is structural:
+
+1. **Every link in `phases/README.md` and `phases/00-conventions.md` resolves.** Run a quick grep for any markdown link that points at a now-moved or renamed file.
+2. **`bun run check` still passes.** Cleanup shouldn't touch source, but verify.
+3. **`bun dev` still loads the app.** Sanity check.
+4. **Archived items remain accessible.** If anything was archived, confirm `ai-resources/archive/README.md` accurately describes what's there.
+
+## Done when
+
+- Each candidate (A–G) has a documented triage outcome.
+- `ai-resources/` no longer contains stale duplicates of content that's now in `phases/`.
+- PLAN.md is either fully reconciled with project reality or replaced with a thin redirect.
+- No broken markdown links between docs.
+- Validation gate passes.
