@@ -1,15 +1,23 @@
 <script lang="ts">
-	import type { Build, WeaponDisplay, WeaponOption } from '$lib/data/types';
+	import type {
+		ArtianWeapon,
+		Build,
+		WeaponDisplay,
+		WeaponOption,
+		WeaponTip
+	} from '$lib/data/types';
 	import ResistanceBars from './ResistanceBars.svelte';
 	import SkillTags from './SkillTags.svelte';
 
 	type Props = {
 		build: Build;
+		artianWeapons: ArtianWeapon[];
 		weapons: WeaponOption[];
+		tips?: WeaponTip[];
 		display: WeaponDisplay;
 	};
 
-	let { build, weapons, display }: Props = $props();
+	let { build, artianWeapons, weapons, tips, display }: Props = $props();
 
 	const damageSkills = $derived(
 		build.skills.filter((skill) => skill.type === 'dmg').map((skill) => skill.name)
@@ -66,6 +74,40 @@
 		<strong>Meal Setup:</strong>
 		{build.meal}
 	</div>
+
+	<div class="result-section">
+		<div class="skills-title">Best-in-Slot Weapons</div>
+		<div class="artian-grid">
+			{#each artianWeapons as aw (aw.name)}
+				<div class="artian-card">
+					<div class="artian-header">
+						<span class="artian-name">{aw.name}</span>
+						<span class="artian-variant variant-{aw.variant}">
+							{aw.variant === 'gogma' ? 'Gogma Artian' : 'Artian'}
+						</span>
+					</div>
+					<ul class="artian-steps">
+						{#each aw.steps as step, i (i)}
+							<li>{step}</li>
+						{/each}
+					</ul>
+				</div>
+			{/each}
+		</div>
+	</div>
+
+	{#if tips?.length}
+		{#each tips as tip (tip.title)}
+			<div class="result-section">
+				<div class="skills-title">{tip.title}</div>
+				<ul class="tip-lines">
+					{#each tip.lines as line, i (i)}
+						<li>{line}</li>
+					{/each}
+				</ul>
+			</div>
+		{/each}
+	{/if}
 
 	<div class="result-section">
 		<div class="skills-title">{display.weaponListTitle}</div>

@@ -184,7 +184,7 @@ export const bow: WeaponData = {
 			name: 'Guts Seregios',
 			stars: '★★★★',
 			source: 'Game8',
-			desc: 'Raw-leaning Bow build using Guts (Tenacity) and Razor’s Edge I for protection and damage, with Evade Window 5 and Constitution 5 for high comfort.',
+			desc: "Raw-leaning Bow build using Guts (Tenacity) and Razor's Edge I for protection and damage, with Evade Window 5 and Constitution 5 for high comfort.",
 			armor: {
 				Head: 'Rey Sandhelm γ',
 				Chest: 'Regios Mail β',
@@ -244,6 +244,79 @@ export const bow: WeaponData = {
 			// Unverified placeholder totals — Compendium screenshots omit resistances.
 			res: { fire: 4, water: -2, thunder: -8, ice: 0, dragon: 6 }
 		},
+		'gore-lords-soul': {
+			name: "Gore Lord's Soul",
+			stars: '★★★★★',
+			source: 'Game8',
+			tier: 'mixed',
+			desc: "High raw + elemental damage with Black Eclipse II. 2pc Udra γ (Scale Layering) + 3pc Gore. Lord's Soul gives Guts + 5% ATK as safety net. Con 5 for stamina comfort.",
+			armor: {
+				Head: 'Udra Mirehelm γ',
+				Chest: 'Udra Miremail γ',
+				Arms: 'Gore Vambraces β',
+				Waist: 'Gore Coil β',
+				Legs: 'Gore Greaves β',
+				Charm: 'Challenger Charm II'
+			},
+			skills: [
+				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Critical Boost 3', type: 'dmg' },
+				{ name: 'Elemental Attack 3', type: 'dmg' },
+				{ name: 'Counterstrike 3', type: 'dmg' },
+				{ name: 'Antivirus 3', type: 'dmg' },
+				{ name: 'Burst 3', type: 'dmg' },
+				{ name: 'Tetrad Shot 2', type: 'dmg' },
+				{ name: 'Spread/Power Shots 1', type: 'dmg' },
+				{ name: 'Adrenaline Rush 1', type: 'dmg' },
+				{ name: 'Constitution 5', type: 'comfort' },
+				{ name: 'Stamina Surge 2', type: 'comfort' },
+				{ name: 'Evade Window 1', type: 'comfort' },
+				{ name: 'Flinch Free 1', type: 'comfort' },
+				{ name: 'Speed Eating 1', type: 'comfort' }
+			],
+			setSkills: ['Black Eclipse II', 'Guts (Tenacity)', 'Scale Layering', 'Bad Blood I'],
+			meal: 'Con 5 = free meal. Sild Garlic (Moxie) for double anti-OHKO with Guts.',
+			res: { fire: 5, water: 3, thunder: -3, ice: 3, dragon: -3 }
+		},
+		'gogma-gore': {
+			name: 'Gogma-Gore',
+			stars: '★★★★★',
+			source: 'Game8',
+			tier: 'mixed',
+			desc: 'Condition-stacking damage through Mutual Hostility, Adrenaline Rush, and Peak Performance. Arkvulcan + Gogmazios + Gore + Dahaad. Speed Eating 3 + Tetrad Shot 3 for comfort and DPS uptime.',
+			armor: {
+				Head: 'Arkvulcan Helm γ',
+				Chest: 'Gogmazios Mail α',
+				Arms: 'Gore Vambraces β',
+				Waist: 'Dahaad Shardcoil γ',
+				Legs: 'Gogmazios Greaves α',
+				Charm: 'Appraised'
+			},
+			skills: [
+				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Weakness Exploit 4', type: 'dmg' },
+				{ name: 'Critical Boost 3', type: 'dmg' },
+				{ name: 'Elemental Attack 3', type: 'dmg' },
+				{ name: 'Counterstrike 3', type: 'dmg' },
+				{ name: 'Tetrad Shot 3', type: 'dmg' },
+				{ name: 'Antivirus 3', type: 'dmg' },
+				{ name: 'Peak Performance 2', type: 'dmg' },
+				{ name: 'Adrenaline Rush 2', type: 'dmg' },
+				{ name: 'Critical Element 1', type: 'dmg' },
+				{ name: 'Ballistics 1', type: 'dmg' },
+				{ name: 'Spread/Power Shots 1', type: 'dmg' },
+				{ name: 'Burst 1', type: 'dmg' },
+				{ name: 'Speed Eating 3', type: 'comfort' },
+				{ name: 'Constitution 2', type: 'comfort' },
+				{ name: 'Stamina Surge 2', type: 'comfort' },
+				{ name: 'Bind Resistance 2', type: 'comfort' },
+				{ name: 'Aquatic/Oilsilt Mobility 1', type: 'comfort' },
+				{ name: 'Evade Window 1', type: 'comfort' }
+			],
+			setSkills: ['Mutual Hostility I', 'Black Eclipse I', 'Guts (Tenacity)'],
+			meal: 'Droolshroom (Black Belt Lo) with Con 2, or Sild Garlic (Moxie) for Guts + Moxie safety.',
+			res: { fire: 8, water: 11, thunder: -3, ice: 0, dragon: -15 }
+		},
 		'max-evasion': {
 			name: 'Max Evasion Comfort',
 			stars: '★★★',
@@ -273,6 +346,28 @@ export const bow: WeaponData = {
 			res: { fire: -11, water: 12, thunder: 1, ice: 6, dragon: -11 }
 		}
 	},
+	artianWeapons: [
+		{
+			name: 'Angelbein',
+			variant: 'standard',
+			steps: [
+				'Craft with 3 same-element parts (Attack infusion)',
+				'Reinforce: target 5x Attack (+5 each). Odds: ~1 in 231',
+				'Craft one per element you need — match to the monster',
+				'Any deviation on reinforcements is weaker but perfectly acceptable'
+			]
+		},
+		{
+			name: 'Calamitous Angel',
+			variant: 'gogma',
+			steps: [
+				'Use Tarred Device Element Focus to roll stats',
+				'Target: 2 Atk EX, 1 Atk III, 2 Ele EX. Affinity is weakest — ignore it',
+				'3 raw + 2 ele reinforcements = still perfect if you land a 4 EX roll',
+				'Set/group bonus varies by build — check build description'
+			]
+		}
+	],
 	weapons: [
 		{
 			element: 'Fire',
@@ -309,85 +404,118 @@ export const bow: WeaponData = {
 		{ element: 'Dragon', name: 'Blazing Samira', info: 'Zoh Shia · Power', cls: 'dragon' }
 	],
 	flow: {
-		title: 'What kind of bow hunter are you?',
-		q1Text: "What's your top priority?",
-		q1Options: [
-			{ label: 'Maximum Damage', value: 'damage' },
-			{ label: 'Balanced (Damage + Survivability)', cssClass: 'balanced', value: 'balanced' },
-			{ label: 'Stamina & Dash Dancing', cssClass: 'comfort', value: 'stamina' },
-			{ label: 'Max Comfort & Safety', cssClass: 'comfort', value: 'comfort' }
-		],
-		q2: {
-			damage: {
-				text: "What's your damage mechanic?",
-				options: [
-					{ label: 'Frenzy cycle (WEX + Coalescence)', value: 'gore-lagi' },
-					{ label: 'Counterstrike (reward getting hit)', value: 'gore-zoh' },
-					{ label: 'WEX + passive healing (Super Recovery)', value: 'zoh-gore-wex' }
-				]
-			},
-			balanced: {
-				text: 'How do you want to manage stamina?',
-				options: [
-					{
-						label: 'Con 5 + Counterstrike, no food needed',
-						cssClass: 'balanced',
-						value: 'comfy-gore-lagi'
-					},
-					{
-						label: 'Counterstrike + droolshroom (more raw)',
-						cssClass: 'balanced',
-						value: 'gore-zoh'
-					},
-					{
-						label: 'WEX + Super Recovery (passive sustain)',
-						cssClass: 'balanced',
-						value: 'zoh-gore-wex'
-					}
-				]
-			},
-			stamina: {
-				text: 'Do you also want damage from dodges?',
-				options: [
-					{ label: 'Yes — Adrenaline Rush 4 (dodges = damage)', value: 'sere-gore' },
-					{
-						label: 'No — Con 5 + Counterstrike, pure smooth flow',
-						cssClass: 'balanced',
-						value: 'comfy-gore-lagi'
-					}
-				]
-			},
-			comfort: {
-				text: 'How much protection?',
-				options: [
-					{
-						label: 'Guts + Evade Window 5 + Tool Specialist',
-						cssClass: 'comfort',
-						value: 'guts-sere'
-					},
-					{
-						label: 'Guts + Lord’s Soul + Evade Extender',
-						cssClass: 'comfort',
-						value: 'guts-comfort'
-					},
-					{
-						label: 'No Guts — EW 5 + Super Recovery + Max Agitator',
-						cssClass: 'comfort',
-						value: 'max-evasion'
-					},
-					{
-						label: 'TU4 Gogma — Gogmapocalypse + Calamitous Angel',
-						cssClass: 'comfort',
-						value: 'gogma-comfort'
-					}
-				]
+		hr50: {
+			title: 'What kind of bow hunter are you?',
+			q1Text: "What's your top priority?",
+			q1Options: [
+				{ label: 'Maximum Damage', value: 'damage' },
+				{
+					label: 'Balanced (Damage + Comfort)',
+					cssClass: 'balanced',
+					value: 'balanced'
+				},
+				{ label: 'Max Comfort & Safety', cssClass: 'comfort', value: 'comfort' }
+			],
+			q2: {
+				damage: {
+					text: "What's your damage mechanic?",
+					options: [
+						{ label: 'Frenzy cycle (WEX + Coalescence)', value: 'gore-lagi' },
+						{ label: 'Counterstrike (reward getting hit)', value: 'gore-zoh' },
+						{ label: 'WEX + passive healing (Super Recovery)', value: 'zoh-gore-wex' }
+					]
+				},
+				balanced: {
+					text: 'How do you want to manage stamina?',
+					options: [
+						{
+							label: 'Con 5 + Counterstrike, no food needed',
+							cssClass: 'balanced',
+							value: 'comfy-gore-lagi'
+						},
+						{
+							label: 'Counterstrike + droolshroom (more raw)',
+							cssClass: 'balanced',
+							value: 'gore-zoh'
+						},
+						{
+							label: 'WEX + Super Recovery (passive sustain)',
+							cssClass: 'balanced',
+							value: 'zoh-gore-wex'
+						}
+					]
+				},
+				comfort: {
+					text: 'How much protection?',
+					options: [
+						{
+							label: 'Guts + Evade Window 5 + Tool Specialist',
+							cssClass: 'comfort',
+							value: 'guts-sere'
+						},
+						{
+							label: "Guts + Lord's Soul + Evade Extender",
+							cssClass: 'comfort',
+							value: 'guts-comfort'
+						},
+						{
+							label: 'No Guts — EW 5 + Super Recovery + Max Agitator',
+							cssClass: 'comfort',
+							value: 'max-evasion'
+						}
+					]
+				}
+			}
+		},
+		hr100: {
+			title: 'What kind of bow hunter are you?',
+			q1Text: "What's your top priority?",
+			q1Options: [
+				{ label: 'Maximum Damage', value: 'damage' },
+				{ label: 'Dodge & Adrenaline', cssClass: 'balanced', value: 'adrenaline' },
+				{ label: 'Comfort & Safety', cssClass: 'comfort', value: 'comfort' }
+			],
+			q2: {
+				damage: {
+					text: 'Which damage engine?',
+					options: [
+						{
+							label: "Black Eclipse II + Lord's Soul (high raw + element)",
+							value: 'gore-lords-soul'
+						},
+						{
+							label: 'Mutual Hostility + condition stacking (Tetrad Shot 3)',
+							value: 'gogma-gore'
+						}
+					]
+				},
+				adrenaline: {
+					text: 'Pick your Adrenaline build:',
+					options: [
+						{
+							label: 'Sere-Gore — AR 4 + Con 5 + Stamina Surge 3',
+							cssClass: 'balanced',
+							value: 'sere-gore'
+						}
+					]
+				},
+				comfort: {
+					text: 'Pick your comfort build:',
+					options: [
+						{
+							label: 'Gogma Comfort — Calamitous Angel + 4pc Gogma + Con 5',
+							cssClass: 'comfort',
+							value: 'gogma-comfort'
+						}
+					]
+				}
 			}
 		}
 	},
 	sourcesText:
-		'MH:GH Bow Compendium (@p_chu & @ninjazenia) and Game8 Bow Builds. Compendium resistance totals remain unverified until calculated from per-piece armor data. Includes one TU4 Gogma comfort build (Calamitous Angel).',
+		'MH:GH Bow Compendium (@p_chu & @ninjazenia) and Game8 Bow Builds. Compendium resistance totals remain unverified until calculated from per-piece armor data.',
 	display: {
-		weaponListTitle: 'Non-Artian Bows (Compendium Picks)',
+		weaponListTitle: 'Non-Artian Bows',
 		comfortTitle: 'Comfort Skills',
 		weaponLayout: 'chip'
 	}

@@ -39,6 +39,12 @@ export interface WeaponOption {
 	cls?: string;
 }
 
+export interface ArtianWeapon {
+	name: string;
+	variant: 'standard' | 'gogma';
+	steps: string[];
+}
+
 export interface FlowOption {
 	label: string;
 	cssClass?: 'balanced' | 'comfort';
@@ -63,10 +69,19 @@ export interface WeaponDisplay {
 	weaponLayout: 'chip' | 'detail';
 }
 
+export type RankRange = 'hr50' | 'hr100';
+
+export interface WeaponTip {
+	title: string;
+	lines: string[];
+}
+
 export interface WeaponData {
 	builds: Record<string, Build>;
+	artianWeapons: ArtianWeapon[];
 	weapons: WeaponOption[];
-	flow: FlowConfig;
+	tips?: WeaponTip[];
+	flow: Record<RankRange, FlowConfig>;
 	sourcesText: string;
 	display: WeaponDisplay;
 }
