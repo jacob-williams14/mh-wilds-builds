@@ -145,6 +145,7 @@ export const insectGlaive: WeaponData = {
 			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'mixed',
+			rank: 'hr100',
 			desc: '100% affinity when WEX, Agitator, Max Might, and Antivirus are active. Consistent crit damage with Hasten Recovery and Second Wind for sustain.',
 			armor: {
 				Head: 'Arkvulcan Helm γ',
@@ -175,6 +176,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Fulgur-Odo Guts',
 			stars: '★★★★★',
 			source: 'Game8',
+			rank: 'hr100',
 			desc: 'Raw and affinity build using Armor Transcendence. Divine Blessing 3 + Quick Sheathe 3 for comfort. Second Wind + Burst Boost + Ward of Wyveria synergy.',
 			armor: {
 				Head: 'G. Fulgur Helm β',
@@ -205,6 +207,7 @@ export const insectGlaive: WeaponData = {
 			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'meta',
+			rank: 'hr100',
 			desc: 'Elemental build centered on Mutual Hostility II for massive element damage and a temporary barrier. Strong and comfortable with Divine Blessing 3 and Earplugs 2.',
 			armor: {
 				Head: 'Rey Sandhelm γ',
@@ -237,6 +240,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Max Raw',
 			stars: '★★★★',
 			source: 'Game8',
+			rank: 'hr100',
 			desc: 'Pure raw damage with Attack Boost 5 and Razor Sharp 3 for sharpness. Divine Blessing 3 for safety. Solid against any monster regardless of element.',
 			armor: {
 				Head: 'Lagiacrus Helm β',
@@ -269,6 +273,7 @@ export const insectGlaive: WeaponData = {
 			stars: '★★★★',
 			source: 'Google Doc',
 			tier: 'mixed',
+			rank: 'hr100',
 			desc: 'Fulgur 2pc bonus with Gogma gloves for Agi 5 and Burst. Latent Power compensates for affinity. Craftable charm, no weapon rolls needed.',
 			armor: {
 				Head: 'G. Fulgur Helm β',
@@ -297,6 +302,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Gore General',
 			stars: '★★★★★',
 			source: 'Google Doc',
+			rank: 'hr100',
 			desc: "Go-to when Gore Magala's Tyranny is rolled on the Gogma weapon. Adrenaline Rush 3 + Counterstrike 3 for strong damage. Requires weapon set bonus roll.",
 			armor: {
 				Head: 'Arkvulcan Helm γ',
@@ -325,6 +331,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Lagia Craftable',
 			stars: '★★★★',
 			source: 'Google Doc',
+			rank: 'hr100',
 			desc: "Standard Lagia 2pc craftable with AT Arkveld helm. No weapon rolls needed. Solid baseline with Leviathan's Fury. Use old Lagia template if no AT Arkveld yet.",
 			armor: {
 				Head: 'Arkvulcan Helm γ',
@@ -353,6 +360,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Resentment Craftable',
 			stars: '★★★★',
 			source: 'Google Doc',
+			rank: 'hr100',
 			desc: 'Lagia variant stacking Resentment 3 via Udra 2pc. Only needs 30% uptime to beat standard Lagia. Strongest craftable option with good Resentment uptime.',
 			armor: {
 				Head: 'Arkvulcan Helm γ',

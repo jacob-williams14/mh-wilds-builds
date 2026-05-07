@@ -127,6 +127,7 @@ export const bow: WeaponData = {
 			name: 'Sere-Gore Adrenaline',
 			stars: '★★★★★',
 			source: 'Game8',
+			rank: 'hr100',
 			desc: 'Stamina-first damage. Constitution 5, Stamina Surge 3, and Adrenaline Rush 4 make perfect dodges both comfortable and rewarding.',
 			armor: {
 				Head: 'Numinous Crown β',
@@ -214,6 +215,7 @@ export const bow: WeaponData = {
 			stars: '★★★★',
 			source: 'Compendium',
 			tier: 'meta',
+			rank: 'hr100',
 			desc: 'TU4-era comfort build leveraging full Gogma armor and the Calamitous Angel (Gogma Artian) bow. Con 5 + Stamina Surge 3 free the meal slot for Moxie or Caprice. Agitator III talisman tops up Agitator. Skill levels partially obscured in source screenshot — verify in-game before treating as canonical.',
 			armor: {
 				Head: 'G. Ebony Helm β',
@@ -249,6 +251,7 @@ export const bow: WeaponData = {
 			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'mixed',
+			rank: 'hr100',
 			desc: "High raw + elemental damage with Black Eclipse II. 2pc Udra γ (Scale Layering) + 3pc Gore. Lord's Soul gives Guts + 5% ATK as safety net. Con 5 for stamina comfort.",
 			armor: {
 				Head: 'Udra Mirehelm γ',
@@ -283,6 +286,7 @@ export const bow: WeaponData = {
 			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'mixed',
+			rank: 'hr100',
 			desc: 'Condition-stacking damage through Mutual Hostility, Adrenaline Rush, and Peak Performance. Arkvulcan + Gogmazios + Gore + Dahaad. Speed Eating 3 + Tetrad Shot 3 for comfort and DPS uptime.',
 			armor: {
 				Head: 'Arkvulcan Helm γ',

@@ -1,42 +1,34 @@
-# sv
+# MH Wilds Build Selector
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A feel-first Monster Hunter Wilds build selector. Choose a weapon, answer two quick questions about your playstyle, and get an endgame armor build that favors comfort, flow, and consistency. Armor is the playstyle decision; weapons are about access.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- SvelteKit + Svelte 5 (runes)
+- TypeScript
+- Tailwind CSS v4
+- bun
 
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
+## Getting Started
 
 ```sh
-# recreate this project
-bun x sv@0.14.1 create --template minimal --types ts --add prettier eslint vitest="usages:unit" tailwindcss="plugins:typography" sveltekit-adapter="adapter:auto" mcp="ide:claude-code,other+setup:remote" --install bun mh_wilds_builds
+bun install
+bun dev
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Validation
 
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run check    # svelte-check + TypeScript
+bun run format   # prettier --write
+bun run lint     # prettier --check + eslint
 ```
 
-## Building
+## Current Weapons
 
-To create a production version of your app:
+- Bow (HR 50-100 and HR 100+)
+- Insect Glaive (HR 50-100 and HR 100+)
 
-```sh
-npm run build
-```
+## Adding a New Weapon
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+See [CLAUDE.md](CLAUDE.md) for the workflow and [ai-resources/phases/00-conventions.md](ai-resources/phases/00-conventions.md) for naming conventions and data shapes.

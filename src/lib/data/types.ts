@@ -30,6 +30,7 @@ export interface Build {
 	 * 'mixed' = blends Gogma armor pieces with non-Gogma. 'meta' = full Gogma set, current TU4 best.
 	 */
 	tier?: ArmorTier;
+	rank?: RankRange;
 }
 
 export interface WeaponOption {
