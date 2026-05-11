@@ -726,6 +726,20 @@ button {
 	margin-top: 0;
 }
 
+.refs-link {
+	display: inline-block;
+	margin-top: 10px;
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: var(--dim);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.refs-link:hover {
+	color: var(--gold);
+}
+
 @media (width <= 640px) {
 	.hero-panel,
 	.flow-shell {

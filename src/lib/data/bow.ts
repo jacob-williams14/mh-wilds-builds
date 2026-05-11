@@ -5,8 +5,8 @@ export const bow: WeaponData = {
 		'gore-lagi': {
 			name: '2pc Gore + 2pc Lagi',
 			stars: '★★★★★',
-			source: 'Compendium',
-			desc: 'Top non-Artian Compendium build. Gore + Lagiacrus with Weakness Exploit, Coalescence, and Frenzy synergy. Requires Droolshroom (Black Belt Lo) with Constitution 3.',
+			source: 'Google Doc',
+			desc: 'Top non-Artian Google Doc build. Gore + Lagiacrus with Weakness Exploit, Coalescence, and Frenzy synergy. Requires Droolshroom (Black Belt Lo) with Constitution 3.',
 			armor: {
 				Head: 'Gore Helm β',
 				Chest: 'Numinous Shroud β',
@@ -30,13 +30,13 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Black Eclipse I', "Leviathan's Fury"],
 			meal: 'Droolshroom (Black Belt Lo) with Con 3. Meat +2 ATK.',
-			// Unverified placeholder totals — Compendium screenshots omit resistances.
+			// Unverified placeholder totals — Google Doc screenshots omit resistances.
 			res: { fire: -12, water: 11, thunder: 7, ice: 0, dragon: -9 }
 		},
 		'comfy-gore-lagi': {
 			name: 'Comfy 2pc Gore + 2pc Lagi',
 			stars: '★★★★★',
-			source: 'Compendium',
+			source: 'Google Doc',
 			desc: 'Baseline comfort variant that does not need shrooms to function comfortably. Constitution 5 frees the meal slot for Moxie or Caprice.',
 			armor: {
 				Head: 'Numinous Crown β',
@@ -60,13 +60,13 @@ export const bow: WeaponData = {
 			],
 			setSkills: ["Leviathan's Fury", 'Black Eclipse I'],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg (Caprice Hi, +15 ATK/10s every 3 min).',
-			// Unverified placeholder totals — Compendium screenshots omit resistances.
+			// Unverified placeholder totals — Google Doc screenshots omit resistances.
 			res: { fire: -12, water: 11, thunder: 7, ice: 0, dragon: -9 }
 		},
 		'gore-zoh': {
 			name: '2pc Gore + 2pc Zoh',
 			stars: '★★★★',
-			source: 'Compendium',
+			source: 'Google Doc',
 			desc: '~1% better than Guts Comfort assuming 30% Counterstrike uptime. Trades Stamina Surge 3 and Guts for more damage. Requires Droolshroom (Black Belt Lo).',
 			armor: {
 				Head: 'Numinous Crown β',
@@ -89,13 +89,13 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Super Recovery I', 'Black Eclipse I'],
 			meal: 'Droolshroom (Black Belt Lo) with Con 3. Meat +2 ATK.',
-			// Unverified placeholder totals — Compendium screenshots omit resistances.
+			// Unverified placeholder totals — Google Doc screenshots omit resistances.
 			res: { fire: -11, water: 13, thunder: 3, ice: 2, dragon: -11 }
 		},
 		'guts-comfort': {
 			name: 'Guts Comfort',
 			stars: '★★★★',
-			source: 'Compendium',
+			source: 'Google Doc',
 			desc: '~1.7% better than 4pc Gore. Adds protection against one-shots through Guts besides Moxie. Evade Extender 2 is part of the package. Requires Delishroom (Black Belt Hi).',
 			armor: {
 				Head: 'Rey Sandhelm γ',
@@ -120,7 +120,7 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Black Eclipse I', "Rey Dau's Voltage", "Lord's Soul"],
 			meal: 'Delishroom (Black Belt Hi) with Meat +2 ATK.',
-			// Unverified placeholder totals — Compendium screenshots omit resistances.
+			// Unverified placeholder totals — Google Doc screenshots omit resistances.
 			res: { fire: 6, water: 6, thunder: -12, ice: -8, dragon: 0 }
 		},
 		'sere-gore': {
@@ -213,7 +213,7 @@ export const bow: WeaponData = {
 		'gogma-comfort': {
 			name: 'Gogma Comfort (TU4)',
 			stars: '★★★★',
-			source: 'Compendium',
+			source: 'Google Doc',
 			tier: 'meta',
 			rank: 'hr100',
 			desc: 'TU4-era comfort build leveraging full Gogma armor and the Calamitous Angel (Gogma Artian) bow. Con 5 + Stamina Surge 3 free the meal slot for Moxie or Caprice. Agitator III talisman tops up Agitator. Skill levels partially obscured in source screenshot — verify in-game before treating as canonical.',
@@ -243,7 +243,7 @@ export const bow: WeaponData = {
 				'Aquatic/Oilsilt Mobility'
 			],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg (Caprice).',
-			// Unverified placeholder totals — Compendium screenshots omit resistances.
+			// Unverified placeholder totals — Google Doc screenshots omit resistances.
 			res: { fire: 4, water: -2, thunder: -8, ice: 0, dragon: 6 }
 		},
 		'gore-lords-soul': {
@@ -517,7 +517,7 @@ export const bow: WeaponData = {
 		}
 	},
 	sourcesText:
-		'MH:GH Bow Compendium (@p_chu & @ninjazenia) and Game8 Bow Builds. Compendium resistance totals remain unverified until calculated from per-piece armor data.',
+		'MH:Wilds Bow Compendium (@p_chu & @ninjazenia) and Game8 Bow Builds. Google Doc resistance totals remain unverified until calculated from per-piece armor data.',
 	display: {
 		weaponListTitle: 'Non-Artian Bows',
 		comfortTitle: 'Comfort Skills',

@@ -3,6 +3,7 @@
 	import FlowQuestion from '$lib/components/FlowQuestion.svelte';
 	import RankSelector from '$lib/components/RankSelector.svelte';
 	import WeaponTabs from '$lib/components/WeaponTabs.svelte';
+	import { resolve } from '$app/paths';
 	import { defaultWeaponKey, weaponData, weaponTabs, type WeaponKey } from '$lib/data';
 	import type { RankRange } from '$lib/data/types';
 
@@ -121,6 +122,7 @@
 		<div class="sources-box">
 			<strong>Sources:</strong>
 			{currentData.sourcesText}
+			<a href={resolve('/references')} class="refs-link">View all sources →</a>
 		</div>
 	</div>
 </div>
