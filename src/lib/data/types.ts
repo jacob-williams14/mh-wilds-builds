@@ -6,6 +6,7 @@ export interface Resistances {
 	thunder: number;
 	ice: number;
 	dragon: number;
+	unverified?: true;
 }
 
 export interface BuildSkill {
@@ -15,21 +16,19 @@ export interface BuildSkill {
 
 export type ArmorTier = 'craftable' | 'mixed' | 'meta';
 
+export type ArmorSlot = 'Head' | 'Chest' | 'Arms' | 'Waist' | 'Legs' | 'Charm';
+
 export interface Build {
 	name: string;
 	stars: string;
 	source: string;
 	desc: string;
-	armor: Record<string, string>;
+	armor: Record<ArmorSlot, string>;
 	skills: BuildSkill[];
 	setSkills: string[];
 	meal: string;
 	res: Resistances;
-	/**
-	 * Armor tier classification. Defaults to 'craftable' (pure non-Artian/non-Gogma) when omitted.
-	 * 'mixed' = blends Gogma armor pieces with non-Gogma. 'meta' = full Gogma set, current TU4 best.
-	 */
-	tier?: ArmorTier;
+	tier: ArmorTier;
 	rank?: RankRange;
 }
 

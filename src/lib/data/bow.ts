@@ -6,6 +6,7 @@ export const bow: WeaponData = {
 			name: '2pc Gore + 2pc Lagi',
 			stars: '★★★★★',
 			source: 'Google Doc',
+			tier: 'craftable',
 			desc: 'Top non-Artian Google Doc build. Gore + Lagiacrus with Weakness Exploit, Coalescence, and Frenzy synergy. Requires Droolshroom (Black Belt Lo) with Constitution 3.',
 			armor: {
 				Head: 'Gore Helm β',
@@ -30,13 +31,13 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Black Eclipse I', "Leviathan's Fury"],
 			meal: 'Droolshroom (Black Belt Lo) with Con 3. Meat +2 ATK.',
-			// Unverified placeholder totals — Google Doc screenshots omit resistances.
-			res: { fire: -12, water: 11, thunder: 7, ice: 0, dragon: -9 }
+			res: { fire: -12, water: 11, thunder: 7, ice: 0, dragon: -9, unverified: true }
 		},
 		'comfy-gore-lagi': {
 			name: 'Comfy 2pc Gore + 2pc Lagi',
 			stars: '★★★★★',
 			source: 'Google Doc',
+			tier: 'craftable',
 			desc: 'Baseline comfort variant that does not need shrooms to function comfortably. Constitution 5 frees the meal slot for Moxie or Caprice.',
 			armor: {
 				Head: 'Numinous Crown β',
@@ -60,13 +61,13 @@ export const bow: WeaponData = {
 			],
 			setSkills: ["Leviathan's Fury", 'Black Eclipse I'],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg (Caprice Hi, +15 ATK/10s every 3 min).',
-			// Unverified placeholder totals — Google Doc screenshots omit resistances.
-			res: { fire: -12, water: 11, thunder: 7, ice: 0, dragon: -9 }
+			res: { fire: -12, water: 11, thunder: 7, ice: 0, dragon: -9, unverified: true }
 		},
 		'gore-zoh': {
 			name: '2pc Gore + 2pc Zoh',
 			stars: '★★★★',
 			source: 'Google Doc',
+			tier: 'craftable',
 			desc: '~1% better than Guts Comfort assuming 30% Counterstrike uptime. Trades Stamina Surge 3 and Guts for more damage. Requires Droolshroom (Black Belt Lo).',
 			armor: {
 				Head: 'Numinous Crown β',
@@ -89,13 +90,13 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Super Recovery I', 'Black Eclipse I'],
 			meal: 'Droolshroom (Black Belt Lo) with Con 3. Meat +2 ATK.',
-			// Unverified placeholder totals — Google Doc screenshots omit resistances.
-			res: { fire: -11, water: 13, thunder: 3, ice: 2, dragon: -11 }
+			res: { fire: -11, water: 13, thunder: 3, ice: 2, dragon: -11, unverified: true }
 		},
 		'guts-comfort': {
 			name: 'Guts Comfort',
 			stars: '★★★★',
 			source: 'Google Doc',
+			tier: 'craftable',
 			desc: '~1.7% better than 4pc Gore. Adds protection against one-shots through Guts besides Moxie. Evade Extender 2 is part of the package. Requires Delishroom (Black Belt Hi).',
 			armor: {
 				Head: 'Rey Sandhelm γ',
@@ -120,13 +121,13 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Black Eclipse I', "Rey Dau's Voltage", "Lord's Soul"],
 			meal: 'Delishroom (Black Belt Hi) with Meat +2 ATK.',
-			// Unverified placeholder totals — Google Doc screenshots omit resistances.
-			res: { fire: 6, water: 6, thunder: -12, ice: -8, dragon: 0 }
+			res: { fire: 6, water: 6, thunder: -12, ice: -8, dragon: 0, unverified: true }
 		},
 		'sere-gore': {
 			name: 'Sere-Gore Adrenaline',
 			stars: '★★★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			rank: 'hr100',
 			desc: 'Stamina-first damage. Constitution 5, Stamina Surge 3, and Adrenaline Rush 4 make perfect dodges both comfortable and rewarding.',
 			armor: {
@@ -156,6 +157,7 @@ export const bow: WeaponData = {
 			name: 'Zoh-Gore WEX',
 			stars: '★★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			desc: 'Affinity-focused endgame build using Weakness Exploit and Antivirus to drive Black Eclipse while keeping Constitution, Evade Window, and Stamina Surge for comfort.',
 			armor: {
 				Head: 'Numinous Crown β',
@@ -185,6 +187,7 @@ export const bow: WeaponData = {
 			name: 'Guts Seregios',
 			stars: '★★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			desc: "Raw-leaning Bow build using Guts (Tenacity) and Razor's Edge I for protection and damage, with Evade Window 5 and Constitution 5 for high comfort.",
 			armor: {
 				Head: 'Rey Sandhelm γ',
@@ -243,8 +246,7 @@ export const bow: WeaponData = {
 				'Aquatic/Oilsilt Mobility'
 			],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg (Caprice).',
-			// Unverified placeholder totals — Google Doc screenshots omit resistances.
-			res: { fire: 4, water: -2, thunder: -8, ice: 0, dragon: 6 }
+			res: { fire: 4, water: -2, thunder: -8, ice: 0, dragon: 6, unverified: true }
 		},
 		'gore-lords-soul': {
 			name: "Gore Lord's Soul",
@@ -325,6 +327,7 @@ export const bow: WeaponData = {
 			name: 'Max Evasion Comfort',
 			stars: '★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			desc: 'Max comfort. Evade Window 5, Constitution 5, and Stamina Surge 3 make dodging and uptime extremely smooth while Super Recovery provides passive sustain.',
 			armor: {
 				Head: 'Numinous Crown β',

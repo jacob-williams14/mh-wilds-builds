@@ -7,6 +7,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Zoh Shia Frenzy',
 			stars: '★★★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			desc: 'Top non-Artian IG. 2pc Zoh Shia (Super Recovery) + 2pc Gore (Black Eclipse) + G. Arkveld arms. Con 5, Coalescence, Antivirus. Smooth ground combos.',
 			armor: {
 				Head: 'Numinous Crown β',
@@ -35,6 +36,7 @@ export const insectGlaive: WeaponData = {
 			name: "Lord's Soul Lagi",
 			stars: '★★★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			desc: "Rey γ + Nu Udra γ + Lagiacrus. Lord's Soul = Guts + 5% ATK. WEX 5, Max Might 3, Evade Extender 2. Best damage-to-safety for hard content.",
 			armor: {
 				Head: 'Rey Sandhelm γ',
@@ -63,6 +65,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Ful-Zoh Comfort',
 			stars: '★★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			desc: 'G. Fulgur Anjanath = extra stamina gauge + Second Wind. Great Max Might uptime. Super Recovery. Smooth vaulting and dodging.',
 			armor: {
 				Head: 'G. Fulgur Anj. Helm β',
@@ -90,6 +93,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Rey-Gore Agitator MM',
 			stars: '★★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			desc: "3pc Rey γ + 2pc Gore. Latent Power + Max Might rewards clean play. Lord's Soul = Guts + 5% raw. For experienced players.",
 			armor: {
 				Head: 'Rey Sandhelm γ',
@@ -117,6 +121,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Lagia-Gore Critical',
 			stars: '★★★',
 			source: 'Game8 / Icy Veins',
+			tier: 'craftable',
 			desc: 'Accessible starter endgame. 2pc Lagi + 2pc Gore. Easy farm, consistent crits, SS3. Azure Bolt gives free thunder procs.',
 			armor: {
 				Head: 'Lagiacrus Helm β',
@@ -176,6 +181,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Fulgur-Odo Guts',
 			stars: '★★★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			rank: 'hr100',
 			desc: 'Raw and affinity build using Armor Transcendence. Divine Blessing 3 + Quick Sheathe 3 for comfort. Second Wind + Burst Boost + Ward of Wyveria synergy.',
 			armor: {
@@ -240,6 +246,7 @@ export const insectGlaive: WeaponData = {
 			name: 'Max Raw',
 			stars: '★★★★',
 			source: 'Game8',
+			tier: 'craftable',
 			rank: 'hr100',
 			desc: 'Pure raw damage with Attack Boost 5 and Razor Sharp 3 for sharpness. Divine Blessing 3 for safety. Solid against any monster regardless of element.',
 			armor: {
@@ -295,13 +302,13 @@ export const insectGlaive: WeaponData = {
 			],
 			setSkills: ['Black Eclipse I', "Lord's Soul", "Fulgur Anjanath's Force"],
 			meal: 'Sild Garlic (Moxie) for Guts + Moxie double safety.',
-			// Unverified placeholder totals — Google Doc screenshots omit resistances.
-			res: { fire: -3, water: 2, thunder: -4, ice: -2, dragon: -1 }
+			res: { fire: -3, water: 2, thunder: -4, ice: -2, dragon: -1, unverified: true }
 		},
 		'gore-general': {
 			name: 'Gore General',
 			stars: '★★★★★',
 			source: 'Google Doc',
+			tier: 'craftable',
 			rank: 'hr100',
 			desc: "Go-to when Gore Magala's Tyranny is rolled on the Gogma weapon. Adrenaline Rush 3 + Counterstrike 3 for strong damage. Requires weapon set bonus roll.",
 			armor: {
@@ -324,13 +331,13 @@ export const insectGlaive: WeaponData = {
 			],
 			setSkills: ['Black Eclipse I', "Lord's Soul", "Leviathan's Fury"],
 			meal: 'Sild Garlic (Moxie) or Airy Egg (Caprice).',
-			// Unverified placeholder totals — Google Doc screenshots omit resistances.
-			res: { fire: -5, water: 4, thunder: 3, ice: -2, dragon: -8 }
+			res: { fire: -5, water: 4, thunder: 3, ice: -2, dragon: -8, unverified: true }
 		},
 		'lagia-craftable': {
 			name: 'Lagia Craftable',
 			stars: '★★★★',
 			source: 'Google Doc',
+			tier: 'craftable',
 			rank: 'hr100',
 			desc: "Standard Lagia 2pc craftable with AT Arkveld helm. No weapon rolls needed. Solid baseline with Leviathan's Fury. Use old Lagia template if no AT Arkveld yet.",
 			armor: {
@@ -353,13 +360,13 @@ export const insectGlaive: WeaponData = {
 			],
 			setSkills: ['Black Eclipse I', "Lord's Soul", "Leviathan's Fury"],
 			meal: 'Sild Garlic (Moxie) or Airy Egg (Caprice).',
-			// Unverified placeholder totals — Google Doc screenshots omit resistances.
-			res: { fire: -5, water: 4, thunder: 2, ice: -4, dragon: -8 }
+			res: { fire: -5, water: 4, thunder: 2, ice: -4, dragon: -8, unverified: true }
 		},
 		resentment: {
 			name: 'Resentment Craftable',
 			stars: '★★★★',
 			source: 'Google Doc',
+			tier: 'craftable',
 			rank: 'hr100',
 			desc: 'Lagia variant stacking Resentment 3 via Udra 2pc. Only needs 30% uptime to beat standard Lagia. Strongest craftable option with good Resentment uptime.',
 			armor: {
@@ -382,8 +389,7 @@ export const insectGlaive: WeaponData = {
 			],
 			setSkills: ['Black Eclipse I', "Lord's Soul", "Leviathan's Fury", "Udra's Bravado"],
 			meal: 'Sild Garlic (Moxie) or Airy Egg (Caprice).',
-			// Unverified placeholder totals — Google Doc screenshots omit resistances.
-			res: { fire: -8, water: 6, thunder: 5, ice: -3, dragon: -10 }
+			res: { fire: -8, water: 6, thunder: 5, ice: -3, dragon: -10, unverified: true }
 		}
 	},
 	artianWeapons: [

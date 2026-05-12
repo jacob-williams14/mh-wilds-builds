@@ -100,12 +100,12 @@ Manual: open any build with previously-unverified resistances and confirm the ba
 
 ## Done when
 
-- [ ] `ArmorSlot` type exists in `types.ts` and `Build.armor` uses it.
-- [ ] `Build.tier` is required (no `?`); every existing build supplies a value.
-- [ ] `Resistances.unverified` field exists and replaces `// Unverified placeholder` comments.
-- [ ] Unverified resistance badge renders in `ResistanceBars.svelte`.
-- [ ] `src/lib/data/contract.test.ts` exists and `bun test` passes.
-- [ ] `bun run check`, `bun run lint`, `bun run format` pass.
-- [ ] Phase doc archived to `ai-resources/archive/07-tighten-data-contracts.md`.
-- [ ] `phases/README.md` row for Phase 7 updated to Complete.
-- [ ] `phases/ACTIVE.md` updated to next phase.
+- [x] `ArmorSlot` type exists in `types.ts` and `Build.armor` uses it.
+- [x] `Build.tier` is required (no `?`); every existing build supplies a value.
+- [x] `Resistances.unverified` field exists and replaces `// Unverified placeholder` comments.
+- [x] Unverified resistance badge renders in `ResistanceBars.svelte`.
+- [x] `src/lib/data/contract.test.ts` exists and `bun test` passes.
+- [x] `bun run check`, `bun run lint`, `bun run format` pass.
+- [x] Phase doc archived to `ai-resources/archive/07-tighten-data-contracts.md`.
+- [x] `phases/README.md` row for Phase 7 updated to Complete.
+- [x] `phases/ACTIVE.md` updated to next phase.

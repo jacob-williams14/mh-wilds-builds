@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Resistances } from '$lib/data/types';
 
-	type ElementKey = keyof Resistances;
+	type ElementKey = 'fire' | 'water' | 'thunder' | 'ice' | 'dragon';
 
 	type Props = {
 		resistances: Resistances;
@@ -27,7 +27,11 @@
 </script>
 
 <div class="result-section">
-	<div class="skills-title">Elemental Resistances</div>
+	<div class="skills-title">
+		Elemental Resistances{#if resistances.unverified}<span class="unverified-note">
+				(estimated)</span
+			>{/if}
+	</div>
 	<div class="res-grid">
 		{#each elements as element (element.key)}
 			{@const value = resistances[element.key]}
@@ -153,6 +157,15 @@
 
 	.res-verdict strong {
 		color: var(--text);
+	}
+
+	.unverified-note {
+		margin-left: 6px;
+		color: var(--dim);
+		font-size: 0.75rem;
+		font-weight: 400;
+		letter-spacing: 0.5px;
+		text-transform: none;
 	}
 
 	@media (width <= 640px) {
