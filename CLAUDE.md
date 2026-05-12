@@ -15,6 +15,10 @@ bun run lint     # prettier --check + eslint
 
 All four must pass before any work is considered done. `bun dev` + manual click-through of every flow path is the only way to verify flow-key → build-key consistency.
 
+## Active phase
+
+Before starting any work, read `ai-resources/phases/ACTIVE.md` to see what is in flight. Tick off `Done when` checkboxes in the active phase doc as you complete items, in the same commit as the work.
+
 ## Adding a New Weapon
 
 This is the core repeatable workflow. Every weapon follows these steps:

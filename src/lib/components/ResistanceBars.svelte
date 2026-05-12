@@ -74,3 +74,90 @@
 		{/if}
 	</div>
 </div>
+
+<style>
+	.res-grid {
+		margin-top: 12px;
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 10px;
+	}
+
+	.res-item {
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		background: rgb(0 0 0 / 0.3);
+		padding: 12px;
+		text-align: center;
+	}
+
+	.res-label {
+		margin-bottom: 6px;
+		font-size: 0.65rem;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+	}
+
+	.res-value {
+		font-family: 'Chakra Petch', sans-serif;
+		font-size: 1.4rem;
+		font-weight: 700;
+	}
+
+	.res-value.pos {
+		color: var(--green);
+	}
+
+	.res-value.neg {
+		color: var(--accent2);
+	}
+
+	.res-value.neu {
+		color: var(--dim);
+	}
+
+	.res-bar-track {
+		position: relative;
+		margin-top: 8px;
+		height: 4px;
+		border-radius: 2px;
+		background: rgb(255 255 255 / 0.08);
+	}
+
+	.res-bar-center {
+		position: absolute;
+		left: 50%;
+		top: -1px;
+		height: 6px;
+		width: 1px;
+		background: rgb(255 255 255 / 0.2);
+	}
+
+	.res-bar-fill {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		border-radius: 2px;
+		opacity: 0.7;
+	}
+
+	.res-verdict {
+		margin-top: 16px;
+		border-radius: 6px;
+		background: rgb(0 0 0 / 0.2);
+		padding: 12px 16px;
+		color: var(--dim);
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+
+	.res-verdict strong {
+		color: var(--text);
+	}
+
+	@media (width <= 640px) {
+		.res-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+</style>

@@ -126,3 +126,144 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.app-header {
+		margin-bottom: 24px;
+		text-align: center;
+	}
+
+	.app-subtitle {
+		color: var(--dim);
+		font-size: 1rem;
+		letter-spacing: 1px;
+	}
+
+	.app-lead {
+		margin: 18px auto 0;
+		max-width: 720px;
+		color: color-mix(in srgb, var(--dim) 82%, white 18%);
+		font-size: 1.05rem;
+		line-height: 1.6;
+	}
+
+	.hero-panel,
+	.flow-shell {
+		border: 1px solid color-mix(in srgb, var(--border) 86%, white 14%);
+		border-radius: 16px;
+		background: linear-gradient(180deg, rgb(18 20 28 / 0.88), rgb(12 14 20 / 0.94));
+		box-shadow:
+			0 18px 48px rgb(0 0 0 / 0.28),
+			inset 0 1px 0 rgb(255 255 255 / 0.03);
+	}
+
+	.hero-panel {
+		margin-bottom: 24px;
+		padding: 20px;
+	}
+
+	.hero-panel-label {
+		margin-bottom: 14px;
+		color: var(--dim);
+		font-family: 'Chakra Petch', sans-serif;
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 1.8px;
+		text-transform: uppercase;
+	}
+
+	.rank-section {
+		margin-bottom: 24px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.section-title {
+		margin-bottom: 14px;
+		border-left: 3px solid var(--gold);
+		padding-left: 16px;
+		color: var(--gold);
+		font-family: 'Chakra Petch', sans-serif;
+		font-size: 1.3rem;
+		font-weight: 600;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+	}
+
+	.flow-shell {
+		padding: 28px;
+	}
+
+	.flow-copy {
+		margin: 0 0 24px 0;
+		color: color-mix(in srgb, var(--dim) 88%, white 12%);
+		font-size: 1rem;
+		line-height: 1.55;
+	}
+
+	.flow-stack {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.connector {
+		margin: 0 auto;
+		height: 32px;
+		width: 2px;
+		background: linear-gradient(to bottom, var(--accent), transparent);
+	}
+
+	.page-footer {
+		margin-top: 28px;
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+	}
+
+	.reset-btn {
+		align-self: flex-start;
+		border: 1px solid var(--dim);
+		border-radius: 6px;
+		background: transparent;
+		padding: 8px 20px;
+		color: var(--dim);
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 1px;
+		transition: all 0.2s;
+	}
+
+	.reset-btn:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+
+	.refs-link {
+		display: inline-block;
+		margin-top: 10px;
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--dim);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.refs-link:hover {
+		color: var(--gold);
+	}
+
+	@media (width <= 640px) {
+		.hero-panel,
+		.flow-shell {
+			padding: 20px;
+		}
+
+		.app-lead {
+			font-size: 0.98rem;
+		}
+
+		.flow-copy {
+			margin-bottom: 20px;
+		}
+	}
+</style>

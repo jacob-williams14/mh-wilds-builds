@@ -24,3 +24,11 @@
 		{/each}
 	</div>
 </div>
+
+<style>
+	.skill-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+</style>
