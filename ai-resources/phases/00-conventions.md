@@ -78,13 +78,17 @@ All community-doc sources use `google_doc` regardless of branding. The actual ti
 
 ## 3. Reference doc structure
 
-Reference docs live in `ai-resources/references/<weapon>/`. One doc per source:
+Reference docs are **transient working artifacts** — create them while building the data module, then archive to `ai-resources/archive/references/<weapon>/` once the module ships. Do not maintain them long-term.
+
+Reference docs live in `ai-resources/references/<weapon>/` during active development. One doc per source:
 
 - `game8-builds.md`
 - `google-doc-builds.md`
 - `google-doc-general-info.md` (optional — mechanics, meals, weapon-specific tips)
 
-**Template** (follows `references/bow/game8-builds.md`):
+Completed examples: `ai-resources/archive/references/bow/` and `archive/references/insect-glaive/`.
+
+**Template** (see also `ai-resources/references/TEMPLATE-game8-builds.md`):
 
 ```markdown
 # <Source> <Weapon> Builds — <Descriptor>

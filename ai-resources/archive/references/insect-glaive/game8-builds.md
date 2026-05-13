@@ -347,4 +347,5 @@ Defense: 462
 - fulgur-odo-guts build: `screenshots/insect_glaive/game8_builds/fulgur-odo-guts/{loadout,skills,description}.png`
 - gogma-guts build: `screenshots/insect_glaive/game8_builds/gogma-guts/{loadout,skills,description}.png`
 - max-raw build: `screenshots/insect_glaive/game8_builds/max-raw/{loadout,skills,description}.png`
-- shared Artian: `screenshots/insect_glaive/game8_builds/artian-weapon.png`
+- shared Artian: `screenshots/insect_glaive/game8_builds/shared/artian.png` and `shared/gogma-artian.png`
+- shared non-Artian weapons: `screenshots/insect_glaive/game8_builds/shared/non-artian-weapons.png`

@@ -12,7 +12,7 @@ Sequenced work on weapon data, presentation, and architecture.
 | 1 | Refresh Bow + UI generalization | Complete | Archived: `archive/01-update-bow.md` |
 | 2 | Bring Insect Glaive in line | Complete | Archived: `archive/02-update-insect-glaive.md` |
 | 3 | Add Long Sword | Blocked on screenshots | [03-add-long-sword.md](./03-add-long-sword.md) |
-| 4 | Cleanup — stale files, redundant docs | Ready | [04-cleanup.md](./04-cleanup.md) |
+| 4 | Cleanup — stale files, redundant docs | Complete | Archived: `archive/04-cleanup.md` |
 | 6 | Scope component CSS | Complete | Archived: `archive/06-scope-component-css.md` |
 | 7 | Tighten data contracts | Complete | Archived: `archive/07-tighten-data-contracts.md` |
 | 8 | Reorganize `lib/` into `domain/` + `ui/` | Complete | Archived: `archive/08-reorganize-lib.md` |

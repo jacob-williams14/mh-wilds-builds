@@ -10,7 +10,7 @@ Note: The Google Doc screenshots do not include elemental resistance totals. Tho
 ## Shared Weapon Recommendations
 
 ### Non-Artian Glaive
-(from non-artian-glaive.png)
+(from `screenshots/insect_glaive/google_doc/shared/non-artian-weapons.png`)
 
 - **Blazing Katir** (Zoh Shia)
   - Attack: 220, Affinity: 5%, Dragon Element: 15
@@ -26,7 +26,7 @@ Note: The Google Doc screenshots do not include elemental resistance totals. Tho
 "See the details tab for other weapons and descriptions."
 
 ### Artian Glaive
-(from artian-info.png)
+(from `screenshots/insect_glaive/google_doc/shared/artian-instructions.png`)
 
 - TU4 Gogmazios has significantly changed Artian Weapons. Basics from before like crafting them with 3 of the same element and Attack infusion still apply, but now they can be upgraded and rolled further.
 - Element Focus is usually preferred for standard elemental picks, though Attack Focus is extremely close and is better on rare matchups (non-AT Arkveld). Insect Glaive is still generally a raw focused weapon.
@@ -338,16 +338,16 @@ TBD (not shown in Google Doc screenshot)
 ## Path Reference
 
 Per-build screenshots:
-- Fulgur Craftable build: `screenshots/insect_glaive/google_doc/builds/fulgur-craftable.png`
-- Fulgur Adjustments: `screenshots/insect_glaive/google_doc/builds/fulgur-adjustments.png`
-- Gore General (RNG) build: `screenshots/insect_glaive/google_doc/builds/gore-rng.png`
-- Gore Adjustments: `screenshots/insect_glaive/google_doc/builds/gore-adjustments.png`
-- Lagia Craftable build: `screenshots/insect_glaive/google_doc/builds/lagia-craftable.png`
-- Lagia Adjustments: `screenshots/insect_glaive/google_doc/builds/lagia-adjustments.png`
-- Resentment Craftable build: `screenshots/insect_glaive/google_doc/builds/resentment-craftable.png`
-- Resentment Adjustments: `screenshots/insect_glaive/google_doc/builds/resentment-adjustments.png`
+- Fulgur Craftable build: `screenshots/insect_glaive/google_doc/fulgur-odo/loadout.png`
+- Fulgur Adjustments: `screenshots/insect_glaive/google_doc/fulgur-odo/adjustments.png`
+- Gore General (RNG) build: `screenshots/insect_glaive/google_doc/gore-rng/loadout.png`
+- Gore Adjustments: `screenshots/insect_glaive/google_doc/gore-rng/adjustments.png`
+- Lagia Craftable build: `screenshots/insect_glaive/google_doc/lagia/loadout.png`
+- Lagia Adjustments: `screenshots/insect_glaive/google_doc/lagia/adjustments.png`
+- Resentment Craftable build: `screenshots/insect_glaive/google_doc/resentment/loadout.png`
+- Resentment Adjustments: `screenshots/insect_glaive/google_doc/resentment/adjustments.png`
 
 Shared assets:
-- Artian Glaive info: `screenshots/insect_glaive/google_doc/artian-info.png`
-- Kinsect info: `screenshots/insect_glaive/google_doc/kinsects.png`
-- Non-Artian Glaive info: `screenshots/insect_glaive/google_doc/non-artian-glaive.png`
+- Artian Glaive info: `screenshots/insect_glaive/google_doc/shared/artian-instructions.png`
+- Kinsect info: `screenshots/insect_glaive/google_doc/shared/kinsects.png`
+- Non-Artian Glaive info: `screenshots/insect_glaive/google_doc/shared/non-artian-weapons.png`

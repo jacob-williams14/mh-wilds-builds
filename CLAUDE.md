@@ -42,7 +42,7 @@ Transcribe screenshots into structured markdown at `ai-resources/references/<wea
 - `google-doc-builds.md` — per-build loadouts from the community Google Doc
 - `google-doc-general-info.md` — optional: mechanics, weapon-specific tips, crafting info
 
-Follow the template in `phases/00-conventions.md` §3.
+Follow the template in `phases/00-conventions.md` §3. **These are transient working artifacts** — archive them to `ai-resources/archive/references/<weapon>/` once the data module ships.
 
 ### 3. Cross-Reference and Deduplicate
 
@@ -50,22 +50,23 @@ Compare builds across sources. Merge when armor differs by ≤1 piece. Flag unve
 
 ### 4. Write Data Module
 
-Create `src/lib/data/<weapon>.ts` exporting a `WeaponData` object. Use `bow.ts` as the canonical pattern. The module must include:
+Create `src/lib/domain/weapons/<weapon>.ts` exporting a `WeaponData` object. Use `bow.ts` as the canonical pattern. The module must include:
 
-- **`builds`** — `Record<string, Build>`. Kebab-case slugs. Each build needs: `name`, `stars`, `source`, `desc`, `armor`, `skills`, `setSkills`, `meal`, `res`. Optional: `tier` (for Gogma gear), `rank: 'hr100'` (for TU4 builds; omit for HR50).
+- **`builds`** — `Record<string, Build>`. Kebab-case slugs. Each build needs: `name`, `source`, `desc`, `tier` (craftable/mixed/meta), `armor`, `skills`, `setSkills`, `meal`, `res`. Optional: `rank: 'hr100'` (for TU4 builds; omit for HR50).
 - **`artianWeapons`** — `ArtianWeapon[]`. Both standard Artian and Gogma variant with crafting `steps` (string array).
 - **`weapons`** — `WeaponOption[]`. Non-Artian alternatives with `element`, `cls` (fire/water/thunder/ice/dragon/raw), `info`.
 - **`tips`** — `WeaponTip[]` (optional). Weapon-specific guidance like kinsect recommendations or coating notes.
 - **`flow`** — `Record<RankRange, FlowConfig>`. Separate 2-step flows for HR 50-100 and HR 100+. Each flow has Q1 (motivation: damage/balanced/comfort) → Q2 (tactic) → build slug.
+- **`referenceKey`** — string key matching a `WeaponSources.key` in `src/lib/domain/references.ts` (e.g. `'bow'`).
 - **`sourcesText`** — one sentence citing sources and caveats.
 - **`display`** — `weaponListTitle`, `comfortTitle`, `weaponLayout: 'chip'`.
 
 ### 5. Register
 
-Add to `src/lib/data/index.ts`:
+Add to `src/lib/domain/registry.ts`:
 
 ```typescript
-import { longSword } from './long-sword';
+import { longSword } from './weapons/long-sword';
 // add to weaponRegistry array
 ```
 
@@ -80,16 +81,16 @@ bun dev  # click through every flow path in both rank tiers
 
 After a phase is complete and committed, move its plan doc from `ai-resources/phases/` to `ai-resources/archive/` and update `ai-resources/phases/README.md` to reflect the new status.
 
-## Key Types (src/lib/data/types.ts)
+## Key Types (src/lib/domain/types.ts)
 
-| Type           | Purpose                                                                                                       |
-| -------------- | ------------------------------------------------------------------------------------------------------------- |
-| `Build`        | Armor loadout with skills, resistances, meal. Optional `tier` (craftable/mixed/meta) and `rank` (hr50/hr100). |
-| `ArtianWeapon` | Best-in-slot weapon with crafting steps. `variant`: 'standard' or 'gogma'.                                    |
-| `WeaponTip`    | Weapon-specific guidance (title + bullet lines). Optional on WeaponData.                                      |
-| `WeaponData`   | Top-level container: builds, artianWeapons, weapons, tips?, flow, sourcesText, display.                       |
-| `FlowConfig`   | 2-step questionnaire. Q1 options → Q2 options → build slug.                                                   |
-| `RankRange`    | `'hr50' \| 'hr100'`. Flow is keyed by rank.                                                                   |
+| Type           | Purpose                                                                                                            |
+| -------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `Build`        | Armor loadout with skills, resistances, meal. Required `tier` (craftable/mixed/meta). Optional `rank` (hr50/hr100). |
+| `ArtianWeapon` | Best-in-slot weapon with crafting steps. `variant`: 'standard' or 'gogma'.                                         |
+| `WeaponTip`    | Weapon-specific guidance (title + bullet lines). Optional on WeaponData.                                           |
+| `WeaponData`   | Top-level container: builds, artianWeapons, weapons, tips?, flow, referenceKey, sourcesText, display.              |
+| `FlowConfig`   | 2-step questionnaire. Q1 options → Q2 options → build slug.                                                        |
+| `RankRange`    | `'hr50' \| 'hr100'`. Flow is keyed by rank.                                                                        |
 
 ## Conventions
 

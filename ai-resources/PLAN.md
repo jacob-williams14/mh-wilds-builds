@@ -10,7 +10,7 @@ This file is a redirect. Detailed documentation lives in:
 
 - **Shipped:** Bow, Insect Glaive (both with HR 50-100 and HR 100+ rank tiers)
 - **Next:** Long Sword (blocked on user-supplied screenshots)
-- **Then:** Cleanup pass (see `phases/04-cleanup.md`)
+- **Active:** Phase 4 Cleanup (see `phases/04-cleanup.md`)
 
 ## Historical Context
 
