@@ -4,7 +4,6 @@ export const bow: WeaponData = {
 	builds: {
 		'gore-lagi': {
 			name: '2pc Gore + 2pc Lagi',
-			stars: '★★★★★',
 			source: 'Google Doc',
 			tier: 'craftable',
 			desc: 'Top non-Artian Google Doc build. Gore + Lagiacrus with Weakness Exploit, Coalescence, and Frenzy synergy. Requires Droolshroom (Black Belt Lo) with Constitution 3.',
@@ -35,7 +34,6 @@ export const bow: WeaponData = {
 		},
 		'comfy-gore-lagi': {
 			name: 'Comfy 2pc Gore + 2pc Lagi',
-			stars: '★★★★★',
 			source: 'Google Doc',
 			tier: 'craftable',
 			desc: 'Baseline comfort variant that does not need shrooms to function comfortably. Constitution 5 frees the meal slot for Moxie or Caprice.',
@@ -65,7 +63,6 @@ export const bow: WeaponData = {
 		},
 		'gore-zoh': {
 			name: '2pc Gore + 2pc Zoh',
-			stars: '★★★★',
 			source: 'Google Doc',
 			tier: 'craftable',
 			desc: '~1% better than Guts Comfort assuming 30% Counterstrike uptime. Trades Stamina Surge 3 and Guts for more damage. Requires Droolshroom (Black Belt Lo).',
@@ -94,7 +91,6 @@ export const bow: WeaponData = {
 		},
 		'guts-comfort': {
 			name: 'Guts Comfort',
-			stars: '★★★★',
 			source: 'Google Doc',
 			tier: 'craftable',
 			desc: '~1.7% better than 4pc Gore. Adds protection against one-shots through Guts besides Moxie. Evade Extender 2 is part of the package. Requires Delishroom (Black Belt Hi).',
@@ -125,7 +121,6 @@ export const bow: WeaponData = {
 		},
 		'sere-gore': {
 			name: 'Sere-Gore Adrenaline',
-			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			rank: 'hr100',
@@ -155,7 +150,6 @@ export const bow: WeaponData = {
 		},
 		'zoh-gore-wex': {
 			name: 'Zoh-Gore WEX',
-			stars: '★★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			desc: 'Affinity-focused endgame build using Weakness Exploit and Antivirus to drive Black Eclipse while keeping Constitution, Evade Window, and Stamina Surge for comfort.',
@@ -185,7 +179,6 @@ export const bow: WeaponData = {
 		},
 		'guts-sere': {
 			name: 'Guts Seregios',
-			stars: '★★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			desc: "Raw-leaning Bow build using Guts (Tenacity) and Razor's Edge I for protection and damage, with Evade Window 5 and Constitution 5 for high comfort.",
@@ -215,7 +208,6 @@ export const bow: WeaponData = {
 		},
 		'gogma-comfort': {
 			name: 'Gogma Comfort (TU4)',
-			stars: '★★★★',
 			source: 'Google Doc',
 			tier: 'meta',
 			rank: 'hr100',
@@ -250,7 +242,6 @@ export const bow: WeaponData = {
 		},
 		'gore-lords-soul': {
 			name: "Gore Lord's Soul",
-			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'mixed',
 			rank: 'hr100',
@@ -285,7 +276,6 @@ export const bow: WeaponData = {
 		},
 		'gogma-gore': {
 			name: 'Gogma-Gore',
-			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'mixed',
 			rank: 'hr100',
@@ -325,7 +315,6 @@ export const bow: WeaponData = {
 		},
 		'max-evasion': {
 			name: 'Max Evasion Comfort',
-			stars: '★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			desc: 'Max comfort. Evade Window 5, Constitution 5, and Stamina Surge 3 make dodging and uptime extremely smooth while Super Recovery provides passive sustain.',
@@ -351,6 +340,100 @@ export const bow: WeaponData = {
 			setSkills: ['Super Recovery I', 'Black Eclipse I'],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg.',
 			res: { fire: -11, water: 12, thunder: 1, ice: 6, dragon: -11 }
+		},
+		'raw-comfort': {
+			name: 'Raw Comfort — Anti-Arkveld',
+			source: 'Google Doc',
+			tier: 'mixed',
+			rank: 'hr100',
+			desc: 'Anti-Arkveld comfort build. Constitution 5 + Counterstrike 3 free the meal slot. Agitator III talisman. Skill levels partially obscured in source — verify Weakness Exploit, Agitator, Quick Sheathe, and Adrenaline Rush in-game.',
+			armor: {
+				Head: 'Udra Mirehelm γ',
+				Chest: 'Gogmazios Mail β',
+				Arms: 'G. Rath Braces β',
+				Waist: 'Gore Coil β',
+				Legs: 'Duna Wildgreaves γ',
+				Charm: 'Agitator III talisman'
+			},
+			skills: [
+				{ name: 'Constitution 5', type: 'comfort' },
+				{ name: 'Counterstrike 3', type: 'dmg' },
+				{ name: 'Antivirus 3', type: 'dmg' },
+				{ name: 'Weakness Exploit 4', type: 'dmg' }, // verify
+				{ name: 'Agitator 3', type: 'dmg' }, // verify
+				{ name: 'Quick Sheathe 2', type: 'comfort' }, // verify
+				{ name: 'Adrenaline Rush 1', type: 'dmg' }, // verify
+				{ name: 'Burst 1', type: 'dmg' },
+				{ name: 'Speed Eating 1', type: 'comfort' }
+			],
+			setSkills: ['Black Eclipse I', "Lord's Soul", 'Scorcher'],
+			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg.',
+			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
+		},
+		'raw-dps': {
+			name: 'Raw DPS — Anti-Arkveld',
+			source: 'Google Doc',
+			tier: 'craftable',
+			rank: 'hr100',
+			desc: 'Anti-Arkveld DPS build. Adrenaline Rush III talisman rewards perfect dodges. High Counterstrike amplifies on-hit reactions. Requires Black Belt Hi (Delishroom). Skill levels partially obscured in source — verify Weakness Exploit, Agitator, Adrenaline Rush total, Constitution, Bind Resistance, and Burst in-game.',
+			armor: {
+				Head: 'G. Rathalos Helm β',
+				Chest: 'Dahaad Shardmail γ',
+				Arms: 'G. Rath Braces β',
+				Waist: 'Dahaad Shardcoil γ',
+				Legs: 'Gore Greaves β',
+				Charm: 'Adrenaline Rush III talisman'
+			},
+			skills: [
+				{ name: 'Counterstrike 3', type: 'dmg' },
+				{ name: 'Weakness Exploit 4', type: 'dmg' }, // verify
+				{ name: 'Agitator 3', type: 'dmg' }, // verify
+				{ name: 'Adrenaline Rush 3', type: 'dmg' }, // verify total (talisman +3)
+				{ name: 'Antivirus 3', type: 'dmg' }, // verify
+				{ name: 'Constitution 3', type: 'comfort' }, // verify
+				{ name: 'Bind Resistance 1', type: 'comfort' }, // verify
+				{ name: 'Burst 3', type: 'dmg' }, // verify
+				{ name: 'Flinch Free 1', type: 'comfort' }
+			],
+			setSkills: ['Black Eclipse I', "Lord's Soul"],
+			meal: 'Delishroom (Black Belt Hi).',
+			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
+		},
+		'gogma-dps': {
+			name: 'Gogmapocalypse DPS (TU4)',
+			source: 'Google Doc',
+			tier: 'meta',
+			rank: 'hr100',
+			desc: 'Gogmapocalypse 4pc DPS build. Three Gogmazios pieces + Calamitous Angel achieve the 4pc bonus. Peak Performance + Mutual Hostility + Agitator Charm II. Requires Black Belt Lo (Droolshroom). Skill levels partially obscured in source — verify Weakness Exploit, Peak Performance, Agitator, Constitution, Burst, Adrenaline Rush, Stamina Surge, and Divine Blessing in-game.',
+			armor: {
+				Head: 'G. Rathalos Helm β',
+				Chest: 'Gogmazios Mail β',
+				Arms: 'G. Ebony Braces β',
+				Waist: 'Gogmazios Coil α',
+				Legs: 'Gogmazios Greaves',
+				Charm: 'Agitator Charm II'
+			},
+			skills: [
+				{ name: 'Weakness Exploit 4', type: 'dmg' }, // verify
+				{ name: 'Peak Performance 2', type: 'dmg' }, // verify
+				{ name: 'Agitator 3', type: 'dmg' }, // verify (Agi Charm II + innate)
+				{ name: 'Constitution 3', type: 'comfort' }, // verify
+				{ name: 'Burst 2', type: 'dmg' }, // verify
+				{ name: 'Adrenaline Rush 1', type: 'dmg' }, // verify
+				{ name: 'Stamina Surge 1', type: 'comfort' }, // verify
+				{ name: 'Speed Eating 1', type: 'comfort' },
+				{ name: 'Divine Blessing 1', type: 'comfort' }, // verify
+				{ name: 'Aquatic/Oilsilt Mobility 1', type: 'comfort' }
+			],
+			setSkills: [
+				'Gogmapocalypse (4pc)',
+				'Mutual Hostility',
+				'Burst Boost',
+				'Scorcher',
+				'Aquatic/Oilsilt Mobility'
+			],
+			meal: 'Droolshroom (Black Belt Lo).',
+			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
 		}
 	},
 	artianWeapons: [
@@ -493,26 +576,40 @@ export const bow: WeaponData = {
 						{
 							label: 'Mutual Hostility + condition stacking (Tetrad Shot 3)',
 							value: 'gogma-gore'
+						},
+						{
+							label: 'Gogmapocalypse 4pc + Peak Performance',
+							value: 'gogma-dps'
 						}
 					]
 				},
 				adrenaline: {
-					text: 'Pick your Adrenaline build:',
+					text: 'Which Adrenaline build?',
 					options: [
 						{
 							label: 'Sere-Gore — AR 4 + Con 5 + Stamina Surge 3',
 							cssClass: 'balanced',
 							value: 'sere-gore'
+						},
+						{
+							label: 'Anti-Arkveld — Adrenaline Rush III talisman',
+							cssClass: 'balanced',
+							value: 'raw-dps'
 						}
 					]
 				},
 				comfort: {
-					text: 'Pick your comfort build:',
+					text: 'Which comfort style?',
 					options: [
 						{
-							label: 'Gogma Comfort — Calamitous Angel + 4pc Gogma + Con 5',
+							label: 'Gogma — Calamitous Angel + 4pc Gogma + Con 5',
 							cssClass: 'comfort',
 							value: 'gogma-comfort'
+						},
+						{
+							label: 'Anti-Arkveld — Con 5 + Counterstrike',
+							cssClass: 'comfort',
+							value: 'raw-comfort'
 						}
 					]
 				}

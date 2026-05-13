@@ -20,7 +20,6 @@ export type ArmorSlot = 'Head' | 'Chest' | 'Arms' | 'Waist' | 'Legs' | 'Charm';
 
 export interface Build {
 	name: string;
-	stars: string;
 	source: string;
 	desc: string;
 	armor: Record<ArmorSlot, string>;

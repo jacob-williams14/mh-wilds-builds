@@ -5,7 +5,6 @@ export const insectGlaive: WeaponData = {
 		// --- HR 50–100 builds (pre-TU4) ---
 		'zoh-frenzy': {
 			name: 'Zoh Shia Frenzy',
-			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			desc: 'Top non-Artian IG. 2pc Zoh Shia (Super Recovery) + 2pc Gore (Black Eclipse) + G. Arkveld arms. Con 5, Coalescence, Antivirus. Smooth ground combos.',
@@ -34,7 +33,6 @@ export const insectGlaive: WeaponData = {
 		},
 		'lords-soul-lagi': {
 			name: "Lord's Soul Lagi",
-			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			desc: "Rey γ + Nu Udra γ + Lagiacrus. Lord's Soul = Guts + 5% ATK. WEX 5, Max Might 3, Evade Extender 2. Best damage-to-safety for hard content.",
@@ -63,7 +61,6 @@ export const insectGlaive: WeaponData = {
 		},
 		'ful-zoh-comfort': {
 			name: 'Ful-Zoh Comfort',
-			stars: '★★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			desc: 'G. Fulgur Anjanath = extra stamina gauge + Second Wind. Great Max Might uptime. Super Recovery. Smooth vaulting and dodging.',
@@ -91,7 +88,6 @@ export const insectGlaive: WeaponData = {
 		},
 		'rey-gore-mm': {
 			name: 'Rey-Gore Agitator MM',
-			stars: '★★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			desc: "3pc Rey γ + 2pc Gore. Latent Power + Max Might rewards clean play. Lord's Soul = Guts + 5% raw. For experienced players.",
@@ -119,7 +115,6 @@ export const insectGlaive: WeaponData = {
 		},
 		'lagia-gore': {
 			name: 'Lagia-Gore Critical',
-			stars: '★★★',
 			source: 'Game8 / Icy Veins',
 			tier: 'craftable',
 			desc: 'Accessible starter endgame. 2pc Lagi + 2pc Gore. Easy farm, consistent crits, SS3. Azure Bolt gives free thunder procs.',
@@ -147,7 +142,6 @@ export const insectGlaive: WeaponData = {
 		// --- HR 100+ builds (TU4) ---
 		'arkveld-gore-affinity': {
 			name: 'Arkveld-Gore Affinity',
-			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'mixed',
 			rank: 'hr100',
@@ -179,7 +173,6 @@ export const insectGlaive: WeaponData = {
 		},
 		'fulgur-odo-guts': {
 			name: 'Fulgur-Odo Guts',
-			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			rank: 'hr100',
@@ -210,7 +203,6 @@ export const insectGlaive: WeaponData = {
 		},
 		'gogma-guts': {
 			name: 'Gogmazios Guts',
-			stars: '★★★★★',
 			source: 'Game8',
 			tier: 'meta',
 			rank: 'hr100',
@@ -244,7 +236,6 @@ export const insectGlaive: WeaponData = {
 		},
 		'max-raw': {
 			name: 'Max Raw',
-			stars: '★★★★',
 			source: 'Game8',
 			tier: 'craftable',
 			rank: 'hr100',
@@ -277,11 +268,10 @@ export const insectGlaive: WeaponData = {
 		},
 		'fulgur-craftable': {
 			name: 'Fulgur Craftable',
-			stars: '★★★★',
 			source: 'Google Doc',
 			tier: 'mixed',
 			rank: 'hr100',
-			desc: 'Fulgur 2pc bonus with Gogma gloves for Agi 5 and Burst. Latent Power compensates for affinity. Craftable charm, no weapon rolls needed.',
+			desc: 'Fulgur 2pc bonus with Gogma gloves for Agi 5 and Burst. Latent Power compensates for affinity. Craftable charm, no weapon rolls needed. Maximum Might shown as "3+" in source (overcapped) — verify exact level in-game.',
 			armor: {
 				Head: 'G. Fulgur Helm β',
 				Chest: 'Udra Miremail α',
@@ -293,7 +283,7 @@ export const insectGlaive: WeaponData = {
 			skills: [
 				{ name: 'Weakness Exploit 5', type: 'dmg' },
 				{ name: 'Agitator 5', type: 'dmg' },
-				{ name: 'Maximum Might 3', type: 'dmg' },
+				{ name: 'Maximum Might 3', type: 'dmg' }, // verify (source says "3+", overcapped)
 				{ name: 'Latent Power 2', type: 'dmg' },
 				{ name: 'Counterstrike 2', type: 'dmg' },
 				{ name: 'Adrenaline Rush 1', type: 'dmg' },
@@ -306,7 +296,6 @@ export const insectGlaive: WeaponData = {
 		},
 		'gore-general': {
 			name: 'Gore General',
-			stars: '★★★★★',
 			source: 'Google Doc',
 			tier: 'craftable',
 			rank: 'hr100',
@@ -335,7 +324,6 @@ export const insectGlaive: WeaponData = {
 		},
 		'lagia-craftable': {
 			name: 'Lagia Craftable',
-			stars: '★★★★',
 			source: 'Google Doc',
 			tier: 'craftable',
 			rank: 'hr100',
@@ -364,7 +352,6 @@ export const insectGlaive: WeaponData = {
 		},
 		resentment: {
 			name: 'Resentment Craftable',
-			stars: '★★★★',
 			source: 'Google Doc',
 			tier: 'craftable',
 			rank: 'hr100',

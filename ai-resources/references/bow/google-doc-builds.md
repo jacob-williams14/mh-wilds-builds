@@ -308,7 +308,181 @@ TBD (not shown in Compendium screenshot)
 
 ## Comparison Notes: Compendium vs Current bow.ts
 
-As of 2026-05-04, all four Builds 1–4 in `bow.ts` (`gore-lagi`, `comfy-gore-lagi`, `gore-zoh`, `guts-comfort`) match the Compendium screenshots. Earlier drift has been reconciled. Build 5 (`gogma-comfort`) was added to `bow.ts` in Phase 1 alongside this audit.
+As of 2026-05-04, all four Builds 1–4 in `bow.ts` (`gore-lagi`, `comfy-gore-lagi`, `gore-zoh`, `guts-comfort`) match the Compendium screenshots. Earlier drift has been reconciled. Build 5 (`gogma-comfort`) was added to `bow.ts` in Phase 1 alongside this audit. Builds 6–8 were added 2026-05-12 from new Anti-Arkveld loadout screenshots.
+
+---
+
+## Build 6: Raw Comfort — Anti-Arkveld (Con 5)
+
+### Description
+Anti-Arkveld comfort build using Calamitous Angel. Constitution 5 + Counterstrike 3 give stamina flexibility and a damage-on-hit reward without a food requirement. Agitator III talisman tops up Agitator. Screenshot note: "You can replace Counter by Refresh." Skill levels partially obscured in source — verify Weakness Exploit, Agitator, Quick Sheathe, and Adrenaline Rush in-game.
+
+### Armor Loadout
+| Slot  | Piece                | Innate Skills (where visible) |
+|-------|----------------------|-------------------------------|
+| Head  | Udra Mirehelm γ      | (per screenshot)              |
+| Chest | Gogmazios Mail β     | (per screenshot)              |
+| Arms  | G. Rath Braces β     | (per screenshot)              |
+| Waist | Gore Coil β          | (per screenshot)              |
+| Legs  | Duna Wildgreaves γ   | (per screenshot)              |
+
+### Charm
+- **Agitator III talisman**
+
+### Weapon
+- **Calamitous Angel** (Gogma Artian Bow)
+
+### Armor Decorations
+| Slot  | Decorations                                            |
+|-------|--------------------------------------------------------|
+| Head  | Physique Jewel [1] ×3                                  |
+| Chest | Tenderizer Jewel [3], Counter Jewel [2]                |
+| Arms  | Tenderizer Jewel [3], Counter Jewel [2], Sane Jewel [1] |
+| Waist | Tenderizer Jewel [3], Counter Jewel [2], (empty)       |
+| Legs  | Sane Jewel [1] ×2                                      |
+
+### Skill Summary
+| Skill             | Level            |
+|-------------------|------------------|
+| Constitution      | 5 (title-confirmed) |
+| Counterstrike     | 3 (3 Counter decs) |
+| Antivirus         | 3 (3 Sane decs + innate) |
+| Weakness Exploit  | verify (3 Tenderizer decs + innate) |
+| Agitator          | verify (Agi III talisman + innate) |
+| Quick Sheathe     | verify (Duna γ innate) |
+| Adrenaline Rush   | verify |
+| Burst             | ~1 |
+| Speed Eating      | ~1 |
+
+### Group / Set Skills
+- Gore Magala's Tyranny (Black Eclipse I) — 1pc Gore Coil β
+- Lord's Soul
+- Scorcher — 1pc Gogmazios Mail β
+
+### Elemental Resistances
+TBD (not shown in screenshot)
+
+### Notes
+- Con 5 = meal slot free. Sild Garlic (Moxie) or Airy Egg.
+- Screenshot tooltip: "Decrepit Stamina Surge" suggests a low-level Stamina Surge decoration is included.
+- "You can replace Counter by [Refresh Jewel]" — noted in source.
+
+---
+
+## Build 7: Raw DPS — Anti-Arkveld (Adrenaline Rush)
+
+### Description
+Anti-Arkveld DPS build using Calamitous Angel. Adrenaline Rush III talisman is the defining mechanic — perfect dodges reward with a significant damage window. High Counterstrike amplifies on-hit reactions. Requires Black Belt Hi (Delishroom) for stamina support. Skill levels partially obscured in source — verify Weakness Exploit, Agitator, Adrenaline Rush total, Constitution, Bind Resistance, and Burst in-game.
+
+### Armor Loadout
+| Slot  | Piece                | Innate Skills (where visible) |
+|-------|----------------------|-------------------------------|
+| Head  | G. Rathalos Helm β   | (per screenshot)              |
+| Chest | Dahaad Shardmail γ   | (per screenshot)              |
+| Arms  | G. Rath Braces β     | (per screenshot)              |
+| Waist | Dahaad Shardcoil γ   | (per screenshot)              |
+| Legs  | Gore Greaves β       | (per screenshot)              |
+
+### Charm
+- **Adrenaline Rush III talisman**
+
+### Weapon
+- **Calamitous Angel** (Gogma Artian Bow)
+
+### Armor Decorations
+| Slot  | Decorations                                             |
+|-------|---------------------------------------------------------|
+| Head  | Tenderizer Jewel [3] ×2, (empty)                        |
+| Chest | Counter Jewel [2] ×2                                    |
+| Arms  | Tenderizer Jewel [3], Counter Jewel [2], Physique Jewel [1] |
+| Waist | Physique Jewel [1], (empty)                             |
+| Legs  | Chain Jewel [3], Sane Jewel [1] ×2                      |
+
+### Skill Summary
+| Skill             | Level                              |
+|-------------------|------------------------------------|
+| Counterstrike     | 3 (3 Counter decs)                 |
+| Weakness Exploit  | verify (Tenderizer decs + innate)  |
+| Agitator          | verify (innate)                    |
+| Adrenaline Rush   | verify (talisman +3 + innate)      |
+| Antivirus         | verify (Sane decs + innate)        |
+| Constitution      | verify (2 Physique decs + innate)  |
+| Bind Resistance   | verify                             |
+| Burst             | verify                             |
+| Flinch Free       | ~1                                 |
+
+### Group / Set Skills
+- Gore Magala's Tyranny (Black Eclipse I) — 1pc Gore Greaves β
+- Lord's Soul
+
+### Elemental Resistances
+TBD (not shown in screenshot)
+
+### Notes
+- Meal requirement: Black Belt Hi (Delishroom).
+- Screenshot note: "You can replace Counter by [Refresh Jewel]"
+- Dahaad 2pc may provide an additional set bonus — check in-game.
+
+---
+
+## Build 8: Gogma DPS (Gogmapocalypse 4pc)
+
+### Description
+Full Gogma DPS build. Three Gogmazios armor pieces + Calamitous Angel bow achieve Gogmapocalypse 4pc. Peak Performance + Agitator Charm II + Mutual Hostility make this the highest-ceiling damage option at HR100. Requires Black Belt Lo (Droolshroom). Skill levels partially obscured in source — verify Weakness Exploit, Peak Performance, Agitator, Constitution, Burst, Adrenaline Rush, Stamina Surge, and Divine Blessing in-game.
+
+### Armor Loadout
+| Slot  | Piece                | Innate Skills (where visible) |
+|-------|----------------------|-------------------------------|
+| Head  | G. Rathalos Helm β   | (per screenshot)              |
+| Chest | Gogmazios Mail β     | (per screenshot)              |
+| Arms  | G. Ebony Braces β    | (per screenshot)              |
+| Waist | Gogmazios Coil α     | (per screenshot)              |
+| Legs  | Gogmazios Greaves    | (per screenshot)              |
+
+### Charm
+- **Agitator Charm II** (Agitator +2)
+
+### Weapon
+- **Calamitous Angel** (Gogma Artian Bow — provides 4th Gogmazios piece for Gogmapocalypse)
+  - Weapon Decoration slots: Element/Bandolier, Charge Master, Spread
+
+### Armor Decorations
+| Slot  | Decorations (partially obscured in source)               |
+|-------|----------------------------------------------------------|
+| Head  | Tenderizer Jewel [3]                                     |
+| Chest | (Or slot variant), Refresh Jewel [2]                     |
+| Arms  | Flawless Jewel [?]                                       |
+| Waist | Refresh Jewel [2], Physique Jewel [1] ×2                 |
+| Legs  | Flawless Jewel [?] ×2 (approx), Physique Jewel [1]       |
+
+### Skill Summary
+| Skill                  | Level                                  |
+|------------------------|----------------------------------------|
+| Weakness Exploit       | verify                                 |
+| Peak Performance       | verify                                 |
+| Agitator               | verify (Agi Charm II + innate)         |
+| Constitution           | verify (Physique decs + innate)        |
+| Burst                  | verify                                 |
+| Adrenaline Rush        | verify                                 |
+| Stamina Surge          | verify                                 |
+| Speed Eating           | ~1                                     |
+| Divine Blessing        | verify                                 |
+| Aquatic/Oilsilt Mobility | 1                                    |
+
+### Group / Set Skills
+- Gogmapocalypse (4pc — 3 Gogmazios armor + Calamitous Angel)
+- Mutual Hostility
+- Burst Boost
+- Scorcher
+- Aquatic/Oilsilt Mobility
+
+### Elemental Resistances
+TBD (not shown in screenshot)
+
+### Notes
+- Meal requirement: Black Belt Lo (Droolshroom).
+- 4pc Gogmapocalypse: Gogmazios Mail β + Gogmazios Coil α + Gogmazios Greaves + Calamitous Angel weapon.
+- Chest shows "Or" variant in screenshot — one decoration slot may have an alternative option.
 
 ---
 
@@ -320,6 +494,9 @@ Per-build screenshots:
 - gore-zoh build: `screenshots/bow/google_doc/gore-zoh/loadout.png`
 - guts-comfort build: `screenshots/bow/google_doc/guts-comfort/loadout.png`
 - gogma-comfort build: `screenshots/bow/google_doc/gogma-comfort/loadout.png`
+- raw-comfort build: `screenshots/bow/google_doc/raw-comfort/loadout.png`
+- raw-dps build: `screenshots/bow/google_doc/raw-dps/loadout.png`
+- gogma-dps build: `screenshots/bow/google_doc/gogma-dps/loadout.png`
 
 Shared assets:
 - shared Artian: `screenshots/bow/google_doc/shared/artian.png`

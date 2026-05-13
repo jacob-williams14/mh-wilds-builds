@@ -40,7 +40,6 @@
 <section class="result-card">
 	<div class="result-header">
 		<div class="result-name">{build.name}</div>
-		<div class="result-stars">{build.stars}</div>
 	</div>
 
 	<div class="source-chip-row">
@@ -149,12 +148,6 @@
 		font-family: 'Chakra Petch', sans-serif;
 		font-size: 1.6rem;
 		font-weight: 700;
-	}
-
-	.result-stars {
-		color: var(--gold);
-		font-size: 1rem;
-		letter-spacing: 2px;
 	}
 
 	.result-desc {
