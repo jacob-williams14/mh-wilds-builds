@@ -13,7 +13,7 @@ Extracting them into named components means:
 - `ArtianCard` and `WeaponCard` each describe exactly one thing (~30 lines each).
 - A reader can navigate directly to the component they need to edit.
 
-See `phases/05-architecture-evaluation.md` §Weaknesses for the full context.
+See `phases/architecture-evaluation.md` §Weaknesses for the full context.
 
 ## Target structure
 

@@ -10,7 +10,7 @@ The flow questionnaire works by chaining string keys: a Q1 answer selects a Q2 g
 
 This phase tightens the type system so a typo fails at `bun run check` instead of silently at runtime, and adds a contract test that verifies key integrity regardless of what TS catches.
 
-See `phases/05-architecture-evaluation.md` §Weaknesses for the full context.
+See `phases/architecture-evaluation.md` §Weaknesses for the full context.
 
 ## Scope
 

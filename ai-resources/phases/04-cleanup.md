@@ -1,6 +1,6 @@
 # Phase 4 — Cleanup
 
-**Status:** Blocked on Phases 1, 2, 3 (run last)
+**Status:** Ready (Phase 3 / LS parked on screenshots; items A–G are independent of it)
 **Blocks:** Nothing
 **Estimated effort:** ~20 min triage + decisions, ~15 min execution
 
@@ -53,7 +53,7 @@ Output: a refreshed PLAN.md that is honestly current, OR a redirect doc that poi
 
 ### D. Orphaned screenshot files
 
-After Phases 1, 2, 3 are complete, scan the screenshot tree for files not referenced in any reference doc:
+Scan the current bow + IG screenshot tree for files not referenced in any reference doc. LS screenshots are out of scope while Phase 3 is parked.
 
 ```bash
 # rough recipe — refine as needed
@@ -106,10 +106,11 @@ Default to **Keep** when uncertain. Cleanup is opt-in — every action requires 
 - `README.md` (project root)
 - `CLAUDE.md` (project root)
 
+**Note:** References to `src/lib/data/` or `src/lib/components/` in any of the above should be updated to `src/lib/domain/` and `src/lib/ui/` (post-Phase-8 layout).
+
 **Potentially create:**
 
-- `ai-resources/archive/` (if any artifacts are archived)
-- `ai-resources/archive/README.md` (index for archived items)
+- `ai-resources/archive/README.md` (index for archived items, if needed)
 - `ai-resources/sources-catalog.md` (if knowledge-base.jsx is migrated to markdown)
 
 **Potentially delete:**

@@ -10,7 +10,7 @@
 
 Renaming to `domain/` + `ui/` makes the distinction self-evident without opening any files. It is a pure file-move with no logic changes.
 
-See `phases/05-architecture-evaluation.md` §"Vertical slice — the answer" for the full context.
+See `phases/architecture-evaluation.md` §"Vertical slice — the answer" for the full context.
 
 ## Target structure
 

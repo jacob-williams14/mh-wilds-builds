@@ -10,7 +10,7 @@
 
 Svelte's `<style>` blocks scope CSS automatically to the component — classes defined inside cannot accidentally affect other components. Moving component-specific styles in-file makes the component self-contained and readable without a separate lookup.
 
-See `phases/05-architecture-evaluation.md` for the full context.
+See `phases/architecture-evaluation.md` for the full context.
 
 ## Scope
 

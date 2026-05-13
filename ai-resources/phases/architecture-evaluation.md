@@ -1,14 +1,10 @@
-# Phase 5 — Architecture Evaluation
+# Architecture Evaluation
 
-**Status:** Complete (living reference)
-**Blocks:** Phases 6-10 (motivates them)
-**Estimated effort:** N/A — already done
+*Snapshot taken 2026-05-11. Weaknesses 1–6 were addressed in Phases 6–10 (archived). Strengths, "Vertical slice — the answer", and "What not to do" remain current guidance.*
 
-## Why this phase exists
+## Why this doc exists
 
-This is a human-maintainability audit. The goal was to evaluate whether Jacob can step into the codebase and build by hand without AI, with reduced cognitive load. Content must not change. The evaluation was performed with full codebase exploration on 2026-05-11.
-
-See also: Phases 6-10 are the concrete follow-through. This doc is the "why" behind each of them.
+A human-maintainability audit of the codebase, evaluating whether a developer can work without AI assistance with low cognitive load. It motivated Phases 6–10; those phases are now complete.
 
 ---
 
@@ -55,11 +51,11 @@ Stack: SvelteKit 2.50 + Svelte 5.54 (runes mode forced), TS strict, Tailwind v4,
 
 ## Weaknesses (ranked by cognitive impact)
 
-### 1. `src/app.css` is 779 lines of unscoped global CSS → Phase 6
+### 1. `src/app.css` is 779 lines of unscoped global CSS *(resolved in Phase 6 — CSS scoped into each component's `<style>` block)*
 
 The single biggest cognitive-load risk. To understand any component's appearance you must grep `app.css`. You cannot safely delete or change a class without auditing everything.
 
-### 2. Stringly-typed cross-references → Phase 7
+### 2. Stringly-typed cross-references *(resolved in Phase 7 — `ArmorSlot` literal union, `contract.test.ts` flow-key validation)*
 
 - `flow.q1Options[].value` must be a key in `flow.q2`.
 - `flow.q2[*].options[].value` must be a key in `builds`.
@@ -68,22 +64,22 @@ The single biggest cognitive-load risk. To understand any component's appearance
 
 A typo fails silently — `currentBuild` becomes `null` at `+page.svelte:21` with no error.
 
-### 3. `references.ts` is orphaned → Phase 10
+### 3. `references.ts` is orphaned *(resolved in Phase 10 — `referenceKey: string` on `WeaponData` links each weapon module to its `references.ts` entry)*
 
 `src/lib/data/references.ts` is a citation catalogue that nothing imports at runtime. Each weapon has its own freeform `sourcesText` instead. Two sources of truth that will drift.
 
-### 4. `BuildResult.svelte` mixes five unrelated sections → Phase 9
+### 4. `BuildResult.svelte` mixes five unrelated sections *(resolved in Phase 9 — extracted `ArmorGrid`, `ArtianCard`, `WeaponCard`)*
 
 Lines 55-127 inline armor grid, artian recipe cards, optional tips, and weapon list. Self-contained sections that deserve their own components.
 
-### 5. Small inconsistencies → Phase 10
+### 5. Small inconsistencies *(resolved in Phase 10 — `WeaponTab` centralised in `registry.ts`, `RankSelector` data-driven, `referenceKey` added)*
 
 - `WeaponTab` type redeclared locally in `WeaponTabs.svelte:2-5`.
 - `RankSelector.svelte:13-28` hand-rolls two buttons instead of `{#each}`.
 - `Build.tier` defaults to `'craftable'` per JSDoc only; consumers must coalesce.
 - "Unverified placeholder" for resistances is a `// comment`, not a data field.
 
-### 6. No data-contract test → Phase 7
+### 6. No data-contract test *(resolved in Phase 7 — `contract.test.ts` validates all flow→build key mappings)*
 
 A 30-line Vitest that walks every weapon and asserts every flow value resolves to a real build would catch every typo at `bun run check` time.
 
@@ -93,7 +89,7 @@ A 30-line Vitest that walks every weapon and asserts every flow value resolves t
 
 **No.** A vertical slice (per-weapon folders owning UI + data + logic) pays off when each feature owns *different* UI. These components are 100% data-driven and weapon-agnostic. Splitting them per weapon would either duplicate them (worse cognitive load) or move folders without changing boundaries (cosmetic).
 
-**What to do instead (Phases 8, 9):** a feature-by-domain organization within the existing layers:
+**What was done instead (Phases 8, 9):** a feature-by-domain organization within the existing layers (now complete):
 
 ```
 src/lib/

@@ -8,7 +8,7 @@
 
 Several small inconsistencies and one medium-sized orphan were identified in the architecture evaluation. None of them are blockers on their own, but they create quiet maintenance traps that compound as more weapons are added. This phase resolves them.
 
-See `phases/05-architecture-evaluation.md` §Weaknesses 3 and 5 for the full context.
+See `phases/architecture-evaluation.md` §Weaknesses 3 and 5 for the full context.
 
 ## Scope
 

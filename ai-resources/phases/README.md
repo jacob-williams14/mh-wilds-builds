@@ -12,8 +12,7 @@ Sequenced work on weapon data, presentation, and architecture.
 | 1 | Refresh Bow + UI generalization | Complete | Archived: `archive/01-update-bow.md` |
 | 2 | Bring Insect Glaive in line | Complete | Archived: `archive/02-update-insect-glaive.md` |
 | 3 | Add Long Sword | Blocked on screenshots | [03-add-long-sword.md](./03-add-long-sword.md) |
-| 4 | Cleanup — stale files, redundant docs | In progress | [04-cleanup.md](./04-cleanup.md) |
-| 5 | Architecture evaluation | Complete (reference) | [05-architecture-evaluation.md](./05-architecture-evaluation.md) |
+| 4 | Cleanup — stale files, redundant docs | Ready | [04-cleanup.md](./04-cleanup.md) |
 | 6 | Scope component CSS | Complete | Archived: `archive/06-scope-component-css.md` |
 | 7 | Tighten data contracts | Complete | Archived: `archive/07-tighten-data-contracts.md` |
 | 8 | Reorganize `lib/` into `domain/` + `ui/` | Complete | Archived: `archive/08-reorganize-lib.md` |
@@ -27,6 +26,11 @@ Sequenced work on weapon data, presentation, and architecture.
 - Open the active phase doc, follow its scope sections, and tick the "Done when" checkboxes as you complete items.
 - When a phase is done: archive it per `CLAUDE.md` §7, update its row here to Complete, update `ACTIVE.md`.
 - The conventions doc is *living* — update when patterns evolve.
+
+## Reference docs
+
+- [`00-conventions.md`](./00-conventions.md) — naming, data shapes, screenshot structure (living)
+- [`architecture-evaluation.md`](./architecture-evaluation.md) — 2026-05-11 maintainability audit; motivated Phases 6–10
 
 ## Related docs
 
