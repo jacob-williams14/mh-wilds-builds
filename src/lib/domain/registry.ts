@@ -1,5 +1,5 @@
-import { bow } from './bow';
-import { insectGlaive } from './insect-glaive';
+import { bow } from './weapons/bow';
+import { insectGlaive } from './weapons/insect-glaive';
 import type { WeaponData } from './types';
 export const weaponRegistry = [
 	{ key: 'bow', label: 'Bow', data: bow },

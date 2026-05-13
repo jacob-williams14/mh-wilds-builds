@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { FlowOption } from '$lib/data/types';
+	import type { FlowOption } from '$lib/domain/types';
 
 	type Props = {
 		stepLabel: string;

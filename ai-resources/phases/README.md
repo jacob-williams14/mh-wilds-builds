@@ -16,7 +16,7 @@ Sequenced work on weapon data, presentation, and architecture.
 | 5 | Architecture evaluation | Complete (reference) | [05-architecture-evaluation.md](./05-architecture-evaluation.md) |
 | 6 | Scope component CSS | Complete | Archived: `archive/06-scope-component-css.md` |
 | 7 | Tighten data contracts | Complete | Archived: `archive/07-tighten-data-contracts.md` |
-| 8 | Reorganize `lib/` into `domain/` + `ui/` | Not started | [08-reorganize-lib.md](./08-reorganize-lib.md) |
+| 8 | Reorganize `lib/` into `domain/` + `ui/` | Complete | Archived: `archive/08-reorganize-lib.md` |
 | 9 | Decompose `BuildResult.svelte` | Not started | [09-decompose-build-result.md](./09-decompose-build-result.md) |
 | 10 | References reconciliation + polish | Not started | [10-references-and-polish.md](./10-references-and-polish.md) |
 

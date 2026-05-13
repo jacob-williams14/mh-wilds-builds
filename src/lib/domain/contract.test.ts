@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { weaponRegistry } from '$lib/data';
+import { weaponRegistry } from '$lib/domain/registry';
 
 const rankRanges = ['hr50', 'hr100'] as const;
 

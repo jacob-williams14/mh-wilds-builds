@@ -5,9 +5,9 @@
 		WeaponDisplay,
 		WeaponOption,
 		WeaponTip
-	} from '$lib/data/types';
+	} from '$lib/domain/types';
 	import ResistanceBars from './ResistanceBars.svelte';
-	import SkillTags from './SkillTags.svelte';
+	import SkillTags from '$lib/ui/shared/SkillTags.svelte';
 
 	type Props = {
 		build: Build;

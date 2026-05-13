@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RankRange } from '$lib/data/types';
+	import type { RankRange } from '$lib/domain/types';
 
 	type Props = {
 		selected: RankRange;

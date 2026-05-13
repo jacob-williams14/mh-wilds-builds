@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { generalSources, weaponSources, type SourceType } from '$lib/data/references';
+	import { generalSources, weaponSources, type SourceType } from '$lib/domain/references';
 
 	const typeLabel: Record<SourceType, string> = {
 		'google-doc': 'Google Doc',

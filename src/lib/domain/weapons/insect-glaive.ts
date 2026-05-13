@@ -1,4 +1,4 @@
-import type { WeaponData } from './types';
+import type { WeaponData } from '../types';
 
 export const insectGlaive: WeaponData = {
 	builds: {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Resistances } from '$lib/data/types';
+	import type { Resistances } from '$lib/domain/types';
 
 	type ElementKey = 'fire' | 'water' | 'thunder' | 'ice' | 'dragon';
 

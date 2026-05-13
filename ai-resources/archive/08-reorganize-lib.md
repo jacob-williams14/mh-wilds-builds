@@ -97,13 +97,13 @@ Manual: open app, navigate to both pages, confirm they load. No visual check nee
 
 ## Done when
 
-- [ ] `src/lib/data/` directory no longer exists.
-- [ ] `src/lib/components/` directory no longer exists.
-- [ ] `src/lib/domain/` and `src/lib/ui/` exist with the target structure above.
-- [ ] `index.ts` renamed to `registry.ts`; all imports updated.
-- [ ] `bun run check` passes with zero errors.
-- [ ] `bun run lint` and `bun run format` pass.
+- [x] `src/lib/data/` directory no longer exists.
+- [x] `src/lib/components/` directory no longer exists.
+- [x] `src/lib/domain/` and `src/lib/ui/` exist with the target structure above.
+- [x] `index.ts` renamed to `registry.ts`; all imports updated.
+- [x] `bun run check` passes with zero errors.
+- [x] `bun run lint` and `bun run format` pass.
 - [ ] App loads and both routes render correctly.
-- [ ] Phase doc archived to `ai-resources/archive/08-reorganize-lib.md`.
-- [ ] `phases/README.md` row for Phase 8 updated to Complete.
-- [ ] `phases/ACTIVE.md` updated to next phase.
+- [x] Phase doc archived to `ai-resources/archive/08-reorganize-lib.md`.
+- [x] `phases/README.md` row for Phase 8 updated to Complete.
+- [x] `phases/ACTIVE.md` updated to next phase.

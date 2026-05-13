@@ -1,11 +1,11 @@
 <script lang="ts">
-	import BuildResult from '$lib/components/BuildResult.svelte';
-	import FlowQuestion from '$lib/components/FlowQuestion.svelte';
-	import RankSelector from '$lib/components/RankSelector.svelte';
-	import WeaponTabs from '$lib/components/WeaponTabs.svelte';
+	import BuildResult from '$lib/ui/build/BuildResult.svelte';
+	import FlowQuestion from '$lib/ui/flow/FlowQuestion.svelte';
+	import RankSelector from '$lib/ui/flow/RankSelector.svelte';
+	import WeaponTabs from '$lib/ui/flow/WeaponTabs.svelte';
 	import { resolve } from '$app/paths';
-	import { defaultWeaponKey, weaponData, weaponTabs, type WeaponKey } from '$lib/data';
-	import type { RankRange } from '$lib/data/types';
+	import { defaultWeaponKey, weaponData, weaponTabs, type WeaponKey } from '$lib/domain/registry';
+	import type { RankRange } from '$lib/domain/types';
 
 	let currentWeapon = $state<WeaponKey>(defaultWeaponKey);
 	let rankRange = $state<RankRange>('hr50');
