@@ -616,6 +616,7 @@ export const bow: WeaponData = {
 			}
 		}
 	},
+	referenceKey: 'bow',
 	sourcesText:
 		'MH:Wilds Bow Compendium (@p_chu & @ninjazenia) and Game8 Bow Builds. Google Doc resistance totals remain unverified until calculated from per-piece armor data.',
 	display: {

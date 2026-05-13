@@ -9,6 +9,7 @@ export interface Source {
 }
 
 export interface WeaponSources {
+	key: string;
 	weapon: string;
 	sources: Source[];
 }
@@ -17,6 +18,7 @@ export const generalSources: Source[] = [];
 
 export const weaponSources: WeaponSources[] = [
 	{
+		key: 'bow',
 		weapon: 'Bow',
 		sources: [
 			{
@@ -35,6 +37,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'ig',
 		weapon: 'Insect Glaive',
 		sources: [
 			{
@@ -52,6 +55,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'long-sword',
 		weapon: 'Long Sword',
 		sources: [
 			{
@@ -68,6 +72,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'dual-blades',
 		weapon: 'Dual Blades',
 		sources: [
 			{
@@ -83,6 +88,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'greatsword',
 		weapon: 'Greatsword',
 		sources: [
 			{
@@ -98,6 +104,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'hammer',
 		weapon: 'Hammer',
 		sources: [
 			{
@@ -113,6 +120,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'hunting-horn',
 		weapon: 'Hunting Horn',
 		sources: [
 			{
@@ -128,6 +136,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'lance',
 		weapon: 'Lance',
 		sources: [
 			{
@@ -143,6 +152,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'gunlance',
 		weapon: 'Gunlance',
 		sources: [
 			{
@@ -158,6 +168,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'switch-axe',
 		weapon: 'Switch Axe',
 		sources: [
 			{
@@ -173,6 +184,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'charge-blade',
 		weapon: 'Charge Blade',
 		sources: [
 			{
@@ -188,6 +200,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'sword-and-shield',
 		weapon: 'Sword and Shield',
 		sources: [
 			{
@@ -203,6 +216,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'light-bowgun',
 		weapon: 'Light Bowgun',
 		sources: [
 			{
@@ -218,6 +232,7 @@ export const weaponSources: WeaponSources[] = [
 		]
 	},
 	{
+		key: 'heavy-bowgun',
 		weapon: 'Heavy Bowgun',
 		sources: [
 			{

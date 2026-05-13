@@ -567,6 +567,7 @@ export const insectGlaive: WeaponData = {
 			}
 		}
 	},
+	referenceKey: 'ig',
 	sourcesText:
 		'Game8 IG Builds (TU4) and MH Wilds IG Google Doc. Google Doc resistance totals unverified. Includes Gogma/Artian builds.',
 	display: {

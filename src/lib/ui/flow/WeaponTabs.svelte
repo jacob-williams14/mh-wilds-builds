@@ -1,8 +1,5 @@
 <script lang="ts">
-	type WeaponTab = {
-		key: string;
-		label: string;
-	};
+	import type { WeaponTab } from '$lib/domain/registry';
 
 	type Props = {
 		weapons: readonly WeaponTab[];

@@ -33,6 +33,7 @@ export interface Build {
 
 export interface WeaponOption {
 	name: string;
+	// Dot-separated chip string: "· Name · Raw · Element · Deco slots"
 	info: string;
 	element?: string;
 	cls?: string;
@@ -81,6 +82,7 @@ export interface WeaponData {
 	weapons: WeaponOption[];
 	tips?: WeaponTip[];
 	flow: Record<RankRange, FlowConfig>;
+	referenceKey: string;
 	sourcesText: string;
 	display: WeaponDisplay;
 }

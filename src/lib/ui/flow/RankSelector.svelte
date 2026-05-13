@@ -7,25 +7,24 @@
 	};
 
 	let { selected, onSelect }: Props = $props();
+
+	const RANKS: { key: RankRange; label: string }[] = [
+		{ key: 'hr50', label: 'HR 50–100' },
+		{ key: 'hr100', label: 'HR 100+' }
+	];
 </script>
 
 <div class="rank-selector">
-	<button
-		type="button"
-		class:active={selected === 'hr50'}
-		class="rank-btn"
-		onclick={() => onSelect('hr50')}
-	>
-		HR 50–100
-	</button>
-	<button
-		type="button"
-		class:active={selected === 'hr100'}
-		class="rank-btn"
-		onclick={() => onSelect('hr100')}
-	>
-		HR 100+
-	</button>
+	{#each RANKS as rank (rank.key)}
+		<button
+			type="button"
+			class:active={selected === rank.key}
+			class="rank-btn"
+			onclick={() => onSelect(rank.key)}
+		>
+			{rank.label}
+		</button>
+	{/each}
 </div>
 
 <style>

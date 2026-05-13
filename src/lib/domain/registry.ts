@@ -1,6 +1,8 @@
 import { bow } from './weapons/bow';
 import { insectGlaive } from './weapons/insect-glaive';
 import type { WeaponData } from './types';
+
+export type WeaponTab = { key: string; label: string };
 export const weaponRegistry = [
 	{ key: 'bow', label: 'Bow', data: bow },
 	{ key: 'ig', label: 'Insect Glaive', data: insectGlaive }

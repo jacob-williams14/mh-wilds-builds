@@ -82,12 +82,12 @@ Manual: click through both weapons × both ranks, including the build result car
 
 ## Done when
 
-- [ ] `references.ts` decision documented and implemented (Option A or B confirmed with Jacob).
-- [ ] `RankSelector` uses a `RANKS` config array with `{#each}`.
-- [ ] `WeaponTabs.svelte` local `WeaponTab` type removed; imported from `$lib/data` (or `$lib/domain`).
-- [ ] `WeaponOption.info` shape decision documented in `types.ts` (comment or structured type).
-- [ ] `bun run check`, `bun run lint`, `bun run format` pass.
+- [x] `references.ts` decision documented and implemented (Option A — added `key: string` to `WeaponSources`, `referenceKey: string` to `WeaponData`, set on bow + ig modules).
+- [x] `RankSelector` uses a `RANKS` config array with `{#each}`.
+- [x] `WeaponTabs.svelte` local `WeaponTab` type removed; imported from `$lib/domain/registry`.
+- [x] `WeaponOption.info` shape decision documented in `types.ts` (dot-separated chip format comment).
+- [x] `bun run check`, `bun run lint`, `bun run format` pass.
 - [ ] Manual click-through of both ranks + `/references` page passes.
-- [ ] Phase doc archived to `ai-resources/archive/10-references-and-polish.md`.
-- [ ] `phases/README.md` row for Phase 10 updated to Complete.
-- [ ] `phases/ACTIVE.md` updated to `none` (or the next weapon-add phase if one is queued).
+- [x] Phase doc archived to `ai-resources/archive/10-references-and-polish.md`.
+- [x] `phases/README.md` row for Phase 10 updated to Complete.
+- [x] `phases/ACTIVE.md` updated to `none` (or the next weapon-add phase if one is queued).

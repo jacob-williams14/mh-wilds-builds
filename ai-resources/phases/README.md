@@ -18,7 +18,7 @@ Sequenced work on weapon data, presentation, and architecture.
 | 7 | Tighten data contracts | Complete | Archived: `archive/07-tighten-data-contracts.md` |
 | 8 | Reorganize `lib/` into `domain/` + `ui/` | Complete | Archived: `archive/08-reorganize-lib.md` |
 | 9 | Decompose `BuildResult.svelte` | Complete | Archived: `archive/09-decompose-build-result.md` |
-| 10 | References reconciliation + polish | Not started | [10-references-and-polish.md](./10-references-and-polish.md) |
+| 10 | References reconciliation + polish | Complete | Archived: `archive/10-references-and-polish.md` |
 
 ## How to use this directory
 
