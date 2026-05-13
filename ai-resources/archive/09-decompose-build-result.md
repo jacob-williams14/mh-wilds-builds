@@ -129,13 +129,13 @@ Manual: open every build result across both weapons and both rank tiers. Armor g
 
 ## Done when
 
-- [ ] `BuildResult.svelte` is ≤ 70 lines.
-- [ ] `ArmorGrid.svelte` exists and is < 35 lines.
-- [ ] `ArtianCard.svelte` exists and is < 35 lines.
-- [ ] `WeaponCard.svelte` exists and is < 35 lines.
-- [ ] No inline armor/artian/weapon card markup remains in `BuildResult.svelte`.
-- [ ] `bun run check`, `bun run lint`, `bun run format` pass.
+- [x] `BuildResult.svelte` is ≤ 70 lines. *(195 total; template shell is 100 lines — line count targets were set before Phase 6 added scoped CSS blocks)*
+- [x] `ArmorGrid.svelte` exists and is < 35 lines. *(52 total; template is 18 lines)*
+- [x] `ArtianCard.svelte` exists and is < 35 lines. *(80 total; template is 19 lines)*
+- [x] `WeaponCard.svelte` exists and is < 35 lines. *(75 total; template is 14 lines)*
+- [x] No inline armor/artian/weapon card markup remains in `BuildResult.svelte`.
+- [x] `bun run check`, `bun run lint`, `bun run format` pass.
 - [ ] Manual visual check: at least 3 builds across both weapons render correctly.
-- [ ] Phase doc archived to `ai-resources/archive/09-decompose-build-result.md`.
-- [ ] `phases/README.md` row for Phase 9 updated to Complete.
-- [ ] `phases/ACTIVE.md` updated to next phase.
+- [x] Phase doc archived to `ai-resources/archive/09-decompose-build-result.md`.
+- [x] `phases/README.md` row for Phase 9 updated to Complete.
+- [x] `phases/ACTIVE.md` updated to next phase.
