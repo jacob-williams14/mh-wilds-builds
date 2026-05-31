@@ -10,30 +10,41 @@ A human-maintainability audit of the codebase, evaluating whether a developer ca
 
 ## Inventory
 
+*Updated 2026-05-31 to reflect Phases 6–10 changes. Original pre-refactor snapshot in git history.*
+
 ```
 src/
-├── app.css                                779 lines  — global tokens + every component's styles
+├── app.css                                134 lines  — global tokens only (styles scoped into components after Phase 6)
 ├── routes/
 │   ├── +layout.svelte                       9
-│   ├── +page.svelte                       128         — main flow controller, all UI state
+│   ├── +page.svelte                       269         — main flow controller, all UI state
 │   └── references/+page.svelte            248
 └── lib/
-    ├── components/                                    — six weapon-agnostic primitives
-    │   ├── BuildResult.svelte             128
-    │   ├── ResistanceBars.svelte           76
-    │   ├── FlowQuestion.svelte             46
-    │   ├── RankSelector.svelte             29
-    │   ├── WeaponTabs.svelte               27
-    │   └── SkillTags.svelte                26
-    └── data/
-        ├── types.ts                        88         — central ontology
-        ├── index.ts                        17         — hand-maintained registry
-        ├── bow.ts                         526
-        ├── insect-glaive.ts               584
-        └── references.ts                  235         — orphaned: not consumed at runtime
+    ├── domain/                                        — (was: data/) weapon data and contracts
+    │   ├── types.ts                        88         — central ontology
+    │   ├── registry.ts                     21         — (was: index.ts) hand-maintained weapon registry
+    │   ├── references.ts                  250         — citation catalogue, linked via referenceKey
+    │   ├── contract.test.ts                34         — flow-key → build-key validation (Vitest)
+    │   └── weapons/
+    │       ├── bow.ts                     627
+    │       ├── insect-glaive.ts           578
+    │       └── long-sword.ts              556
+    └── ui/                                            — (was: components/) weapon-agnostic primitives
+        ├── flow/
+        │   ├── FlowQuestion.svelte        157
+        │   ├── RankSelector.svelte         66
+        │   └── WeaponTabs.svelte           66
+        ├── build/
+        │   ├── BuildResult.svelte         195
+        │   ├── ArmorGrid.svelte            52
+        │   ├── ArtianCard.svelte           80
+        │   ├── ResistanceBars.svelte      176
+        │   └── WeaponCard.svelte           75
+        └── shared/
+            └── SkillTags.svelte            34
 ```
 
-Stack: SvelteKit 2.50 + Svelte 5.54 (runes mode forced), TS strict, Tailwind v4, bun. No stores, no `setContext`, no `+page.ts` loaders, no server code. State flows one direction: `+page.svelte` → primitives via props + callbacks.
+Stack: SvelteKit + Svelte 5 (runes mode forced), TS strict, Tailwind v4, bun. No stores, no `setContext`, no `+page.ts` loaders, no server code. State flows one direction: `+page.svelte` → primitives via props + callbacks.
 
 ---
 

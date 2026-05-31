@@ -8,10 +8,6 @@ This file is a redirect. Detailed documentation lives in:
 
 ## Current State
 
-- **Shipped:** Bow, Insect Glaive (both with HR 50-100 and HR 100+ rank tiers)
-- **Next:** Long Sword (blocked on user-supplied screenshots)
-- **Active:** Phase 4 Cleanup (see `phases/04-cleanup.md`)
-
-## Historical Context
-
-The original full plan, prototype, and process docs are preserved in `archive/` for reference.
+- **Shipped:** Bow, Insect Glaive, Long Sword (all with HR 50+ and HR 100+ rank tiers)
+- **Active phase:** None
+- **Next weapon:** TBD
