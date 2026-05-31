@@ -83,14 +83,14 @@ After a phase is complete and committed, move its plan doc from `ai-resources/ph
 
 ## Key Types (src/lib/domain/types.ts)
 
-| Type           | Purpose                                                                                                            |
-| -------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Type           | Purpose                                                                                                             |
+| -------------- | ------------------------------------------------------------------------------------------------------------------- |
 | `Build`        | Armor loadout with skills, resistances, meal. Required `tier` (craftable/mixed/meta). Optional `rank` (hr50/hr100). |
-| `ArtianWeapon` | Best-in-slot weapon with crafting steps. `variant`: 'standard' or 'gogma'.                                         |
-| `WeaponTip`    | Weapon-specific guidance (title + bullet lines). Optional on WeaponData.                                           |
-| `WeaponData`   | Top-level container: builds, artianWeapons, weapons, tips?, flow, referenceKey, sourcesText, display.              |
-| `FlowConfig`   | 2-step questionnaire. Q1 options → Q2 options → build slug.                                                        |
-| `RankRange`    | `'hr50' \| 'hr100'`. Flow is keyed by rank.                                                                        |
+| `ArtianWeapon` | Best-in-slot weapon with crafting steps. `variant`: 'standard' or 'gogma'.                                          |
+| `WeaponTip`    | Weapon-specific guidance (title + bullet lines). Optional on WeaponData.                                            |
+| `WeaponData`   | Top-level container: builds, artianWeapons, weapons, tips?, flow, referenceKey, sourcesText, display.               |
+| `FlowConfig`   | 2-step questionnaire. Q1 options → Q2 options → build slug.                                                         |
+| `RankRange`    | `'hr50' \| 'hr100'`. Flow is keyed by rank.                                                                         |
 
 ## Conventions
 
