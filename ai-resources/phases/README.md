@@ -7,7 +7,7 @@ Sequenced work on weapon data, presentation, and architecture.
 ## Phases
 
 | # | Phase | Status | Plan |
-|---|-------|--------|------|
+| --- | ----- | ------ | ---- |
 | 0 | Conventions reference | Living | [00-conventions.md](./00-conventions.md) |
 | 1 | Refresh Bow + UI generalization | Complete | Archived: `archive/01-update-bow.md` |
 | 2 | Bring Insect Glaive in line | Complete | Archived: `archive/02-update-insect-glaive.md` |
@@ -18,6 +18,7 @@ Sequenced work on weapon data, presentation, and architecture.
 | 8 | Reorganize `lib/` into `domain/` + `ui/` | Complete | Archived: `archive/08-reorganize-lib.md` |
 | 9 | Decompose `BuildResult.svelte` | Complete | Archived: `archive/09-decompose-build-result.md` |
 | 10 | References reconciliation + polish | Complete | Archived: `archive/10-references-and-polish.md` |
+| 11 | Automated weapon data pipeline (11 weapons) | **In progress** | [11-automated-weapon-pipeline.md](./11-automated-weapon-pipeline.md) |
 
 ## How to use this directory
 

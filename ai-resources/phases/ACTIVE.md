@@ -1,15 +1,16 @@
 # Active phase
 
-**Phase:** none
-**Completed:** 2026-05-13 (Phase 4 — Cleanup)
-**Owner:** —
+**Phase:** 11 — Automated Weapon Data Pipeline ([`phases/11-automated-weapon-pipeline.md`](./11-automated-weapon-pipeline.md))
+**Started:** 2026-07-06
+**Branch:** `phase-11-weapon-data-pipeline`
+**Owner:** Claude (orchestrator) + worktree subagents
 
 ## Working agreement
 
 Any agent or subagent starting work in this repo MUST follow these rules:
 
 1. **Read this file first.** Know what is in flight before touching anything.
-2. **Read the active phase doc** (`phases/04-cleanup.md`) and its triage candidates.
+2. **Read the active phase doc** (`phases/11-automated-weapon-pipeline.md`) and its stage gates.
 3. **Tick checkboxes as you complete items**, in the same commit as the work. Edit the phase doc directly.
 4. **When all items are checked:** archive the phase doc per `CLAUDE.md` §7, update `phases/README.md` status to Complete, then point this file at the next phase.
 5. **Do not start a new phase without first updating this file.** If you discover the current phase scope is wrong, edit the phase doc — do not silently switch.

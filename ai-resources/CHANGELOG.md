@@ -4,9 +4,22 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 
 ---
 
+## 2026-07-06
+
+**Phase 11 opened — Automated weapon data pipeline**
+
+- Feasibility spike proved the screenshot workflow is replaceable: Game8 pages fetch as full
+  text; Google Docs serve prose via `/mobilebasic`; embedded doc images (loadout/Artian
+  panels) download from public `googleusercontent` URLs at `=s1600` and transcribe directly
+- `src/lib/domain/references.ts` confirmed as the complete source manifest for all 14 weapons
+- Created `phases/11-automated-weapon-pipeline.md` (Stages A–C: LS pilot validation →
+  Greatsword pilot → 2×5 worktree fan-out); branch `phase-11-weapon-data-pipeline`
+- Updated `ACTIVE.md` and `phases/README.md`
+
 ## 2026-05-31
 
 **Housekeeping — archive LS phase doc, delete stale artifacts, refresh docs**
+
 - Archived `phases/03-add-long-sword.md` → `archive/`
 - Deleted `archive/knowledge-base.jsx`, `archive/mhw-builds-original-prototype.html`, `archive/PROCESS-add-weapon.md` (superseded or obsolete)
 - Updated `phases/README.md`: Long Sword row → Complete
@@ -16,6 +29,7 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 - Added this changelog
 
 **Long Sword — monster-specific builds added to HR100 flow**
+
 - Added `anti-seregios` and `anti-guardian` builds (Google Doc, HR100+)
 - Added "Specific Hunt" Q1 branch to HR100 flow
 - Fixed HR100 flow: removed `evasive-comfy` (HR50+ build) from HR100 comfort branch; dropped comfort branch entirely; folded `zoh-shia-ls` into versatile
@@ -23,6 +37,7 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 ## 2026-05-30
 
 **Long Sword — initial ship (Phase 3)**
+
 - Added `src/lib/domain/weapons/long-sword.ts`: 10 builds (5 HR50+, 5 HR100+), artian weapons, non-artian weapons, tips, 2-step flow for both rank tiers
 - Registered `ls` in `src/lib/domain/registry.ts`
 - Created reference docs: `ai-resources/references/long-sword/game8-builds.md`, `google-doc-builds.md` (archived same session)
@@ -31,34 +46,42 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 ## 2026-05-13
 
 **Phase 4 — Cleanup**
+
 - Archived stale reference docs and phase docs
 - Fixed stale entries in `CLAUDE.md`
 - Added Bow builds 5–6
 
 **Phase 10 — References reconciliation + polish**
+
 - Added `referenceKey: string` to `WeaponData`; links each weapon module to its `references.ts` entry
 - Made `RankSelector` data-driven (no more hardcoded buttons)
 - Centralized `WeaponTab` type in `registry.ts`
 
 **Phase 9 — Decompose BuildResult**
+
 - Extracted `ArmorGrid.svelte`, `ArtianCard.svelte`, `WeaponCard.svelte` from `BuildResult.svelte`
 
 **Phase 8 — Reorganize lib/**
+
 - `src/lib/data/` → `src/lib/domain/weapons/` + `src/lib/domain/`
 - `src/lib/components/` → `src/lib/ui/flow/`, `src/lib/ui/build/`, `src/lib/ui/shared/`
 
 **Phase 7 — Tighten data contracts**
+
 - Added `ArmorSlot` literal union type
 - Added `contract.test.ts`: Vitest that validates all flow-key → build-key mappings
 
 **Phase 6 — Scope component CSS**
+
 - Moved styles from global `app.css` into per-component `<style>` blocks
 
 **Phase 2 — Insect Glaive**
+
 - Added `src/lib/domain/weapons/insect-glaive.ts`
 - Brought IG in line with Bow patterns; added rank selector
 
 **Phase 1 — Bow refresh + UI generalization**
+
 - Refreshed Bow data module
 - Generalized UI components to be weapon-agnostic
 - Added `.raw` CSS chip color for Artian weapons
