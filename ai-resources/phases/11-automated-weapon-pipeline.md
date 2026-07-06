@@ -3,7 +3,9 @@
 **Status:** In progress
 **Blocks:** All remaining weapon phases (11 weapons)
 **Branch:** `phase-11-weapon-data-pipeline`
-**Estimated effort:** Pilot validation ~1 session; each weapon ~30 min agent time after pipeline is proven
+**Estimated effort:** Pilot validation ~1 session; each weapon ~30 min agent time is a
+**floor** (the LS figure assumed pre-organized screenshots and a pre-designed flow) — budget
+more for tab verification, image transcription, dedupe, and flow design
 
 ## Why this phase exists
 
@@ -47,18 +49,38 @@ archive) are unchanged.
 1. **Fetch Game8** — WebFetch the weapon's Game8 URL from `references.ts`. Transcribe every
    endgame build (HR50+ and HR100+/TU4) into
    `ai-resources/references/<weapon>/game8-builds.md` per the template in
-   `phases/00-conventions.md` §3 and `references/TEMPLATE-game8-builds.md`. Large pages may
-   need multiple targeted WebFetch prompts (one per build) — the fetch is cached 15 min.
-2. **Fetch Google Doc** — `curl -sL <doc>/mobilebasic` to scratchpad. Extract prose for
-   `google-doc-general-info.md` (mechanics, rotations, skill priorities). Extract all
-   `<img src>` URLs, download each at `=s1600`, and Read them to transcribe loadouts into
-   `google-doc-builds.md`. Downloaded images are **transient scratchpad artifacts** — never
-   committed; the reference markdown is the durable record.
+   `phases/00-conventions.md` §3 and `references/TEMPLATE-game8-builds.md`. **Also transcribe
+   the shared panels, not just builds:** standard + Gogma Artian crafting steps, the
+   non-Artian weapon list, secondary weapons, and mantle/kinsect/coating guidance — these
+   feed the required `artianWeapons`, `weapons`, and `tips` fields. Extract elemental
+   resistance totals from Game8 where the page shows them; apply `// Unverified placeholder`
+   per conventions §10 only when the source genuinely omits them (typically Google-Doc-only
+   builds). Large pages may need multiple targeted WebFetch prompts (one per build) — the
+   fetch is cached 15 min.
+2. **Fetch Google Doc** — `curl -sL <doc>/mobilebasic` to scratchpad. **Tab check first:**
+   four weapons' reference URLs point at non-default tabs (Charge Blade, Hunting Horn,
+   Gunlance, Light Bowgun carry `?tab=` params other than `t.0`), and `/mobilebasic` may
+   serve only the default tab. Confirm the fetched HTML actually contains the referenced
+   tab's build content; if absent, try per-tab fetch, else fall back to user screenshots for
+   that weapon only. Then extract prose for `google-doc-general-info.md` (mechanics,
+   rotations, skill priorities), extract all `<img src>` URLs, download each at `=s1600`, and
+   Read them to transcribe loadouts into `google-doc-builds.md`. Downloaded images are
+   **transient scratchpad artifacts** — never committed; the reference markdown is the
+   durable record.
 3. **Provenance header** — each generated reference doc must open with the source URL, fetch
    date, and title-update version the source claims (e.g. "TU4"), so staleness is diagnosable
    later.
-4. Steps 3–7 of `CLAUDE.md` proceed exactly as before (cross-reference → data module →
-   register → validate → archive).
+4. Steps 3–6 of `CLAUDE.md` proceed as before (cross-reference → data module → register →
+   validate), with two rules made explicit because no phase doc will pre-design them per
+   weapon:
+   - **Flow design is not mechanical.** The orchestrator's per-weapon agent brief must name
+     the weapon's core design axis and Q1 options (drafted from the Google Doc's philosophy
+     section during the Stage B pre-check); the agent may refine with justification. Ten
+     agents inventing flows unguided produces inconsistent UX.
+   - **Rank and tier assignment:** `rank: 'hr100'` for TU4/HR100+ builds, omit for HR50;
+     `tier` per conventions §5 by Gogma-piece content. Both the hr50 and hr100 flows must be
+     complete and rank-matched.
+   Step 7 archival is **orchestrator-only** (see Stage C).
 
 ## Stage A — Pilot validation (pipeline trust check)
 
@@ -74,6 +96,16 @@ Then diff generated vs archived docs and classify every discrepancy:
   arguably the fetched data is *more* current.
 - **Coverage gap** — a build or section the pipeline missed entirely, or captured that the
   manual pass skipped.
+- **Normalization/cosmetic** — naming variants ("WEX 5" vs "Weakness Exploit Lv5"). Expected;
+  filter out so it doesn't swamp the diff.
+- **Illegibility/ambiguity** — an image field that cannot be read confidently. Maps to an
+  unverified placeholder, not a fail.
+
+Two scope caveats: the archived docs are themselves human transcriptions, **not ground
+truth** — for any disputed field, spot-check ≥3 against the live source before calling it a
+pipeline error. And LS is the friendliest case (default-tab doc, screenshot-verified), so
+Stage A validates **transcription fidelity only**, not doc-access robustness — the tabbed-doc
+risk is exercised in Stages B/C.
 
 Deliverable: a diff report (armor pieces, skills, decorations, build inventory per source)
 with per-discrepancy classification, reported to the user. **Gate:** zero unexplained
@@ -81,9 +113,12 @@ pipeline errors before Stage B.
 
 ## Stage B — Pilot weapon (Greatsword)
 
-- Cheap accessibility pre-check first: `curl -s -o /dev/null -w "%{http_code}"` each of the
-  11 remaining weapons' Google Doc `mobilebasic` URLs, so restricted docs surface now, not
-  mid–fan-out.
+- Accessibility + tab pre-check first, on all 11 remaining weapons' Google Docs. A status
+  code alone false-passes: restricted docs return HTTP 200 with a sign-in page. Check the
+  fetched `mobilebasic` body for (a) a weapon-specific content marker (a build/skill
+  keyword), (b) absence of `accounts.google.com` / sign-in markers, and (c) for the four
+  non-default-tab weapons (CB, HH, GL, LBG), presence of the referenced tab's content.
+  During this pass, also draft each weapon's flow-axis directive for its future agent brief.
 - Full pipeline end-to-end for Greatsword: reference docs → cross-reference →
   `src/lib/domain/weapons/greatsword.ts` → register → all four validation commands →
   flow click-through.
@@ -97,13 +132,19 @@ pipeline errors before Stage B.
 - Each agent owns exactly one weapon: reference docs + data module. Agents must pass the full
   gate suite (`bun run check`, `bun run format`, `bun run lint`, contract test) inside their
   worktree and self-report results.
-- **Agents do not touch `registry.ts`, `references.ts`, or any shared file** — guaranteed
-  merge conflicts otherwise. The orchestrator wires registry entries and runs final
-  integrated validation on the phase branch after each batch merges.
+- **Contract-test caveat:** `contract.test.ts` iterates `weaponRegistry`, so an unregistered
+  weapon is invisible to it. Each agent adds a **temporary local registry entry** solely to
+  run the contract test against its own flows/slugs/ranks, then reverts it before returning.
+  Otherwise flow-key bugs only surface at batch-merge time.
+- **Agents do not touch `registry.ts` (beyond the reverted temp entry), `references.ts`, or
+  any shared file** — guaranteed merge conflicts otherwise. The orchestrator wires registry
+  entries and runs final integrated validation on the phase branch after each batch merges.
 - Batch order (popularity/priority first): Batch 1 — Sword & Shield, Dual Blades, Hammer,
   Switch Axe, Charge Blade. Batch 2 — Hunting Horn, Lance, Gunlance, Light Bowgun,
-  Heavy Bowgun.
-- Archive each weapon's reference docs per `CLAUDE.md` step 7 once its module ships.
+  Heavy Bowgun. (Charge Blade's non-default-tab doc lands in batch 1, giving the tab
+  handling a live test early.)
+- All archival and README/CHANGELOG bookkeeping is **orchestrator-only**, post-merge —
+  `CLAUDE.md` step 7 touches shared files, so agents never perform it.
 
 ## Stage D — out of scope
 
@@ -122,7 +163,9 @@ Visual redesign happens in a later phase, only after all 14 weapons ship.
 - `src/lib/domain/registry.ts` — orchestrator only, one entry per shipped weapon
 - `ai-resources/phases/README.md`, `ACTIVE.md`, `CHANGELOG.md` — phase bookkeeping
 - `CLAUDE.md` + `phases/00-conventions.md` — after Stage B proves the pipeline, replace the
-  screenshot workflow with the fetch workflow (conventions doc is living)
+  screenshot workflow with the fetch workflow (conventions doc is living). While in there,
+  fix two known-stale spots: conventions §5 lists a `stars: string` field that no longer
+  exists on `Build`, and §6's `WeaponData` shape omits `referenceKey`.
 
 **Read:**
 
@@ -146,8 +189,10 @@ Visual redesign happens in a later phase, only after all 14 weapons ship.
 ## Done when
 
 - [ ] Stage A: LS pilot diff report delivered; zero unexplained pipeline errors
-- [ ] Stage B: Google Doc accessibility pre-check on all 11 remaining weapons reported
+- [ ] Stage B: Google Doc accessibility + content-marker pre-check on all 11 remaining weapons reported
+- [ ] Stage B: tab-completeness verified for the 4 non-default-tab weapons (CB, HH, GL, LBG)
 - [ ] Stage B: Greatsword ships (module + registry + gates + click-through) with diff/consistency report
+- [ ] Every shipped module populates `artianWeapons` (both variants), `weapons`, and `tips` where the source provides them
 - [ ] `CLAUDE.md` + `00-conventions.md` updated: fetch pipeline replaces screenshot workflow
 - [ ] Stage C batch 1: 5 weapons shipped, gates pass, integrated validation on branch
 - [ ] Stage C batch 2: 5 weapons shipped, gates pass, integrated validation on branch
