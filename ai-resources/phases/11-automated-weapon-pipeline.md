@@ -199,7 +199,8 @@ Visual redesign happens in a later phase, only after all 14 weapons ship.
 - [x] Stage A: LS pilot diff report delivered; zero unexplained pipeline errors (2026-07-06 —
       PASS; Game8 detail-table gap closed via static Build Details pages; report archived at
       `archive/11-stage-a-ls-diff-report.md`)
-- [ ] Follow-up from Stage A: audit shipped `long-sword.ts` against pipeline output — the
+- [x] Follow-up from Stage A (2026-07-06 — 15 corrections committed; 7/8 Game8 builds and all
+      armor verified already correct): audit shipped `long-sword.ts` against pipeline output — the
       archived human transcriptions contained ~12 confirmed errors that may have propagated
       (known suspects: "Nu Udra's Medley" should be "Mutiny", several decoration slot sizes,
       Anti-Guardian WEX level, Game8 charm names). Trust hierarchy for all future briefs:

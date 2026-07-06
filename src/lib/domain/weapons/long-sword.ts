@@ -172,7 +172,7 @@ export const longSword: WeaponData = {
 			source: 'Google Doc',
 			tier: 'mixed',
 			rank: 'hr100',
-			desc: "Optimized for Seregios. Bleed Res 2 enables near-100% Resentment uptime — Sororal Earrings provide Resentment, and Seregios rarely inflicts bleed otherwise. Thunder element Headsman's Hamus. Skill levels partially unverified — verify in-game.",
+			desc: "Optimized for Seregios. Bleed Res 2 enables near-100% Resentment uptime — Sororal Earrings provide Resentment, and Seregios rarely inflicts bleed otherwise. Thunder element Headsman's Hamus.",
 			armor: {
 				Head: 'Sororal Earrings α',
 				Chest: 'Udra Miremail γ',
@@ -184,16 +184,18 @@ export const longSword: WeaponData = {
 			skills: [
 				{ name: 'Agitator 5', type: 'dmg' },
 				{ name: 'Critical Boost 5', type: 'dmg' },
+				{ name: 'Resentment 5', type: 'dmg' },
 				{ name: 'Antivirus 3', type: 'dmg' },
 				{ name: 'Counterstrike 3', type: 'dmg' },
 				{ name: 'Maximum Might 3', type: 'dmg' },
-				{ name: 'Burst 2', type: 'dmg' },
+				{ name: 'Burst 1', type: 'dmg' },
+				{ name: 'Flayer 1', type: 'dmg' },
 				{ name: "Master's Touch 1", type: 'dmg' },
-				{ name: 'Flayer 1', type: 'dmg' }, // verify
-				{ name: 'Quick Sheathe 3', type: 'comfort' }, // verify
+				{ name: 'Weakness Exploit 1', type: 'dmg' },
+				{ name: 'Quick Sheathe 3', type: 'comfort' },
 				{ name: 'Bleeding Resistance 2', type: 'comfort' }
 			],
-			setSkills: ["Gore Magala's Tyranny", "Nu Udra's Medley"],
+			setSkills: ["Gore Magala's Tyranny", "Nu Udra's Mutiny", "Lord's Soul"],
 			meal: "Sild Garlic (Moxie) stacks with Guts from Lord's Soul for double OHKO protection.",
 			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
 		},
@@ -202,25 +204,29 @@ export const longSword: WeaponData = {
 			source: 'Google Doc',
 			tier: 'mixed',
 			rank: 'hr100',
-			desc: "Optimized for Guardian Arkveld. WEX replaces Agitator because Guardian doesn't stay enraged — WEX has better uptime here. Arkvulcan 2pc provides Arkveld's Hunger. Dragon element Headsman's Hamus. Skill levels partially unverified — verify in-game.",
+			desc: "Optimized for Guardian Arkveld. WEX replaces Agitator because Guardian doesn't stay enraged — WEX has better uptime here. Arkvulcan 2pc provides Arkveld's Hunger. Dragon element Headsman's Hamus.",
 			armor: {
 				Head: 'Arkvulcan Helm γ',
 				Chest: 'Udra Miremail γ',
 				Arms: 'Arkvulcan Vambraces γ',
 				Waist: 'Rey Sandcoil γ',
 				Legs: 'Gore Greaves β',
-				Charm: '— (// verify)'
+				Charm: 'Burst Lv. 3 Talisman'
 			},
 			skills: [
+				{ name: 'Burst 5', type: 'dmg' },
 				{ name: 'Critical Boost 5', type: 'dmg' },
-				{ name: 'Weakness Exploit 4', type: 'dmg' }, // verify — may be 5
-				{ name: 'Antivirus 3', type: 'dmg' }, // verify
-				{ name: 'Counterstrike 3', type: 'dmg' }, // verify
-				{ name: 'Maximum Might 3', type: 'dmg' }, // verify
+				{ name: 'Weakness Exploit 5', type: 'dmg' },
+				{ name: 'Antivirus 3', type: 'dmg' },
+				{ name: 'Counterstrike 3', type: 'dmg' },
+				{ name: 'Maximum Might 3', type: 'dmg' },
+				{ name: 'Flayer 2', type: 'dmg' },
+				{ name: 'Latent Power 2', type: 'dmg' },
 				{ name: "Master's Touch 1", type: 'dmg' },
-				{ name: 'Quick Sheathe 3', type: 'comfort' } // verify
+				{ name: 'Quick Sheathe 3', type: 'comfort' },
+				{ name: 'Flinch Free 1', type: 'comfort' }
 			],
-			setSkills: ["Gore Magala's Tyranny", "Arkveld's Hunger"],
+			setSkills: ["Gore Magala's Tyranny", "Arkveld's Hunger", "Lord's Soul"],
 			meal: 'Any Attack Up meal.',
 			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
 		},
@@ -252,11 +258,12 @@ export const longSword: WeaponData = {
 				{ name: "Master's Touch 1", type: 'dmg' },
 				{ name: 'Quick Sheathe 3', type: 'comfort' },
 				{ name: 'Divine Blessing 3', type: 'comfort' },
+				{ name: 'Shock Absorber 1', type: 'comfort' },
 				{ name: 'Stun Resistance 1', type: 'comfort' }
 			],
 			setSkills: ['Second Wind I', 'Azure Bolt I', 'Guts (Tenacity)'],
 			meal: 'Sild Garlic (Moxie) stacks with Guts (Tenacity) for double OHKO protection.',
-			res: { fire: 0, water: 0, thunder: -5, ice: -6, dragon: -5 }
+			res: { fire: -1, water: 0, thunder: 5, ice: -6, dragon: -6 }
 		},
 		'gogma-arkveld': {
 			name: 'Gogma-Arkveld LS',
@@ -329,7 +336,7 @@ export const longSword: WeaponData = {
 			source: 'Google Doc',
 			tier: 'meta',
 			rank: 'hr100',
-			desc: "General-purpose Gogmazios LS. Element matched to hunt via Headsman's Hamus. Requires Gore Magala's Tyranny rolled on the weapon. For AT Arkveld, use Dragon element and slot Dragon Resistance 3. Skill levels partially unverified — verify in-game.",
+			desc: "General-purpose Gogmazios LS. Element matched to hunt via Headsman's Hamus. Requires Gore Magala's Tyranny rolled on the weapon. For AT Arkveld, use Dragon element and slot Dragon Resistance 3.",
 			armor: {
 				Head: 'Sororal Earrings α',
 				Chest: 'Udra Miremail γ',
@@ -340,12 +347,15 @@ export const longSword: WeaponData = {
 			},
 			skills: [
 				{ name: 'Agitator 5', type: 'dmg' },
-				{ name: 'Weakness Exploit 5', type: 'dmg' }, // verify
+				{ name: 'Critical Boost 5', type: 'dmg' },
+				{ name: 'Weakness Exploit 5', type: 'dmg' },
 				{ name: 'Antivirus 3', type: 'dmg' },
 				{ name: 'Counterstrike 3', type: 'dmg' },
 				{ name: 'Maximum Might 3', type: 'dmg' },
+				{ name: 'Flayer 2', type: 'dmg' },
+				{ name: 'Burst 1', type: 'dmg' },
 				{ name: "Master's Touch 1", type: 'dmg' },
-				{ name: 'Quick Sheathe 3', type: 'comfort' } // verify
+				{ name: 'Quick Sheathe 3', type: 'comfort' }
 			],
 			setSkills: ["Gore Magala's Tyranny", "Lord's Soul"],
 			meal: "Sild Garlic (Moxie) stacks with Guts from Lord's Soul for double OHKO protection.",
@@ -356,7 +366,7 @@ export const longSword: WeaponData = {
 			source: 'Google Doc',
 			tier: 'craftable',
 			rank: 'hr100',
-			desc: "Best craftable Long Sword while farming toward your first Gogmazios LS. Numinous 2pc (Guardian's Pulse) + Gore 2pc (Black Eclipse I). Counter Charm III for Counterstrike 3. Use element-matched craftable LS — e.g. Blazing Rafel for Dragon. Skill levels partially unverified — verify in-game.",
+			desc: 'Best craftable Long Sword while farming toward your first Gogmazios LS. Numinous 2pc (Super Recovery I) + Gore 2pc (Black Eclipse I) + Ward of Wyveria. Counter Charm III for Counterstrike 3. Use element-matched craftable LS — e.g. Blazing Rafel for Dragon.',
 			armor: {
 				Head: 'Numinous Crown β',
 				Chest: 'Numinous Shroud β',
@@ -366,17 +376,21 @@ export const longSword: WeaponData = {
 				Charm: 'Counter Charm III'
 			},
 			skills: [
-				{ name: 'Agitator 5', type: 'dmg' }, // verify
-				{ name: 'Weakness Exploit 5', type: 'dmg' }, // verify
+				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Antivirus 3', type: 'dmg' },
 				{ name: 'Counterstrike 3', type: 'dmg' },
-				{ name: 'Critical Boost 4', type: 'dmg' }, // verify
-				{ name: "Master's Touch 1", type: 'dmg' }, // verify
-				{ name: 'Antivirus 1', type: 'dmg' }, // verify
-				{ name: 'Constitution 2', type: 'comfort' },
+				{ name: 'Critical Boost 3', type: 'dmg' },
+				{ name: 'Maximum Might 3', type: 'dmg' },
+				{ name: 'Weakness Exploit 2', type: 'dmg' },
+				{ name: 'Burst 1', type: 'dmg' },
+				{ name: "Master's Touch 1", type: 'dmg' },
+				{ name: 'Whiteflame Torrent 1', type: 'dmg' },
+				{ name: 'Constitution 3', type: 'comfort' },
+				{ name: 'Quick Sheathe 3', type: 'comfort' },
 				{ name: 'Recovery Speed 1', type: 'comfort' },
 				{ name: 'Flinch Free 1', type: 'comfort' }
 			],
-			setSkills: ["Guardian's Pulse", 'Black Eclipse I'],
+			setSkills: ['Ward of Wyveria', 'Super Recovery I', 'Black Eclipse I'],
 			meal: 'Any Attack Up meal. Sild Garlic (Moxie) for anti-OHKO safety.',
 			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
 		}
@@ -396,7 +410,7 @@ export const longSword: WeaponData = {
 			name: "Headsman's Hamus",
 			variant: 'gogma',
 			steps: [
-				'Attack Focus — takes −10% affinity; recover via 1 Affinity Boost EX reinforcement',
+				'Attack Focus — takes −15% affinity; recover 10% via 1 Affinity Boost EX reinforcement',
 				'Target roll: 2 Attack EX, 2 Attack III, 1 Sharpness EX',
 				'Any element type — match to the monster each hunt',
 				"Set bonus: roll Gore Magala's Tyranny; Lord's Soul group skill activates automatically"
@@ -547,7 +561,7 @@ export const longSword: WeaponData = {
 	},
 	referenceKey: 'long-sword',
 	sourcesText:
-		'Game8 Long Sword Builds (TU4) and MH Wilds Long Sword community Google Doc. Game8 resistance totals from screenshots. Google Doc skill levels partially unverified — verify in-game before treating as canonical.',
+		'Game8 Long Sword Builds (TU4) and MH Wilds Long Sword community Google Doc. Google Doc builds do not list elemental resistances — those values are unverified placeholders.',
 	display: {
 		weaponListTitle: 'Craftable Long Swords',
 		comfortTitle: 'Comfort Skills',
