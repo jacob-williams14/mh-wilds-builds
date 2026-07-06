@@ -57,6 +57,14 @@ archive) are unchanged.
    per conventions §10 only when the source genuinely omits them (typically Google-Doc-only
    builds). Large pages may need multiple targeted WebFetch prompts (one per build) — the
    fetch is cached 15 min.
+   **Build Details pages are mandatory (Stage A finding):** the summary page's per-build
+   skill/deco/resistance tables are client-rendered React widgets (`data-react-props`
+   references a mapping ID; nothing to scrape), but every build links to a static "Build
+   Details" page (e.g. LS: `archives/502435`) whose HTML carries full skill lists with
+   levels, decorations with slot sizes, and resistance tables. Fetch the summary page for
+   the build inventory + loadouts + descriptions, then the details page(s) for the rest.
+   **Endgame cutoff:** transcribe HR50+ builds only — skip Low Rank and sub-HR50 tiers so
+   agents scope build lists consistently.
 2. **Fetch Google Doc** — `curl -sL <doc>/mobilebasic` to scratchpad. **Tab check first:**
    four weapons' reference URLs point at non-default tabs (Charge Blade, Hunting Horn,
    Gunlance, Light Bowgun carry `?tab=` params other than `t.0`), and `/mobilebasic` may
@@ -188,7 +196,14 @@ Visual redesign happens in a later phase, only after all 14 weapons ship.
 
 ## Done when
 
-- [ ] Stage A: LS pilot diff report delivered; zero unexplained pipeline errors
+- [x] Stage A: LS pilot diff report delivered; zero unexplained pipeline errors (2026-07-06 —
+      PASS; Game8 detail-table gap closed via static Build Details pages; report archived at
+      `archive/11-stage-a-ls-diff-report.md`)
+- [ ] Follow-up from Stage A: audit shipped `long-sword.ts` against pipeline output — the
+      archived human transcriptions contained ~12 confirmed errors that may have propagated
+      (known suspects: "Nu Udra's Medley" should be "Mutiny", several decoration slot sizes,
+      Anti-Guardian WEX level, Game8 charm names). Trust hierarchy for all future briefs:
+      pipeline-from-source > archived transcription.
 - [ ] Stage B: Google Doc accessibility + content-marker pre-check on all 11 remaining weapons reported
 - [ ] Stage B: tab-completeness verified for the 4 non-default-tab weapons (CB, HH, GL, LBG)
 - [ ] Stage B: Greatsword ships (module + registry + gates + click-through) with diff/consistency report

@@ -6,6 +6,18 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 
 ## 2026-07-06
 
+**Phase 11 Stage A — Long Sword pilot validation: PASS**
+
+- Blind-transcribed both LS sources via the fetch pipeline; diffed against archived human
+  transcriptions: zero pipeline errors across ~175 compared fields (armor 60/60, talismans
+  identical); pipeline beat the archive on all 9 live-source spot-checks
+- Found ~12 confirmed errors in the archived human docs (wrong weapon on one build, charm
+  names, decoration sizes, skill levels, "Nu Udra's Medley" → "Mutiny") — follow-up audit of
+  shipped `long-sword.ts` added to phase doc
+- Closed the one structural gap: Game8 summary pages client-render their skill/deco/res
+  tables, but each build's static "Build Details" page carries them — pipeline now fetches
+  both; full report at `archive/11-stage-a-ls-diff-report.md`
+
 **Phase 11 opened — Automated weapon data pipeline**
 
 - Feasibility spike proved the screenshot workflow is replaceable: Game8 pages fetch as full
