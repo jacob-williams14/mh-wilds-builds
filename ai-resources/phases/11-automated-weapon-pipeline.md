@@ -205,8 +205,12 @@ Visual redesign happens in a later phase, only after all 14 weapons ship.
       (known suspects: "Nu Udra's Medley" should be "Mutiny", several decoration slot sizes,
       Anti-Guardian WEX level, Game8 charm names). Trust hierarchy for all future briefs:
       pipeline-from-source > archived transcription.
-- [ ] Stage B: Google Doc accessibility + content-marker pre-check on all 11 remaining weapons reported
-- [ ] Stage B: tab-completeness verified for the 4 non-default-tab weapons (CB, HH, GL, LBG)
+- [x] Stage B: Google Doc accessibility + content-marker pre-check on all 11 remaining weapons
+      reported (2026-07-06 — all 11 GO, zero sign-in walls; report + per-weapon flow-axis
+      directives at `phases/11-stage-b-precheck.md`. Brief flags: SnS/Hammer/Lance/SA docs are
+      pre-TU4 → Game8 primary for HR100 builds; Dual Blades doc is 1.07 MB / 176 images)
+- [x] Stage B: tab-completeness verified for the 4 non-default-tab weapons (CB, HH, GL, LBG) —
+      mobilebasic concatenates all tabs; referenced tab anchors found in each
 - [ ] Stage B: Greatsword ships (module + registry + gates + click-through) with diff/consistency report
 - [ ] Every shipped module populates `artianWeapons` (both variants), `weapons`, and `tips` where the source provides them
 - [ ] `CLAUDE.md` + `00-conventions.md` updated: fetch pipeline replaces screenshot workflow
