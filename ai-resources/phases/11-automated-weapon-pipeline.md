@@ -218,9 +218,10 @@ Visual redesign happens in a later phase, only after all 14 weapons ship.
 - [x] `CLAUDE.md` + `00-conventions.md` updated: fetch pipeline replaces screenshot workflow
       (2026-07-07 — also fixed stale `stars` field, missing `referenceKey`, and added
       `bun run test` to the documented gate)
-- [ ] Stage C batch 1: 5 weapons shipped, gates pass, integrated validation on branch —
-      4/5 done 2026-07-07 (sns, hammer, sa, cb merged + registered; vitest 49/49;
-      references archived); **Dual Blades pending** (deferred for usage-window headroom)
-- [ ] Stage C batch 2: 5 weapons shipped, gates pass, integrated validation on branch
-- [ ] All 14 weapons registered; every flow path resolves in both rank tiers
-- [ ] Reference docs archived per weapon; changelog updated per batch
+- [x] Stage C batch 1: 5 weapons shipped, gates pass, integrated validation on branch —
+      sns, hammer, sa, cb 2026-07-07; Dual Blades completed 2026-07-08
+- [x] Stage C batch 2: 5 weapons shipped, gates pass, integrated validation on branch
+      (2026-07-08 — hh, lance, gl, lbg, hbg)
+- [x] All 14 weapons registered; every flow path resolves in both rank tiers
+      (vitest 85/85; browser click-through of the 11 new tabs pending user)
+- [x] Reference docs archived per weapon; changelog updated per batch

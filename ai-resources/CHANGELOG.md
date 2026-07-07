@@ -4,6 +4,23 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 
 ---
 
+## 2026-07-08
+
+**All 14 weapons shipped — Dual Blades + batch 2 (Phase 11 Stage C complete)**
+
+- Six worktree agents shipped Dual Blades, Hunting Horn, Lance, Gunlance, Light Bowgun,
+  and Heavy Bowgun (12 builds each); merged, registered, and references archived
+- Dual Blades triaged its 176-image doc to 27 downloads by proving the per-element set
+  families share identical armor; HH landed the batch's cleanest cross-source merge
+  (Game8 ≡ doc armor 5/5); GL and DB docs publish resistance totals, so their doc builds
+  ship verified res (no placeholders)
+- Multi-tab docs (HH, GL, LBG) all confirmed fully served via mobilebasic; more Game8
+  summary-page errors overruled by details pages (charms on Lance/HBG, duplicated heading
+  on HH)
+- Integrated gates: svelte-check 0 errors (345 files), lint clean, vitest 85/85 — the
+  contract test now covers every weapon's flows in both rank tiers
+- Outstanding: user browser click-through of the 11 pipeline-shipped weapon tabs
+
 ## 2026-07-07 (later)
 
 **Batch 1 (partial) — Sword & Shield, Hammer, Switch Axe, Charge Blade ship (Phase 11
