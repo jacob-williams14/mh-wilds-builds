@@ -1,3 +1,5 @@
+# MH Wilds Build Selector
+
 ## Project Overview
 
 MH Wilds Build Selector — a SvelteKit web app that helps Monster Hunter Wilds players choose endgame armor builds through a 2-step flow based on playstyle. Feel over optimization. Each weapon is a self-contained data module; the UI is fully data-driven.
@@ -11,9 +13,10 @@ bun dev          # start dev server
 bun run check    # svelte-check + TypeScript
 bun run format   # prettier --write
 bun run lint     # prettier --check + eslint
+bun run test     # vitest — includes the flow-key → build-key contract test
 ```
 
-All four must pass before any work is considered done. `bun dev` + manual click-through of every flow path is the only way to verify flow-key → build-key consistency.
+All five must pass before any work is considered done. The contract test verifies flow-key → build-key consistency; `bun dev` + manual click-through remains the visual check for rendering.
 
 ## Active phase
 
@@ -23,20 +26,18 @@ Before starting any work, read `ai-resources/phases/ACTIVE.md` to see what is in
 
 This is the core repeatable workflow. Every weapon follows these steps:
 
-### 1. Screenshots
+### 1. Fetch Sources
 
-User provides screenshots in `ai-resources/screenshots/<weapon>/` organized as:
+No user screenshots needed — both sources are fetched directly. URLs for every weapon live in `src/lib/domain/references.ts`.
 
-```
-screenshots/<weapon>/<source>/<build-slug>/{loadout,skills,description}.png
-screenshots/<weapon>/<source>/shared/<topic>.png
-```
+- **Game8:** fetch the summary page (browser User-Agent required for `curl`) for build inventory + loadouts, then the linked "Build Details" page(s) for skills with levels, decorations, resistances, and charms. Details page > summary headings when they disagree. HR50+ builds only.
+- **Google Doc:** fetch `https://docs.google.com/document/d/<ID>/mobilebasic` (serves all tabs, no auth). Download every embedded image at `=s1600` and read them to transcribe loadout/crafting panels. Images and raw HTML are transient scratch artifacts — never committed.
 
-Sources: `game8_builds`, `google_doc`. See `phases/00-conventions.md` §2 for full naming rules.
+See `phases/00-conventions.md` §2 for full detail, including the screenshot fallback if a source becomes unfetchable.
 
 ### 2. Reference Docs
 
-Transcribe screenshots into structured markdown at `ai-resources/references/<weapon>/`:
+Transcribe the fetched sources into structured markdown at `ai-resources/references/<weapon>/`, each opening with a provenance header (source URL, fetch date, claimed TU version):
 
 - `game8-builds.md` — per-build loadouts from Game8
 - `google-doc-builds.md` — per-build loadouts from the community Google Doc

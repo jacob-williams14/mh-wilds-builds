@@ -4,6 +4,30 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 
 ---
 
+## 2026-07-07
+
+**Greatsword — initial ship (Phase 11 Stage B, first fully pipeline-sourced weapon)**
+
+- Added `src/lib/domain/weapons/greatsword.ts`: 12 builds (5 HR50, 7 HR100), both Artian
+  variants, 3 non-Artian weapons, 3 tips, 2-step flows for both tiers on the
+  commitment-vs-forgiveness axis; registered `gs`
+- No user screenshots involved: Game8 summary + Build Details pages fetched directly; all 24
+  Google Doc images downloaded and transcribed; reference docs at
+  `ai-resources/references/greatsword/`
+- Gates: svelte-check 0 errors, lint clean, vitest 25/25 (browser click-through pending)
+
+**Long Sword — audit against pipeline-fetched sources**
+
+- Fixed 15 propagated transcription errors in `long-sword.ts` (Nu Udra's Mutiny, sign-flipped
+  thunder res, anti-guardian charm + WEX level, zoh-shia skill levels); resolved every
+  remaining `// verify` placeholder
+
+**Workflow docs — fetch pipeline is now canonical**
+
+- `CLAUDE.md` step 1 "Screenshots" → "Fetch Sources"; conventions §2 rewritten around the
+  fetch pipeline with screenshots demoted to fallback; fixed stale `stars` field and missing
+  `referenceKey` in conventions; `bun run test` added to the documented gate
+
 ## 2026-07-06
 
 **Phase 11 Stage A — Long Sword pilot validation: PASS**

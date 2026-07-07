@@ -8,7 +8,7 @@ The single document a contributor or subagent reads before working on any weapon
 
 ## 1. Directory layout
 
-```
+```text
 mh_wilds_builds/
 ├── src/lib/
 │   ├── data/
@@ -38,16 +38,37 @@ mh_wilds_builds/
 
 ---
 
-## 2. Screenshot folder & file naming
+## 2. Source acquisition — fetch pipeline (canonical) & screenshot fallback
+
+**Canonical acquisition is the automated fetch pipeline** (proven in Phase 11; no user
+screenshots needed). Source URLs for every weapon live in `src/lib/domain/references.ts`.
+
+- **Game8:** fetch the weapon's summary page (browser User-Agent required — plain `curl`
+  returns 0 bytes; use `-A 'Mozilla/5.0 ...'`) for build inventory, loadouts, and
+  descriptions. The per-build skill/deco/resistance tables are client-rendered on the
+  summary page but published statically on the linked **"Build Details"** page(s) — fetch
+  those for skills with levels, decorations with slot sizes, resistances, and charm details.
+  Trust hierarchy: details page > summary headings (summary pages carry typos and
+  charm-based rank labels). Transcribe HR50+ builds only.
+- **Google Doc:** fetch `https://docs.google.com/document/d/<ID>/mobilebasic` (serves all
+  tabs concatenated, no auth). Extract prose for general-info; download every embedded
+  `<img src>` at high resolution (swap a trailing `=s800`-style suffix for `=s1600`) and
+  read the images to transcribe loadout/crafting panels. Downloaded images and raw HTML are
+  transient scratch artifacts — never committed.
+- Every generated reference doc opens with a provenance header: source URL, fetch date, and
+  the title-update version the source claims.
+
+**Screenshot fallback** — only if a source becomes unfetchable (e.g. a doc goes private).
+User-provided screenshots follow the naming below.
 
 **Canonical pattern:**
 
-```
+```text
 screenshots/<weapon>/<source>/<build-slug>/<panel>.png
 ```
 
 | Token | Values |
-|---|---|
+| --- | --- |
 | `<weapon>` | `bow`, `insect_glaive`, `long_sword` (snake_case, matches data-module filename minus extension) |
 | `<source>` | `game8_builds`, `google_doc` |
 | `<build-slug>` | kebab-case slug matching the build key in the data module (see §4) |
@@ -55,12 +76,13 @@ screenshots/<weapon>/<source>/<build-slug>/<panel>.png
 
 **Shared assets** (Artian crafting, weapon recommendations, kinsects, meals) live in a `shared/` subfolder:
 
-```
+```text
 screenshots/<weapon>/<source>/shared/<topic>.png
 ```
 
 Example:
-```
+
+```text
 screenshots/bow/game8_builds/shared/artian.png
 screenshots/insect_glaive/google_doc/shared/kinsects.png
 ```
@@ -68,7 +90,7 @@ screenshots/insect_glaive/google_doc/shared/kinsects.png
 **Source directory names:**
 
 | Source | Directory name |
-|---|---|
+| --- | --- |
 | Game8 | `game8_builds` |
 | Community Google Docs | `google_doc` |
 
@@ -94,7 +116,8 @@ Completed examples: `ai-resources/archive/references/bow/` and `archive/referenc
 # <Source> <Weapon> Builds — <Descriptor>
 
 Source: <URL>
-Extracted from screenshots on <YYYY-MM-DD>.
+Fetched: <YYYY-MM-DD> · Claimed version: <e.g. TU4>
+(Screenshot-sourced docs instead note: "Extracted from screenshots on <YYYY-MM-DD>.")
 
 ---
 
@@ -132,7 +155,7 @@ Google Doc variants omit "Elemental Resistances" when the source doesn't provide
 Kebab-case, 2-4 segments, no weapon-type prefix. The slug communicates the build's signature — a core armor pairing or mechanic.
 
 | Slug | Why |
-|---|---|
+| --- | --- |
 | `gore-lagi` | Two armor sets paired |
 | `comfy-gore-lagi` | Mood prefix + armor pairing |
 | `sere-gore` | Weapon armor + supporting armor |
@@ -150,7 +173,6 @@ Defined in `src/lib/data/types.ts`. Required fields:
 ```typescript
 {
   name: string;              // display name
-  stars: string;             // unicode ★ rating (3-5 stars)
   source: string;            // "Compendium", "Game8", "Google Doc", etc.
   desc: string;              // 1-3 sentence playstyle summary
   armor: Record<string, string>;   // keys: Head, Chest, Arms, Waist, Legs, Charm
@@ -187,6 +209,7 @@ Every weapon must declare its Artian options in `artianWeapons: ArtianWeapon[]`.
 Standard Artian and Gogma Artian are different crafting systems — always include both variants. The UI renders standard variants with a gold badge and Gogma variants with a purple badge.
 
 **Example** (from `bow.ts`):
+
 ```typescript
 artianWeapons: [
   {
@@ -237,12 +260,14 @@ The top-level container for each weapon module (`src/lib/data/types.ts`):
   weapons: WeaponOption[];          // non-Artian alternatives
   tips?: WeaponTip[];               // weapon-specific guidance
   flow: Record<RankRange, FlowConfig>;  // hr50 and hr100 flows
+  referenceKey: string;             // matches a WeaponSources.key in references.ts
   sourcesText: string;
   display: WeaponDisplay;           // weaponListTitle, comfortTitle, weaponLayout
 }
 ```
 
 **`WeaponOption`** — non-Artian weapon alternatives:
+
 ```typescript
 {
   name: string;
@@ -253,6 +278,7 @@ The top-level container for each weapon module (`src/lib/data/types.ts`):
 ```
 
 **`WeaponDisplay`**:
+
 ```typescript
 {
   weaponListTitle: string;     // e.g. "Non-Artian Bows"
@@ -279,6 +305,7 @@ Each flow is a two-step questionnaire: Step 1 captures motivation, Step 2 picks 
 ```
 
 **`FlowOption`:**
+
 ```typescript
 {
   label: string;                           // colloquial phrasing
@@ -288,6 +315,7 @@ Each flow is a two-step questionnaire: Step 1 captures motivation, Step 2 picks 
 ```
 
 **Resolution chain** (`src/routes/+page.svelte`):
+
 ```typescript
 currentData  = weaponData[currentWeapon];
 currentFlow  = currentData.flow[rankRange];       // rank selector picks hr50 or hr100
@@ -323,10 +351,13 @@ The full source catalog with URLs and quality ratings is in `archive/knowledge-b
 
 ## 10. Data integrity rules
 
-1. **No `null` builds.** A typo'd Step 2 `value` silently renders `null`. Manual click-through is the only safety net.
-2. **Star ratings use unicode `★`.** 3 to 5 characters.
-3. **Slugs are stable identifiers.** Don't rename without updating every flow path that references it.
-4. **Unverified resistances** get a `// Unverified placeholder…` comment. Don't omit the comment.
+1. **No `null` builds.** A typo'd Step 2 `value` silently renders `null`.
+   `contract.test.ts` catches flow-key → build-key mismatches; browser
+   click-through remains the visual check.
+2. **Slugs are stable identifiers.** Don't rename without updating every
+   flow path that references it.
+3. **Unverified resistances** get a `// Unverified placeholder…` comment.
+   Don't omit the comment.
 
 ---
 
@@ -338,7 +369,9 @@ Every change ends with:
 bun run check        # svelte-check + TypeScript
 bun run format       # prettier --write
 bun run lint         # prettier --check + eslint
+bun run test         # vitest incl. flow-key contract test
 bun dev              # manual click-through every flow path
 ```
 
-Browser click-through must cover both rank tiers for every weapon. All four commands must pass.
+Browser click-through must cover both rank tiers for every weapon. All
+commands must pass.

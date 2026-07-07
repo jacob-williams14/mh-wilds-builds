@@ -211,9 +211,13 @@ Visual redesign happens in a later phase, only after all 14 weapons ship.
       pre-TU4 → Game8 primary for HR100 builds; Dual Blades doc is 1.07 MB / 176 images)
 - [x] Stage B: tab-completeness verified for the 4 non-default-tab weapons (CB, HH, GL, LBG) —
       mobilebasic concatenates all tabs; referenced tab anchors found in each
-- [ ] Stage B: Greatsword ships (module + registry + gates + click-through) with diff/consistency report
+- [ ] Stage B: Greatsword ships (module + registry + gates + click-through) with
+      diff/consistency report — module, registry, references, and all gates done 2026-07-07
+      (12 builds, vitest 25/25); **browser click-through pending user**
 - [ ] Every shipped module populates `artianWeapons` (both variants), `weapons`, and `tips` where the source provides them
-- [ ] `CLAUDE.md` + `00-conventions.md` updated: fetch pipeline replaces screenshot workflow
+- [x] `CLAUDE.md` + `00-conventions.md` updated: fetch pipeline replaces screenshot workflow
+      (2026-07-07 — also fixed stale `stars` field, missing `referenceKey`, and added
+      `bun run test` to the documented gate)
 - [ ] Stage C batch 1: 5 weapons shipped, gates pass, integrated validation on branch
 - [ ] Stage C batch 2: 5 weapons shipped, gates pass, integrated validation on branch
 - [ ] All 14 weapons registered; every flow path resolves in both rank tiers
