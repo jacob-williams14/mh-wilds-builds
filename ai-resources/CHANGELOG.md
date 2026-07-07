@@ -4,6 +4,23 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 
 ---
 
+## 2026-07-07 (later)
+
+**Batch 1 (partial) — Sword & Shield, Hammer, Switch Axe, Charge Blade ship (Phase 11
+Stage C)**
+
+- Four worktree agents ran the full pipeline independently; merged their branches and
+  registered `sns`, `hammer`, `sa`, `cb` (8 weapons total now)
+- Builds shipped: SnS 8 (all Game8 — its pre-TU4 doc had no usable loadouts, contributed
+  mechanics/tips), Hammer 12 (2 cross-source merges), Switch Axe 12, Charge Blade 12
+  (multi-tab doc confirmed fully served via mobilebasic)
+- Pipeline continues to catch source errors: retired build still listed on Game8's Hammer
+  summary, wrong armor pieces on two summary blocks (CB, SA) — details pages overruled,
+  all documented in the reference docs
+- Integrated gates: svelte-check 0 errors, lint clean, vitest 49/49; reference docs
+  archived for all five pipeline weapons (incl. Greatsword)
+- Dual Blades deferred (largest source doc; pending usage-window headroom); batch 2 next
+
 ## 2026-07-07
 
 **Greatsword — initial ship (Phase 11 Stage B, first fully pipeline-sourced weapon)**
