@@ -43,11 +43,12 @@ The `sbx` foundation is documented in [`sbx-dev.md`](./sbx-dev.md):
 - Two isolation modes: bind-mount (interactive) vs `--clone` (host read-only, review commits
   like a coworker's branch).
 
-## Deferred (not adopted here)
+## Follow-ups
 
-- **agent-browser** — in-sandbox browser self-validation. The clean next increment: add
-  Chromium + agent-browser to `.sbx/Dockerfile` so the agent can drive a real browser to
-  validate UI changes, fully local. (crabbox's remote browser/VNC + screenshot artifacts are
-  the heavier, remote version of the same idea.)
-- **Autonomous loop / "the internal loop tool"** — see [`loop-spec.md`](./loop-spec.md). Layers on this same
-  `sbx` foundation once the interactive sandbox is settled.
+- **agent-browser** — ~~deferred~~ **shipped 2026-07-08**: Chromium (Playwright's
+  linux/arm64 build) + agent-browser are baked into `.sbx/Dockerfile`, with the
+  `validate-ui` project skill and a live watch mode (see [`sbx-dev.md`](./sbx-dev.md)).
+  This covers, locally, what crabbox's remote browser/VNC + screenshot artifacts offer.
+- **Autonomous loop / "the internal loop tool"** — still deferred; see [`loop-spec.md`](./loop-spec.md).
+  Layers on this same `sbx` foundation.
+- **Portable extraction** — planned; see [`portable-plan.md`](./portable-plan.md).

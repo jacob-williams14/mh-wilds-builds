@@ -22,12 +22,18 @@ bun dev
 bun run check    # svelte-check + TypeScript
 bun run format   # prettier --write
 bun run lint     # prettier --check + eslint
+bun run test     # vitest — flow/build data contracts
 ```
 
 ## Current Weapons
 
-- Bow (HR 50-100 and HR 100+)
-- Insect Glaive (HR 50-100 and HR 100+)
+All 14 weapon types, each with separate HR 50–100 and HR 100+ flows.
+
+## Development
+
+AI-assisted development runs inside an egress-restricted Docker Sandbox microVM — see
+[ai-resources/sandbox/sbx-dev.md](ai-resources/sandbox/sbx-dev.md). The deploy stack
+(`Dockerfile`, `docker-compose.yml`, CI) ships the static build to Render.
 
 ## Adding a New Weapon
 

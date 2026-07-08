@@ -1,9 +1,11 @@
 # Active phase
 
 **Phase:** none
-**Completed:** 2026-07-08 (Phase 12 — Legacy Weapon Re-audit; all 14
-weapons now pipeline-verified; see `../verification-backlog.md` for the
-remaining in-game checks)
+**Completed:** 2026-07-08 (Phase 13 — Sandbox Adoption; sbx `--clone` is the
+agent launch path with egress lockdown, agent-browser self-validation, live
+watch mode, and the Render deploy stack; docs in `../sandbox/`. Phase 12 —
+Legacy Weapon Re-audit — closed the same day; see `../verification-backlog.md`
+for remaining in-game checks)
 **Owner:** —
 
 ## Working agreement
