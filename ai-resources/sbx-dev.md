@@ -13,6 +13,8 @@ Egress is locked down separately — see [Network egress](#network-egress).
 > The `.devcontainer/` setup remains as an optional VS Code "Reopen in Container" path.
 > The deploy stack (`Dockerfile`, `nginx.conf`, `docker-compose.yml`, CI) is unrelated —
 > that ships the static app to Render.
+>
+> Why `sbx` and not a remote tool like crabbox: see [sandbox-decision.md](./sandbox-decision.md).
 
 ## Prerequisites (one-time, on the host)
 
