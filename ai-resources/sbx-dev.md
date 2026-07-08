@@ -160,5 +160,5 @@ and guardrails you rely on, put them at **project level** (they ride into the cl
 
 - `.claude/skills/` and `.claude/commands/` — skills / slash commands
 - `.claude/settings.json` — project hooks (e.g. markdown-lint) and permissions
-- `.mcp.json` — MCP servers (e.g. the Svelte MCP this repo uses)
+- `.mcp.json` — any MCP servers you want the sandboxed agent to have
 - Mirror any load-bearing global `CLAUDE.md` rules into the project `CLAUDE.md`

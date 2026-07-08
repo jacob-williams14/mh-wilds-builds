@@ -102,12 +102,3 @@ After a phase is complete and committed, move its plan doc from `ai-resources/ph
 ## Conventions
 
 Full detail on naming, data shapes, screenshot structure, and validation: [ai-resources/phases/00-conventions.md](ai-resources/phases/00-conventions.md)
-
-## Svelte MCP Tools
-
-Use the Svelte MCP server for Svelte 5 and SvelteKit documentation:
-
-1. **list-sections** — discover available documentation sections. Use FIRST when researching Svelte topics.
-2. **get-documentation** — fetch full content for specific sections. After list-sections, fetch ALL relevant sections.
-3. **svelte-autofixer** — analyze Svelte code for issues. Use whenever writing Svelte components. Keep calling until no issues remain.
-4. **playground-link** — generate a Svelte Playground link. Only after user confirms, never if code was written to project files.
