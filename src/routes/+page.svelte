@@ -7,6 +7,13 @@
 	import { defaultWeaponKey, weaponData, weaponTabs, type WeaponKey } from '$lib/domain/registry';
 	import type { RankRange } from '$lib/domain/types';
 
+	// TODO(jacob): replace both placeholders — BMC username after creating the account,
+	// Google Form share URL after creating the form. Links are hidden until then.
+	const SUPPORT_URL = 'https://buymeacoffee.com/YOUR_USERNAME';
+	const FEEDBACK_URL = 'https://forms.gle/YOUR_FORM_ID';
+	const supportReady = !SUPPORT_URL.includes('YOUR_');
+	const feedbackReady = !FEEDBACK_URL.includes('YOUR_');
+
 	let currentWeapon = $state<WeaponKey>(defaultWeaponKey);
 	let rankRange = $state<RankRange>('hr50');
 	let step1Answer = $state<string | null>(null);
@@ -124,6 +131,21 @@
 			{currentData.sourcesText}
 			<a href={resolve('/references')} class="refs-link">View all sources →</a>
 		</div>
+
+		{#if supportReady || feedbackReady}
+			<div class="support-row">
+				{#if supportReady}
+					<a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" class="support-link">
+						☕ Enjoying this? Buy me a coffee
+					</a>
+				{/if}
+				{#if feedbackReady}
+					<a href={FEEDBACK_URL} target="_blank" rel="noopener noreferrer" class="support-link">
+						💬 Spotted a bad build? Send feedback
+					</a>
+				{/if}
+			</div>
+		{/if}
 	</div>
 </div>
 
@@ -249,6 +271,24 @@
 	}
 
 	.refs-link:hover {
+		color: var(--gold);
+	}
+
+	.support-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 24px;
+	}
+
+	.support-link {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--dim);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.support-link:hover {
 		color: var(--gold);
 	}
 
