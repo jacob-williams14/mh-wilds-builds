@@ -14,7 +14,8 @@
 		"format": "prettier --write .",
 		"test:unit": "vitest",
 		"test": "bun run test:unit -- --run",
-		"sbx": "sh scripts/sbx-dev.sh"
+		"sbx": "sh scripts/sbx-dev.sh",
+		"sbx:watch": "sh scripts/sbx-watch.sh"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.3",

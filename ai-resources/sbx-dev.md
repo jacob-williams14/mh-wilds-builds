@@ -204,7 +204,7 @@ watch every navigation and click from your own browser, live. Two scripts wrap t
    command — a one-time `agent-browser connect` does not persist across invocations, and
    later commands silently launch a fresh, unwatched Chrome (`AGENT_BROWSER_CDP` doesn't
    stick either).
-2. **On the host:** `sh scripts/sbx-watch.sh` — publishes `9222:9223` (and 5173 so you can
+2. **On the host:** `bun run sbx:watch` — publishes `9222:9223` (and 5173 so you can
    view the app yourself), then prints the steps: `chrome://inspect` → Configure… → add
    `localhost:9222` → **inspect** → live screencast.
 
