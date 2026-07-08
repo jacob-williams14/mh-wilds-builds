@@ -18,6 +18,12 @@ bun run test     # vitest — includes the flow-key → build-key contract test
 
 All five must pass before any work is considered done. The contract test verifies flow-key → build-key consistency; `bun dev` + manual click-through remains the visual check for rendering.
 
+### Running the agent in a sandbox
+
+For an isolated, egress-restricted environment, Claude can run inside a Docker Sandbox (`sbx`)
+microVM: `sh scripts/sbx-setup.sh` once, then `bun run sbx` (or `sh scripts/sbx-dev.sh`). See
+[ai-resources/sbx-dev.md](ai-resources/sbx-dev.md).
+
 ## Active phase
 
 Before starting any work, read `ai-resources/phases/ACTIVE.md` to see what is in flight. Tick off `Done when` checkboxes in the active phase doc as you complete items, in the same commit as the work.

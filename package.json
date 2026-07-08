@@ -13,7 +13,8 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run"
+		"test": "bun run test:unit -- --run",
+		"sbx": "sh scripts/sbx-dev.sh"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.3",
