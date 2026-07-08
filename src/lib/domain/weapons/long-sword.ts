@@ -197,7 +197,7 @@ export const longSword: WeaponData = {
 			],
 			setSkills: ["Gore Magala's Tyranny", "Nu Udra's Mutiny", "Lord's Soul"],
 			meal: "Sild Garlic (Moxie) stacks with Guts from Lord's Soul for double OHKO protection.",
-			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
+			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true } // Unverified placeholder totals — Google Doc builder images omit resistances (re-confirmed 2026-07-07).
 		},
 		'anti-guardian': {
 			name: 'Anti-Guardian Arkveld LS',
@@ -228,7 +228,7 @@ export const longSword: WeaponData = {
 			],
 			setSkills: ["Gore Magala's Tyranny", "Arkveld's Hunger", "Lord's Soul"],
 			meal: 'Any Attack Up meal.',
-			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
+			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true } // Unverified placeholder totals — Google Doc builder images omit resistances (re-confirmed 2026-07-07).
 		},
 
 		// --- HR 100+ builds ---
@@ -359,7 +359,7 @@ export const longSword: WeaponData = {
 			],
 			setSkills: ["Gore Magala's Tyranny", "Lord's Soul"],
 			meal: "Sild Garlic (Moxie) stacks with Guts from Lord's Soul for double OHKO protection.",
-			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
+			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true } // Unverified placeholder totals — Google Doc builder images omit resistances (re-confirmed 2026-07-07).
 		},
 		'zoh-shia-ls': {
 			name: 'Zoh Shia LS (Craftable)',
@@ -392,7 +392,7 @@ export const longSword: WeaponData = {
 			],
 			setSkills: ['Ward of Wyveria', 'Super Recovery I', 'Black Eclipse I'],
 			meal: 'Any Attack Up meal. Sild Garlic (Moxie) for anti-OHKO safety.',
-			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
+			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true } // Unverified placeholder totals — Google Doc builder images omit resistances (re-confirmed 2026-07-07).
 		}
 	},
 	artianWeapons: [
@@ -413,7 +413,7 @@ export const longSword: WeaponData = {
 				'Attack Focus — takes −15% affinity; recover 10% via 1 Affinity Boost EX reinforcement',
 				'Target roll: 2 Attack EX, 2 Attack III, 1 Sharpness EX',
 				'Any element type — match to the monster each hunt',
-				"Set bonus: roll Gore Magala's Tyranny; Lord's Soul group skill activates automatically"
+				"Set bonus: roll Gore Magala's Tyranny — the group skill no longer matters (Lord's Soul not required)"
 			]
 		}
 	],
