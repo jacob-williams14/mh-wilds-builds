@@ -6,7 +6,7 @@ export const bow: WeaponData = {
 			name: '2pc Gore + 2pc Lagi',
 			source: 'Google Doc',
 			tier: 'craftable',
-			desc: 'Top non-Artian Google Doc build. Gore + Lagiacrus with Weakness Exploit, Coalescence, and Frenzy synergy. Requires Droolshroom (Black Belt Lo) with Constitution 3.',
+			desc: 'Top non-Artian Google Doc build. Gore + Lagiacrus with Weakness Exploit, Coalescence, and Frenzy synergy. Requires Delishroom (Black Belt Hi) with Constitution 2.',
 			armor: {
 				Head: 'Gore Helm β',
 				Chest: 'Numinous Shroud β',
@@ -20,16 +20,17 @@ export const bow: WeaponData = {
 				{ name: 'Agitator 3', type: 'dmg' },
 				{ name: 'Antivirus 3', type: 'dmg' },
 				{ name: 'Adrenaline Rush 3', type: 'dmg' },
-				{ name: 'Constitution 3', type: 'comfort' },
-				{ name: 'Stamina Surge 3', type: 'comfort' },
-				{ name: 'Evade Window 2', type: 'comfort' },
+				{ name: 'Constitution 2', type: 'comfort' },
+				{ name: 'Stamina Surge 2', type: 'comfort' },
+				{ name: 'Evade Window 1', type: 'comfort' },
 				{ name: 'Coalescence 1', type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
 				{ name: 'Latent Power 1', type: 'dmg' },
 				{ name: 'Speed Eating 1', type: 'comfort' }
 			],
 			setSkills: ['Black Eclipse I', "Leviathan's Fury"],
-			meal: 'Droolshroom (Black Belt Lo) with Con 3. Meat +2 ATK.',
+			meal: 'Delishroom (Black Belt Hi) with Con 2. Meat +2 ATK.',
+			// Unverified placeholder totals — Google Doc loadout panels omit resistances.
 			res: { fire: -12, water: 11, thunder: 7, ice: 0, dragon: -9, unverified: true }
 		},
 		'comfy-gore-lagi': {
@@ -59,6 +60,7 @@ export const bow: WeaponData = {
 			],
 			setSkills: ["Leviathan's Fury", 'Black Eclipse I'],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg (Caprice Hi, +15 ATK/10s every 3 min).',
+			// Unverified placeholder totals — Google Doc loadout panels omit resistances.
 			res: { fire: -12, water: 11, thunder: 7, ice: 0, dragon: -9, unverified: true }
 		},
 		'gore-zoh': {
@@ -87,6 +89,7 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Super Recovery I', 'Black Eclipse I'],
 			meal: 'Droolshroom (Black Belt Lo) with Con 3. Meat +2 ATK.',
+			// Unverified placeholder totals — Google Doc loadout panels omit resistances.
 			res: { fire: -11, water: 13, thunder: 3, ice: 2, dragon: -11, unverified: true }
 		},
 		'guts-comfort': {
@@ -117,6 +120,7 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Black Eclipse I', "Rey Dau's Voltage", "Lord's Soul"],
 			meal: 'Delishroom (Black Belt Hi) with Meat +2 ATK.',
+			// Unverified placeholder totals — Google Doc loadout panels omit resistances.
 			res: { fire: 6, water: 6, thunder: -12, ice: -8, dragon: 0, unverified: true }
 		},
 		'sere-gore': {
@@ -131,7 +135,7 @@ export const bow: WeaponData = {
 				Arms: 'Regios Vambraces β',
 				Waist: 'Gore Coil β',
 				Legs: 'Gore Greaves β',
-				Charm: 'Counterattack Charm III'
+				Charm: 'Counterattack Charm III (HR50+) / Appraised (HR100+)'
 			},
 			skills: [
 				{ name: 'Agitator 5', type: 'dmg' },
@@ -159,7 +163,7 @@ export const bow: WeaponData = {
 				Arms: 'Lagiacrus Braces β',
 				Waist: 'Gore Coil β',
 				Legs: 'Gore Greaves β',
-				Charm: 'Counterattack Charm III'
+				Charm: 'Counterattack Charm III (HR50+) / Appraised (HR100+)'
 			},
 			skills: [
 				{ name: 'Weakness Exploit 5', type: 'dmg' },
@@ -188,7 +192,7 @@ export const bow: WeaponData = {
 				Arms: 'Duna Wildbraces γ',
 				Waist: 'Regios Coil β',
 				Legs: 'Duna Wildgreaves γ',
-				Charm: 'Counterattack Charm III'
+				Charm: 'Counterattack Charm III (HR50+) / Appraised (HR100+)'
 			},
 			skills: [
 				{ name: 'Agitator 5', type: 'dmg' },
@@ -211,7 +215,7 @@ export const bow: WeaponData = {
 			source: 'Google Doc',
 			tier: 'meta',
 			rank: 'hr100',
-			desc: 'TU4-era comfort build leveraging full Gogma armor and the Calamitous Angel (Gogma Artian) bow. Con 5 + Stamina Surge 3 free the meal slot for Moxie or Caprice. Agitator III talisman tops up Agitator. Skill levels partially obscured in source screenshot — verify in-game before treating as canonical.',
+			desc: 'TU4-era comfort build leveraging full Gogma armor and the Calamitous Angel (Gogma Artian) bow. Con 5 + Stamina Surge 3 free the meal slot for Moxie or Caprice. Agitator III talisman tops up Agitator.',
 			armor: {
 				Head: 'G. Ebony Helm β',
 				Chest: 'Gogmazios Mail β',
@@ -223,21 +227,17 @@ export const bow: WeaponData = {
 			skills: [
 				{ name: 'Weakness Exploit 5', type: 'dmg' },
 				{ name: 'Constitution 5', type: 'comfort' },
-				{ name: 'Agitator 3', type: 'dmg' },
+				{ name: 'Agitator 4', type: 'dmg' },
+				{ name: 'Peak Performance 4', type: 'dmg' },
+				{ name: 'Burst 4', type: 'dmg' },
 				{ name: 'Stamina Surge 3', type: 'comfort' },
-				{ name: 'Peak Performance 2', type: 'dmg' },
-				{ name: 'Adrenaline Rush 3', type: 'dmg' },
-				{ name: 'Burst 2', type: 'dmg' },
-				{ name: 'Speed Eating 1', type: 'comfort' }
+				{ name: 'Adrenaline Rush 2', type: 'dmg' },
+				{ name: 'Speed Eating 2', type: 'comfort' },
+				{ name: 'Aquatic/Oilsilt Mobility 1', type: 'comfort' }
 			],
-			setSkills: [
-				'Gogmapocalypse (4pc)',
-				'Mutual Hostility',
-				'Burst Boost',
-				'Scorcher',
-				'Aquatic/Oilsilt Mobility'
-			],
+			setSkills: ['Gogmapocalypse (4pc)', 'Mutual Hostility', 'Burst Boost', 'Scorcher'],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg (Caprice).',
+			// Unverified placeholder totals — Google Doc loadout panels omit resistances.
 			res: { fire: 4, water: -2, thunder: -8, ice: 0, dragon: 6, unverified: true }
 		},
 		'gore-lords-soul': {
@@ -252,7 +252,7 @@ export const bow: WeaponData = {
 				Arms: 'Gore Vambraces β',
 				Waist: 'Gore Coil β',
 				Legs: 'Gore Greaves β',
-				Charm: 'Challenger Charm II'
+				Charm: 'Appraised (HR100+) / Challenger Charm II'
 			},
 			skills: [
 				{ name: 'Agitator 5', type: 'dmg' },
@@ -272,7 +272,7 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Black Eclipse II', 'Guts (Tenacity)', 'Scale Layering', 'Bad Blood I'],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) for double anti-OHKO with Guts.',
-			res: { fire: 5, water: 3, thunder: -3, ice: 3, dragon: -3 }
+			res: { fire: 4, water: 1, thunder: -3, ice: 8, dragon: -3 }
 		},
 		'gogma-gore': {
 			name: 'Gogma-Gore',
@@ -311,7 +311,7 @@ export const bow: WeaponData = {
 			],
 			setSkills: ['Mutual Hostility I', 'Black Eclipse I', 'Guts (Tenacity)'],
 			meal: 'Droolshroom (Black Belt Lo) with Con 2, or Sild Garlic (Moxie) for Guts + Moxie safety.',
-			res: { fire: 8, water: 11, thunder: -3, ice: 0, dragon: -15 }
+			res: { fire: -11, water: 11, thunder: -3, ice: 10, dragon: -15 }
 		},
 		'max-evasion': {
 			name: 'Max Evasion Comfort',
@@ -324,7 +324,7 @@ export const bow: WeaponData = {
 				Arms: 'Gore Vambraces α',
 				Waist: 'Gore Coil α',
 				Legs: 'Dahaad Shardgreaves β',
-				Charm: 'Evasion Charm IV'
+				Charm: 'Evasion Charm IV (HR50+) / Appraised (HR100+)'
 			},
 			skills: [
 				{ name: 'Agitator 5', type: 'dmg' },
@@ -334,8 +334,7 @@ export const bow: WeaponData = {
 				{ name: 'Constitution 5', type: 'comfort' },
 				{ name: 'Evade Window 5', type: 'comfort' },
 				{ name: 'Stamina Surge 3', type: 'comfort' },
-				{ name: 'Recovery Speed 1', type: 'comfort' },
-				{ name: 'Flinch Free 1', type: 'comfort' }
+				{ name: 'Recovery Speed 1', type: 'comfort' }
 			],
 			setSkills: ['Super Recovery I', 'Black Eclipse I'],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg.',
@@ -346,7 +345,7 @@ export const bow: WeaponData = {
 			source: 'Google Doc',
 			tier: 'mixed',
 			rank: 'hr100',
-			desc: 'Anti-Arkveld comfort build. Constitution 5 + Counterstrike 3 free the meal slot. Agitator III talisman. Skill levels partially obscured in source — verify Weakness Exploit, Agitator, Quick Sheathe, and Adrenaline Rush in-game.',
+			desc: 'Anti-Arkveld comfort build. Constitution 5 + Counterstrike 3 free the meal slot. Agitator III talisman.',
 			armor: {
 				Head: 'Udra Mirehelm γ',
 				Chest: 'Gogmazios Mail β',
@@ -356,18 +355,19 @@ export const bow: WeaponData = {
 				Charm: 'Agitator III talisman'
 			},
 			skills: [
+				{ name: 'Weakness Exploit 5', type: 'dmg' },
 				{ name: 'Constitution 5', type: 'comfort' },
+				{ name: 'Agitator 4', type: 'dmg' },
 				{ name: 'Counterstrike 3', type: 'dmg' },
 				{ name: 'Antivirus 3', type: 'dmg' },
-				{ name: 'Weakness Exploit 4', type: 'dmg' }, // verify
-				{ name: 'Agitator 3', type: 'dmg' }, // verify
-				{ name: 'Quick Sheathe 2', type: 'comfort' }, // verify
-				{ name: 'Adrenaline Rush 1', type: 'dmg' }, // verify
-				{ name: 'Burst 1', type: 'dmg' },
-				{ name: 'Speed Eating 1', type: 'comfort' }
+				{ name: 'Burst 3', type: 'dmg' },
+				{ name: 'Quick Sheathe 3', type: 'comfort' },
+				{ name: 'Adrenaline Rush 2', type: 'dmg' },
+				{ name: 'Speed Eating 2', type: 'comfort' }
 			],
 			setSkills: ['Black Eclipse I', "Lord's Soul", 'Scorcher'],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg.',
+			// Unverified placeholder totals — Google Doc loadout panels omit resistances.
 			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
 		},
 		'raw-dps': {
@@ -375,7 +375,7 @@ export const bow: WeaponData = {
 			source: 'Google Doc',
 			tier: 'craftable',
 			rank: 'hr100',
-			desc: 'Anti-Arkveld DPS build. Adrenaline Rush III talisman rewards perfect dodges. High Counterstrike amplifies on-hit reactions. Requires Black Belt Hi (Delishroom). Skill levels partially obscured in source — verify Weakness Exploit, Agitator, Adrenaline Rush total, Constitution, Bind Resistance, and Burst in-game.',
+			desc: 'Anti-Arkveld DPS build. Adrenaline Rush III talisman rewards perfect dodges. High Counterstrike amplifies on-hit reactions. Requires Black Belt Hi (Delishroom).',
 			armor: {
 				Head: 'G. Rathalos Helm β',
 				Chest: 'Dahaad Shardmail γ',
@@ -385,18 +385,19 @@ export const bow: WeaponData = {
 				Charm: 'Adrenaline Rush III talisman'
 			},
 			skills: [
+				{ name: 'Weakness Exploit 5', type: 'dmg' },
+				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Adrenaline Rush 3', type: 'dmg' },
+				{ name: 'Antivirus 3', type: 'dmg' },
 				{ name: 'Counterstrike 3', type: 'dmg' },
-				{ name: 'Weakness Exploit 4', type: 'dmg' }, // verify
-				{ name: 'Agitator 3', type: 'dmg' }, // verify
-				{ name: 'Adrenaline Rush 3', type: 'dmg' }, // verify total (talisman +3)
-				{ name: 'Antivirus 3', type: 'dmg' }, // verify
-				{ name: 'Constitution 3', type: 'comfort' }, // verify
-				{ name: 'Bind Resistance 1', type: 'comfort' }, // verify
-				{ name: 'Burst 3', type: 'dmg' }, // verify
+				{ name: 'Constitution 2', type: 'comfort' },
+				{ name: 'Bind Resistance 2', type: 'comfort' },
+				{ name: 'Burst 1', type: 'dmg' },
 				{ name: 'Flinch Free 1', type: 'comfort' }
 			],
-			setSkills: ['Black Eclipse I', "Lord's Soul"],
+			setSkills: ['Black Eclipse I', "Lord's Soul", 'Scorcher'],
 			meal: 'Delishroom (Black Belt Hi).',
+			// Unverified placeholder totals — Google Doc loadout panels omit resistances.
 			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
 		},
 		'gogma-dps': {
@@ -404,35 +405,30 @@ export const bow: WeaponData = {
 			source: 'Google Doc',
 			tier: 'meta',
 			rank: 'hr100',
-			desc: 'Gogmapocalypse 4pc DPS build. Three Gogmazios pieces + Calamitous Angel achieve the 4pc bonus. Peak Performance + Mutual Hostility + Agitator Charm II. Requires Black Belt Lo (Droolshroom). Skill levels partially obscured in source — verify Weakness Exploit, Peak Performance, Agitator, Constitution, Burst, Adrenaline Rush, Stamina Surge, and Divine Blessing in-game.',
+			desc: 'Gogmapocalypse 4pc DPS build. Three Gogmazios pieces + Calamitous Angel achieve the 4pc bonus. Peak Performance + Mutual Hostility + Agitator Charm III. Requires Black Belt Lo (Droolshroom).',
 			armor: {
 				Head: 'G. Rathalos Helm β',
 				Chest: 'Gogmazios Mail β',
 				Arms: 'G. Ebony Braces β',
 				Waist: 'Gogmazios Coil α',
 				Legs: 'Gogmazios Greaves',
-				Charm: 'Agitator Charm II'
+				Charm: 'Agitator Charm III'
 			},
 			skills: [
-				{ name: 'Weakness Exploit 4', type: 'dmg' }, // verify
-				{ name: 'Peak Performance 2', type: 'dmg' }, // verify
-				{ name: 'Agitator 3', type: 'dmg' }, // verify (Agi Charm II + innate)
-				{ name: 'Constitution 3', type: 'comfort' }, // verify
-				{ name: 'Burst 2', type: 'dmg' }, // verify
-				{ name: 'Adrenaline Rush 1', type: 'dmg' }, // verify
-				{ name: 'Stamina Surge 1', type: 'comfort' }, // verify
-				{ name: 'Speed Eating 1', type: 'comfort' },
-				{ name: 'Divine Blessing 1', type: 'comfort' }, // verify
+				{ name: 'Weakness Exploit 5', type: 'dmg' },
+				{ name: 'Peak Performance 5', type: 'dmg' },
+				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Constitution 3', type: 'comfort' },
+				{ name: 'Burst 3', type: 'dmg' },
+				{ name: 'Adrenaline Rush 2', type: 'dmg' },
+				{ name: 'Stamina Surge 2', type: 'comfort' },
+				{ name: 'Speed Eating 2', type: 'comfort' },
+				{ name: 'Divine Blessing 1', type: 'comfort' },
 				{ name: 'Aquatic/Oilsilt Mobility 1', type: 'comfort' }
 			],
-			setSkills: [
-				'Gogmapocalypse (4pc)',
-				'Mutual Hostility',
-				'Burst Boost',
-				'Scorcher',
-				'Aquatic/Oilsilt Mobility'
-			],
+			setSkills: ['Gogmapocalypse (4pc)', 'Mutual Hostility', 'Burst Boost', 'Scorcher'],
 			meal: 'Droolshroom (Black Belt Lo).',
+			// Unverified placeholder totals — Google Doc loadout panels omit resistances.
 			res: { fire: 0, water: 0, thunder: 0, ice: 0, dragon: 0, unverified: true }
 		}
 	},
