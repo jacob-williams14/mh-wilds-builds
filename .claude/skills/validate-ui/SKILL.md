@@ -63,6 +63,14 @@ Afterwards: Read the screenshot(s) to visually confirm rendering, then kill the 
 6. **Console errors = failure. A flow path that doesn't reach its expected end state =
    failure.** Do not claim the work done.
 
+## Watch mode (optional)
+
+If the user asks to watch you work: launch the watch Chrome + socat proxy per
+"Watching the agent live" in `ai-resources/sbx-dev.md`, then pass `--cdp 9222` on **every**
+`agent-browser` command in the session (a one-time `connect` does not persist — later
+commands silently launch a fresh, unwatched Chrome). Everything else in this skill is
+unchanged.
+
 ## Evidence and reporting
 
 - Screenshots are transient evidence — write them to `/tmp`, never commit them.
