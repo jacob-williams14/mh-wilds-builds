@@ -4,6 +4,28 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 
 ---
 
+## 2026-07-08 (phase 12 close)
+
+**Legacy weapons re-audited — Bow, Insect Glaive, Long Sword now
+pipeline-verified; verification backlog shipped**
+
+- Three worktree agents fetched both live sources per weapon, wrote fresh
+  pipeline-format reference docs, and diffed every module field-by-field
+- Bow: ~30 corrections across 8 builds (skill levels, two charms, two
+  wrong resistance blocks); all 20 `// verify` markers resolved
+- Insect Glaive: ~60 corrections including one fully mis-transcribed
+  loadout (`ful-zoh-comfort`), two phantom pieces/skills, five wrong set
+  skills, four resistance blocks corrected; its lone `// verify` resolved
+- Long Sword: module already accurate (Stage A held — zero field
+  discrepancies); one Gogma Artian step fixed; fresh reference docs
+  replace the known-erroneous screenshot-era archive
+- Screenshot-era archives for all three replaced at
+  `archive/references/`; zero `// verify` markers remain repo-wide
+- New: `ai-resources/verification-backlog.md` — all 41 remaining
+  unverified resistance blocks (11 weapons) in one in-game checklist;
+  Dual Blades, Gunlance, and SnS are fully verified
+- Integrated gates: svelte-check 0 errors, lint clean, vitest 85/85
+
 ## 2026-07-08 (later)
 
 **Phase 12 opened — Legacy weapon re-audit (Bow, Insect Glaive, Long Sword)**

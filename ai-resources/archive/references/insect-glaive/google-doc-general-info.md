@@ -1,103 +1,106 @@
-# Google Doc Insect Glaive General Info — Reference
+# Google Doc Insect Glaive General Info — "Wilds IG Endgame Sets + Info"
 
-Source: MH Wilds IG Google Doc
-Extracted from screenshots on 2026-05-04.
-
-This document captures non-build-specific Insect Glaive information that should eventually live in an informational section of the app.
-
----
-
-## 1. Kinsect Guide
-(from kinsects.png)
-
-### Overview
-The two most generally applicable and commonly used kinsects:
-
-1. **Foebeetle** — Standard combat kinsect shown as the primary recommendation.
-2. **Culldrone** — Alternative kinsect option.
-
-(These screenshots show the kinsect with Fire aura to being taken while equipped with a Fire glaive.)
-
-### Kinsect Selection Notes
-- Blunt kinsects are usually preferred for the ability to easily get KOs. Sever kinsects only gain a small 1% increase attack multiplier.
-- MHGH Discord Kinsect Pins (referenced) provide additional detail.
-
-### Specific Kinsect Recommendations
-- Use **Foebeetle** as a generic choice for Kinsect Boost, Harvest Extract, and Whipworms if possible. Use the Culldrone if you haven't farmed enough for the Foebeetle since it has Kinsect Charge. See links for more.
+Source (mobilebasic, all tabs):
+<https://docs.google.com/document/d/1Ep2Al6Liw-P8G78x0Q-t6Y3boKPtNRftJJSOgC_47UU/mobilebasic>
+Fetched: 2026-07-07 · Claimed version: TU4 + AT Arkveld / USJ updates
+(update log ends "USJ small updates on March 3" [2026])
+Authors: Qwas and Cerasium.
 
 ---
 
-## 2. Artian Insect Glaive Info
-(from artian-info.png)
+## Kinsects
 
-### Artian Weapons Overview
-TU4 Gogmazios has significantly changed Artian Weapons. Basics from before like crafting them with 3 of the same element and Attack infusion still apply, but now they can be upgraded and rolled further.
+The two most commonly used kinsects (both shown in-game panels,
+transcribed from `=s1600` images):
 
-### Focus Type
-- **Element Focus** is usually preferred for standard elemental picks, though Attack Focus is extremely close and is better on rare matchups (non-AT Arkveld).
-- Insect Glaive is still generally a **raw focused weapon**.
+| Kinsect | Type | Powder | Bonuses |
+| --- | --- | --- | --- |
+| Foebeetle | Blunt | Poison | Kinsect Boost: Harvest Extract; Attack Boost: Weak Point Focus |
+| Whispervesp | Blunt | Blast | Kinsect Boost: Fast Charge; Attack Boost: Powder |
 
-### Best Roll for IG
-- **2 Attack EX, 2 Attack III, 1 Sharpness EX** is the "best roll" for IG now.
-
-### Reinforcement Priority
-Generally the priority for Artian Weapon reinforcements (from highest to lowest) is:
-1. **Sharpness** (1 roll)
-2. **Attack**
-3. **Affinity**
-4. **Element** (far behind — indicated by ">>>")
-
-### Active Skills
-For Active Skills, the ideal general use combination is **Gore Magala's Tyranny + Lord's Soul**. See the details tab for sets using it and more info.
-
-### Artian TLDR
-- 3 Attack Infusion elemental parts
-- Element Focus for Gogma
-- Raw Attack + Sharpness Reinforcements
-
----
-
-## 3. Non-Artian Glaive Options
-(from non-artian-glaive.png)
-
-### Recommended Non-Artian Weapon
-
-| Element | Weapon Tree | Glaive Name     | Stats                        | Set Skill            |
-|---------|-------------|-----------------|------------------------------|----------------------|
-| Dragon  | Zoh Shia    | Blazing Katir   | 220 Atk, 5% Aff, 15 Dragon  | Whiteflame Torrent 1 |
-
-### Weapon Decoration Slots
-- Critical Jewel III [3]
-- Flight Jewel [2]
-- Critical Jewel [1]
-
-### Important Note
-"Thanks to TU4's massive Artian powercreep, Non-Artian weapons are far worse and should be avoided more than before."
-
-"See the details tab for other weapons and descriptions."
-
-### Context
-- Only one non-Artian weapon is explicitly recommended (Blazing Katir), unlike the Bow Compendium which lists multiple per-element alternatives.
-- The Google Doc suggests Artian weapons are strongly preferred for IG in TU4; non-Artian options are a significant step down.
+- Blunt kinsects are usually preferred — easy KOs via kinsect combo.
+  Sever kinsects only gain a small 1.1x kinsect attack multiplier
+  (slightly more damage on the same HZV if not planning a KO).
+- Foebeetle is the generalist damage choice (triple extract gathering
+  during charged shots and Rising Spiral Slash). Arkmaiden has Fast
+  Charge with slowest speed; Gullshad is the fastest triple gather;
+  Mauldrone has increased green extract healing.
+- Whispervesp sacrifices triple gathering for the highest speed and
+  Fast Charge; Carnage Beetle has the highest power and Kinsect
+  Combo: Element. Whispervesp is far more common.
+- Powder type is irrelevant during efficient play.
+- The unique OMG (Omega) kinsect is "horrible" — never efficient.
+- NOTE: the screenshot-era transcription named the second kinsect
+  "Culldrone" with a "Kinsect Charge" bonus and "Whipworms" on
+  Foebeetle — all three details were misreadings. Culldrone is only
+  mentioned as the severing mirror of Mauldrone.
 
 ---
 
-## App UI Mapping Notes
+## Artian Weapons
 
-These three sections could be presented in the app as:
-
-1. **"Insect Glaive Guide" tab or panel** alongside build results — covering kinsect selection, Artian crafting, and weapon recommendations.
-2. **Kinsect info card** — explaining the Foebeetle vs Culldrone choice and blunt vs sever preference.
-3. **Artian crafting reference** — showing the ideal rolls and reinforcement priority specific to IG (differs from Bow in prioritizing Sharpness).
-
-The Artian info is especially important since IG's ideal roll (2 Atk EX + 2 Atk III + 1 Sharpness EX) differs from Bow's (5x Attack). The kinsect section is unique to IG and has no equivalent in the Bow docs.
+- TU4 Gogmazios changed Artian weapons: craft with 3 of the same
+  element and Attack infusion as before, but they can now be upgraded
+  (Gogma augments) and re-rolled.
+- Focus tradeoffs: Attack Focus (+10 Attack, -15% Affinity); Affinity
+  Focus (+10% Affinity, -10 Attack, -2 Element, -10 Sharpness —
+  avoid); Element Focus (+4 Element, -5% Affinity — strongest for
+  most matchups). IG is still generally a raw-focused weapon.
+- Best roll: 2 Attack EX, 2 Attack III, 1 Sharpness EX
+  (1 Sharpness, 4 Attack). Only 2 EX per reinforcement type.
+- Reinforcement priority: 1 Sharpness > Attack > Affinity >>>
+  Element.
+- Ideal Gogma Set Bonus + Group Skill roll: Gore Magala's Tyranny +
+  Lord's Soul.
+- Artian TLDR: 3 Attack Infusion elemental parts; Element Focus for
+  Gogma; Raw Attack + Sharpness reinforcements.
+- Element vs Status: always favor elemental Artian weapons matched to
+  the monster over status ones; element is roughly 5–6% of IG's total
+  output. Blast is the weaker universal pick. Craft Dragon first
+  (Gogmazios farming).
 
 ---
 
-## Path Reference
+## Non-Artian Weapons
 
-Screenshots backing the sections in this document:
+"Thanks to TU4's massive Artian powercreep, Non-Artian weapons are
+far worse and should be avoided more than before."
 
-- Kinsect guide (S1): `screenshots/insect_glaive/google_doc/kinsects.png`
-- Artian Glaive info (S2): `screenshots/insect_glaive/google_doc/artian-info.png`
-- Non-Artian Glaive options (S3): `screenshots/insect_glaive/google_doc/non-artian-glaive.png`
+- Craftable weapons typically run Crit Boost 4 + Airborne 1
+  (Crit【3】/ Flight【2】/ Crit【1】) for weapon decorations.
+- **Blazing Katir** (Zoh Shia, Dragon + raw) — strongest general
+  craftable; Whiteflame Torrent deals 50 flat damage procs roughly
+  every 6 seconds of attacking (does not apply to Descending Slash /
+  Rising Spiral Slash).
+- **True Omega's Rod** (Savage Omega, Fire) — Synergy gives everyone
+  around +15% Affinity for 45s after Rising Spiral Slash (buffed to
+  +25% / 60s with Savage Omega 4p).
+- **Curved Naganagi** (Mizutsune, Water) — usable high-affinity pick.
+- **Fractal Glaive Boltgia** (Lagiacrus, Thunder) — among the
+  strongest craftables; loses to Artian on most endgame thunder
+  matchups. (Game8 spells it "Fractal Glaive Boltlagia".)
+- **Immaculate Blizzard** (Blangonga, Ice) — 230 Attack, 50 units of
+  white sharpness, innate Focus 3, Kinsect Level 10.
+
+---
+
+## RNG Talismans
+
+- Only worthwhile near-perfect; usually R7/R8 (rarely R6).
+- R8 charms can drop two levels of a 3-slot skill point (like WEX) to
+  gain extra weapon skills; aim for 3,10,0 or 3,8,5 charms with all
+  three size 1 slots. 2,1,10 also works with Airborne.
+- Attack Boost and Critical Eye are generally interchangeable.
+
+---
+
+## Matchup Notes
+
+- All sets double as element sets — IG does not prioritize elemental
+  damage even with elemental weapons.
+- Gogmazios Phase 3 is the exception: 50–65 dragon hitzones make a
+  dedicated element-heavy set (Convert Element 3 with AT Arkveld)
+  worth swapping to at camp for the final phase.
+- Omega/Savage Omega: use Fulgur or Lagiacrus templates, drop
+  Counterstrike/Earplugs, favor size 1 slots (Stun/Fire Res); Earplugs
+  is unnecessary for Omega.

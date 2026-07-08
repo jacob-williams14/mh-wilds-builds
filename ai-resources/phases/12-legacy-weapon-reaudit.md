@@ -64,15 +64,15 @@ Orchestrator then: merge, integrated gates, archive reference docs
 
 ## Done when
 
-- [ ] Bow re-audited: fresh reference docs, module corrections, gates green
-- [ ] Insect Glaive re-audited: fresh reference docs, module corrections,
+- [x] Bow re-audited: fresh reference docs, module corrections, gates green
+- [x] Insect Glaive re-audited: fresh reference docs, module corrections,
       gates green
-- [ ] Long Sword re-audited: fresh reference docs (replacing the erroneous
+- [x] Long Sword re-audited: fresh reference docs (replacing the erroneous
       screenshot-era archive), module delta confirmed small, gates green
-- [ ] Reference docs archived to `ai-resources/archive/references/`
-- [ ] `ai-resources/verification-backlog.md` written — every remaining
+- [x] Reference docs archived to `ai-resources/archive/references/`
+- [x] `ai-resources/verification-backlog.md` written — every remaining
       estimated/unverified field across all 14 weapons, grouped by weapon
-- [ ] Integrated gates green (`check`, `format`, `lint`, `test`)
-- [ ] CHANGELOG updated; phase doc archived; `phases/README.md` and
+- [x] Integrated gates green (`check`, `format`, `lint`, `test`)
+- [x] CHANGELOG updated; phase doc archived; `phases/README.md` and
       `ACTIVE.md` updated
 - [ ] User: browser click-through of Bow / IG / LS tabs in both rank tiers

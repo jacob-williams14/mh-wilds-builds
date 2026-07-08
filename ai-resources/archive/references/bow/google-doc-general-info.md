@@ -1,147 +1,122 @@
-# Compendium Bow General Info — Reference
+# Google Doc Bow General Info — MH:Wilds Bow Compendium (TU4)
 
-Source: MH:GH Bow Compendium (@p_chu & @ninjazenia)
-Extracted from screenshots on 2026-05-04.
-
-This document captures non-build-specific bow information that should eventually live in an informational section of the app.
-
----
-
-## 1. Recommended Meal Setups
-
-### Ration
-- **Meat** — Always choose meat for +2 Attack.
-
-### Additional Ingredients
-
-| Ingredient | Food Skill | When to Eat | Effect |
-|---|---|---|---|
-| Droolshroom | Black Belt (Lo) | If your build has Constitution 3 | Stamina reduction cap via food |
-| Delishroom | Black Belt (Hi) | If your build has Constitution 2 | Stamina reduction cap via food |
-| Sild Garlic | Moxie (Lo) | If your build has Constitution 5 | Stops one-shots by leaving you at 1 HP |
-| Specialty Sild Garlic | Moxie (Hi) | If your build has Constitution 5 | Stops one-shots and heals you a bit |
-| Fluffy Egg | Caprice (Lo) | If your build has Constitution 5 | +7 Attack for 10 seconds, every 3 minutes |
-| Airy Egg | Caprice (Hi) | If your build has Constitution 5 | +15 Attack for 10 seconds, every 3 minutes |
-
-### Finishing Touches
-| Ingredient | When to Use | Effect |
-|---|---|---|
-| Monster Chili | Don't want to bother with hot/cool drinks | Temperature immunity |
-| Jeweled Mullet Roe | Fighting in a wet area | +3 Attack when wet |
-
-### Key Takeaway
-Builds with Constitution 5 free your meal slot — you can eat for Moxie (survival) or Caprice (damage). Builds with Constitution 2-3 need to eat for Black Belt (Droolshroom/Delishroom) to reach the stamina reduction cap.
+Source:
+<https://docs.google.com/document/d/1i3qfZtagi5CFrIKdTlNM-DN2cMowdOwwkAVOWvMccUE/mobilebasic>
+Fetched via pipeline (curl) on 2026-07-07.
+Claimed version: "MH:Wilds Bow Compendium (WIP FOR TU4)" by @p_chu and
+@ninjazenia (MH:GH discord).
 
 ---
 
-## 2. Capping Stamina Reduction
+## TU4 Patch Highlights ("Gogma Balls edition")
 
-The stamina bar is the single most important resource for Bow. There are 6 equivalent ways to reach the stamina reduction cap:
+- Gogma Artian weapon system introduced — new BiS for almost all
+  matchups; any coating and element craftable, so no more settling for
+  secondary elemental weaknesses.
+- Pierce Coating massively buffed; Power Coating bows are "even worse
+  than pre patch" despite the x1.3 → x1.35 modifier buff.
+- Gogmazios armor added: "an insane amount of elemental damage, but
+  comfort on top of it" (Gogmapocalypse).
+- Elemental damage cap increased to x2.3 of the weapon's base element.
+- Coating reload animation shortened; Tracer Arrow bufferable mid
+  Discerning Dodge.
 
-| Combination | Notes |
-|---|---|
-| Constitution 5 | No food/consumable needed. Frees meal slot. |
-| Constitution 4 + Dash Juice | Consumable dependency. |
-| Constitution 3 + Black Belt (Lo) | Eat Droolshroom. Most common for damage builds. |
-| Constitution 2 + Dash Juice + Black Belt (Lo) | Double dependency. |
-| Constitution 2 + Black Belt (Hi) | Eat Delishroom. |
-| Constitution 1 + Dash Juice + Black Belt (Hi) | Maximum external dependency. |
+## Core Playstyle
 
-### Abbreviations
-- Cons = Constitution (skill)
-- DJ = Dash Juice (consumable)
-- BBLo = Black Belt (Lo) from Droolshroom (food)
-- BBHi = Black Belt (Hi) from Delishroom (food)
+- Goal: reach the highest charge level fast, maintain it, and output
+  power shots and power volleys as much as possible. Always have
+  coatings loaded.
+- Perfect Discerning Dodge grants max charge, 100 stamina, and one bar
+  (30 points) of Trickshot gauge. The final portion of the dodge
+  animation only has hyper armor — chip damage or faints are possible.
+- Dash Dancing is the bread-and-butter combo: Charging sidestep >
+  Charged shot > Power shot > Power volley > repeat (skip the volley if
+  the opening is small). Start it from any neutral opener.
+- Animation cancel (buffer charged shot then power shot in quick
+  succession) is a big DPS boost — use after every charging sidestep.
+- Focus Strike on wounds staggers the monster and gives a free auto
+  Dragon Piercer follow-up.
 
-### Key Takeaway
-Constitution 5 is the easiest path — purely from jewels, no food/consumable dependency. The Compendium notes this is very easy to achieve with current meta sets. Lower Constitution levels trade jewel slots for food/consumable requirements.
+## Stamina Reduction Cap
 
----
+Six ways to cap stamina reduction (Cons = Constitution, DJ = Dash
+Juice, BBLo/BBHi = Black Belt food skill):
 
-## 3. Crafting the Ideal Artian Bow
+- Cons 5
+- Cons 4 + DJ
+- Cons 3 + BBLo
+- Cons 2 + DJ + BBLo
+- Cons 2 + BBHi
+- Cons 1 + DJ + BBHi
 
-### Weapon: Angelbein
+## Recommended Meal Setups
 
-The Artian crafting system has 8 customizable stats:
-- **3 Infusions** (from parts): can be Affinity or Attack
-- **5 Reinforcements** (from upgrading): can be Affinity, Attack, or Element
+- **Ration:** always Meat for the +2 attack.
+- **Droolshroom** — Black Belt (Lo). Eat if the build has
+  Constitution 3.
+- **Delishroom** — Black Belt (Hi). Eat if the build has
+  Constitution 2.
+- **Sild Garlic** — Moxie (Lo). Eat with Constitution 5; stops
+  one-shots at 1 HP.
+- **Specialty Sild Garlic** — Moxie (Hi). As above plus a small heal.
+- **Fluffy Egg** — Caprice (Lo): +7 attack for 10s every 3 minutes
+  (Con 5 builds).
+- **Airy Egg** — Caprice (Hi): +15 attack for 10s every 3 minutes
+  (Con 5 builds).
+- **Finishing touches:** Monster Chili (skip hot/cool drinks) or
+  Jeweled Mullet Roe (+3 attack when wet).
 
-### Ideal Stat Spread
-- **Production Bonus**: Element +20, Attack +5, Attack +5, Attack +5
-- **Reinforcement Bonus**: Attack +5, Attack +5, Attack +5, Attack +5, Attack +5
-- **Element Type**: Any (craft one per element you need)
+## Mantles
 
-### Odds
-- 5× Attack Reinforcement: **1 in 231** (0.43%)
-- Credits to @via.kreatv1 for the probability calculator
+- **Evasion Mantle** is the meta: duration 105s (buffed from 90s),
+  attack buff of 20% for 10 seconds after a perfect evade.
+- **Corrupted Mantle** nerfed in TU1 (raw 10% → 5%, affinity
+  30% → 10%, gauge regen x3 → x2, duration 120s → 90s). Still usable in
+  multiplayer where Evasion Mantle uptime is low.
 
-### Practical Advice
-- Any deviation on reinforcements is weaker but perfectly acceptable — the difference is extremely marginal.
-- "If you don't care enough to min-max, just craft and use the G. Doshaguma bow."
-- A linked probability calculator exists for computing odds of specific Artian rolls.
+## Skill Information
 
-### Game8 Comparison
-Game8's Angelbein recommendation differs slightly — they suggest 3× Affinity +5 reinforcements + 2× Element +30 reinforcements instead of 5× Attack. The Compendium's all-Attack approach prioritizes raw damage, while Game8's version trades some raw for more consistent crits and elemental damage.
+- **Gogmapocalypse:** Mutual Hostility I (2pc) — +20% of base element
+  plus 20 flat element while the monster is enraged. Mutual Hostility
+  II (4pc) — +30% / 40 flat, plus a damage barrier when the monster
+  enrages (75 damage or 2:20 duration, 2:50 cooldown from application;
+  triggers Counterstrike and Elemental Absorption without hunter
+  damage; immune to negative status while up).
+- **Lord's Soul:** grants Guts once per cart; +5% raw / -5% defense
+  while Guts is up, then +5% defense and +3 resistance after it's
+  spent.
+- **Tetrad Shot:** 8/10/12 affinity from the 4th to 10th coating; only
+  the 4th and 6th coatings get 3/6/10 attack and 5% element. Don't
+  impulsively reload coatings.
+- **Critical Element:** +5%/10%/15% elemental on crits.
+- **Charge Master:** +5%/10%/15% elemental on charged moveset at charge
+  level 1+; does not affect uncharged shots, TD/DP/iDP.
+- **Piercing Shots:** only affects Dragon Piercer and Thousand Dragons
+  (x1.05 raw); does NOT affect pierce coatings — use Spread/Power Shots
+  for pierce-coating builds.
+- **Ballistics:** no range increase for close-range coatings; level 3
+  adds +5 raw in critical distance.
+- **Burst (bow):** buff lasts 3 seconds; +6/7/8/9/10 attack and
+  +4/6/8/10/12 element.
+- **Black Eclipse:** level 1 self-frenzy, +15% affinity when cured;
+  level 2 adds 10 attack during frenzy and 15 total when cured.
+- **Antivirus:** frenzy cures faster; +10% affinity on cure, stacks
+  with Black Eclipse.
+- **Counterstrike:** triggers through hyper armor (Discerning Dodge
+  end, Focus Strike auto Dragon Piercer) — viable Refresh replacement
+  against multi-hitbox monsters like Arkveld.
+- **Evade Window:** works on Discerning Dodge.
+- **Convert Element:** discern-dodge an elemental attack to activate;
+  only worth using vs Rathalos, Rathian, G. Rathalos, Gravios, Zoh
+  Shia; not recommended for multiplayer.
 
----
+## Progression Notes
 
-## 4. Non-Artian Bow Options (Alternative Bows)
-
-"Dedicated to those who are looking for alternative bows that are not restricted to being Artian and/or close-range coating. These bows are weaker than the meta, but are easier and faster to get."
-
-| Element | Weapon Tree | Bow Name | Coating |
-|---|---|---|---|
-| Fire | Quematrice | Firetrail Leviora | Close-Range |
-| Fire | Rathalos | Dark Filament | Power |
-| Water | Xu Wu | Bookwilthe's Punisher | Power |
-| Ice | Blangonga | Singha Sharanga | Close-Range |
-| Thunder | Lagiacrus | High Voltsender | Close-Range |
-| Thunder | Artian | Angelbein | Power |
-| Dragon | G. Arkveld | G. Renowned Tristram | Close-Range |
-| Dragon | Zoh Shia | Blazing Samira | Power |
-
-### Comparison with Game8 Weapon Recs
-Game8 recommends 4 non-Artian bows: Dark Filament (Fire), High Voltsender (Thunder), Singha Sharanga (Ice), Verzweiflung (Dragon).
-
-Key differences from the Compendium list:
-- **Verzweiflung** (Gore Magala, Dragon) appears in Game8 but not in the Compendium's non-Artian list. The Compendium lists G. Renowned Tristram and Blazing Samira for Dragon instead.
-- The Compendium includes **Firetrail Leviora** (Fire, Close-Range) and **Bookwilthe's Punisher** (Water, Power) which Game8 doesn't list.
-- The Compendium includes **Blazing Samira** (Zoh Shia, Dragon, Power) which Game8 doesn't list.
-- Both agree on **Dark Filament**, **High Voltsender**, and **Singha Sharanga**.
-
-### Coating Context
-- **Power Coating** = stronger damage boost, preferred when available
-- **Close-Range Coating** = requires staying closer to the monster, weaker boost but more universally available
-- Bows with Power Coating are generally preferred; Close-Range bows are viable alternatives
-
----
-
-## App UI Mapping Notes
-
-These four sections could be presented in the app as:
-
-1. **"Bow Guide" tab or panel** alongside the weapon tabs — a dedicated informational section that isn't build-specific
-2. **Expandable info cards** within the current flow — e.g. a "Meal Setup" card that dynamically shows relevant meals based on the selected build's Constitution level
-3. **A reference sidebar or modal** accessible from any build result — "How do I cap stamina?" / "Which bow should I use?" / "How do I craft the Artian bow?"
-
-The meal data is especially useful per-build since the correct meal depends on the build's Constitution level. The stamina cap and Artian crafting info are more static reference content. The bow options table is useful as a "swap guide" shown alongside or below the weapon recommendations in each build result.
-
----
-
-## Path Reference
-
-Shared assets backing the sections in this document:
-
-- meals (§1): `screenshots/bow/google_doc/shared/meals.png`
-- stamina management (§2): `screenshots/bow/google_doc/shared/stamina-management.png`
-- ideal Artian bow (§3): `screenshots/bow/google_doc/shared/artian.png`
-- non-Artian / alternative bows (§4): `screenshots/bow/google_doc/shared/non-artian-weapons.png`
-
-Related Gogma-era references (covered in `google-doc-bow-builds.md`'s Shared Weapon Recommendations):
-
-- Gogma Artian (Calamitous Angel) target stats: `screenshots/bow/google_doc/shared/gogma-artian.png`
-- Gogma Artian crafting instructions: `screenshots/bow/google_doc/shared/gogma-artian-instructions.png`
-
-Legacy / out-of-scope reference (not currently transcribed here):
-
-- TU2-and-below weapon skills overview: `screenshots/bow/google_doc/shared/weapon-skills.png`
+- Low Rank: Rey Sand pieces + Fitness Charm I + G. Rathalos vambraces +
+  Xu Wu greaves while upgrading the Hunter's Bow.
+- Early HR: Yian Kut-Ku (HR8) and Gypceros (HR10) pieces.
+- Mid HR: Doshaguma Braces α (HR9); G. Rathalos Mail β / Coil α /
+  Greaves β + Fitness Charm III (HR21). Craft and upgrade the
+  G. Doshaguma bow.
+- "Bow progression in Wilds is not as atrocious compared to previous
+  titles due to the existence of discerning dodge."
