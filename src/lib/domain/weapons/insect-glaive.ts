@@ -25,12 +25,15 @@ export const insectGlaive: WeaponData = {
 				{ name: "Master's Touch 1", type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
 				{ name: 'Constitution 5', type: 'comfort' },
-				{ name: 'Recovery Speed 2', type: 'comfort' }
+				{ name: 'Recovery Speed 2', type: 'comfort' },
+				{ name: 'Flinch Free 1', type: 'comfort' }
 			],
-			setSkills: ['Black Eclipse I', 'Super Recovery I'],
+			setSkills: ['Black Eclipse I', 'Super Recovery I', 'Ward of Wyveria'],
 			meal: 'Con 5 = free meal. Sild Garlic (Moxie) or Airy Egg.',
-			res: { fire: -10, water: 14, thunder: -2, ice: 6, dragon: -10 }
+			res: { fire: -6, water: 10, thunder: 1, ice: 4, dragon: -14 }
 		},
+		// Retired from the live Game8 page (last modified 2026-03-10) — kept for
+		// flow continuity; loadout unverifiable against current sources.
 		'lords-soul-lagi': {
 			name: "Lord's Soul Lagi",
 			source: 'Game8',
@@ -63,39 +66,44 @@ export const insectGlaive: WeaponData = {
 			name: 'Ful-Zoh Comfort',
 			source: 'Game8',
 			tier: 'craftable',
-			desc: 'G. Fulgur Anjanath = extra stamina gauge + Second Wind. Great Max Might uptime. Super Recovery. Smooth vaulting and dodging.',
+			desc: '2pc G. Fulgur = extra stamina gauge + Second Wind. Great Max Might uptime. 2pc Numinous = Super Recovery. Smooth vaulting and dodging.',
 			armor: {
-				Head: 'G. Fulgur Anj. Helm β',
-				Chest: 'Numinous Shroud β',
-				Arms: 'G. Fulgur Anj. Vambraces β',
-				Waist: 'Gore Coil β',
-				Legs: 'Gore Greaves β',
-				Charm: 'Exploiter Charm II'
+				Head: 'Numinous Crown β',
+				Chest: 'G. Fulgur Mail β',
+				Arms: 'Rey Sandbraces γ',
+				Waist: 'Numinous Overlay β',
+				Legs: 'G. Fulgur Greaves β',
+				Charm: 'Challenger Charm II'
 			},
 			skills: [
-				{ name: 'Weakness Exploit 5', type: 'dmg' },
+				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Weakness Exploit 3', type: 'dmg' },
 				{ name: 'Maximum Might 3', type: 'dmg' },
-				{ name: 'Agitator 3', type: 'dmg' },
-				{ name: 'Antivirus 3', type: 'dmg' },
-				{ name: 'Burst 1', type: 'dmg' },
-				{ name: 'Constitution 3', type: 'comfort' },
+				{ name: 'Critical Boost 3', type: 'dmg' },
+				{ name: 'Critical Eye 3', type: 'dmg' },
+				{ name: 'Coalescence 2', type: 'dmg' },
+				{ name: 'Handicraft 2', type: 'dmg' },
+				{ name: 'Airborne 1', type: 'dmg' },
+				{ name: 'Constitution 4', type: 'comfort' },
+				{ name: 'Earplugs 2', type: 'comfort' },
 				{ name: 'Evade Extender 2', type: 'comfort' },
-				{ name: 'Stamina Surge 2', type: 'comfort' }
+				{ name: 'Recovery Speed 1', type: 'comfort' },
+				{ name: 'Stamina Surge 1', type: 'comfort' }
 			],
-			setSkills: ['Second Wind I', 'Black Eclipse I', 'Super Recovery I'],
-			meal: 'Droolshroom (Black Belt Lo) with Con 3.',
-			res: { fire: -6, water: 8, thunder: 2, ice: 4, dragon: -8 }
+			setSkills: ['Ward of Wyveria', 'Super Recovery I', 'Second Wind I'],
+			meal: 'Droolshroom (Black Belt Lo) with Con 4.',
+			res: { fire: -6, water: 0, thunder: 12, ice: -9, dragon: -12 }
 		},
 		'rey-gore-mm': {
 			name: 'Rey-Gore Agitator MM',
 			source: 'Game8',
 			tier: 'craftable',
-			desc: "3pc Rey γ + 2pc Gore. Latent Power + Max Might rewards clean play. Lord's Soul = Guts + 5% raw. For experienced players.",
+			desc: '3pc Rey γ + 2pc Gore. Latent Power + Max Might rewards clean play. Guts (Tenacity) group skill as an OHKO safety net. For experienced players.',
 			armor: {
 				Head: 'Rey Sandhelm γ',
-				Chest: 'Rey Sandmail γ',
+				Chest: 'Gore Mail β',
 				Arms: 'Rey Sandbraces γ',
-				Waist: 'Gore Coil β',
+				Waist: 'Rey Sandcoil γ',
 				Legs: 'Gore Greaves β',
 				Charm: 'Challenger Charm II'
 			},
@@ -104,39 +112,51 @@ export const insectGlaive: WeaponData = {
 				{ name: 'Critical Boost 5', type: 'dmg' },
 				{ name: 'Antivirus 3', type: 'dmg' },
 				{ name: 'Maximum Might 3', type: 'dmg' },
-				{ name: 'Latent Power 3', type: 'dmg' },
+				{ name: 'Latent Power 2', type: 'dmg' },
+				{ name: 'Weakness Exploit 2', type: 'dmg' },
+				{ name: "Master's Touch 1", type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
 				{ name: 'Evade Extender 2', type: 'comfort' },
-				{ name: 'Stamina Surge 2', type: 'comfort' }
+				{ name: 'Evade Window 2', type: 'comfort' },
+				{ name: 'Constitution 1', type: 'comfort' },
+				{ name: 'Flinch Free 1', type: 'comfort' },
+				{ name: 'Stamina Surge 1', type: 'comfort' }
 			],
-			setSkills: ['Black Eclipse I', 'Thunderous Roar I', "Lord's Soul"],
+			setSkills: ['Black Eclipse I', 'Thunderous Roar I', 'Guts (Tenacity)'],
 			meal: 'Droolshroom or Sild Garlic depending on Con level.',
-			res: { fire: -4, water: -4, thunder: 10, ice: -7, dragon: -2 }
+			res: { fire: -4, water: 0, thunder: 10, ice: -5, dragon: -2 }
 		},
 		'lagia-gore': {
 			name: 'Lagia-Gore Critical',
 			source: 'Game8 / Icy Veins',
 			tier: 'craftable',
-			desc: 'Accessible starter endgame. 2pc Lagi + 2pc Gore. Easy farm, consistent crits, SS3. Azure Bolt gives free thunder procs.',
+			desc: 'Accessible starter endgame. 2pc Lagi + 2pc Gore. Easy farm, consistent crits. Azure Bolt gives free thunder procs.',
 			armor: {
 				Head: 'Lagiacrus Helm β',
 				Chest: 'Numinous Shroud β',
 				Arms: 'Lagiacrus Braces β',
 				Waist: 'Gore Coil β',
 				Legs: 'Gore Greaves β',
-				Charm: 'Exploiter Charm II'
+				Charm: 'Challenger Charm II'
 			},
 			skills: [
-				{ name: 'Weakness Exploit 5', type: 'dmg' },
-				{ name: 'Maximum Might 3', type: 'dmg' },
+				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Weakness Exploit 4', type: 'dmg' },
 				{ name: 'Antivirus 3', type: 'dmg' },
-				{ name: 'Agitator 3', type: 'dmg' },
+				{ name: 'Maximum Might 3', type: 'dmg' },
+				{ name: 'Critical Boost 3', type: 'dmg' },
+				{ name: 'Airborne 1', type: 'dmg' },
+				{ name: 'Handicraft 1', type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
-				{ name: 'Stamina Surge 3', type: 'comfort' }
+				{ name: 'Constitution 2', type: 'comfort' },
+				{ name: 'Stamina Surge 2', type: 'comfort' },
+				{ name: 'Adaptability 1', type: 'comfort' },
+				{ name: 'Earplugs 1', type: 'comfort' },
+				{ name: 'Flinch Free 1', type: 'comfort' }
 			],
 			setSkills: ['Black Eclipse I', 'Azure Bolt I'],
 			meal: 'Flexible — Sild Garlic or Airy Egg.',
-			res: { fire: -12, water: 11, thunder: 7, ice: 0, dragon: -9 }
+			res: { fire: -12, water: 12, thunder: 8, ice: 2, dragon: -10 }
 		},
 
 		// --- HR 100+ builds (TU4) ---
@@ -161,8 +181,11 @@ export const insectGlaive: WeaponData = {
 				{ name: 'Counterstrike 3', type: 'dmg' },
 				{ name: 'Maximum Might 3', type: 'dmg' },
 				{ name: 'Antivirus 3', type: 'dmg' },
+				{ name: 'Flayer 2', type: 'dmg' },
 				{ name: "Master's Touch 1", type: 'dmg' },
 				{ name: 'Coalescence 1', type: 'dmg' },
+				{ name: 'Airborne 1', type: 'dmg' },
+				{ name: 'Attack Boost 1', type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
 				{ name: 'Constitution 2', type: 'comfort' },
 				{ name: 'Blight Resistance 2', type: 'comfort' }
@@ -183,7 +206,7 @@ export const insectGlaive: WeaponData = {
 				Arms: 'G. Ebony Braces β',
 				Waist: 'G. Ebony Coil β',
 				Legs: 'Duna Wildgreaves γ',
-				Charm: 'Mighty Charm III'
+				Charm: 'Appraised (Crit Eye 1 + MM 1 + CS 1) / Mighty Charm III'
 			},
 			skills: [
 				{ name: 'Weakness Exploit 5', type: 'dmg' },
@@ -194,12 +217,14 @@ export const insectGlaive: WeaponData = {
 				{ name: "Master's Touch 1", type: 'dmg' },
 				{ name: 'Burst 2', type: 'dmg' },
 				{ name: 'Critical Eye 2', type: 'dmg' },
+				{ name: 'Airborne 1', type: 'dmg' },
 				{ name: 'Divine Blessing 3', type: 'comfort' },
-				{ name: 'Quick Sheathe 3', type: 'comfort' }
+				{ name: 'Quick Sheathe 3', type: 'comfort' },
+				{ name: 'Shock Absorber 1', type: 'comfort' }
 			],
 			setSkills: ['Second Wind I', 'Burst Boost I', 'Guts (Tenacity)', 'Ward of Wyveria'],
 			meal: 'Sild Garlic (Moxie) for triple safety (Guts + Moxie + Divine Blessing).',
-			res: { fire: 1, water: -7, thunder: -6, ice: -6, dragon: 6 }
+			res: { fire: -1, water: -7, thunder: -5, ice: -6, dragon: 6 }
 		},
 		'gogma-guts': {
 			name: 'Gogmazios Guts',
@@ -228,6 +253,7 @@ export const insectGlaive: WeaponData = {
 				{ name: 'Burst 2', type: 'dmg' },
 				{ name: 'Divine Blessing 3', type: 'comfort' },
 				{ name: 'Earplugs 2', type: 'comfort' },
+				{ name: 'Shock Absorber 1', type: 'comfort' },
 				{ name: 'Stamina Surge 1', type: 'comfort' }
 			],
 			setSkills: ['Mutual Hostility II', 'Guts (Tenacity)'],
@@ -246,7 +272,7 @@ export const insectGlaive: WeaponData = {
 				Arms: 'G. Ebony Braces β',
 				Waist: 'Dahaad Shardcoil γ',
 				Legs: 'G. Ebony Greaves β',
-				Charm: 'Challenger Charm III'
+				Charm: 'Appraised (Attack Boost 3 + Agitator 1) / Challenger Charm III'
 			},
 			skills: [
 				{ name: 'Weakness Exploit 5', type: 'dmg' },
@@ -256,42 +282,51 @@ export const insectGlaive: WeaponData = {
 				{ name: 'Counterstrike 3', type: 'dmg' },
 				{ name: 'Maximum Might 3', type: 'dmg' },
 				{ name: 'Agitator 4', type: 'dmg' },
+				{ name: 'Airborne 1', type: 'dmg' },
+				{ name: 'Handicraft 1', type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
 				{ name: 'Divine Blessing 3', type: 'comfort' },
 				{ name: 'Bind Resistance 2', type: 'comfort' },
 				{ name: 'Evade Extender 1', type: 'comfort' },
-				{ name: 'Earplugs 1', type: 'comfort' }
+				{ name: 'Earplugs 1', type: 'comfort' },
+				{ name: 'Shock Absorber 1', type: 'comfort' }
 			],
 			setSkills: ['Burst Boost I', 'Azure Bolt I', 'Guts (Tenacity)'],
 			meal: 'Sild Garlic (Moxie) for double anti-OHKO, or Airy Egg (Caprice) for damage.',
-			res: { fire: -6, water: -6, thunder: -1, ice: -6, dragon: 5 }
+			res: { fire: -5, water: -6, thunder: -1, ice: -2, dragon: 5 }
 		},
 		'fulgur-craftable': {
 			name: 'Fulgur Craftable',
 			source: 'Google Doc',
 			tier: 'mixed',
 			rank: 'hr100',
-			desc: 'Fulgur 2pc bonus with Gogma gloves for Agi 5 and Burst. Latent Power compensates for affinity. Craftable charm, no weapon rolls needed. Maximum Might shown as "3+" in source (overcapped) — verify exact level in-game.',
+			desc: 'Fulgur 2pc bonus with Gogma gloves for Agi 5 and Burst. Latent Power compensates for affinity. Craftable charm, no weapon rolls needed. Maximum Might is overcapped (effective 3).',
 			armor: {
 				Head: 'G. Fulgur Helm β',
-				Chest: 'Udra Miremail α',
+				Chest: 'Udra Miremail γ',
 				Arms: 'Gogmazios Vambraces α',
-				Waist: 'Rey Sandcoil β',
-				Legs: 'Exhaust Sharpgreaves γ',
-				Charm: 'Exploiter Charm'
+				Waist: 'Rey Sandcoil γ',
+				Legs: 'Dahaad Shardgreaves γ',
+				Charm: 'Exploiter Charm III'
 			},
 			skills: [
 				{ name: 'Weakness Exploit 5', type: 'dmg' },
 				{ name: 'Agitator 5', type: 'dmg' },
-				{ name: 'Maximum Might 3', type: 'dmg' }, // verify (source says "3+", overcapped)
+				{ name: 'Critical Boost 5', type: 'dmg' },
+				{ name: 'Counterstrike 3', type: 'dmg' },
+				{ name: 'Maximum Might 3', type: 'dmg' },
 				{ name: 'Latent Power 2', type: 'dmg' },
-				{ name: 'Counterstrike 2', type: 'dmg' },
-				{ name: 'Adrenaline Rush 1', type: 'dmg' },
+				{ name: 'Airborne 1', type: 'dmg' },
+				{ name: 'Attack Boost 1', type: 'dmg' },
+				{ name: 'Foray 1', type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
 				{ name: 'Earplugs 1', type: 'comfort' }
 			],
-			setSkills: ['Black Eclipse I', "Lord's Soul", "Fulgur Anjanath's Force"],
+			setSkills: ["Lord's Soul", "Fulgur Anjanath's Will (Second Wind I)"],
 			meal: 'Sild Garlic (Moxie) for Guts + Moxie double safety.',
+			// Unverified placeholder totals — the Google Doc's Math Hunter panels
+			// publish resistances only with meal buffs active; armor-only totals
+			// are not published anywhere.
 			res: { fire: -3, water: 2, thunder: -4, ice: -2, dragon: -1, unverified: true }
 		},
 		'gore-general': {
@@ -299,27 +334,35 @@ export const insectGlaive: WeaponData = {
 			source: 'Google Doc',
 			tier: 'craftable',
 			rank: 'hr100',
-			desc: "Go-to when Gore Magala's Tyranny is rolled on the Gogma weapon. Adrenaline Rush 3 + Counterstrike 3 for strong damage. Requires weapon set bonus roll.",
+			desc: "Go-to when Gore Magala's Tyranny is rolled on the Gogma weapon. Resentment 3 + Counterstrike 3 for strong damage. Requires weapon set bonus roll.",
 			armor: {
 				Head: 'Arkvulcan Helm γ',
 				Chest: 'Udra Miremail γ',
-				Arms: 'Udra Mirebones γ',
+				Arms: 'Udra Mirebraces γ',
 				Waist: 'Lagiacrus Coil β',
-				Legs: 'Sorosal Boots α',
+				Legs: 'Sororal Boots α',
 				Charm: 'Challenger Charm III'
 			},
 			skills: [
 				{ name: 'Weakness Exploit 5', type: 'dmg' },
 				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Critical Boost 5', type: 'dmg' },
+				{ name: 'Antivirus 3', type: 'dmg' },
 				{ name: 'Counterstrike 3', type: 'dmg' },
-				{ name: 'Adrenaline Rush 3', type: 'dmg' },
+				{ name: 'Resentment 3', type: 'dmg' },
 				{ name: 'Maximum Might 3', type: 'dmg' },
-				{ name: 'Latent Power 2', type: 'dmg' },
+				{ name: 'Airborne 1', type: 'dmg' },
+				{ name: 'Attack Boost 1', type: 'dmg' },
+				{ name: 'Partbreaker 1', type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
-				{ name: 'Earplugs 1', type: 'comfort' }
+				{ name: 'Earplugs 1', type: 'comfort' },
+				{ name: 'Stamina Surge 1', type: 'comfort' }
 			],
-			setSkills: ['Black Eclipse I', "Lord's Soul", "Leviathan's Fury"],
+			setSkills: ['Black Eclipse I (weapon roll)', "Lord's Soul", "Nu Udra's Mutiny"],
 			meal: 'Sild Garlic (Moxie) or Airy Egg (Caprice).',
+			// Unverified placeholder totals — the Google Doc's Math Hunter panels
+			// publish resistances only with meal buffs active; armor-only totals
+			// are not published anywhere.
 			res: { fire: -5, water: 4, thunder: 3, ice: -2, dragon: -8, unverified: true }
 		},
 		'lagia-craftable': {
@@ -334,20 +377,29 @@ export const insectGlaive: WeaponData = {
 				Arms: 'Azure Age Sleeve α',
 				Waist: 'Lagiacrus Coil β',
 				Legs: 'Arkvulcan Greaves γ',
-				Charm: 'Exploiter Charm'
+				Charm: 'Challenger Charm III'
 			},
 			skills: [
 				{ name: 'Weakness Exploit 5', type: 'dmg' },
 				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Critical Boost 5', type: 'dmg' },
+				{ name: 'Counterstrike 3', type: 'dmg' },
 				{ name: 'Maximum Might 3', type: 'dmg' },
-				{ name: 'Latent Power 2', type: 'dmg' },
-				{ name: 'Counterstrike 1', type: 'dmg' },
+				{ name: 'Flayer 2', type: 'dmg' },
+				{ name: 'Latent Power 1', type: 'dmg' },
 				{ name: 'Adrenaline Rush 1', type: 'dmg' },
+				{ name: 'Airborne 1', type: 'dmg' },
+				{ name: 'Attack Boost 1', type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
+				{ name: 'Blight Resistance 2', type: 'comfort' },
+				{ name: 'Constitution 1', type: 'comfort' },
 				{ name: 'Earplugs 1', type: 'comfort' }
 			],
-			setSkills: ['Black Eclipse I', "Lord's Soul", "Leviathan's Fury"],
+			setSkills: ["Lord's Soul", "Leviathan's Fury", "Arkveld's Hunger"],
 			meal: 'Sild Garlic (Moxie) or Airy Egg (Caprice).',
+			// Unverified placeholder totals — the Google Doc's Math Hunter panels
+			// publish resistances only with meal buffs active; armor-only totals
+			// are not published anywhere.
 			res: { fire: -5, water: 4, thunder: 2, ice: -4, dragon: -8, unverified: true }
 		},
 		resentment: {
@@ -362,20 +414,27 @@ export const insectGlaive: WeaponData = {
 				Arms: 'Lagiacrus Braces β',
 				Waist: 'Lagiacrus Coil β',
 				Legs: 'Udra Miregreaves γ',
-				Charm: 'Exploiter Charm'
+				Charm: 'Challenger Charm III'
 			},
 			skills: [
 				{ name: 'Weakness Exploit 5', type: 'dmg' },
 				{ name: 'Agitator 5', type: 'dmg' },
+				{ name: 'Critical Boost 5', type: 'dmg' },
 				{ name: 'Resentment 3', type: 'dmg' },
+				{ name: 'Counterstrike 3', type: 'dmg' },
 				{ name: 'Maximum Might 3', type: 'dmg' },
-				{ name: 'Counterstrike 2', type: 'dmg' },
-				{ name: 'Latent Power 1', type: 'dmg' },
+				{ name: 'Airborne 1', type: 'dmg' },
+				{ name: 'Critical Eye 1', type: 'dmg' },
 				{ name: 'Burst 1', type: 'dmg' },
+				{ name: 'Speed Eating 3', type: 'comfort' },
+				{ name: 'Stamina Surge 2', type: 'comfort' },
 				{ name: 'Earplugs 1', type: 'comfort' }
 			],
-			setSkills: ['Black Eclipse I', "Lord's Soul", "Leviathan's Fury", "Udra's Bravado"],
+			setSkills: ["Lord's Soul", "Leviathan's Fury", "Nu Udra's Mutiny"],
 			meal: 'Sild Garlic (Moxie) or Airy Egg (Caprice).',
+			// Unverified placeholder totals — the Google Doc's Math Hunter panels
+			// publish resistances only with meal buffs active; armor-only totals
+			// are not published anywhere.
 			res: { fire: -8, water: 6, thunder: 5, ice: -3, dragon: -10, unverified: true }
 		}
 	},
@@ -387,8 +446,7 @@ export const insectGlaive: WeaponData = {
 				'Craft with 3 same-element parts (Attack infusion)',
 				'Reinforce: target 2 Atk EX, 2 Atk III, 1 Sharpness EX',
 				'Priority: Sharpness (1) > Attack > Affinity >>> Element',
-				'At most 1 Affinity bonus or infusion — rest goes to Attack',
-				"Active Skills: Gore Magala's Tyranny + Lord's Soul"
+				'At most 1 Affinity bonus or infusion — rest goes to Attack'
 			]
 		},
 		{
@@ -406,9 +464,9 @@ export const insectGlaive: WeaponData = {
 		{
 			title: 'Kinsects',
 			lines: [
-				'Foebeetle — best general pick (Kinsect Boost, Harvest Extract, Whipworms)',
-				"Culldrone — alternative if you haven't farmed Foebeetle (has Kinsect Charge)",
-				'Blunt kinsects preferred for KOs. Sever only gains +1% attack multiplier'
+				'Foebeetle — best general pick (Kinsect Boost: Harvest Extract + Attack Boost: Weak Point Focus)',
+				'Whispervesp — alternative trading triple-gather for top speed (Kinsect Boost: Fast Charge)',
+				'Blunt kinsects preferred for KOs. Sever only gains a 1.1x kinsect attack multiplier'
 			]
 		}
 	],
@@ -475,7 +533,7 @@ export const insectGlaive: WeaponData = {
 							value: 'lords-soul-lagi'
 						},
 						{
-							label: 'Easy farm, SS3, consistent crits',
+							label: 'Easy farm, consistent crits',
 							cssClass: 'balanced',
 							value: 'lagia-gore'
 						}
@@ -524,7 +582,7 @@ export const insectGlaive: WeaponData = {
 							value: 'arkveld-gore-affinity'
 						},
 						{
-							label: 'Gore weapon roll (Black Eclipse + Adrenaline Rush)',
+							label: 'Gore weapon roll (Black Eclipse + Resentment)',
 							value: 'gore-general'
 						}
 					]
@@ -569,7 +627,7 @@ export const insectGlaive: WeaponData = {
 	},
 	referenceKey: 'ig',
 	sourcesText:
-		'Game8 IG Builds (TU4) and MH Wilds IG Google Doc. Google Doc resistance totals unverified. Includes Gogma/Artian builds.',
+		'Game8 IG Builds (TU4) and the Wilds IG Endgame Sets Google Doc (Qwas & Cerasium). Google Doc resistances are only published with meal buffs, so armor-only totals remain estimates. Includes Gogma/Artian builds.',
 	display: {
 		weaponListTitle: 'Non-Artian Insect Glaives',
 		comfortTitle: 'Comfort / Mobility',
