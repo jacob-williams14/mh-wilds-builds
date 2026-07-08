@@ -4,6 +4,18 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 
 ---
 
+## 2026-07-08 (later)
+
+**Phase 12 opened — Legacy weapon re-audit (Bow, Insect Glaive, Long Sword)**
+
+- The three pre-pipeline weapons still rest on screenshot-era transcriptions
+  (proven error-prone in Stage A); re-running the fetch pipeline gives all 14
+  weapons identical provenance and knowledge-base-quality reference docs
+- Also delivers `ai-resources/verification-backlog.md` — a consolidated list
+  of every field that remains estimated/unverified across all weapons
+- Plan: `phases/12-legacy-weapon-reaudit.md`; three worktree agents in audit
+  mode (no temp-registry step — modules already registered)
+
 ## 2026-07-08
 
 **All 14 weapons shipped — Dual Blades + batch 2 (Phase 11 Stage C complete)**
