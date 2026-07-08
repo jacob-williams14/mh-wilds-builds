@@ -1,0 +1,89 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    name: Checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Type check
+        run: bun run check
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Test
+        run: bun run test
+
+  deploy:
+    name: Build, diff, deploy
+    needs: ci
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set image name
+        run: echo "IMAGE=ghcr.io/$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
+      - name: Pull existing image
+        id: pull
+        run: |
+          if docker pull ${{ env.IMAGE }}:latest 2>/dev/null; then
+            echo "id=$(docker inspect ${{ env.IMAGE }}:latest --format '{{.Id}}')" >> $GITHUB_OUTPUT
+          else
+            echo "id=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build candidate image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          tags: ${{ env.IMAGE }}:candidate
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Diff and push
+        id: push
+        run: |
+          NEW_ID=$(docker inspect ${{ env.IMAGE }}:candidate --format '{{.Id}}')
+          if [ "$NEW_ID" = "${{ steps.pull.outputs.id }}" ]; then
+            echo "Image unchanged — skipping push and deploy"
+            echo "pushed=false" >> $GITHUB_OUTPUT
+          else
+            docker tag ${{ env.IMAGE }}:candidate ${{ env.IMAGE }}:latest
+            docker tag ${{ env.IMAGE }}:candidate ${{ env.IMAGE }}:${{ github.sha }}
+            docker push ${{ env.IMAGE }}:latest
+            docker push ${{ env.IMAGE }}:${{ github.sha }}
+            echo "pushed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Trigger Render deploy
+        if: steps.push.outputs.pushed == 'true'
+        run: curl -sf "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
