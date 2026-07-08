@@ -33,8 +33,7 @@ describe('flow key contract', () => {
 	}
 });
 
-// Guards the rank-placement bug class: an hr50 build leaking into the hr100 flow
-// (the Long Sword `evasive-comfy` regression). Invariant across all weapons:
+// Guards against rank-tier leakage between flows. Invariant across all weapons:
 // hr50 flows recommend only un-ranked builds; hr100 flows recommend only `rank: 'hr100'`.
 describe('flow rank contract', () => {
 	for (const { key: weaponKey, data } of weaponRegistry) {
