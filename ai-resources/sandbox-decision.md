@@ -13,7 +13,7 @@ the host is limited and its blast radius is contained — enough to make
 
 ## The two tools solve different problems
 
-| | **sbx / devcontainer** (chosen) | **crabbox** |
+| | **sbx** (chosen) | **crabbox** |
 | --- | --- | --- |
 | What it is | A **local isolation boundary** around the agent | A **remote execution control plane** |
 | Where the agent runs | On your Mac, caged in a microVM | Locally, but commands are rsync'd to a leased cloud/SSH box and run over SSH |

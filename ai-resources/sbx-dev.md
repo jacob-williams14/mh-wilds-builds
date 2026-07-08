@@ -1,9 +1,9 @@
 # Running Claude in a Docker Sandbox (`sbx`)
 
-This repo can be developed with Claude running inside an isolated **Docker Sandbox**
-(`sbx`) — a microVM with its own Docker daemon, filesystem, and network. Stronger isolation
-than a devcontainer, purpose-built for agents, and it makes `--dangerously-skip-permissions`
-safe because the blast radius is contained inside the VM.
+This repo is developed with Claude running inside an isolated **Docker Sandbox**
+(`sbx`) — a microVM with its own Docker daemon, filesystem, and network. Purpose-built for
+agents, it makes `--dangerously-skip-permissions` safe because the blast radius is contained
+inside the VM.
 
 By default the agent works on a private **in-container clone** (`--clone`): your host repo is
 mounted read-only and the agent's commits come back via a `sandbox-mh-wilds` git remote you
@@ -13,7 +13,6 @@ Bind-mount ("watch me work", edits land on host files live) is the opt-in altern
 [Network egress](#network-egress). What config the sandboxed agent has is covered in
 [Agent config inside the sandbox](#agent-config-inside-the-sandbox).
 
-> The `.devcontainer/` setup remains as an optional VS Code "Reopen in Container" path.
 > The deploy stack (`Dockerfile`, `nginx.conf`, `docker-compose.yml`, CI) is unrelated —
 > that ships the static app to Render.
 >
