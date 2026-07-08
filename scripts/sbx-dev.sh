@@ -2,8 +2,13 @@
 # Launch Claude in an isolated Docker Sandbox (sbx) against this repo.
 #
 # Builds the bun-equipped sbx template on first run (requires Docker running),
-# loads it into the sbx runtime, then runs Claude in a sandbox that bind-mounts
-# this repo. Edits land on the host files live.
+# loads it into the sbx runtime, then runs Claude on a private in-container CLONE
+# of this repo (--clone). The host repo is mounted read-only; the agent's commits
+# are surfaced on the host via a `sandbox-mh-wilds` git remote to review and merge.
+# Nothing the agent does touches your working tree until you pull it.
+#
+# Note: --clone only takes effect when the sandbox is first created. If a bind-mount
+# sandbox named 'mh-wilds' already exists, remove it first:  sbx rm mh-wilds
 #
 # Prerequisites (one-time, on the host):
 #   - Docker Desktop running
@@ -35,4 +40,4 @@ if sbx policy ls 2>/dev/null | grep -qiE "allow[- ]all|all (outbound )?traffic (
   echo "         run 'sh scripts/sbx-setup.sh' to set a deny-by-default 'balanced' policy." >&2
 fi
 
-exec sbx run -t "$TAG" --name "$NAME" claude "$DIR"
+exec sbx run -t "$TAG" --name "$NAME" --clone claude "$DIR"

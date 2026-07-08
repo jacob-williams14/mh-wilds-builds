@@ -5,10 +5,13 @@ This repo can be developed with Claude running inside an isolated **Docker Sandb
 than a devcontainer, purpose-built for agents, and it makes `--dangerously-skip-permissions`
 safe because the blast radius is contained inside the VM.
 
-The one decision to make up front is **how** the agent touches your code: bind-mount (edits
-land on your host files live — the interactive "watch me work" model) vs `--clone` (host repo
-read-only, commits reviewed like a coworker's branch). See [Isolation modes](#isolation-modes).
-Egress is locked down separately — see [Network egress](#network-egress).
+By default the agent works on a private **in-container clone** (`--clone`): your host repo is
+mounted read-only and the agent's commits come back via a `sandbox-mh-wilds` git remote you
+review and merge like a coworker's branch — nothing touches your working tree until you pull it.
+Bind-mount ("watch me work", edits land on host files live) is the opt-in alternative. See
+[Isolation modes](#isolation-modes). Egress is locked down separately — see
+[Network egress](#network-egress). What config the sandboxed agent has is covered in
+[Agent config inside the sandbox](#agent-config-inside-the-sandbox).
 
 > The `.devcontainer/` setup remains as an optional VS Code "Reopen in Container" path.
 > The deploy stack (`Dockerfile`, `nginx.conf`, `docker-compose.yml`, CI) is unrelated —
@@ -37,8 +40,8 @@ sh scripts/sbx-dev.sh
 ```
 
 On first run this builds the bun-equipped template (`.sbx/Dockerfile`), loads it into the
-sbx runtime, then drops you into Claude inside a sandbox that bind-mounts this repo — edits
-land on the host files live. Subsequent runs reuse the template.
+sbx runtime, then drops you into Claude inside a sandbox running on a **private clone** of
+this repo. Subsequent runs reuse the template.
 
 Under the hood:
 
@@ -46,12 +49,25 @@ Under the hood:
 docker build -t mh-wilds-sbx -f .sbx/Dockerfile .sbx
 docker save mh-wilds-sbx -o /tmp/mh-wilds-sbx.tar
 sbx template load /tmp/mh-wilds-sbx.tar
-sbx run -t mh-wilds-sbx --name mh-wilds claude .
+sbx run -t mh-wilds-sbx --name mh-wilds --clone claude .
 ```
 
 Why the custom template: the default `claude` sandbox image ships Node but not bun, and
 this repo is bun-based, so `.sbx/Dockerfile` layers bun onto
 `docker/sandbox-templates:claude-code-docker`.
+
+**Reviewing the agent's work.** `--clone` only takes effect at sandbox *creation*. To see the
+agent's commits on the host, fetch the auto-created remote:
+
+```sh
+git fetch sandbox-mh-wilds          # pull the agent's branch(es)
+git log sandbox-mh-wilds/<branch>   # review like a coworker's PR, then merge/cherry-pick
+```
+
+Because the host repo is read-only to the agent and it works from a *clone of committed
+state*, uncommitted/untracked changes in your working tree are **not** visible inside the
+sandbox — commit or stash WIP before launching if you want the agent to see it. Switching an
+existing bind-mount sandbox to clone mode requires removing it first: `sbx rm mh-wilds`.
 
 ## Live app preview
 
@@ -113,16 +129,36 @@ sbx policy allow network "api.anthropic.com,*.npmjs.org,registry.npmjs.org,githu
 
 ## Isolation modes
 
-- **Bind-mount (default here).** The repo is mounted into the sandbox; Claude's edits appear
-  on your host files immediately. The interactive "watch me work" model.
-- **`--clone`.** `sbx run --clone …` runs Claude on an in-container clone of the repo (host
-  mounted read-only); its commits are surfaced via a `sandbox-<name>` git remote on the host,
-  which you review like a coworker's branch. This is the safer, autonomous-leaning model and
-  the natural on-ramp to **the internal loop tool** (an internal autonomous workflow that layers on this same
-  `sbx` foundation).
+- **`--clone` (default here).** `sbx run --clone …` runs Claude on an in-container clone of the
+  repo (host mounted read-only); its commits are surfaced via a `sandbox-<name>` git remote on
+  the host, which you review like a coworker's branch. Strongest isolation — the agent cannot
+  touch your working tree — and the natural on-ramp to **the internal loop tool** (an internal autonomous
+  workflow that layers on this same `sbx` foundation).
+- **Bind-mount (opt-in).** The repo is mounted read-write into the sandbox; Claude's edits
+  appear on your host files immediately. The interactive "watch me work" model. Drop `--clone`
+  from `scripts/sbx-dev.sh` (or run `sbx run` without it) to use this.
 
 Running fully hands-off inside the VM:
 
 ```sh
-sbx run -t mh-wilds-sbx claude . -- --dangerously-skip-permissions
+sbx run -t mh-wilds-sbx --clone claude . -- --dangerously-skip-permissions
 ```
+
+## Agent config inside the sandbox
+
+The sandboxed agent runs as user `agent` with a **fresh `~/.claude`** — it has auth and default
+settings, but **none of your host `~/.claude/` user-level config**. Specifically absent:
+
+- User skills (`~/.claude/skills/`) and slash commands (`~/.claude/commands/`)
+- Your **global `CLAUDE.md`** — its rules (commit conventions, no-AI-attribution, secrets
+  policy, etc.) and any global hooks do **not** apply in the sandbox
+- User-level memory, permissions, and MCP servers
+
+What the agent *does* have: auth, Claude Code's built-in tools, and everything committed in the
+repo — including the **project `CLAUDE.md`**. So to give the sandboxed agent the capabilities
+and guardrails you rely on, put them at **project level** (they ride into the clone):
+
+- `.claude/skills/` and `.claude/commands/` — skills / slash commands
+- `.claude/settings.json` — project hooks (e.g. markdown-lint) and permissions
+- `.mcp.json` — MCP servers (e.g. the Svelte MCP this repo uses)
+- Mirror any load-bearing global `CLAUDE.md` rules into the project `CLAUDE.md`
