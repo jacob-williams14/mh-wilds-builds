@@ -4,6 +4,25 @@ Reverse-chronological log of completed work. Updated whenever a weapon ships or 
 
 ---
 
+## 2026-07-08 (phase 13 close)
+
+**Sandbox adoption — the agent now runs in an egress-locked microVM and
+validates its own UI changes in a real browser**
+
+- `sbx --clone` is the launch path (`bun run sbx`): host repo read-only,
+  commits reviewed via the `sandbox-mh-wilds` remote; `balanced` deny-by-default
+  egress policy set by `scripts/sbx-setup.sh`; devcontainer path removed
+- agent-browser + Playwright linux/arm64 Chromium baked into `.sbx/Dockerfile`;
+  the `validate-ui` project skill encodes the verified method (hydration-race
+  and locator-casing traps included)
+- Live watch mode: `bun run sbx:watch` + `scripts/watch-chrome.sh` → DevTools
+  screencast of the agent's browser from the host
+- Deploy stack shipped (Docker → GHCR → Render hook CI); rank-tier flow
+  contract test added; sandbox docs consolidated under `ai-resources/sandbox/`
+  with the portable-harness extraction plan
+- Footer gained gated Buy-Me-a-Coffee + feedback links (hidden until real
+  URLs land)
+
 ## 2026-07-08 (phase 12 close)
 
 **Legacy weapons re-audited — Bow, Insect Glaive, Long Sword now

@@ -20,6 +20,7 @@ Sequenced work on weapon data, presentation, and architecture.
 | 10 | References reconciliation + polish | Complete | Archived: `archive/10-references-and-polish.md` |
 | 11 | Automated weapon data pipeline (11 weapons) | Complete | Archived: `archive/11-automated-weapon-pipeline.md` |
 | 12 | Legacy weapon re-audit (Bow, IG, LS) | Complete | Archived: `archive/12-legacy-weapon-reaudit.md` |
+| 13 | Sandbox adoption — sbx `--clone`, egress lockdown, agent-browser validation, watch mode, deploy stack | Complete | Docs: [`../sandbox/`](../sandbox/sbx-dev.md) (ran as a working branch, no phase doc) |
 
 ## How to use this directory
 

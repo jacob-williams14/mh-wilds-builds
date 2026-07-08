@@ -16,7 +16,7 @@ bun run lint     # prettier --check + eslint
 bun run test     # vitest — includes the flow-key → build-key contract test
 ```
 
-All five must pass before any work is considered done. The contract test verifies flow-key → build-key consistency; `bun dev` + manual click-through remains the visual check for rendering.
+All five must pass before any work is considered done. The contract test verifies flow-key → build-key consistency and rank-tier placement. For rendering, the `validate-ui` skill (`.claude/skills/validate-ui/`) drives a real browser against the dev server — use it in the sandbox; `bun dev` + manual click-through remains the host fallback.
 
 ### Running the agent in a sandbox
 
@@ -80,9 +80,12 @@ import { longSword } from './weapons/long-sword';
 ### 6. Validate
 
 ```sh
-bun run check && bun run format && bun run lint
-bun dev  # click through every flow path in both rank tiers
+bun run check && bun run format && bun run lint && bun run test
 ```
+
+Then verify rendering: in the sandbox, use the `validate-ui` skill (drives a real browser
+through the changed flow paths, both rank tiers); on the host, `bun dev` + manual
+click-through is the fallback.
 
 ### 7. Archive the Phase Doc
 
