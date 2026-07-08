@@ -195,40 +195,20 @@ is used); the baked-in binary is wired via `AGENT_BROWSER_EXECUTABLE_PATH`.
 ### Watching the agent live (DevTools screencast)
 
 Headless Chrome has no window, but DevTools can screencast it: publish its CDP port and
-watch every navigation and click from your own browser, live.
+watch every navigation and click from your own browser, live. Two scripts wrap the recipe:
 
-Inside the sandbox (the agent runs this when asked to work "watched"):
+1. **Inside the sandbox** (the agent runs this when asked to work "watched"):
+   `sh scripts/watch-chrome.sh` — starts a fixed-port watch Chrome (CDP 9222) plus a socat
+   proxy on 9223 (Chrome pins the debug port to loopback; `--remote-debugging-address` is a
+   no-op on this build). The agent must then pass `--cdp 9222` on **every** `agent-browser`
+   command — a one-time `agent-browser connect` does not persist across invocations, and
+   later commands silently launch a fresh, unwatched Chrome (`AGENT_BROWSER_CDP` doesn't
+   stick either).
+2. **On the host:** `sh scripts/sbx-watch.sh` — publishes `9222:9223` (and 5173 so you can
+   view the app yourself), then prints the steps: `chrome://inspect` → Configure… → add
+   `localhost:9222` → **inspect** → live screencast.
 
-```sh
-mkdir -p /tmp/watch-profile
-/opt/ms-playwright/chrome \
-  --headless=new --no-sandbox --disable-dev-shm-usage \
-  --remote-debugging-port=9222 \
-  --user-data-dir=/tmp/watch-profile --window-size=1280,900 \
-  about:blank &
-
-# Chrome binds the debug port to 127.0.0.1 only (--remote-debugging-address is a no-op
-# on this build), so proxy it to a publishable interface — socat ships in the image:
-socat TCP-LISTEN:9223,bind=0.0.0.0,fork,reuseaddr TCP:127.0.0.1:9222 &
-```
-
-The agent must then attach to *this* Chrome by passing `--cdp 9222` on **every**
-`agent-browser` invocation (e.g. `agent-browser --cdp 9222 open http://localhost:5173`).
-A one-time `agent-browser connect` does **not** persist across CLI invocations — later
-commands silently launch a fresh unwatched Chrome. `AGENT_BROWSER_CDP` doesn't stick either;
-use the flag.
-
-On the host:
-
-```sh
-sbx ports mh-wilds --publish 9222:9223   # host:sandbox — note: the socat port, not 9222
-```
-
-Then open `chrome://inspect` in your Chrome → Configure… → add `localhost:9222` → click
-**inspect** on the target. The DevTools window shows a live screencast of the page as the
-agent drives it. (`sbx ports` binds host-side to loopback only — nothing is exposed beyond
-your machine.)
-
-> The CDP port is full, unauthenticated control of that browser. Publish it only while
-> watching, and kill the watch Chrome + socat when done. `agent-browser close --all` leaves
-> the watch Chrome untouched, so cleanup is `kill %1 %2` (or let the sandbox end).
+> The CDP port is full, unauthenticated control of that browser. `sbx ports` binds host-side
+> to loopback only, so nothing leaves your machine; stop watching by closing the DevTools tab
+> and ending the sandbox (or killing the watch Chrome inside). `agent-browser close --all`
+> leaves the watch Chrome untouched.

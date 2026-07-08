@@ -65,11 +65,10 @@ Afterwards: Read the screenshot(s) to visually confirm rendering, then kill the 
 
 ## Watch mode (optional)
 
-If the user asks to watch you work: launch the watch Chrome + socat proxy per
-"Watching the agent live" in `ai-resources/sbx-dev.md`, then pass `--cdp 9222` on **every**
-`agent-browser` command in the session (a one-time `connect` does not persist — later
-commands silently launch a fresh, unwatched Chrome). Everything else in this skill is
-unchanged.
+If the user asks to watch you work: run `sh scripts/watch-chrome.sh`, then pass `--cdp 9222`
+on **every** `agent-browser` command in the session (a one-time `connect` does not persist —
+later commands silently launch a fresh, unwatched Chrome). The user runs
+`sh scripts/sbx-watch.sh` on the host. Everything else in this skill is unchanged.
 
 ## Evidence and reporting
 
