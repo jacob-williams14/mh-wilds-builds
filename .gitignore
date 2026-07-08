@@ -34,3 +34,6 @@ ai-resources/**/*.gif
 ai-resources/**/*.webp
 ai-resources/**/*.avif
 ai-resources/**/*.heic
+
+# Internal-tooling discussion — kept local, out of the public repo
+ai-resources/sandbox/loop-spec.md

@@ -143,8 +143,8 @@ sbx policy allow network "api.anthropic.com,*.npmjs.org,registry.npmjs.org,githu
 - **`--clone` (default here).** `sbx run --clone …` runs Claude on an in-container clone of the
   repo (host mounted read-only); its commits are surfaced via a `sandbox-<name>` git remote on
   the host, which you review like a coworker's branch. Strongest isolation — the agent cannot
-  touch your working tree — and the natural on-ramp to **the internal loop tool** (an internal autonomous
-  workflow that layers on this same `sbx` foundation).
+  touch your working tree — and the natural on-ramp to a fully autonomous loop layered on
+  this same `sbx` foundation (spec kept local, untracked).
 - **Bind-mount (opt-in).** The repo is mounted read-write into the sandbox; Claude's edits
   appear on your host files immediately. The interactive "watch me work" model. Drop `--clone`
   from `scripts/sbx-dev.sh` (or run `sbx run` without it) to use this.

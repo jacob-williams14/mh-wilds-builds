@@ -49,6 +49,6 @@ The `sbx` foundation is documented in [`sbx-dev.md`](./sbx-dev.md):
   linux/arm64 build) + agent-browser are baked into `.sbx/Dockerfile`, with the
   `validate-ui` project skill and a live watch mode (see [`sbx-dev.md`](./sbx-dev.md)).
   This covers, locally, what crabbox's remote browser/VNC + screenshot artifacts offer.
-- **Autonomous loop / "the internal loop tool"** — still deferred; see [`loop-spec.md`](./loop-spec.md).
-  Layers on this same `sbx` foundation.
+- **Autonomous loop** — still deferred; the spec (`loop-spec.md`) is kept local and
+  gitignored because it discusses internal tooling. Layers on this same `sbx` foundation.
 - **Portable extraction** — planned; see [`portable-plan.md`](./portable-plan.md).

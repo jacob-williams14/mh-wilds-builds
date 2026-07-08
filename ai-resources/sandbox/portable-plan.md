@@ -72,8 +72,9 @@ plugin (heavier packaging; revisit only if the skill outgrows itself).
 4. **Back-port fixes** discovered in step 3 into this repo's copies, keeping the
    reference implementation and templates in sync (manual for now; automate only if
    drift actually bites).
-5. **Later, when unfrozen:** fold the autonomous loop (`loop-spec.md`) into the harness as
-   an optional stamped extra — it layers on the same `--clone` foundation.
+5. **Later, when unfrozen:** fold the autonomous loop (`loop-spec.md`, local/untracked)
+   into the harness as an optional stamped extra — it layers on the same `--clone`
+   foundation.
 
 ## Non-goals
 
