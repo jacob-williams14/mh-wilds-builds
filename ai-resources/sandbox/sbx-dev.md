@@ -16,7 +16,8 @@ Bind-mount ("watch me work", edits land on host files live) is the opt-in altern
 > The deploy stack (`Dockerfile`, `nginx.conf`, `docker-compose.yml`, CI) is unrelated —
 > that ships the static app to Render.
 >
-> Why `sbx` and not a remote tool like crabbox: see [sandbox-decision.md](./sandbox-decision.md).
+> Why `sbx` and not a remote tool like crabbox: see [decision.md](./decision.md).
+> Plan for lifting this harness into other projects: [portable-plan.md](./portable-plan.md).
 
 ## Prerequisites (one-time, on the host)
 
@@ -182,7 +183,7 @@ real app (open → snapshot → click → read → screenshot) to verify its own
 surfacing commits.
 
 The how-to lives in the committed project skill
-[`.claude/skills/validate-ui/SKILL.md`](../.claude/skills/validate-ui/SKILL.md), including
+[`.claude/skills/validate-ui/SKILL.md`](../../.claude/skills/validate-ui/SKILL.md), including
 the hard-won gotchas (hydration race before the first click, ref-vs-text-locator casing
 traps). The skill's "App config" section is the only app-specific part — it is designed to
 be lifted into other projects.

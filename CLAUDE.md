@@ -22,7 +22,7 @@ All five must pass before any work is considered done. The contract test verifie
 
 For an isolated, egress-restricted environment, Claude can run inside a Docker Sandbox (`sbx`)
 microVM: `sh scripts/sbx-setup.sh` once, then `bun run sbx` (or `sh scripts/sbx-dev.sh`). See
-[ai-resources/sbx-dev.md](ai-resources/sbx-dev.md).
+[ai-resources/sandbox/sbx-dev.md](ai-resources/sandbox/sbx-dev.md).
 
 ## Active phase
 

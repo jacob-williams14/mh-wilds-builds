@@ -49,5 +49,5 @@ The `sbx` foundation is documented in [`sbx-dev.md`](./sbx-dev.md):
   Chromium + agent-browser to `.sbx/Dockerfile` so the agent can drive a real browser to
   validate UI changes, fully local. (crabbox's remote browser/VNC + screenshot artifacts are
   the heavier, remote version of the same idea.)
-- **Autonomous loop / "the internal loop tool"** — see [`loop/SPEC.md`](./loop/SPEC.md). Layers on this same
+- **Autonomous loop / "the internal loop tool"** — see [`loop-spec.md`](./loop-spec.md). Layers on this same
   `sbx` foundation once the interactive sandbox is settled.
