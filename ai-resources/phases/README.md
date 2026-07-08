@@ -19,7 +19,7 @@ Sequenced work on weapon data, presentation, and architecture.
 | 9 | Decompose `BuildResult.svelte` | Complete | Archived: `archive/09-decompose-build-result.md` |
 | 10 | References reconciliation + polish | Complete | Archived: `archive/10-references-and-polish.md` |
 | 11 | Automated weapon data pipeline (11 weapons) | Complete | Archived: `archive/11-automated-weapon-pipeline.md` |
-| 12 | Legacy weapon re-audit (Bow, IG, LS) | In progress | [12-legacy-weapon-reaudit.md](./12-legacy-weapon-reaudit.md) |
+| 12 | Legacy weapon re-audit (Bow, IG, LS) | Complete | Archived: `archive/12-legacy-weapon-reaudit.md` |
 
 ## How to use this directory
 

@@ -2,7 +2,8 @@
 
 **Branch:** `phase-11-weapon-data-pipeline` (continues on the pipeline branch)
 **Opened:** 2026-07-08
-**Status:** In progress
+**Status:** Complete (2026-07-08); only the user browser click-through
+remains open — tracked implicitly, not blocking
 
 ## Why
 
