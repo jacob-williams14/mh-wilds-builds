@@ -54,7 +54,18 @@ sbx run -t mh-wilds-sbx --name mh-wilds --clone claude .
 
 Why the custom template: the default `claude` sandbox image ships Node but not bun, and
 this repo is bun-based, so `.sbx/Dockerfile` layers bun onto
-`docker/sandbox-templates:claude-code-docker`.
+`docker/sandbox-templates:claude-code-docker`. It also bakes in **agent-browser + Chromium**
+for browser self-validation — see [Browser self-validation](#browser-self-validation).
+
+**After editing `.sbx/Dockerfile`**: the launcher only builds when the template is *missing*,
+so an edited Dockerfile needs a manual rebuild + reload, then a fresh sandbox:
+
+```sh
+docker build -t mh-wilds-sbx -f .sbx/Dockerfile .sbx
+docker save mh-wilds-sbx -o /tmp/mh-wilds-sbx.tar
+sbx template load /tmp/mh-wilds-sbx.tar
+sbx rm mh-wilds   # existing sandboxes keep the old template
+```
 
 **Reviewing the agent's work.** `--clone` only takes effect at sandbox *creation*. To see the
 agent's commits on the host, fetch the auto-created remote:
@@ -162,3 +173,22 @@ and guardrails you rely on, put them at **project level** (they ride into the cl
 - `.claude/settings.json` — project hooks (e.g. markdown-lint) and permissions
 - `.mcp.json` — any MCP servers you want the sandboxed agent to have
 - Mirror any load-bearing global `CLAUDE.md` rules into the project `CLAUDE.md`
+
+## Browser self-validation
+
+The template ships **agent-browser** (CDP-driven headless-Chrome CLI) with Playwright's
+linux/arm64 Chromium baked in at build time — the egress-locked sandbox never downloads
+anything at runtime; validation only talks to the local dev server. The agent drives the
+real app (open → snapshot → click → read → screenshot) to verify its own UI changes before
+surfacing commits.
+
+The how-to lives in the committed project skill
+[`.claude/skills/validate-ui/SKILL.md`](../.claude/skills/validate-ui/SKILL.md), including
+the hard-won gotchas (hydration race before the first click, ref-vs-text-locator casing
+traps). The skill's "App config" section is the only app-specific part — it is designed to
+be lifted into other projects.
+
+Cost: Chromium + system libraries grow the image from ~2.1GB to ~3.2GB, and `docker save` /
+`sbx template load` take correspondingly longer. `agent-browser install` must never run in
+the sandbox — Chrome for Testing has no linux/arm64 builds (that's why Playwright's Chromium
+is used); the baked-in binary is wired via `AGENT_BROWSER_EXECUTABLE_PATH`.

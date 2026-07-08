@@ -11,4 +11,38 @@ FROM docker.io/docker/sandbox-templates:claude-code-docker
 
 USER root
 RUN npm install -g bun && bun --version
+
+# Browser self-validation: agent-browser (CDP-driven headless Chrome CLI for agents).
+# Chrome + system deps are baked in at BUILD time (host network, unrestricted) so the
+# egress-locked sandbox never needs to download anything at runtime — validation only
+# talks to the local dev server.
+#
+# agent-browser's own `install` only fetches "Chrome for Testing", and Google does not
+# publish Chrome for Testing builds for linux/arm64 (this host builds arm64 images) —
+# it fails outright and tells you to install Chromium from the system package manager.
+# But Ubuntu 26.04 has no chromium/chromium-browser apt package either (Ubuntu moved it
+# to a snap, and snaps don't run in containers). Neither of agent-browser's usual install
+# paths works here.
+#
+# Playwright ships real linux/arm64 Chromium builds, and its `--with-deps` installer also
+# lays down the apt system libraries Chrome needs on Ubuntu 26.04. We install it once as
+# root into a shared, world-readable path (PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright,
+# instead of the default $HOME/.cache/ms-playwright) so the runtime `agent` user can read
+# and execute it without needing its own copy. `--no-shell` skips the separate
+# headless-shell build — agent-browser only needs the full Chrome binary, which already
+# supports `--headless` on its own — keeping the download smaller.
+#
+# The installed path is versioned (chromium-<rev>), so we symlink it to a stable path
+# and point agent-browser at that symlink via AGENT_BROWSER_EXECUTABLE_PATH (a documented
+# agent-browser env var — see `agent-browser --help`), instead of hardcoding a revision
+# number that would drift on the next `npx playwright install`.
+RUN npm install -g agent-browser \
+	&& PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright npx --yes playwright install --with-deps --no-shell chromium \
+	&& ln -s "$(find /opt/ms-playwright -maxdepth 1 -type d -name 'chromium-*')/chrome-linux/chrome" /opt/ms-playwright/chrome \
+	&& chmod -R a+rX /opt/ms-playwright \
+	&& rm -rf /root/.cache /root/.npm
+
+ENV AGENT_BROWSER_EXECUTABLE_PATH=/opt/ms-playwright/chrome
+
 USER agent
+RUN agent-browser --version
