@@ -13,8 +13,9 @@ Bind-mount ("watch me work", edits land on host files live) is the opt-in altern
 [Network egress](#network-egress). What config the sandboxed agent has is covered in
 [Agent config inside the sandbox](#agent-config-inside-the-sandbox).
 
-> The deploy stack (`Dockerfile`, `nginx.conf`, `docker-compose.yml`, CI) is unrelated —
-> that ships the static app to Render.
+> The Docker files at the repo root (`Dockerfile`, `nginx.conf`, `docker-compose.yml`) are
+> unrelated — local prod-parity runs of the app. Deployment is a Render static site
+> (`render.yaml`).
 >
 > Why `sbx` and not a remote tool like crabbox: see [decision.md](./decision.md).
 > Plan for lifting this harness into other projects: [portable-plan.md](./portable-plan.md).

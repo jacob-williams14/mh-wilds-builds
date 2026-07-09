@@ -32,8 +32,9 @@ All 14 weapon types, each with separate HR 50–100 and HR 100+ flows.
 ## Development
 
 AI-assisted development runs inside an egress-restricted Docker Sandbox microVM — see
-[ai-resources/sandbox/sbx-dev.md](ai-resources/sandbox/sbx-dev.md). The deploy stack
-(`Dockerfile`, `docker-compose.yml`, CI) ships the static build to Render.
+[ai-resources/sandbox/sbx-dev.md](ai-resources/sandbox/sbx-dev.md). Deployment is a Render
+static site built from this repo on push (`render.yaml`); the Docker stack (`Dockerfile`,
+`docker-compose.yml`) is for local prod-parity runs.
 
 ## Adding a New Weapon
 
