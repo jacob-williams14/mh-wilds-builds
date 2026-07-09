@@ -1,5 +1,7 @@
 # MH Wilds Build Selector
 
+**Live: [mh-wilds-builds.pages.dev](https://mh-wilds-builds.pages.dev)**
+
 A feel-first Monster Hunter Wilds build selector. Choose a weapon, answer two quick questions about your playstyle, and get an endgame armor build that favors comfort, flow, and consistency. Armor is the playstyle decision; weapons are about access.
 
 ## Tech Stack
