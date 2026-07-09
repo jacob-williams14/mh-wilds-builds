@@ -1,0 +1,19 @@
+# Render Blueprint — deploys the app as a free static site with global CDN.
+# Dashboard: New → Blueprint → select this repo → Apply. Rebuilds on every push to main.
+#
+# The app is fully prerendered (adapter-static: / and /references), so no SPA
+# fallback/rewrite rules are needed. The Docker stack (Dockerfile, compose) remains
+# for local prod-parity runs; it is not the deploy path.
+services:
+  - type: web
+    name: mh-wilds-builds
+    runtime: static
+    buildCommand: npm install -g bun && bun install --frozen-lockfile && bun run build
+    staticPublishPath: ./build
+    # adapter-static emits flat files (references.html, not references/index.html);
+    # nginx covered this with a `$uri.html` try_files fallback — replicate it explicitly
+    # rather than relying on platform extensionless resolution.
+    routes:
+      - type: rewrite
+        source: /references
+        destination: /references.html

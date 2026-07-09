@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -32,63 +32,7 @@ jobs:
       - name: Test
         run: bun run test
 
-  deploy:
-    name: Build, diff, deploy
-    needs: ci
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-
-      - name: Log in to GHCR
-        uses: docker/login-action@af1e73f918a031802d376d3c8bbc3fe56130a9b0 # v4.4.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4.2.0
-
-      - name: Set image name
-        run: echo "IMAGE=ghcr.io/$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
-
-      - name: Pull existing image
-        id: pull
-        run: |
-          if docker pull ${{ env.IMAGE }}:latest 2>/dev/null; then
-            echo "id=$(docker inspect ${{ env.IMAGE }}:latest --format '{{.Id}}')" >> $GITHUB_OUTPUT
-          else
-            echo "id=" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Build candidate image
-        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
-        with:
-          context: .
-          load: true
-          tags: ${{ env.IMAGE }}:candidate
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
-      - name: Diff and push
-        id: push
-        run: |
-          NEW_ID=$(docker inspect ${{ env.IMAGE }}:candidate --format '{{.Id}}')
-          if [ "$NEW_ID" = "${{ steps.pull.outputs.id }}" ]; then
-            echo "Image unchanged — skipping push and deploy"
-            echo "pushed=false" >> $GITHUB_OUTPUT
-          else
-            docker tag ${{ env.IMAGE }}:candidate ${{ env.IMAGE }}:latest
-            docker tag ${{ env.IMAGE }}:candidate ${{ env.IMAGE }}:${{ github.sha }}
-            docker push ${{ env.IMAGE }}:latest
-            docker push ${{ env.IMAGE }}:${{ github.sha }}
-            echo "pushed=true" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Trigger Render deploy
-        if: steps.push.outputs.pushed == 'true'
-        run: curl -sf "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+# Deployment is handled by Render's static-site Blueprint (render.yaml) — Render builds
+# from the repo on every push to main. The former image pipeline (build → GHCR → deploy
+# hook) was removed 2026-07-09; recover it from git history if an image-backed deploy is
+# ever needed again. The Dockerfile/compose remain for local prod-parity runs.
