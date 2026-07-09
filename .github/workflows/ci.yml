@@ -32,7 +32,32 @@ jobs:
       - name: Test
         run: bun run test
 
-# Deployment is handled by Cloudflare Pages (git integration) — it builds from the repo
-# on every push to main, independently of this workflow. The former image pipeline
-# (build → GHCR → deploy hook) was removed 2026-07-09; recover it from git history if an
-# image-backed deploy is ever needed. The Dockerfile/compose remain for local prod parity.
+  # Deploys ONLY when the gates above pass (needs: ci) — Cloudflare's own git-watching is
+  # not used; this job is the sole deploy path. The wrangler step self-bootstraps the Pages
+  # project on first run. Secrets: CLOUDFLARE_API_TOKEN (Account → Cloudflare Pages → Edit)
+  # and CLOUDFLARE_ACCOUNT_ID.
+  # The former image pipeline (build → GHCR → deploy hook) was removed 2026-07-09; recover
+  # it from git history if ever needed. Dockerfile/compose remain for local prod parity.
+  deploy:
+    name: Deploy to Cloudflare Pages
+    needs: ci
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build
+        run: bun run build
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          preCommands: wrangler pages project create mh-wilds-builds --production-branch=main || true
+          command: pages deploy build --project-name=mh-wilds-builds
