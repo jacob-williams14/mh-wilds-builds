@@ -32,7 +32,7 @@ jobs:
       - name: Test
         run: bun run test
 
-# Deployment is handled by Render's static-site Blueprint (render.yaml) — Render builds
-# from the repo on every push to main. The former image pipeline (build → GHCR → deploy
-# hook) was removed 2026-07-09; recover it from git history if an image-backed deploy is
-# ever needed again. The Dockerfile/compose remain for local prod-parity runs.
+# Deployment is handled by Cloudflare Pages (git integration) — it builds from the repo
+# on every push to main, independently of this workflow. The former image pipeline
+# (build → GHCR → deploy hook) was removed 2026-07-09; recover it from git history if an
+# image-backed deploy is ever needed. The Dockerfile/compose remain for local prod parity.
