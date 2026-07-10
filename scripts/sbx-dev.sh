@@ -22,8 +22,11 @@
 # then open http://localhost:5173
 set -e
 
-TAG=mh-wilds-sbx
-NAME=mh-wilds
+# --- app config (the only lines to edit when stamping into another repo) ---
+TAG=mh-wilds-sbx # sbx template tag (matches .sbx/Dockerfile image name)
+NAME=mh-wilds    # sandbox name; the host review remote becomes "sandbox-$NAME"
+# ---------------------------------------------------------------------------
+
 DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 
 if ! sbx template ls 2>/dev/null | grep -q "$TAG"; then

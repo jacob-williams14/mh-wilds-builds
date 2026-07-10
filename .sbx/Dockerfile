@@ -10,8 +10,15 @@
 FROM docker.io/docker/sandbox-templates:claude-code-docker
 
 USER root
+
+# --- app runtime: bun ---
+# The only app-specific layer. When stamping this template into another repo, replace
+# with that app's runtime (node/pnpm/python/…) — or delete if the base image suffices.
 RUN npm install -g bun && bun --version
 
+# --- generic: browser validation ---
+# Everything below is app-agnostic; port it unchanged.
+#
 # Browser self-validation: agent-browser (CDP-driven headless Chrome CLI for agents).
 # Chrome + system deps are baked in at BUILD time (host network, unrestricted) so the
 # egress-locked sandbox never needs to download anything at runtime — validation only

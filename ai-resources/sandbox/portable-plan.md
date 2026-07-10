@@ -1,6 +1,8 @@
 # Portable sandbox harness — extraction plan
 
-**Status:** planned (extraction not started) · **Date:** 2026-07-08
+**Status:** in progress — steps 1–2 done 2026-07-09 (seams marked here; `sandbox-harness`
+skill stamped into dotfiles on branch `feat-sandbox-harness-skill`); steps 3–4 (second-app
+proof + back-port) remain · **Date:** 2026-07-08
 
 ## Goal
 
@@ -85,8 +87,10 @@ plugin (heavier packaging; revisit only if the skill outgrows itself).
 
 ## Done when
 
-- [ ] Seams labeled in this repo (step 1) with template rebuild verified
-- [ ] `sandbox-harness` user skill exists in dotfiles with all six templates
+- [x] Seams labeled in this repo (step 1) with template rebuild verified — 2026-07-09,
+      rebuild was fully layer-cached (comments only, zero behavior change)
+- [x] `sandbox-harness` user skill exists in dotfiles with all six templates — 2026-07-09,
+      dotfiles branch `feat-sandbox-harness-skill`
 - [ ] A second app runs the full loop: `bun run sbx`-equivalent → agent validates a UI
       change in-sandbox via its stamped validate-ui skill → watched live via
       `sbx:watch`-equivalent → commits reviewed over the `sandbox-*` remote
