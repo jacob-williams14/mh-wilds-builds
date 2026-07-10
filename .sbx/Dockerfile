@@ -6,7 +6,7 @@
 #   docker build -t mh-wilds-sbx -f .sbx/Dockerfile .sbx
 #   docker save mh-wilds-sbx -o /tmp/mh-wilds-sbx.tar
 #   sbx template load /tmp/mh-wilds-sbx.tar
-#   sbx run -t mh-wilds-sbx --name mh-wilds claude .
+#   sbx run -t mh-wilds-sbx --name mh-wilds --clone claude .
 FROM docker.io/docker/sandbox-templates:claude-code-docker
 
 USER root
