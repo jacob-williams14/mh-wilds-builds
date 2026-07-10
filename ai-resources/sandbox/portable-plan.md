@@ -78,6 +78,18 @@ plugin (heavier packaging; revisit only if the skill outgrows itself).
    into the harness as an optional stamped extra — it layers on the same `--clone`
    foundation.
 
+## Dogfood coverage (2026-07-10)
+
+A cold-agent dogfood run stamped the skill into a synthetic Python/Flask + Makefile
+fixture: stamping, non-JS wiring, placeholder fill, and a real `docker build` of the
+stamped image all passed; 9 critique items were folded back into the skill (naming rule,
+headless fallback, PyPI/PEP 668 guidance, egress-for-non-npm, table→bullets in
+validate-ui, sbx-setup append placement, socat provenance, SPA-note). Still unexercised
+— step 3's real-app proof should cover them: actual `sbx template load` + `--clone` run,
+in-sandbox validate-ui execution against a live dev server, the `sandbox-<name>` review
+remote, applying (not just documenting) extra egress allows, and live watch mode on a
+stamped repo.
+
 ## Non-goals
 
 - No npm package / plugin / separate repo until a third consumer exists (rule of three).

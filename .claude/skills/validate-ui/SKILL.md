@@ -10,13 +10,13 @@ click is not evidence — the post-click state is.
 
 ## App config (edit only this section when porting the skill to another app)
 
-|                  |                                                                                                                                                                                             |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Install          | `bun install --frozen-lockfile`                                                                                                                                                             |
-| Start            | `bun dev --host` (Vite; `--host` so it binds 0.0.0.0)                                                                                                                                       |
-| URL              | `http://localhost:5173`                                                                                                                                                                     |
-| Ready when       | HTTP 200 from the URL                                                                                                                                                                       |
-| What to validate | Every flow path you changed: weapon → rank tier → Q1 → Q2 → build card renders the expected build name and armor. Check BOTH rank tiers (HR 50–100 and HR 100+) for any weapon you touched. |
+- **Install:** `bun install --frozen-lockfile`
+- **Start:** `bun dev --host` (Vite; `--host` so it binds 0.0.0.0)
+- **URL:** `http://localhost:5173`
+- **Ready when:** HTTP 200 from the URL
+- **What to validate:** Every flow path you changed: weapon → rank tier → Q1 → Q2 → build
+  card renders the expected build name and armor. Check BOTH rank tiers (HR 50–100 and
+  HR 100+) for any weapon you touched.
 
 ## Setup
 
