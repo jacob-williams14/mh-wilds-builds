@@ -21,7 +21,9 @@ All five must pass before any work is considered done. The contract test verifie
 ### Running the agent in a sandbox
 
 For an isolated, egress-restricted environment, Claude can run inside a Docker Sandbox (`sbx`)
-microVM: `sh scripts/sbx-setup.sh` once, then `bun run sbx` (or `sh scripts/sbx-dev.sh`). See
+microVM: `sh scripts/sbx-setup.sh` once, then `bun run sbx` (or `sh scripts/sbx-dev.sh`). Commit
+or stash WIP first — the sandbox clone sees only committed state — and pull the agent's work back
+with `git fetch sandbox-mh-wilds`. See
 [ai-resources/sandbox/sbx-dev.md](ai-resources/sandbox/sbx-dev.md).
 
 ## Active phase
