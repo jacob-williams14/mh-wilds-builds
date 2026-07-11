@@ -1,13 +1,11 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import avatarPlaceholder from '$lib/assets/avatar-placeholder.svg';
 
-	// Avatar is still the themed placeholder — drop a real photo in src/lib/assets/ and
-	// import it in place of avatarPlaceholder whenever one is ready.
+	// No avatar for now — when an in-game character screenshot is ready, add it to
+	// src/lib/assets/, import it here, and restore the dev-avatar block in the card below.
 	const dev = {
 		name: 'jWill',
 		handle: '',
-		avatar: avatarPlaceholder,
 		bio: [
 			"I'm jWill — a software developer by day who hunts on nights and weekends. I built " +
 				'this so picking an endgame build starts with how you actually like to play, not with ' +
@@ -90,9 +88,6 @@
 		<h2 class="about-heading">Who made this</h2>
 		<div class="dev-card">
 			<div class="dev-identity">
-				<div class="dev-avatar">
-					<img src={dev.avatar} alt="{dev.name}'s profile picture" width="56" height="56" />
-				</div>
 				<div class="dev-name-block">
 					<span class="dev-name">{dev.name}</span>
 					{#if dev.handle}
@@ -222,23 +217,6 @@
 		display: flex;
 		align-items: center;
 		gap: 14px;
-	}
-
-	.dev-avatar {
-		flex-shrink: 0;
-		width: 56px;
-		height: 56px;
-		border-radius: 10px;
-		border: 1px solid var(--border);
-		overflow: hidden;
-		background: var(--bg);
-	}
-
-	.dev-avatar img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
 	}
 
 	.dev-name-block {
