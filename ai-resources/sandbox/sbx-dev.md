@@ -83,19 +83,16 @@ existing bind-mount sandbox to clone mode requires removing it first: `sbx rm mh
 
 ## Live app preview
 
-Inside the sandbox, start the dev server bound to all interfaces:
+One command from the host (starts the dev server in the clone if needed, publishes the
+port loopback-only, prints the URL):
 
 ```sh
-bun install        # first time
-bun dev --host     # --host is required so Vite binds 0.0.0.0
+bun run sbx:preview     # open http://localhost:5173
+bun run sbx:kill        # stop the detached dev server when done
 ```
 
-Then, in a second **host** terminal, publish the port and open it:
-
-```sh
-sbx ports mh-wilds --publish 5173:5173
-# open http://localhost:5173
-```
+Manual equivalent: inside the sandbox `bun dev --host` (`--host` so Vite binds 0.0.0.0),
+then on the host `sbx ports mh-wilds --publish 5173:5173`.
 
 ## Useful commands
 
@@ -105,6 +102,31 @@ sbx exec mh-wilds <cmd>     # run a command inside the sandbox
 sbx template ls             # list loaded templates
 sbx rm mh-wilds             # remove the sandbox
 sbx reset                   # nuke all sandboxes / state
+```
+
+### Host-side cheat sheet (proven 2026-07-10)
+
+`sbx exec` starts in `/home/agent/workspace`, NOT the repo clone — the clone lives at the
+same absolute path as on the host, so always pass the path (`git -C …` / `cd … && …`):
+
+```sh
+# What has the agent changed? (uncommitted work is invisible to git fetch)
+sbx exec mh-wilds -- git -C /Users/jacobwilliams/Projects/mh_wilds_builds status --short
+sbx exec mh-wilds -- git -C /Users/jacobwilliams/Projects/mh_wilds_builds diff
+
+# Review + merge committed agent work (the designed flow)
+git fetch sandbox-mh-wilds
+git log --oneline HEAD..sandbox-mh-wilds/<branch>
+git merge sandbox-mh-wilds/<branch>
+
+# See the app rendered from the sandbox / kill that detached dev server
+bun run sbx:preview      # start in clone if needed + publish; open http://localhost:5173
+bun run sbx:kill         # pkill uses the [b]un trick — a bare pkill -f "bun dev" matches
+                         # its own sbx exec wrapper shell and strands the exec channel
+
+# What's running in there? / copy a file out without a commit
+sbx exec mh-wilds -- ps aux
+sbx cp mh-wilds:<path-in-sandbox> <host-path>
 ```
 
 ## Network egress

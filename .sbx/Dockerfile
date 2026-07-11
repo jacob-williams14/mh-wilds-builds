@@ -6,12 +6,17 @@
 #   docker build -t mh-wilds-sbx -f .sbx/Dockerfile .sbx
 #   docker save mh-wilds-sbx -o /tmp/mh-wilds-sbx.tar
 #   sbx template load /tmp/mh-wilds-sbx.tar
-#   sbx run -t mh-wilds-sbx --name mh-wilds claude .
+#   sbx run -t mh-wilds-sbx --name mh-wilds --clone claude .
 FROM docker.io/docker/sandbox-templates:claude-code-docker
 
 USER root
-RUN npm install -g bun && bun --version
 
+# --- generic: browser validation ---
+# This layer is app-agnostic; port it unchanged. It comes FIRST (before the app
+# runtime layer) because it is by far the most expensive layer (~150 MB Chromium +
+# apt deps) and never changes per app — ordering it first lets Docker reuse its
+# cache across app-runtime edits and across every repo stamped from this template.
+#
 # Browser self-validation: agent-browser (CDP-driven headless Chrome CLI for agents).
 # Chrome + system deps are baked in at BUILD time (host network, unrestricted) so the
 # egress-locked sandbox never needs to download anything at runtime — validation only
@@ -43,6 +48,11 @@ RUN npm install -g agent-browser \
 	&& rm -rf /root/.cache /root/.npm
 
 ENV AGENT_BROWSER_EXECUTABLE_PATH=/opt/ms-playwright/chrome
+
+# --- app runtime: bun ---
+# The only app-specific layer (kept LAST so editing it doesn't bust the browser
+# layer's cache). The base image ships Node and Python 3; this repo needs bun.
+RUN npm install -g bun && bun --version
 
 USER agent
 RUN agent-browser --version

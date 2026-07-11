@@ -1,6 +1,8 @@
 # Portable sandbox harness — extraction plan
 
-**Status:** planned (extraction not started) · **Date:** 2026-07-08
+**Status:** in progress — steps 1–2 done 2026-07-09 (seams marked here; `sandbox-harness`
+skill stamped into dotfiles on branch `feat-sandbox-harness-skill`); steps 3–4 (second-app
+proof + back-port) remain · **Date:** 2026-07-08
 
 ## Goal
 
@@ -76,6 +78,18 @@ plugin (heavier packaging; revisit only if the skill outgrows itself).
    into the harness as an optional stamped extra — it layers on the same `--clone`
    foundation.
 
+## Dogfood coverage (2026-07-10)
+
+A cold-agent dogfood run stamped the skill into a synthetic Python/Flask + Makefile
+fixture: stamping, non-JS wiring, placeholder fill, and a real `docker build` of the
+stamped image all passed; 9 critique items were folded back into the skill (naming rule,
+headless fallback, PyPI/PEP 668 guidance, egress-for-non-npm, table→bullets in
+validate-ui, sbx-setup append placement, socat provenance, SPA-note). Still unexercised
+— step 3's real-app proof should cover them: actual `sbx template load` + `--clone` run,
+in-sandbox validate-ui execution against a live dev server, the `sandbox-<name>` review
+remote, applying (not just documenting) extra egress allows, and live watch mode on a
+stamped repo.
+
 ## Non-goals
 
 - No npm package / plugin / separate repo until a third consumer exists (rule of three).
@@ -85,8 +99,10 @@ plugin (heavier packaging; revisit only if the skill outgrows itself).
 
 ## Done when
 
-- [ ] Seams labeled in this repo (step 1) with template rebuild verified
-- [ ] `sandbox-harness` user skill exists in dotfiles with all six templates
+- [x] Seams labeled in this repo (step 1) with template rebuild verified — 2026-07-09,
+      rebuild was fully layer-cached (comments only, zero behavior change)
+- [x] `sandbox-harness` user skill exists in dotfiles with all six templates — 2026-07-09,
+      dotfiles branch `feat-sandbox-harness-skill`
 - [ ] A second app runs the full loop: `bun run sbx`-equivalent → agent validates a UI
       change in-sandbox via its stamped validate-ui skill → watched live via
       `sbx:watch`-equivalent → commits reviewed over the `sandbox-*` remote

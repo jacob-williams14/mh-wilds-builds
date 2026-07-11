@@ -21,8 +21,18 @@ All five must pass before any work is considered done. The contract test verifie
 ### Running the agent in a sandbox
 
 For an isolated, egress-restricted environment, Claude can run inside a Docker Sandbox (`sbx`)
-microVM: `sh scripts/sbx-setup.sh` once, then `bun run sbx` (or `sh scripts/sbx-dev.sh`). See
+microVM: `sh scripts/sbx-setup.sh` once, then `bun run sbx` (or `sh scripts/sbx-dev.sh`). Commit
+or stash WIP first — the sandbox clone sees only committed state — and pull the agent's work back
+with `git fetch sandbox-mh-wilds`. See
 [ai-resources/sandbox/sbx-dev.md](ai-resources/sandbox/sbx-dev.md).
+
+If you are running INSIDE the sandbox: commit ALL work before finishing — uncommitted changes
+are invisible on the host and die with the sandbox (the first live test ended with the agent's
+work stranded uncommitted). User-level skills (`/log-work` etc.) are not available
+here, this clone is the only writable git tree, and you won't know which commit is the session's
+last — so write EVERY commit body to carry its slice of the session-log raw material as you go
+(the decision and why, what was validated and what rendered, open threads at that point).
+Host-side `/log-work` synthesizes the session from the fetched commit bodies.
 
 ## Active phase
 

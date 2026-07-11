@@ -10,8 +10,8 @@
 # registries — exactly what Claude + bun need. Inspect it with `sbx policy ls`.
 #
 # To tighten further to a strict allowlist, swap the policy block below for:
-#   sbx policy init deny-all
-#   sbx policy allow network "api.anthropic.com,*.npmjs.org,registry.npmjs.org,github.com,*.githubusercontent.com,objects.githubusercontent.com"
+#   sbx policy set-default deny-all
+#   sbx policy allow network -g "api.anthropic.com,*.npmjs.org,registry.npmjs.org,github.com,*.githubusercontent.com,objects.githubusercontent.com"
 # Note: `deny-all` blocks model-provider APIs too, so api.anthropic.com MUST be re-allowed
 # or `claude` cannot reach the API from inside the sandbox.
 set -e
@@ -25,7 +25,7 @@ echo "Starting the sbx daemon (idempotent)…"
 sbx daemon start || true
 
 echo "Setting network policy to 'balanced' (deny-by-default + baseline allowlist)…"
-sbx policy init balanced
+sbx policy set-default balanced
 
 echo
 echo "Current network policy:"
