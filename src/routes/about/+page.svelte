@@ -2,27 +2,22 @@
 	import { resolve } from '$app/paths';
 	import avatarPlaceholder from '$lib/assets/avatar-placeholder.svg';
 
-	// TODO(jacob): replace this placeholder developer info with your own before shipping.
-	// Every field below (name, handle, bio, avatar, supportUrl, links) is fake scaffolding — swap
-	// it. Drop your own photo in src/lib/assets/ and import it in place of avatarPlaceholder.
-	// The coffee button renders unconditionally so you can preview the layout; make sure
-	// `supportUrl` is a real buymeacoffee.com URL before you ship.
+	// Avatar is still the themed placeholder — drop a real photo in src/lib/assets/ and
+	// import it in place of avatarPlaceholder whenever one is ready.
 	const dev = {
-		name: 'Ari Fieldsmith',
-		handle: '@palico_main',
+		name: 'Jacob Williams',
+		handle: '@jacob-williams14',
 		avatar: avatarPlaceholder,
 		bio: [
-			"I'm a longtime Monster Hunter player who spent more time in the training area tweaking " +
-				'sets than actually hunting. This started as a spreadsheet I kept passing to friends, then ' +
-				'turned into a tool so I could stop explaining it in Discord.',
-			"It's a nights-and-weekends project — no ads, no tracking, no login. If it saved you a " +
+			"I'm Jacob — a software developer (consultant at Atomic Object by day) who hunts on " +
+				'nights and weekends. I built this so picking an endgame build starts with how you ' +
+				'actually like to play, not with an hour of cross-referencing spreadsheets, wiki tabs, ' +
+				'and Discord screenshots.',
+			"It's a solo side project — no ads, no tracking, no login. If it saved you a " +
 				'crafting headache, a coffee keeps the late-night data transcription going.'
 		],
-		supportUrl: 'https://buymeacoffee.com/YOUR_USERNAME',
-		links: [
-			{ label: 'GitHub', url: 'https://github.com/your-username' },
-			{ label: 'Bluesky', url: 'https://bsky.app/profile/your-handle' }
-		]
+		supportUrl: 'https://buymeacoffee.com/jwill',
+		links: [{ label: 'GitHub', url: 'https://github.com/jacob-williams14' }]
 	};
 </script>
 
