@@ -107,6 +107,36 @@ sbx rm mh-wilds             # remove the sandbox
 sbx reset                   # nuke all sandboxes / state
 ```
 
+### Host-side cheat sheet (proven 2026-07-10)
+
+`sbx exec` starts in `/home/agent/workspace`, NOT the repo clone — the clone lives at the
+same absolute path as on the host, so always pass the path (`git -C …` / `cd … && …`):
+
+```sh
+# What has the agent changed? (uncommitted work is invisible to git fetch)
+sbx exec mh-wilds -- git -C /Users/jacobwilliams/Projects/mh_wilds_builds status --short
+sbx exec mh-wilds -- git -C /Users/jacobwilliams/Projects/mh_wilds_builds diff
+
+# Review + merge committed agent work (the designed flow)
+git fetch sandbox-mh-wilds
+git log --oneline HEAD..sandbox-mh-wilds/<branch>
+git merge sandbox-mh-wilds/<branch>
+
+# See the app rendered from the sandbox (start server inside, publish, open)
+sbx exec mh-wilds -- sh -c 'cd /Users/jacobwilliams/Projects/mh_wilds_builds && (nohup bun dev --host >/tmp/dev-server.log 2>&1 &)'
+sbx ports mh-wilds --publish 5173:5173     # then open http://localhost:5173 (loopback-only)
+
+# Kill a dev server started outside the Claude session
+sbx exec mh-wilds -- pkill -f "bun dev"    # the exec itself may hang/exit oddly (pkill
+                                           # matches its own wrapper shell) — that's fine;
+                                           # verify with the curl below
+sbx exec mh-wilds -- curl -sf -o /dev/null --max-time 2 http://localhost:5173 || echo down
+
+# What's running in there? / copy a file out without a commit
+sbx exec mh-wilds -- ps aux
+sbx cp mh-wilds:<path-in-sandbox> <host-path>
+```
+
 ## Network egress
 
 The microVM isolates the filesystem and processes, but by default nothing stops a process
