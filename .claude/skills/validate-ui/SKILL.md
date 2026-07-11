@@ -24,7 +24,9 @@ click is not evidence — the post-click state is.
 ```sh
 bun install --frozen-lockfile
 mkdir -p /tmp/ui-validation   # screenshot target — agent-browser does NOT create parent dirs
-(bun dev --host > /tmp/dev-server.log 2>&1 &)
+# Reuse a server that's already up (often the user's live preview via sbx ports) —
+# the marker file records that it isn't yours to kill.
+if curl -sf -o /dev/null http://localhost:5173; then touch /tmp/dev-server.preexisting; else (bun dev --host > /tmp/dev-server.log 2>&1 &); fi
 for i in $(seq 1 60); do curl -sf -o /dev/null http://localhost:5173 && break; sleep 1; done
 curl -sf -o /dev/null http://localhost:5173 || { echo "dev server never became ready:"; cat /tmp/dev-server.log; exit 1; }
 ```
@@ -50,7 +52,10 @@ agent-browser screenshot /tmp/ui-validation/<step>.png
 agent-browser close --all
 ```
 
-Afterwards: Read the screenshot(s) to visually confirm rendering, then kill the dev server.
+Afterwards: Read the screenshot(s) to visually confirm rendering. Kill the dev server
+ONLY if you started it — if `/tmp/dev-server.preexisting` exists, the server predates
+this validation run (often the user watching a live preview) and killing it yanks the
+app out from under them; leave it running.
 
 ## Multi-viewport sweep (run for ANY layout/CSS change)
 

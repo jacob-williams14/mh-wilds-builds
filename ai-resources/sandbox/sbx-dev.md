@@ -115,6 +115,8 @@ sbx exec mh-wilds -- git -C /Users/jacobwilliams/Projects/mh_wilds_builds status
 sbx exec mh-wilds -- git -C /Users/jacobwilliams/Projects/mh_wilds_builds diff
 
 # Review + merge committed agent work (the designed flow)
+# FETCH BEFORE `sbx rm` — removing the sandbox also removes the sandbox-mh-wilds
+# remote and its tracking refs; anything committed-but-unfetched dies with it.
 git fetch sandbox-mh-wilds
 git log --oneline HEAD..sandbox-mh-wilds/<branch>
 git merge sandbox-mh-wilds/<branch>
