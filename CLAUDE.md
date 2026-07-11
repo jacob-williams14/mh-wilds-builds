@@ -26,6 +26,14 @@ or stash WIP first — the sandbox clone sees only committed state — and pull 
 with `git fetch sandbox-mh-wilds`. See
 [ai-resources/sandbox/sbx-dev.md](ai-resources/sandbox/sbx-dev.md).
 
+If you are running INSIDE the sandbox: commit ALL work before finishing — uncommitted changes
+are invisible on the host and die with the sandbox (the first live test ended with the agent's
+work stranded uncommitted). User-level skills (`/log-work` etc.) are not available
+here, this clone is the only writable git tree, and you won't know which commit is the session's
+last — so write EVERY commit body to carry its slice of the session-log raw material as you go
+(the decision and why, what was validated and what rendered, open threads at that point).
+Host-side `/log-work` synthesizes the session from the fetched commit bodies.
+
 ## Active phase
 
 Before starting any work, read `ai-resources/phases/ACTIVE.md` to see what is in flight. Tick off `Done when` checkboxes in the active phase doc as you complete items, in the same commit as the work.
