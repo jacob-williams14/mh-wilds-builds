@@ -7,9 +7,8 @@
 	import { defaultWeaponKey, weaponData, weaponTabs, type WeaponKey } from '$lib/domain/registry';
 	import type { RankRange } from '$lib/domain/types';
 
-	// TODO(jacob): replace the Google Form share URL after creating the form. Link is hidden
-	// until then. The Buy Me a Coffee link now lives on the /about page ("Who made this").
-	const FEEDBACK_URL = 'https://forms.gle/YOUR_FORM_ID';
+	// The Buy Me a Coffee link lives on the /about page ("Who made this").
+	const FEEDBACK_URL = 'https://forms.gle/jYsQsnsvY5fQXexz7';
 	const feedbackReady = !FEEDBACK_URL.includes('YOUR_');
 
 	let currentWeapon = $state<WeaponKey>(defaultWeaponKey);
