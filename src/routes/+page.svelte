@@ -122,7 +122,14 @@
 	</section>
 
 	<div class="page-footer">
-		<button type="button" class="reset-btn" onclick={resetFlow}>↻ Start Over</button>
+		<div class="footer-actions">
+			<button type="button" class="reset-btn" onclick={resetFlow}>↻ Start Over</button>
+			{#if feedbackReady}
+				<a href={FEEDBACK_URL} target="_blank" rel="noopener noreferrer" class="reset-btn">
+					💬 Leave Feedback
+				</a>
+			{/if}
+		</div>
 
 		<div class="sources-box">
 			<strong>Sources:</strong>
@@ -135,14 +142,6 @@
 			Built and maintained by one hunter-dev as a no-ads side project.
 			<a href={resolve('/about')} class="refs-link">Learn more about the site and the dev →</a>
 		</div>
-
-		{#if feedbackReady}
-			<div class="support-row">
-				<a href={FEEDBACK_URL} target="_blank" rel="noopener noreferrer" class="support-link">
-					💬 Spotted a bad build? Send feedback
-				</a>
-			</div>
-		{/if}
 	</div>
 </div>
 
@@ -239,6 +238,12 @@
 		gap: 18px;
 	}
 
+	.footer-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
 	.reset-btn {
 		align-self: flex-start;
 		border: 1px solid var(--dim);
@@ -249,6 +254,7 @@
 		font-size: 0.9rem;
 		font-weight: 600;
 		letter-spacing: 1px;
+		text-decoration: none;
 		transition: all 0.2s;
 	}
 
@@ -268,24 +274,6 @@
 	}
 
 	.refs-link:hover {
-		color: var(--gold);
-	}
-
-	.support-row {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px 24px;
-	}
-
-	.support-link {
-		font-size: 0.85rem;
-		font-weight: 600;
-		color: var(--dim);
-		text-decoration: none;
-		transition: color 0.2s;
-	}
-
-	.support-link:hover {
 		color: var(--gold);
 	}
 
