@@ -90,6 +90,18 @@ in-sandbox validate-ui execution against a live dev server, the `sandbox-<name>`
 remote, applying (not just documenting) extra egress allows, and live watch mode on a
 stamped repo.
 
+## Known gap — user-level config doesn't reach the sandbox (2026-07-10)
+
+The clone carries only repo files: `~/.claude` (global CLAUDE.md rules, user skills like
+`/log-work`) does not exist inside the sandbox. First real bite: the in-sandbox agent
+added a `Co-Authored-By: Claude` footer its host-side counterpart is forbidden from
+writing. Mitigation today is per-rule and manual — restate critical conventions in the
+repo CLAUDE.md (done for commit rules + worklog convention) and stamp needed user skills
+project-level (the validate-ui pattern). If the workflow grows more user-level skills the
+sandbox needs, candidate evolutions: bake a curated sandbox-safe `~/.claude` layer into
+the template image at build time, or fold this into the planned "bootstrap projects with
+relevant user skills" stamping skill. Revisit when the manual restating starts to bite.
+
 ## Non-goals
 
 - No npm package / plugin / separate repo until a third consumer exists (rule of three).

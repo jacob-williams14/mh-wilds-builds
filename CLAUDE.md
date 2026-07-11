@@ -34,6 +34,11 @@ last — so write EVERY commit body to carry its slice of the session-log raw ma
 (the decision and why, what was validated and what rendered, open threads at that point).
 Host-side `/log-work` synthesizes the session from the fetched commit bodies.
 
+Commit-message conventions apply in the sandbox too — user-level rules don't reach this clone,
+so they're restated here: Conventional Commits (`type(scope): summary`, imperative mood), body
+explains the why, and **NEVER add AI-attribution footers** — no "Generated with Claude Code",
+no `Co-Authored-By: Claude` trailers.
+
 ## Active phase
 
 Before starting any work, read `ai-resources/phases/ACTIVE.md` to see what is in flight. Tick off `Done when` checkboxes in the active phase doc as you complete items, in the same commit as the work.
