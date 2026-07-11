@@ -5,20 +5,19 @@
 	// Avatar is still the themed placeholder — drop a real photo in src/lib/assets/ and
 	// import it in place of avatarPlaceholder whenever one is ready.
 	const dev = {
-		name: 'Jacob Williams',
-		handle: '@jacob-williams14',
+		name: 'jWill',
+		handle: '',
 		avatar: avatarPlaceholder,
 		bio: [
-			"I'm Jacob — a software developer (consultant at Atomic Object by day) who hunts on " +
-				'nights and weekends. I built this so picking an endgame build starts with how you ' +
-				'actually like to play, not with an hour of cross-referencing spreadsheets, wiki tabs, ' +
-				'and Discord screenshots.',
+			"I'm jWill — a software developer by day who hunts on nights and weekends. I built " +
+				'this so picking an endgame build starts with how you actually like to play, not with ' +
+				'an hour of cross-referencing spreadsheets, wiki tabs, and Discord screenshots.',
 			"It's a solo side project — no ads, no accounts, no cookies; just anonymous page " +
 				'counts to see if anyone visits. If it saved you a crafting headache, a coffee keeps ' +
 				'the late-night data transcription going.'
 		],
 		supportUrl: 'https://buymeacoffee.com/jwill',
-		links: [{ label: 'GitHub', url: 'https://github.com/jacob-williams14' }]
+		links: [] as { label: string; url: string }[]
 	};
 </script>
 
@@ -96,7 +95,9 @@
 				</div>
 				<div class="dev-name-block">
 					<span class="dev-name">{dev.name}</span>
-					<span class="dev-handle">{dev.handle}</span>
+					{#if dev.handle}
+						<span class="dev-handle">{dev.handle}</span>
+					{/if}
 				</div>
 			</div>
 			{#each dev.bio as line (line)}

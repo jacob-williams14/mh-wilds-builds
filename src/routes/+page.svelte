@@ -128,7 +128,12 @@
 			<strong>Sources:</strong>
 			{currentData.sourcesText}
 			<a href={resolve('/references')} class="refs-link">View all sources →</a>
-			<a href={resolve('/about')} class="refs-link">About this tool →</a>
+		</div>
+
+		<div class="sources-box">
+			<strong>About:</strong>
+			Built and maintained by one hunter-dev as a no-ads side project.
+			<a href={resolve('/about')} class="refs-link">Learn more about the site and the dev →</a>
 		</div>
 
 		{#if feedbackReady}
