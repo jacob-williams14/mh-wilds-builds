@@ -108,6 +108,13 @@ breaks "the clone carries everything reviewable." The `bootstrap-project` user s
 exists in dotfiles as the entry point: a menu of independently stampable units
 (sandbox-harness by delegation, host-mode validate-ui, an agent-conventions CLAUDE.md
 fragment). New user-level capabilities that sandboxes need become new units there.
+Runtime mounts were also considered and rejected — sbx supports read-only extra
+workspaces (and an experimental `--kit` mechanism), but mounted user skills assume host
+reality (`/log-work` writes outside any repo; host paths, credentials) and half-work
+silently, launcher-machine state becomes invisible unreviewable behavior, and even a
+read-only `~/.claude` mount leaks memory/hooks/settings into the minimal-trust VM.
+Revisit via `--kit` only if a class of self-contained, secret-free, fast-churning
+skills emerges that many sandboxes need.
 
 ## Non-goals
 
