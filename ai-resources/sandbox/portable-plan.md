@@ -102,6 +102,13 @@ sandbox needs, candidate evolutions: bake a curated sandbox-safe `~/.claude` lay
 the template image at build time, or fold this into the planned "bootstrap projects with
 relevant user skills" stamping skill. Revisit when the manual restating starts to bite.
 
+**Decision (2026-07-10): stamp per-repo.** The image-layer path was rejected — silent
+staleness between rebuilds, a permanent sandbox-safety curation of dotfiles, and it
+breaks "the clone carries everything reviewable." The `bootstrap-project` user skill now
+exists in dotfiles as the entry point: a menu of independently stampable units
+(sandbox-harness by delegation, host-mode validate-ui, an agent-conventions CLAUDE.md
+fragment). New user-level capabilities that sandboxes need become new units there.
+
 ## Non-goals
 
 - No npm package / plugin / separate repo until a third consumer exists (rule of three).
