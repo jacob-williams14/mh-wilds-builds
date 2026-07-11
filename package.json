@@ -15,7 +15,9 @@
 		"test:unit": "vitest",
 		"test": "bun run test:unit -- --run",
 		"sbx": "sh scripts/sbx-dev.sh",
-		"sbx:watch": "sh scripts/sbx-watch.sh"
+		"sbx:watch": "sh scripts/sbx-watch.sh",
+		"sbx:preview": "sh scripts/sbx-preview.sh",
+		"sbx:kill": "sh scripts/sbx-kill-server.sh"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.3",

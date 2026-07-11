@@ -83,19 +83,16 @@ existing bind-mount sandbox to clone mode requires removing it first: `sbx rm mh
 
 ## Live app preview
 
-Inside the sandbox, start the dev server bound to all interfaces:
+One command from the host (starts the dev server in the clone if needed, publishes the
+port loopback-only, prints the URL):
 
 ```sh
-bun install        # first time
-bun dev --host     # --host is required so Vite binds 0.0.0.0
+bun run sbx:preview     # open http://localhost:5173
+bun run sbx:kill        # stop the detached dev server when done
 ```
 
-Then, in a second **host** terminal, publish the port and open it:
-
-```sh
-sbx ports mh-wilds --publish 5173:5173
-# open http://localhost:5173
-```
+Manual equivalent: inside the sandbox `bun dev --host` (`--host` so Vite binds 0.0.0.0),
+then on the host `sbx ports mh-wilds --publish 5173:5173`.
 
 ## Useful commands
 
@@ -122,15 +119,10 @@ git fetch sandbox-mh-wilds
 git log --oneline HEAD..sandbox-mh-wilds/<branch>
 git merge sandbox-mh-wilds/<branch>
 
-# See the app rendered from the sandbox (start server inside, publish, open)
-sbx exec mh-wilds -- sh -c 'cd /Users/jacobwilliams/Projects/mh_wilds_builds && (nohup bun dev --host >/tmp/dev-server.log 2>&1 &)'
-sbx ports mh-wilds --publish 5173:5173     # then open http://localhost:5173 (loopback-only)
-
-# Kill a dev server started outside the Claude session
-sbx exec mh-wilds -- pkill -f "bun dev"    # the exec itself may hang/exit oddly (pkill
-                                           # matches its own wrapper shell) — that's fine;
-                                           # verify with the curl below
-sbx exec mh-wilds -- curl -sf -o /dev/null --max-time 2 http://localhost:5173 || echo down
+# See the app rendered from the sandbox / kill that detached dev server
+bun run sbx:preview      # start in clone if needed + publish; open http://localhost:5173
+bun run sbx:kill         # pkill uses the [b]un trick — a bare pkill -f "bun dev" matches
+                         # its own sbx exec wrapper shell and strands the exec channel
 
 # What's running in there? / copy a file out without a commit
 sbx exec mh-wilds -- ps aux
