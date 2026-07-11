@@ -13,8 +13,9 @@
 				'nights and weekends. I built this so picking an endgame build starts with how you ' +
 				'actually like to play, not with an hour of cross-referencing spreadsheets, wiki tabs, ' +
 				'and Discord screenshots.',
-			"It's a solo side project — no ads, no tracking, no login. If it saved you a " +
-				'crafting headache, a coffee keeps the late-night data transcription going.'
+			"It's a solo side project — no ads, no accounts, no cookies; just anonymous page " +
+				'counts to see if anyone visits. If it saved you a crafting headache, a coffee keeps ' +
+				'the late-night data transcription going.'
 		],
 		supportUrl: 'https://buymeacoffee.com/jwill',
 		links: [{ label: 'GitHub', url: 'https://github.com/jacob-williams14' }]
