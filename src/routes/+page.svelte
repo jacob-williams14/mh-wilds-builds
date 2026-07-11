@@ -7,11 +7,9 @@
 	import { defaultWeaponKey, weaponData, weaponTabs, type WeaponKey } from '$lib/domain/registry';
 	import type { RankRange } from '$lib/domain/types';
 
-	// TODO(jacob): replace both placeholders — BMC username after creating the account,
-	// Google Form share URL after creating the form. Links are hidden until then.
-	const SUPPORT_URL = 'https://buymeacoffee.com/YOUR_USERNAME';
+	// TODO(jacob): replace the Google Form share URL after creating the form. Link is hidden
+	// until then. The Buy Me a Coffee link now lives on the /about page ("Who made this").
 	const FEEDBACK_URL = 'https://forms.gle/YOUR_FORM_ID';
-	const supportReady = !SUPPORT_URL.includes('YOUR_');
 	const feedbackReady = !FEEDBACK_URL.includes('YOUR_');
 
 	let currentWeapon = $state<WeaponKey>(defaultWeaponKey);
@@ -130,20 +128,14 @@
 			<strong>Sources:</strong>
 			{currentData.sourcesText}
 			<a href={resolve('/references')} class="refs-link">View all sources →</a>
+			<a href={resolve('/about')} class="refs-link">About this tool →</a>
 		</div>
 
-		{#if supportReady || feedbackReady}
+		{#if feedbackReady}
 			<div class="support-row">
-				{#if supportReady}
-					<a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" class="support-link">
-						☕ Enjoying this? Buy me a coffee
-					</a>
-				{/if}
-				{#if feedbackReady}
-					<a href={FEEDBACK_URL} target="_blank" rel="noopener noreferrer" class="support-link">
-						💬 Spotted a bad build? Send feedback
-					</a>
-				{/if}
+				<a href={FEEDBACK_URL} target="_blank" rel="noopener noreferrer" class="support-link">
+					💬 Spotted a bad build? Send feedback
+				</a>
 			</div>
 		{/if}
 	</div>
