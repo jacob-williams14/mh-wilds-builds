@@ -63,16 +63,23 @@ For each of 390x844 (mobile), 768x1024 (tablet), 1440x900 (desktop), on each rou
 touched by the change:
 
 ```sh
-agent-browser viewport 390 844
+agent-browser set viewport 390 844
 agent-browser open http://localhost:5173
 agent-browser wait --load networkidle
+agent-browser eval 'document.documentElement.clientWidth'   # MUST equal the width you set
 agent-browser eval 'document.documentElement.scrollWidth - document.documentElement.clientWidth'
 agent-browser console
 agent-browser screenshot /tmp/ui-validation/mobile-<route>.png
 ```
 
-The eval MUST print `0` — any positive number is horizontal overflow and a failure
-(this has caught a real 279px overflow from a `shrink-0` flex child).
+The command is `set viewport` — a bare `agent-browser viewport 390 844` prints
+`Unknown command` (or silently no-ops on older builds), leaving you measuring at the
+default 1280px while believing you tested mobile. ALWAYS assert `clientWidth` equals
+the width you set before trusting the overflow number — this is exactly the silent
+false pass this skill exists to prevent.
+
+The overflow eval MUST print `0` — any positive number is horizontal overflow and a
+failure (this has caught a real 279px overflow from a `shrink-0` flex child).
 Scroll-dependent UI needs hydration time: after `wait --load networkidle`, scroll via
 `eval`, wait ~900ms, then assert — router scroll restoration can reset scrolls issued
 too early.
