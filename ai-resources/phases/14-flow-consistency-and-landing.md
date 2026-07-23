@@ -293,8 +293,12 @@ Branch A ships safely on its own; Branch B depends on A's `matchups` field.
 - [x] Header nav on all four routes; post-result CTA block rendering _(Branch B)_
 - [x] `/build` opens with no weapon preselected _(Branch B)_
 - [x] Gates pass: `bun run check && bun run format && bun run lint && bun run test`
-- [~] `validate-ui`: host lacks `agent-browser` (sandbox-only). Validated
-      host-side instead — all 4 routes 200, SSR content/nav/weapon-order/empty-
-      state correct, production build + static prerender clean. Interactive
-      click-through (matchup lane + CTA post-selection) still wants a real
-      browser: run sandbox `validate-ui` or a manual pass before final deploy.
+- [x] `validate-ui`: ran in the sbx sandbox (agent-browser is sandbox-only).
+      Confirmed live in a real browser — landing renders; nav + active state on
+      all routes; `/build` no-preselection empty state; in-game weapon order;
+      LS HR100 matchup lane renders and a card-click jumps the flow to the
+      Anti-Seregios build; IG HR100 comfort re-slot (2 Q2 options) reaches
+      Fulgur-Odo Guts; post-result CTA renders; console clean; zero horizontal
+      overflow at 390px on all four routes. (Skill's App-config viewport snippet
+      is stale for this agent-browser build — needs `set viewport`, not
+      `viewport`; nearly caused a false mobile pass.)
