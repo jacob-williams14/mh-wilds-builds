@@ -491,16 +491,12 @@ export const bow: WeaponData = {
 	],
 	flow: {
 		hr50: {
-			title: 'What kind of bow hunter are you?',
+			title: 'What kind of Bow hunter are you?',
 			q1Text: "What's your top priority?",
 			q1Options: [
-				{ label: 'Maximum Damage', value: 'damage' },
-				{
-					label: 'Balanced (Damage + Comfort)',
-					cssClass: 'balanced',
-					value: 'balanced'
-				},
-				{ label: 'Max Comfort & Safety', cssClass: 'comfort', value: 'comfort' }
+				{ label: 'Max DPS', value: 'damage' },
+				{ label: 'Balanced', cssClass: 'balanced', value: 'balanced' },
+				{ label: 'Comfort & Evasion', cssClass: 'comfort', value: 'comfort' }
 			],
 			q2: {
 				damage: {
@@ -554,12 +550,12 @@ export const bow: WeaponData = {
 			}
 		},
 		hr100: {
-			title: 'What kind of bow hunter are you?',
+			title: 'What kind of Bow hunter are you?',
 			q1Text: "What's your top priority?",
 			q1Options: [
-				{ label: 'Maximum Damage', value: 'damage' },
-				{ label: 'Dodge & Adrenaline', cssClass: 'balanced', value: 'adrenaline' },
-				{ label: 'Comfort & Safety', cssClass: 'comfort', value: 'comfort' }
+				{ label: 'Max DPS', value: 'damage' },
+				{ label: 'Balanced', cssClass: 'balanced', value: 'balanced' },
+				{ label: 'Comfort & Evasion', cssClass: 'comfort', value: 'comfort' }
 			],
 			q2: {
 				damage: {
@@ -579,8 +575,8 @@ export const bow: WeaponData = {
 						}
 					]
 				},
-				adrenaline: {
-					text: 'Which Adrenaline build?',
+				balanced: {
+					text: 'Which balanced build?',
 					options: [
 						{
 							label: 'Sere-Gore — AR 4 + Con 5 + Stamina Surge 3',
@@ -612,6 +608,18 @@ export const bow: WeaponData = {
 			}
 		}
 	},
+	matchups: [
+		{
+			monster: 'Arkveld',
+			buildKey: 'raw-dps',
+			note: 'Adrenaline Rush III talisman rewards perfect dodges; Counterstrike amplifies on-hit reactions.'
+		},
+		{
+			monster: 'Arkveld',
+			buildKey: 'raw-comfort',
+			note: 'Constitution 5 + Counterstrike 3 free the meal slot; Agitator III talisman.'
+		}
+	],
 	referenceKey: 'bow',
 	sourcesText:
 		'MH:Wilds Bow Compendium (@p_chu & @ninjazenia) and Game8 Bow Builds. Google Doc resistance totals remain unverified until calculated from per-piece armor data.',

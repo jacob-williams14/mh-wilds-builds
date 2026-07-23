@@ -76,12 +76,24 @@ export interface WeaponTip {
 	lines: string[];
 }
 
+/**
+ * A build tuned for a specific monster matchup. Indexed separately from the
+ * playstyle flow so it is reachable from any Q1 path, not gated behind one
+ * motivation. `buildKey` must resolve to a key in `WeaponData.builds`.
+ */
+export interface Matchup {
+	monster: string;
+	buildKey: string;
+	note: string;
+}
+
 export interface WeaponData {
 	builds: Record<string, Build>;
 	artianWeapons: ArtianWeapon[];
 	weapons: WeaponOption[];
 	tips?: WeaponTip[];
 	flow: Record<RankRange, FlowConfig>;
+	matchups?: Matchup[];
 	referenceKey: string;
 	sourcesText: string;
 	display: WeaponDisplay;
