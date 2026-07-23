@@ -78,7 +78,7 @@ export function llmsFull(): string {
 		'# MH Wilds Build Selector — full build data',
 		'',
 		'> Feel-first endgame armor builds for every Monster Hunter Wilds weapon, in two rank',
-		`> tiers (HR 50–100 and HR 100+). Interactive picker at ${SITE_URL} — choose a weapon,`,
+		`> tiers (HR 50–100 and HR 100+). Interactive picker at ${SITE_URL}/build — choose a weapon,`,
 		'> answer two playstyle questions, get a build. Data is transcribed from Game8 build',
 		'> guides and community spreadsheets; per-weapon source notes below, full source list',
 		`> at ${SITE_URL}/references.`,
@@ -109,7 +109,8 @@ export function llmsIndex(): string {
 		'',
 		'## Pages',
 		'',
-		`- [Build selector](${SITE_URL}/): the interactive two-question picker`,
+		`- [Home](${SITE_URL}/): what the site is and the feel-first pitch`,
+		`- [Build selector](${SITE_URL}/build): the interactive two-question picker`,
 		`- [About](${SITE_URL}/about): what the site is and who makes it`,
 		`- [Sources](${SITE_URL}/references): every source used, per weapon`,
 		''

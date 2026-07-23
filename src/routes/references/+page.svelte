@@ -23,7 +23,7 @@
 
 <div class="app-shell">
 	<header class="refs-header">
-		<a href={resolve('/')} class="back-link">← Back</a>
+		<a href={resolve('/build')} class="back-link">← Back to the build selector</a>
 		<h1 class="app-title">Sources & References</h1>
 		<p class="refs-lead">
 			All builds are sourced from the community. These are the primary references used to build and

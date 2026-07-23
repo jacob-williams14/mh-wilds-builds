@@ -281,17 +281,24 @@ Branch A ships safely on its own; Branch B depends on A's `matchups` field.
       so a re-slotted build can never silently fall out of the UI _(Branch A)_
 - [x] `matchups` field on `WeaponData`, populated for LS and Bow; every
       `buildKey` resolves to a real build _(Branch A — data; lane render is B)_
-- [ ] "Hunting something specific?" lane renders beside the result for those
+- [x] "Hunting something specific?" lane renders beside the result for those
       two weapons, reachable from *any* Q1 path, and is absent on the other
-      twelve
+      twelve _(Branch B; rank-gated so HR100 matchups never show on HR50)_
 - [x] Every Q2 branch has ≥ 2 options, asserted in `contract.test.ts` _(Branch A)_
 - [x] `weaponRegistry` in in-game canonical order _(Branch A)_; `defaultWeaponKey`
-      re-scope to deep-link fallback is Branch B
-- [ ] Landing page live at `/`; tool at `/build`
-- [ ] Every reference in the workstream-C blast radius updated; `llms.test.ts`
-      passes
-- [ ] Header nav on all four routes; post-result CTA block rendering
-- [ ] `/build` opens with no weapon preselected
-- [ ] Gates pass: `bun run check && bun run format && bun run lint && bun run test`
-- [ ] `validate-ui` clean across changed flow paths, both rank tiers, for Bow,
-      Insect Glaive, and Long Sword at minimum
+      kept for deep-link fallback, no longer the on-load weapon _(Branch B)_
+- [x] Landing page live at `/`; tool at `/build` _(Branch B)_
+- [x] Every reference in the workstream-C blast radius updated; `llms.test.ts`
+      passes _(Branch B)_
+- [x] Header nav on all four routes; post-result CTA block rendering _(Branch B)_
+- [x] `/build` opens with no weapon preselected _(Branch B)_
+- [x] Gates pass: `bun run check && bun run format && bun run lint && bun run test`
+- [x] `validate-ui`: ran in the sbx sandbox (agent-browser is sandbox-only).
+      Confirmed live in a real browser — landing renders; nav + active state on
+      all routes; `/build` no-preselection empty state; in-game weapon order;
+      LS HR100 matchup lane renders and a card-click jumps the flow to the
+      Anti-Seregios build; IG HR100 comfort re-slot (2 Q2 options) reaches
+      Fulgur-Odo Guts; post-result CTA renders; console clean; zero horizontal
+      overflow at 390px on all four routes. (Skill's App-config viewport snippet
+      is stale for this agent-browser build — needs `set viewport`, not
+      `viewport`; nearly caused a false mobile pass.)
