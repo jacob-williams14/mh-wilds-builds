@@ -497,12 +497,12 @@ export const insectGlaive: WeaponData = {
 	],
 	flow: {
 		hr50: {
-			title: 'How do you want your glaive to feel?',
-			q1Text: 'What matters most to you?',
+			title: 'What kind of Insect Glaive hunter are you?',
+			q1Text: "What's your top priority?",
 			q1Options: [
-				{ label: 'High Damage Output', value: 'damage' },
-				{ label: 'Smooth Flow & Mobility', cssClass: 'balanced', value: 'flow' },
-				{ label: 'Safety & Survivability', cssClass: 'comfort', value: 'safety' }
+				{ label: 'Max Raw Damage', value: 'damage' },
+				{ label: 'Balanced', cssClass: 'balanced', value: 'balanced' },
+				{ label: 'Comfort & Survivability', cssClass: 'comfort', value: 'comfort' }
 			],
 			q2: {
 				damage: {
@@ -519,7 +519,7 @@ export const insectGlaive: WeaponData = {
 						{ label: 'Latent Power spikes (burst windows)', value: 'rey-gore-mm' }
 					]
 				},
-				flow: {
+				balanced: {
 					text: 'What kind of mobility?',
 					options: [
 						{
@@ -539,7 +539,7 @@ export const insectGlaive: WeaponData = {
 						}
 					]
 				},
-				safety: {
+				comfort: {
 					text: 'How much protection?',
 					options: [
 						{
@@ -562,12 +562,12 @@ export const insectGlaive: WeaponData = {
 			}
 		},
 		hr100: {
-			title: 'How do you want your glaive to feel?',
-			q1Text: 'What matters most to you?',
+			title: 'What kind of Insect Glaive hunter are you?',
+			q1Text: "What's your top priority?",
 			q1Options: [
-				{ label: 'Max Damage Output', value: 'damage' },
-				{ label: 'Balanced Damage & Comfort', cssClass: 'balanced', value: 'balanced' },
-				{ label: 'Craftable & Accessible', cssClass: 'comfort', value: 'accessible' }
+				{ label: 'Max Raw Damage', value: 'damage' },
+				{ label: 'Balanced', cssClass: 'balanced', value: 'balanced' },
+				{ label: 'Comfort & Survivability', cssClass: 'comfort', value: 'comfort' }
 			],
 			q2: {
 				damage: {
@@ -591,11 +591,6 @@ export const insectGlaive: WeaponData = {
 					text: 'What kind of balance?',
 					options: [
 						{
-							label: 'Transcendence (Divine Blessing + Quick Sheathe)',
-							cssClass: 'balanced',
-							value: 'fulgur-odo-guts'
-						},
-						{
 							label: "Fulgur 2pc (Second Wind + Lord's Soul)",
 							cssClass: 'balanced',
 							value: 'fulgur-craftable'
@@ -604,21 +599,31 @@ export const insectGlaive: WeaponData = {
 							label: 'Max Raw (Attack Boost 5 + Razor Sharp)',
 							cssClass: 'balanced',
 							value: 'max-raw'
-						}
-					]
-				},
-				accessible: {
-					text: 'Which craftable path?',
-					options: [
+						},
 						{
 							label: 'Lagia 2pc (no weapon rolls needed)',
-							cssClass: 'comfort',
+							cssClass: 'balanced',
 							value: 'lagia-craftable'
 						},
 						{
 							label: 'Resentment variant (30% uptime beats standard Lagia)',
-							cssClass: 'comfort',
+							cssClass: 'balanced',
 							value: 'resentment'
+						}
+					]
+				},
+				comfort: {
+					text: 'How do you want to stay safe?',
+					options: [
+						{
+							label: 'Transcendence — Divine Blessing 3 + Quick Sheathe 3',
+							cssClass: 'comfort',
+							value: 'fulgur-odo-guts'
+						},
+						{
+							label: 'Affinity + Hasten Recovery + Second Wind sustain',
+							cssClass: 'comfort',
+							value: 'arkveld-gore-affinity'
 						}
 					]
 				}

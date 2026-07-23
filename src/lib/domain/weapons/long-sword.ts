@@ -451,9 +451,9 @@ export const longSword: WeaponData = {
 			title: 'What kind of Long Sword hunter are you?',
 			q1Text: "What's your top priority?",
 			q1Options: [
-				{ label: 'Maximum Damage', value: 'damage' },
-				{ label: 'Balanced (Damage + Comfort)', cssClass: 'balanced', value: 'balanced' },
-				{ label: 'Comfort & Safety', cssClass: 'comfort', value: 'comfort' }
+				{ label: 'Max Spirit Damage', value: 'damage' },
+				{ label: 'Balanced', cssClass: 'balanced', value: 'balanced' },
+				{ label: 'Comfort & Sheathe Speed', cssClass: 'comfort', value: 'comfort' }
 			],
 			q2: {
 				damage: {
@@ -505,24 +505,11 @@ export const longSword: WeaponData = {
 			title: 'What kind of Long Sword hunter are you?',
 			q1Text: "What's your top priority?",
 			q1Options: [
-				{ label: 'Maximum Damage', value: 'damage' },
-				{ label: 'Versatile — any hunt, any monster', cssClass: 'balanced', value: 'versatile' },
-				{ label: 'Specific Hunt', value: 'specific' }
+				{ label: 'Max Spirit Damage', value: 'damage' },
+				{ label: 'Balanced', cssClass: 'balanced', value: 'balanced' },
+				{ label: 'Comfort & Sheathe Speed', cssClass: 'comfort', value: 'comfort' }
 			],
 			q2: {
-				specific: {
-					text: 'Which monster?',
-					options: [
-						{
-							label: 'Seregios — Bleed Res + Resentment uptime',
-							value: 'anti-seregios'
-						},
-						{
-							label: 'Guardian Arkveld — WEX over Agitator',
-							value: 'anti-guardian'
-						}
-					]
-				},
 				damage: {
 					text: 'Which damage engine?',
 					options: [
@@ -533,10 +520,18 @@ export const longSword: WeaponData = {
 						{
 							label: 'Gore Tyranny — element-matched Gogmazios LS',
 							value: 'gore-guts'
+						},
+						{
+							label: 'vs Seregios — Bleed Res + Resentment uptime',
+							value: 'anti-seregios'
+						},
+						{
+							label: 'vs Guardian Arkveld — WEX over Agitator',
+							value: 'anti-guardian'
 						}
 					]
 				},
-				versatile: {
+				balanced: {
 					text: 'What matters more on your hunts?',
 					options: [
 						{
@@ -551,14 +546,41 @@ export const longSword: WeaponData = {
 						},
 						{
 							label: 'Craftable — best option while farming Gogmazios LS',
+							cssClass: 'balanced',
+							value: 'zoh-shia-ls'
+						}
+					]
+				},
+				comfort: {
+					text: 'How do you prefer to stay safe?',
+					options: [
+						{
+							label: 'Craftable sustain — Super Recovery + Con 3 + Quick Sheathe 3',
 							cssClass: 'comfort',
 							value: 'zoh-shia-ls'
+						},
+						{
+							label: 'Guts + Hasten Recovery + Quick Sheathe — double OHKO protection',
+							cssClass: 'comfort',
+							value: 'gogma-arkveld'
 						}
 					]
 				}
 			}
 		}
 	},
+	matchups: [
+		{
+			monster: 'Seregios',
+			buildKey: 'anti-seregios',
+			note: 'Bleed Res + Resentment uptime tuned for Seregios.'
+		},
+		{
+			monster: 'Guardian Arkveld',
+			buildKey: 'anti-guardian',
+			note: 'WEX over Agitator for the Guardian Arkveld fight.'
+		}
+	],
 	referenceKey: 'long-sword',
 	sourcesText:
 		'Game8 Long Sword Builds (TU4) and MH Wilds Long Sword community Google Doc. Google Doc builds do not list elemental resistances — those values are unverified placeholders.',

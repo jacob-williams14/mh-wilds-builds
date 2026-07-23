@@ -21,6 +21,7 @@ Sequenced work on weapon data, presentation, and architecture.
 | 11 | Automated weapon data pipeline (11 weapons) | Complete | Archived: `archive/11-automated-weapon-pipeline.md` |
 | 12 | Legacy weapon re-audit (Bow, IG, LS) | Complete | Archived: `archive/12-legacy-weapon-reaudit.md` |
 | 13 | Sandbox adoption — sbx `--clone`, egress lockdown, agent-browser validation, watch mode, deploy stack | Complete | Docs: [`../sandbox/`](../sandbox/sbx-dev.md) (ran as a working branch, no phase doc) |
+| 14 | Flow consistency, weapon ordering, and a real landing page | Planned | [14-flow-consistency-and-landing.md](./14-flow-consistency-and-landing.md) |
 
 ## How to use this directory
 

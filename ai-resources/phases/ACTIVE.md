@@ -1,12 +1,16 @@
 # Active phase
 
-**Phase:** none
-**Completed:** 2026-07-08 (Phase 13 — Sandbox Adoption; sbx `--clone` is the
+**Phase:** 14 — Flow Consistency, Weapon Ordering, and a Real Landing Page
+**Plan:** [14-flow-consistency-and-landing.md](./14-flow-consistency-and-landing.md)
+**Opened:** 2026-07-22
+**Status:** Planned — scoped from a requirements session, not yet started
+**Owner:** —
+
+**Previously:** 2026-07-08 (Phase 13 — Sandbox Adoption; sbx `--clone` is the
 agent launch path with egress lockdown, agent-browser self-validation, live
 watch mode, and the Render deploy stack; docs in `../sandbox/`. Phase 12 —
 Legacy Weapon Re-audit — closed the same day; see `../verification-backlog.md`
 for remaining in-game checks)
-**Owner:** —
 
 ## Working agreement
 
