@@ -116,6 +116,22 @@
 		</div>
 	</section>
 
+	<section class="about-section">
+		<h2 class="about-heading">Built for humans and machines</h2>
+		<p class="about-body">
+			Every build is also published as plain text for AI assistants and search crawlers, following
+			the <a
+				href="https://llmstxt.org"
+				target="_blank"
+				rel="external noopener noreferrer"
+				class="inline-link">llms.txt</a
+			>
+			convention — a short
+			<a href={resolve('/llms.txt')} class="inline-link">index</a> and the
+			<a href={resolve('/llms-full.txt')} class="inline-link">full build data</a> for all 14 weapons.
+		</p>
+	</section>
+
 	<div class="about-footer">
 		<a href={resolve('/build')} class="back-link">← Back to the build selector</a>
 	</div>

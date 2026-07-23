@@ -3,3 +3,7 @@ User-agent: *
 Disallow:
 
 Sitemap: https://mh-wilds-builds.pages.dev/sitemap.xml
+
+# LLM-readable build data (llmstxt.org convention):
+#   /llms.txt      — index
+#   /llms-full.txt — every build for all 14 weapons, in plain text
