@@ -29,7 +29,7 @@
 
 <div class="app-shell">
 	<header class="about-header">
-		<a href={resolve('/')} class="back-link">← Back</a>
+		<a href={resolve('/build')} class="back-link">← Back to the build selector</a>
 		<h1 class="app-title">About</h1>
 		<p class="about-lead">
 			A feel-first Monster Hunter Wilds build selector. Choose a weapon, answer two quick questions
@@ -117,7 +117,7 @@
 	</section>
 
 	<div class="about-footer">
-		<a href={resolve('/')} class="back-link">← Back to the build selector</a>
+		<a href={resolve('/build')} class="back-link">← Back to the build selector</a>
 	</div>
 </div>
 

@@ -1,293 +1,244 @@
 <script lang="ts">
-	import BuildResult from '$lib/ui/build/BuildResult.svelte';
-	import FlowQuestion from '$lib/ui/flow/FlowQuestion.svelte';
-	import RankSelector from '$lib/ui/flow/RankSelector.svelte';
-	import WeaponTabs from '$lib/ui/flow/WeaponTabs.svelte';
 	import { resolve } from '$app/paths';
-	import { defaultWeaponKey, weaponData, weaponTabs, type WeaponKey } from '$lib/domain/registry';
-	import type { RankRange } from '$lib/domain/types';
+	import { weaponRegistry } from '$lib/domain/registry';
 
-	// The Buy Me a Coffee link lives on the /about page ("Who made this").
-	const FEEDBACK_URL = 'https://forms.gle/jYsQsnsvY5fQXexz7';
-	const feedbackReady = !FEEDBACK_URL.includes('YOUR_');
+	const weaponCount = weaponRegistry.length;
 
-	let currentWeapon = $state<WeaponKey>(defaultWeaponKey);
-	let rankRange = $state<RankRange>('hr50');
-	let step1Answer = $state<string | null>(null);
-	let step2Answer = $state<string | null>(null);
-
-	const currentData = $derived.by(() => weaponData[currentWeapon]);
-	const currentFlow = $derived.by(() => currentData.flow[rankRange]);
-	const step2Config = $derived.by(() =>
-		step1Answer ? (currentFlow.q2[step1Answer] ?? null) : null
-	);
-	const currentBuild = $derived.by(() =>
-		step2Answer ? (currentData.builds[step2Answer] ?? null) : null
-	);
-
-	function resetFlow() {
-		step1Answer = null;
-		step2Answer = null;
-	}
-
-	function selectWeapon(weapon: string) {
-		currentWeapon = weapon as WeaponKey;
-		rankRange = 'hr50';
-		resetFlow();
-	}
-
-	function selectRank(range: RankRange) {
-		rankRange = range;
-		resetFlow();
-	}
-
-	function answerStep1(value: string) {
-		step1Answer = value;
-		step2Answer = null;
-	}
-
-	function answerStep2(value: string) {
-		step2Answer = value;
-	}
+	const steps = [
+		{
+			n: '1',
+			title: 'Pick a weapon',
+			body: 'Choose your weapon and Hunter Rank tier — HR 50–100 or HR 100+.'
+		},
+		{
+			n: '2',
+			title: 'Answer two questions',
+			body: 'The first about what you want from the build, the second about how you like to play it.'
+		},
+		{
+			n: '3',
+			title: 'Get one build',
+			body: 'A single loadout with skills, decorations, a recommended meal, and the weapon to aim for.'
+		}
+	];
 </script>
 
 <svelte:head>
-	<title>MH Wilds — Build Selector</title>
+	<title>MH Wilds Build Selector — Choose Armor by Playstyle</title>
 	<meta
 		name="description"
-		content="A feel-first Monster Hunter Wilds build selector. Choose armor by playstyle; Artian/Gogma weapons noted as best in slot with craftable alternatives."
+		content="A feel-first Monster Hunter Wilds build selector. Pick a weapon, answer two playstyle questions, and get an endgame armor build tuned for comfort, flow, and consistency."
 	/>
 </svelte:head>
 
 <div class="app-shell">
-	<header class="app-header">
-		<h1 class="app-title">MH Wilds Build Selector</h1>
-		<div class="app-subtitle">Feel-First — Choose Armor by Playstyle</div>
-		<p class="app-lead">
-			Choose a weapon, answer two quick questions, and get an endgame build that favors comfort,
-			flow, and consistency. Armor is the playstyle decision; weapons are about access —
-			Artian/Gogma Artian are best in slot, with non-Artian alternatives listed when you can't craft
-			one.
+	<section class="hero">
+		<div class="hero-eyebrow">Feel-first · No ads · No accounts</div>
+		<h1 class="app-title hero-title">MH Wilds Build Selector</h1>
+		<p class="hero-tagline">Choose armor by how you like to play — not by chasing the meta.</p>
+		<p class="hero-sub">
+			Endgame builds for all {weaponCount} weapons across two rank tiers, favoring comfort, flow, and
+			consistency over squeezing every last damage number.
 		</p>
-	</header>
-	<section class="hero-panel">
-		<div class="hero-panel-label">Weapon selection</div>
-		<WeaponTabs weapons={weaponTabs} activeWeapon={currentWeapon} onSelect={selectWeapon} />
-	</section>
-
-	<section class="rank-section">
-		<RankSelector selected={rankRange} onSelect={selectRank} />
-	</section>
-
-	<section class="flow-shell">
-		<div class="section-title">{currentFlow.title}</div>
-		<p class="flow-copy">Each path resolves to one build. Switch weapons or reset at any time.</p>
-
-		<div class="flow-stack">
-			<FlowQuestion
-				stepLabel="Step 1"
-				text={currentFlow.q1Text}
-				options={currentFlow.q1Options}
-				selectedValue={step1Answer}
-				active={step1Answer === null}
-				completed={step1Answer !== null}
-				onAnswer={answerStep1}
-			/>
-
-			{#if step2Config}
-				<div class="connector"></div>
-				<FlowQuestion
-					stepLabel="Step 2"
-					text={step2Config.text}
-					options={step2Config.options}
-					selectedValue={step2Answer}
-					active={step2Answer === null}
-					completed={step2Answer !== null}
-					onAnswer={answerStep2}
-				/>
-			{/if}
-
-			{#if currentBuild}
-				<div class="connector"></div>
-				<BuildResult
-					build={currentBuild}
-					artianWeapons={currentData.artianWeapons}
-					weapons={currentData.weapons}
-					tips={currentData.tips}
-					display={currentData.display}
-				/>
-			{/if}
+		<div class="hero-actions">
+			<a href={resolve('/build')} class="cta-primary">Get Started →</a>
 		</div>
 	</section>
 
-	<div class="page-footer">
-		<div class="footer-actions">
-			<button type="button" class="reset-btn" onclick={resetFlow}>↻ Start Over</button>
-			{#if feedbackReady}
-				<a href={FEEDBACK_URL} target="_blank" rel="noopener noreferrer" class="reset-btn">
-					💬 Leave Feedback
-				</a>
-			{/if}
+	<section class="how">
+		<div class="how-label">How it works</div>
+		<div class="how-grid">
+			{#each steps as step (step.n)}
+				<div class="how-card">
+					<div class="how-num">{step.n}</div>
+					<div class="how-card-title">{step.title}</div>
+					<p class="how-card-body">{step.body}</p>
+				</div>
+			{/each}
 		</div>
+	</section>
 
-		<div class="sources-box">
-			<strong>Sources:</strong>
-			{currentData.sourcesText}
-			<a href={resolve('/references')} class="refs-link">View all sources →</a>
+	<section class="why">
+		<h2 class="why-heading">Why feel-first?</h2>
+		<p class="why-body">
+			Most guides optimize for the highest possible damage number. This one optimizes for how a
+			build <em>feels</em> to play. Armor is the playstyle decision — whether you trade blows, dodge everything,
+			or sharpen and mount without breaking flow. Weapons are about access: Artian and Gogma Artian are
+			best in slot, with craftable alternatives listed for when you can't craft one yet.
+		</p>
+		<div class="why-links">
+			<a href={resolve('/references')} class="why-link">Where builds come from →</a>
+			<a href={resolve('/about')} class="why-link">About the project & the dev →</a>
 		</div>
-
-		<div class="sources-box">
-			<strong>About:</strong>
-			Built and maintained by one hunter-dev as a no-ads side project.
-			<a href={resolve('/about')} class="refs-link">Learn more about the site and the dev →</a>
-		</div>
-	</div>
+	</section>
 </div>
 
 <style>
-	.app-header {
-		margin-bottom: 24px;
+	.hero {
+		margin: 24px 0 40px;
 		text-align: center;
 	}
 
-	.app-subtitle {
+	.hero-eyebrow {
+		margin-bottom: 14px;
 		color: var(--dim);
-		font-size: 1rem;
-		letter-spacing: 1px;
+		font-family: 'Chakra Petch', sans-serif;
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+		text-transform: uppercase;
 	}
 
-	.app-lead {
-		margin: 18px auto 0;
-		max-width: 720px;
+	.hero-title {
+		font-size: clamp(2.2rem, 6vw, 3.2rem);
+	}
+
+	.hero-tagline {
+		margin: 14px auto 0;
+		max-width: 640px;
+		color: var(--text);
+		font-size: clamp(1.1rem, 3vw, 1.4rem);
+		font-weight: 500;
+		line-height: 1.4;
+	}
+
+	.hero-sub {
+		margin: 16px auto 0;
+		max-width: 620px;
 		color: color-mix(in srgb, var(--dim) 82%, white 18%);
-		font-size: 1.05rem;
+		font-size: 1.02rem;
 		line-height: 1.6;
 	}
 
-	.hero-panel,
-	.flow-shell {
-		border: 1px solid color-mix(in srgb, var(--border) 86%, white 14%);
-		border-radius: 16px;
-		background: linear-gradient(180deg, rgb(18 20 28 / 0.88), rgb(12 14 20 / 0.94));
-		box-shadow:
-			0 18px 48px rgb(0 0 0 / 0.28),
-			inset 0 1px 0 rgb(255 255 255 / 0.03);
+	.hero-actions {
+		margin-top: 28px;
 	}
 
-	.hero-panel {
-		margin-bottom: 24px;
-		padding: 20px;
+	.cta-primary {
+		display: inline-block;
+		border: 1px solid var(--gold);
+		border-radius: 8px;
+		background: linear-gradient(135deg, rgb(232 69 69 / 0.18), rgb(240 192 64 / 0.14));
+		padding: 14px 32px;
+		color: var(--gold);
+		font-family: 'Chakra Petch', sans-serif;
+		font-size: 1rem;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: all 0.2s;
 	}
 
-	.hero-panel-label {
-		margin-bottom: 14px;
+	.cta-primary:hover {
+		border-color: var(--accent2);
+		background: linear-gradient(135deg, rgb(232 69 69 / 0.28), rgb(240 192 64 / 0.22));
+		box-shadow: 0 10px 30px rgb(240 192 64 / 0.15);
+	}
+
+	.how {
+		margin-bottom: 40px;
+	}
+
+	.how-label {
+		margin-bottom: 16px;
 		color: var(--dim);
 		font-family: 'Chakra Petch', sans-serif;
 		font-size: 0.78rem;
 		font-weight: 600;
 		letter-spacing: 1.8px;
+		text-align: center;
 		text-transform: uppercase;
 	}
 
-	.rank-section {
-		margin-bottom: 24px;
-		display: flex;
-		justify-content: center;
+	.how-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 16px;
 	}
 
-	.section-title {
-		margin-bottom: 14px;
-		border-left: 3px solid var(--gold);
-		padding-left: 16px;
+	.how-card {
+		border: 1px solid color-mix(in srgb, var(--border) 86%, white 14%);
+		border-radius: 14px;
+		background: linear-gradient(180deg, rgb(18 20 28 / 0.88), rgb(12 14 20 / 0.94));
+		padding: 24px;
+	}
+
+	.how-num {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: 999px;
+		background: linear-gradient(135deg, var(--accent2), var(--gold));
+		color: var(--bg);
+		font-family: 'Chakra Petch', sans-serif;
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
+
+	.how-card-title {
+		margin: 14px 0 8px;
 		color: var(--gold);
 		font-family: 'Chakra Petch', sans-serif;
-		font-size: 1.3rem;
+		font-size: 1.05rem;
 		font-weight: 600;
-		letter-spacing: 1.5px;
-		text-transform: uppercase;
+		letter-spacing: 0.5px;
 	}
 
-	.flow-shell {
-		padding: 28px;
-	}
-
-	.flow-copy {
-		margin: 0 0 24px 0;
-		color: color-mix(in srgb, var(--dim) 88%, white 12%);
-		font-size: 1rem;
+	.how-card-body {
+		margin: 0;
+		color: var(--dim);
+		font-size: 0.95rem;
 		line-height: 1.55;
 	}
 
-	.flow-stack {
-		display: flex;
-		flex-direction: column;
+	.why {
+		border-radius: 14px;
+		border-left: 3px solid var(--gold);
+		background: rgb(240 192 64 / 0.05);
+		padding: 24px 28px;
 	}
 
-	.connector {
-		margin: 0 auto;
-		height: 32px;
-		width: 2px;
-		background: linear-gradient(to bottom, var(--accent), transparent);
+	.why-heading {
+		margin: 0 0 12px;
+		color: var(--gold);
+		font-family: 'Chakra Petch', sans-serif;
+		font-size: 1.05rem;
+		font-weight: 600;
+		letter-spacing: 1px;
+		text-transform: uppercase;
 	}
 
-	.page-footer {
-		margin-top: 28px;
-		display: flex;
-		flex-direction: column;
-		gap: 18px;
+	.why-body {
+		margin: 0;
+		color: color-mix(in srgb, var(--dim) 88%, white 12%);
+		font-size: 1rem;
+		line-height: 1.65;
 	}
 
-	.footer-actions {
+	.why-body em {
+		color: var(--text);
+		font-style: italic;
+	}
+
+	.why-links {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 12px;
+		gap: 20px;
+		margin-top: 18px;
 	}
 
-	.reset-btn {
-		align-self: flex-start;
-		border: 1px solid var(--dim);
-		border-radius: 6px;
-		background: transparent;
-		padding: 8px 20px;
+	.why-link {
 		color: var(--dim);
 		font-size: 0.9rem;
 		font-weight: 600;
-		letter-spacing: 1px;
-		text-decoration: none;
-		transition: all 0.2s;
-	}
-
-	.reset-btn:hover {
-		border-color: var(--accent);
-		color: var(--accent);
-	}
-
-	.refs-link {
-		display: inline-block;
-		margin-top: 10px;
-		font-size: 0.85rem;
-		font-weight: 600;
-		color: var(--dim);
 		text-decoration: none;
 		transition: color 0.2s;
 	}
 
-	.refs-link:hover {
+	.why-link:hover {
 		color: var(--gold);
-	}
-
-	@media (width <= 640px) {
-		.hero-panel,
-		.flow-shell {
-			padding: 20px;
-		}
-
-		.app-lead {
-			font-size: 0.98rem;
-		}
-
-		.flow-copy {
-			margin-bottom: 20px;
-		}
 	}
 </style>

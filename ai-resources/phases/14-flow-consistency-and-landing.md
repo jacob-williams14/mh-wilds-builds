@@ -281,17 +281,20 @@ Branch A ships safely on its own; Branch B depends on A's `matchups` field.
       so a re-slotted build can never silently fall out of the UI _(Branch A)_
 - [x] `matchups` field on `WeaponData`, populated for LS and Bow; every
       `buildKey` resolves to a real build _(Branch A — data; lane render is B)_
-- [ ] "Hunting something specific?" lane renders beside the result for those
+- [x] "Hunting something specific?" lane renders beside the result for those
       two weapons, reachable from *any* Q1 path, and is absent on the other
-      twelve
+      twelve _(Branch B; rank-gated so HR100 matchups never show on HR50)_
 - [x] Every Q2 branch has ≥ 2 options, asserted in `contract.test.ts` _(Branch A)_
 - [x] `weaponRegistry` in in-game canonical order _(Branch A)_; `defaultWeaponKey`
-      re-scope to deep-link fallback is Branch B
-- [ ] Landing page live at `/`; tool at `/build`
-- [ ] Every reference in the workstream-C blast radius updated; `llms.test.ts`
-      passes
-- [ ] Header nav on all four routes; post-result CTA block rendering
-- [ ] `/build` opens with no weapon preselected
-- [ ] Gates pass: `bun run check && bun run format && bun run lint && bun run test`
-- [ ] `validate-ui` clean across changed flow paths, both rank tiers, for Bow,
-      Insect Glaive, and Long Sword at minimum
+      kept for deep-link fallback, no longer the on-load weapon _(Branch B)_
+- [x] Landing page live at `/`; tool at `/build` _(Branch B)_
+- [x] Every reference in the workstream-C blast radius updated; `llms.test.ts`
+      passes _(Branch B)_
+- [x] Header nav on all four routes; post-result CTA block rendering _(Branch B)_
+- [x] `/build` opens with no weapon preselected _(Branch B)_
+- [x] Gates pass: `bun run check && bun run format && bun run lint && bun run test`
+- [~] `validate-ui`: host lacks `agent-browser` (sandbox-only). Validated
+      host-side instead — all 4 routes 200, SSR content/nav/weapon-order/empty-
+      state correct, production build + static prerender clean. Interactive
+      click-through (matchup lane + CTA post-selection) still wants a real
+      browser: run sandbox `validate-ui` or a manual pass before final deploy.

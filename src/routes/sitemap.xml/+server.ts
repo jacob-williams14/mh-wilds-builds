@@ -2,7 +2,7 @@ import { SITE_URL } from '$lib/domain/llms';
 
 export const prerender = true;
 
-const PAGES = ['/', '/about', '/references'];
+const PAGES = ['/', '/build', '/about', '/references'];
 
 export function GET() {
 	const urls = PAGES.map((path) => `\t<url><loc>${SITE_URL}${path}</loc></url>`).join('\n');

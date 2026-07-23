@@ -33,7 +33,7 @@ describe('llms-full.txt generation', () => {
 describe('llms.txt index', () => {
 	it('links the full data file and all pages on the live origin', () => {
 		const index = llmsIndex();
-		for (const path of ['/llms-full.txt', '/', '/about', '/references']) {
+		for (const path of ['/llms-full.txt', '/', '/build', '/about', '/references']) {
 			expect(index).toContain(`${SITE_URL}${path}`);
 		}
 	});
